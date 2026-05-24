@@ -4,28 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0b" />
-  <title>Faisel Tajiran — Founder of Frequentor</title>
-  <meta name="description" content="Faisel Tajiran is the founder of Frequentor, a Houston-based location-intelligence platform. MBA. 15+ years building digital products and growth systems for SMBs and venues." />
+  <title>Faisel Tajiran — Founder & CEO, Frequentor</title>
+  <meta name="description" content="Faisel Tajiran is the founder & CEO of Frequentor — a hospitality intelligence platform with 7 U.S. patents pending. Full-stack builder across mobile, cloud, hardware, and AI. 15+ years in growth & engineering. MBA, University of Houston." />
   <meta name="author" content="Faisel Tajiran" />
   <link rel="canonical" href="https://faiseltajiran.com/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://faiseltajiran.com/" />
-  <meta property="og:title" content="Faisel Tajiran — Founder of Frequentor" />
-  <meta property="og:description" content="Founder of Frequentor. MBA. 15+ years turning location data into recurring revenue." />
+  <meta property="og:title" content="Faisel Tajiran — Founder & CEO, Frequentor" />
+  <meta property="og:description" content="Founder & CEO of Frequentor. 7 U.S. patents pending. Full-stack across mobile, cloud, hardware, and agentic AI. MBA · Houston, TX." />
   <meta property="og:image" content="https://faiseltajiran.com/og.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Faisel Tajiran — Founder of Frequentor" />
-  <meta name="twitter:description" content="Founder of Frequentor. MBA. Houston, TX." />
+  <meta name="twitter:title" content="Faisel Tajiran — Founder & CEO, Frequentor" />
+  <meta name="twitter:description" content="Founder & CEO of Frequentor. 7 U.S. patents pending. MBA. Houston, TX." />
 
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ff7a3d'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif,system-ui' font-weight='800' font-size='18' fill='%23000'%3EF%3C/text%3E%3C/svg%3E" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 
@@ -37,6 +37,11 @@
     "name": "Faisel Tajiran",
     "url": "https://faiseltajiran.com",
     "jobTitle": "Founder & CEO, Frequentor",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Frequentor",
+      "url": "https://frequentor.com"
+    },
     "alumniOf": {
       "@type": "CollegeOrUniversity",
       "name": "University of Houston"
@@ -47,6 +52,15 @@
       "addressRegion": "TX",
       "addressCountry": "US"
     },
+    "knowsAbout": [
+      "Hospitality intelligence",
+      "Agentic AI",
+      "Multi-signal sensor fusion (mmWave + thermal IR + WiFi RSSI)",
+      "React Native",
+      "AWS Amplify",
+      "Patent strategy",
+      "Performance marketing"
+    ],
     "sameAs": [
       "https://github.com/faisetaj",
       "https://www.linkedin.com/in/faiseltajiran/",
@@ -57,6 +71,12 @@
 </head>
 <body>
 
+  <!-- Page-wide animated tech background -->
+  <div class="tech-bg" aria-hidden="true">
+    <div class="tech-bg__grid"></div>
+    <div class="tech-bg__scan"></div>
+  </div>
+
   <!-- Nav -->
   <header class="nav" id="nav">
     <a class="nav__brand" href="#top" aria-label="Home">
@@ -64,58 +84,71 @@
       <span class="nav__name">Faisel Tajiran</span>
     </a>
     <nav class="nav__links" aria-label="Primary">
-      <a href="#work">Work</a>
       <a href="#frequentor">Frequentor</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#patents">Patents</a>
       <a href="#about">About</a>
-      <a href="#contact">Contact</a>
     </nav>
-    <a class="btn btn--ghost nav__cta" href="mailto:faisel@frequentor.com">Get in touch</a>
+    <a class="btn btn--ghost nav__cta" href="#contact">Get in touch</a>
   </header>
 
   <main id="top">
 
     <!-- Hero -->
     <section class="hero">
+      <canvas id="hero-canvas" class="hero__canvas" aria-hidden="true"></canvas>
       <div class="hero__bg" aria-hidden="true">
         <div class="hero__glow hero__glow--a"></div>
         <div class="hero__glow hero__glow--b"></div>
-        <div class="hero__grid"></div>
+        <div class="hero__radar">
+          <span class="hero__radar-ring"></span>
+          <span class="hero__radar-ring"></span>
+          <span class="hero__radar-ring"></span>
+        </div>
       </div>
 
       <div class="container hero__inner">
-        <p class="eyebrow"><span class="dot"></span> Houston, TX · Founder &amp; Operator</p>
+        <p class="eyebrow"><span class="dot"></span> Houston, TX · Founder · Full-stack builder</p>
         <h1 class="hero__title">
-          I build products that turn
+          I turn
           <span class="grad">physical presence</span>
           into recurring revenue.
         </h1>
         <p class="hero__sub">
-          I&rsquo;m Faisel — founder of <a href="https://frequentor.com" class="link">Frequentor</a>, a location-intelligence platform with 7 U.S. patents pending. Before this I spent 15+ years running growth, web, and IT for SMBs across hospitality, healthcare, retail, and home services.
+          I&rsquo;m Faisel — founder &amp; CEO of <a href="https://frequentor.com" class="link">Frequentor</a>, a hospitality intelligence platform with <strong>7 U.S. patents pending</strong>. Built solo across iOS/Android, AWS, ESP32 hardware, and a proprietary agentic AI engine called <strong>FAHE</strong>. Before this, 15+ years running growth, web, and IT for SMBs and enterprise hospitality (Landry&rsquo;s · 60+ brands / 500+ locations).
         </p>
         <div class="hero__cta">
           <a class="btn btn--primary" href="#frequentor">See what I&rsquo;m building <span aria-hidden="true">→</span></a>
-          <a class="btn btn--ghost" href="#work">Selected work</a>
+          <a class="btn btn--ghost" href="/Faisel-Tajiran-Resume-2026.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="16" height="16"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+            Download résumé
+          </a>
         </div>
 
         <ul class="hero__stats" aria-label="At a glance">
           <li><strong>7</strong><span>U.S. patents pending</span></li>
           <li><strong>15+</strong><span>years shipping</span></li>
-          <li><strong>50+</strong><span>SMB clients</span></li>
-          <li><strong>5,000%</strong><span>peak ad ROAS</span></li>
+          <li><strong>500+</strong><span>locations marketed</span></li>
+          <li><strong>$300K</strong><span>new ARR generated</span></li>
         </ul>
 
         <div class="marquee" aria-label="Partners and programs">
           <div class="marquee__track">
-            <span>ElevenLabs Startup Grant</span><span>·</span>
-            <span>PostHog for Startups</span><span>·</span>
-            <span>NVIDIA Inception</span><span>·</span>
-            <span>Lambda for Startups</span><span>·</span>
-            <span>AWS Activate</span><span>·</span>
-            <span>Anthropic Builder</span><span>·</span>
-            <span>ElevenLabs Startup Grant</span><span>·</span>
-            <span>PostHog for Startups</span><span>·</span>
-            <span>NVIDIA Inception</span><span>·</span>
-            <span>Lambda for Startups</span><span>·</span>
+            <span>ElevenLabs Startup Grant</span><span class="dotdiv">·</span>
+            <span>PostHog for Startups</span><span class="dotdiv">·</span>
+            <span>NVIDIA Inception</span><span class="dotdiv">·</span>
+            <span>Lambda for Startups</span><span class="dotdiv">·</span>
+            <span>AWS Activate</span><span class="dotdiv">·</span>
+            <span>Anthropic Builder</span><span class="dotdiv">·</span>
+            <span>HubSpot for Startups</span><span class="dotdiv">·</span>
+            <span>ElevenLabs Startup Grant</span><span class="dotdiv">·</span>
+            <span>PostHog for Startups</span><span class="dotdiv">·</span>
+            <span>NVIDIA Inception</span><span class="dotdiv">·</span>
+            <span>Lambda for Startups</span><span class="dotdiv">·</span>
+            <span>AWS Activate</span><span class="dotdiv">·</span>
+            <span>Anthropic Builder</span><span class="dotdiv">·</span>
+            <span>HubSpot for Startups</span><span class="dotdiv">·</span>
           </div>
         </div>
       </div>
@@ -127,16 +160,37 @@
         <div class="feature">
           <div class="feature__copy">
             <p class="eyebrow eyebrow--orange">Currently building</p>
-            <h2 class="h2">Frequentor</h2>
+            <h2 class="h2">Frequentor.</h2>
             <p class="lead">
-              A patented platform that connects bars, restaurants, and retailers to the people who actually walk through the door. Customers get recognized for showing up; venues get a real-time CRM, GBP scorecard, competitive intelligence, and a 30-day mitigation window for online reviews.
+              An end-to-end hospitality intelligence platform that connects guests, staff, and owners through verified physical-presence signals. Mobile, cloud, edge hardware, and a proprietary agentic AI engine — <strong>FAHE</strong> (Forecasting Agentic Hospitality Engine) — designed, engineered, and shipped solo.
             </p>
             <ul class="checks">
-              <li>Mobile app (iOS + Android) with silent geofence check-in</li>
-              <li>Venue dashboard with Compete tier and FAHE bespoke engine</li>
-              <li>Hardware: ESP32 puck for behind-the-bar staff recognition</li>
-              <li>7 U.S. patents pending · USPTO PPA &#35;64/057,597 et al.</li>
+              <li>iOS + Android app (React Native / Expo) with silent geofence check-in &amp; Apple Wallet passes</li>
+              <li>AWS Amplify Gen 2 backend — AppSync, DynamoDB single-table, Cognito, Lambda, IAM-scoped</li>
+              <li>ESP32 sensor pucks fusing mmWave radar, thermal IR, and WiFi RSSI for live-busyness scoring</li>
+              <li>Venue dashboard with Compete tier, GBP scorecard, and FAHE one-tap recommendations</li>
+              <li>7 U.S. provisional patents filed (USPTO) — PPA &#35;64/049,701 · &#35;64/053,550 · &#35;64/057,597 et al.</li>
             </ul>
+
+            <div class="stack-chips" aria-label="Frequentor stack">
+              <span class="chip">React Native</span>
+              <span class="chip">Expo</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">AWS Amplify Gen 2</span>
+              <span class="chip">AppSync · GraphQL</span>
+              <span class="chip">DynamoDB</span>
+              <span class="chip">Cognito</span>
+              <span class="chip">Lambda</span>
+              <span class="chip">Express · Cloudflare</span>
+              <span class="chip">Stripe</span>
+              <span class="chip">ESP32 / Embedded C</span>
+              <span class="chip">mmWave LD2410/2450</span>
+              <span class="chip">AMG8833 IR</span>
+              <span class="chip">Anthropic Claude</span>
+              <span class="chip">AWS Bedrock</span>
+              <span class="chip">Model Context Protocol</span>
+            </div>
+
             <div class="feature__cta">
               <a class="btn btn--primary" href="https://frequentor.com">Visit Frequentor <span aria-hidden="true">→</span></a>
               <a class="btn btn--ghost" href="https://frequentor.com/founders">For founders &amp; investors</a>
@@ -147,6 +201,7 @@
             <div class="card card--device">
               <div class="card__chrome">
                 <span></span><span></span><span></span>
+                <span class="card__title">frequentor &mdash; dashboard</span>
               </div>
               <div class="card__body">
                 <div class="kpi">
@@ -163,9 +218,15 @@
                   <div class="bar"><span style="height:46%"></span><label>S</label></div>
                 </div>
                 <div class="row">
-                  <div class="pill pill--ok">Geofence: live</div>
+                  <div class="pill pill--ok"><span class="pill__dot"></span> Geofence: live</div>
                   <div class="pill">FAHE engine</div>
                   <div class="pill">PPA #64/057,597</div>
+                </div>
+                <div class="terminal">
+                  <div class="terminal__line"><span class="t-prompt">$</span> fahe predict --venue=bosscat</div>
+                  <div class="terminal__line t-out">▸ peak window: <span class="t-hi">Fri 7&ndash;10pm</span> · 92% confidence</div>
+                  <div class="terminal__line t-out">▸ action: <span class="t-hi">push to 84 VIPs</span> · est. +17 visits</div>
+                  <div class="terminal__line"><span class="t-prompt">$</span> <span class="t-cursor">_</span></div>
                 </div>
               </div>
             </div>
@@ -174,120 +235,245 @@
       </div>
     </section>
 
-    <!-- Services -->
-    <section class="section section--alt" id="services">
+    <!-- Experience timeline -->
+    <section class="section section--alt" id="experience">
       <div class="container">
-        <p class="eyebrow">What I do</p>
-        <h2 class="h2">Three things, done well.</h2>
+        <p class="eyebrow">Experience</p>
+        <h2 class="h2">Where I&rsquo;ve built.</h2>
 
-        <div class="grid grid--3">
-          <article class="tile">
-            <div class="tile__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12h3l3-8 4 16 3-8h5"/></svg>
+        <ol class="timeline">
+          <li class="timeline__item timeline__item--current">
+            <div class="timeline__meta">
+              <span class="timeline__year">Now</span>
+              <span class="timeline__tag">Houston, TX</span>
             </div>
-            <h3>Growth &amp; performance marketing</h3>
-            <p>Paid search, paid social, SEO, and analytics built on real attribution — not vanity dashboards. Google Ads &amp; Analytics IQ certified, Meta Marketing Strategy Professional.</p>
+            <div class="timeline__body">
+              <h3>Founder &amp; CEO &mdash; Frequentor</h3>
+              <p class="timeline__role">Sole engineer / designer / operator across mobile, cloud, hardware, AI, and GTM.</p>
+              <ul class="bullets">
+                <li>Shipped 460+ file React Native app with native geofencing, APNs, Apple Wallet, and EAS OTA — live on TestFlight.</li>
+                <li>Architected production AWS Amplify Gen 2 stack with strict IAM scoping; serving real traffic in <code>us-east-1</code>.</li>
+                <li>Designed ESP32 sensor pucks fusing mmWave + thermal IR + WiFi RSSI; 3D-printed enclosure; field-validated 2026.</li>
+                <li>Built FAHE — proprietary agentic AI for forecasting + one-tap actions + AI moderation pipeline.</li>
+                <li>Filed 7 U.S. provisional patents at USPTO covering sensor fusion, check-in attribution, agentic forecasting, and verified-content authority.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__year">2010 &ndash; Present</span>
+              <span class="timeline__tag">Houston, TX</span>
+            </div>
+            <div class="timeline__body">
+              <h3>Digital Marketing Director &mdash; Professional Travel Center / eTotalHome</h3>
+              <p class="timeline__role">Own all branding, paid media, SEO, and analytics. Lead an inbound team of six.</p>
+              <ul class="bullets">
+                <li><strong>6,500%</strong> lift in monthly renewals and <strong>$300K</strong> in new annual revenue via email + funnel optimization.</li>
+                <li>Built an automated lead engine with Zapier + BurstSMS API: <strong>+60%</strong> conversion, <strong>&minus;40%</strong> manual workload.</li>
+                <li>Pilot campaign on a new service line: <strong>400% ROI</strong> / <strong>$120K</strong> in incremental revenue.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item">
+            <div class="timeline__meta">
+              <span class="timeline__year">2022 &ndash; 2023</span>
+              <span class="timeline__tag">Houston, TX</span>
+            </div>
+            <div class="timeline__body">
+              <h3>Digital Marketing Strategy Manager &mdash; Landry&rsquo;s Inc.</h3>
+              <p class="timeline__role">Led paid digital across <strong>60+ brands / 500+ locations</strong>. Reported quarterly to VP of Marketing.</p>
+              <ul class="bullets">
+                <li><strong>+25%</strong> lead generation, <strong>&minus;15%</strong> CPA across Google, Meta, Yelp, and programmatic CTV / video / audio.</li>
+                <li>Built and delivered the <strong>GA4 migration training program for 90+ brands</strong>; <strong>+30%</strong> data accuracy.</li>
+                <li>Owned conversion tracking architecture (GTM + GA4) and exec reporting (Looker / Supermetrics).</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Skills pillars -->
+    <section class="section" id="skills">
+      <div class="container">
+        <p class="eyebrow">Capabilities</p>
+        <h2 class="h2">Full stack across product, growth, and the metal.</h2>
+        <p class="lead">I write production code, design the hardware, run the ad accounts, and file the patents. Not a strategist with a deck — an operator who ships.</p>
+
+        <div class="grid grid--3 skills-grid">
+          <article class="tile tile--skill">
+            <div class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M8 5l-6 7 6 7M16 5l6 7-6 7M14 4l-4 16"/></svg>
+            </div>
+            <h3>Engineering &amp; Cloud</h3>
+            <p class="tile__lead">Production systems built for real traffic, not demos.</p>
+            <div class="tag-list">
+              <span class="tag">TypeScript</span><span class="tag">React / RN</span><span class="tag">Node.js</span><span class="tag">Python</span>
+              <span class="tag">GraphQL</span><span class="tag">REST</span><span class="tag">Serverless</span>
+              <span class="tag">AWS Amplify Gen 2</span><span class="tag">AppSync</span><span class="tag">DynamoDB</span>
+              <span class="tag">Cognito</span><span class="tag">Lambda</span><span class="tag">S3</span><span class="tag">IAM</span>
+              <span class="tag">CloudFormation</span><span class="tag">AWS CDK</span><span class="tag">Express</span>
+              <span class="tag">Cloudflare</span><span class="tag">Stripe</span><span class="tag">CI/CD</span>
+            </div>
           </article>
 
-          <article class="tile">
+          <article class="tile tile--skill">
             <div class="tile__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 14h3"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>
             </div>
-            <h3>Product &amp; web engineering</h3>
-            <p>From WordPress migrations to React/React Native, AppSync, Lambda, and Stripe. I write production code; I&rsquo;m not just a strategist with a deck.</p>
+            <h3>Mobile · Hardware · IoT</h3>
+            <p class="tile__lead">From APNs and Apple Wallet down to firmware on the bench.</p>
+            <div class="tag-list">
+              <span class="tag">React Native / Expo</span><span class="tag">EAS OTA</span><span class="tag">TestFlight</span>
+              <span class="tag">Geofencing</span><span class="tag">Background tasks</span><span class="tag">APNs</span>
+              <span class="tag">Apple Wallet</span><span class="tag">Lock-screen widgets</span><span class="tag">Native modules</span>
+              <span class="tag">ESP32 / Embedded C</span><span class="tag">LD2410 mmWave</span><span class="tag">LD2450 mmWave</span>
+              <span class="tag">AMG8833 IR</span><span class="tag">BLE iBeacon</span><span class="tag">WiFi RSSI</span>
+              <span class="tag">Sensor fusion</span><span class="tag">Edge compute</span><span class="tag">3D CAD / enclosure</span>
+            </div>
           </article>
 
-          <article class="tile">
+          <article class="tile tile--skill">
             <div class="tile__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="9"/><path d="M12 3v3m0 12v3M3 12h3m12 0h3"/></svg>
             </div>
-            <h3>IT &amp; infrastructure for SMBs</h3>
-            <p>Voice, network, identity, backups, and the unsexy plumbing that keeps a small business from losing a week to an outage. Doing this since I was 13.</p>
+            <h3>AI · Agentic · Vertical</h3>
+            <p class="tile__lead">LLM apps and agent orchestration with budgets, latency, and moderation in mind.</p>
+            <div class="tag-list">
+              <span class="tag">Anthropic Claude API</span><span class="tag">AWS Bedrock</span><span class="tag">Model Context Protocol</span>
+              <span class="tag">Multi-agent orchestration</span><span class="tag">Prompt engineering</span>
+              <span class="tag">AI moderation</span><span class="tag">Knowledge graphs</span>
+              <span class="tag">Vertical AI</span><span class="tag">AI-assisted engineering</span>
+              <span class="tag">FAHE engine</span>
+            </div>
+          </article>
+
+          <article class="tile tile--skill">
+            <div class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 17l6-6 4 4 8-9"/><path d="M14 6h7v7"/></svg>
+            </div>
+            <h3>Marketing &amp; Analytics</h3>
+            <p class="tile__lead">15+ years of paid media, SEO, and attribution that actually moves revenue.</p>
+            <div class="tag-list">
+              <span class="tag">SEO</span><span class="tag">SEM / PPC</span><span class="tag">Google Ads</span><span class="tag">Meta Ads</span>
+              <span class="tag">Programmatic CTV</span><span class="tag">Video / Audio</span>
+              <span class="tag">GA4</span><span class="tag">Google Tag Manager</span><span class="tag">Looker / Data Studio</span>
+              <span class="tag">Supermetrics</span><span class="tag">Server-Side Tracking</span>
+              <span class="tag">Attribution Modeling</span><span class="tag">CRO / A/B</span><span class="tag">Lifecycle</span>
+            </div>
+          </article>
+
+          <article class="tile tile--skill">
+            <div class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 7h16M4 12h10M4 17h16"/></svg>
+            </div>
+            <h3>CRM &amp; Automation</h3>
+            <p class="tile__lead">The unsexy plumbing that compounds for SMBs.</p>
+            <div class="tag-list">
+              <span class="tag">HubSpot</span><span class="tag">ActiveCampaign</span><span class="tag">Zapier</span>
+              <span class="tag">BurstSMS API</span><span class="tag">Calendly</span><span class="tag">Marketing Automation</span>
+            </div>
+          </article>
+
+          <article class="tile tile--skill">
+            <div class="tile__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l3 6 6 1-4.5 4 1 6L12 16l-5.5 3 1-6L3 9l6-1z"/></svg>
+            </div>
+            <h3>Founding &amp; Product</h3>
+            <p class="tile__lead">0-to-1 vertical SaaS with IP strategy and founder-led sales.</p>
+            <div class="tag-list">
+              <span class="tag">Vertical SaaS</span><span class="tag">B2B Pricing</span><span class="tag">Patent / IP Strategy</span>
+              <span class="tag">USPTO PPAs</span><span class="tag">Founder-Led Sales</span>
+              <span class="tag">Cold-Start Strategy</span><span class="tag">GTM Design</span>
+              <span class="tag">Pitch Decks</span><span class="tag">Lean Startup</span><span class="tag">MVP Development</span>
+              <span class="tag">RestTech / Hospitality</span>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Selected work -->
-    <section class="section" id="work">
+    <!-- Patents strip -->
+    <section class="section section--alt" id="patents">
       <div class="container">
-        <p class="eyebrow">Selected work</p>
-        <h2 class="h2">A few engagements I&rsquo;m proud of.</h2>
+        <p class="eyebrow eyebrow--orange">Intellectual property</p>
+        <h2 class="h2">7 U.S. patents pending.</h2>
+        <p class="lead">Filed at the U.S. Patent &amp; Trademark Office covering check-in attribution, multi-signal sensor fusion, agentic forecasting, verified-content authority, and cross-venue intelligence.</p>
 
-        <div class="grid grid--2">
-          <article class="case">
-            <div class="case__meta">2021 · Hospitality</div>
-            <h3>Restaurant group — paid acquisition rebuild</h3>
-            <p>Restructured Google &amp; Meta accounts around dine-in vs. delivery intent. <strong>5,000% ROAS</strong> on the top campaign at peak; CPA down 62% in the first quarter.</p>
+        <div class="grid grid--3 patents">
+          <article class="patent">
+            <div class="patent__num">PPA &#35;5 &middot; <code>64/049,701</code></div>
+            <h3>Check-in attribution</h3>
+            <p>Verified physical-presence signals as the system of record for foot-traffic attribution.</p>
           </article>
-
-          <article class="case">
-            <div class="case__meta">2019–2021 · Membership</div>
-            <h3>Subscription program — retention &amp; renewals</h3>
-            <p>Built the renewal pipeline, churn dashboards, and a gifted-upgrade flow. <strong>$250K incremental ARR</strong> from a single renewal motion.</p>
+          <article class="patent">
+            <div class="patent__num">PPA &#35;6 &middot; <code>64/053,550</code></div>
+            <h3>Multi-signal sensor fusion</h3>
+            <p>mmWave radar + thermal IR + WiFi RSSI fused on-edge into real-time live-busyness scoring.</p>
           </article>
-
-          <article class="case">
-            <div class="case__meta">2018 · Local services</div>
-            <h3>Home-services brand — full-funnel relaunch</h3>
-            <p>New site, tracking stack, local SEO, and a paid program against thin national competitors. Lead volume 4&times; in 90 days at a lower blended CPL.</p>
-          </article>
-
-          <article class="case">
-            <div class="case__meta">2016 · Healthcare</div>
-            <h3>Specialty clinic — practice growth system</h3>
-            <p>Replaced an agency that hadn&rsquo;t reported in six months. Stood up GA, GTM, call tracking, and a referral dashboard the practice still uses.</p>
+          <article class="patent">
+            <div class="patent__num">PPA &#35;13 &middot; <code>64/057,597</code></div>
+            <h3>Agentic hospitality engine</h3>
+            <p>FAHE — forecasting + one-tap actions + cross-venue intelligence under a single agent loop.</p>
           </article>
         </div>
-
-        <p class="note">Older portfolio &amp; references available on request.</p>
+        <p class="note">Additional PPAs cover verified-content authority and operator-tier mechanics. Full list under NDA on request.</p>
       </div>
     </section>
 
     <!-- About -->
-    <section class="section section--alt" id="about">
+    <section class="section" id="about">
       <div class="container about">
         <div class="about__copy">
           <p class="eyebrow">About</p>
           <h2 class="h2">From building PCs at 13 to filing patents at 40.</h2>
           <p>
-            I grew up taking computers apart in Houston. Studied finance and then an M.B.A. at the University of Houston (BBA Finance 2010, MBA 2015). Spent the next decade running marketing and IT for small businesses across the city — clinics, restaurants, retail, home services — the kind of work where one person has to be the strategist, the engineer, and the one who actually pushes the deploy.
+            I grew up taking computers apart in Houston. <strong>BBA</strong> from the University of Houston (2004&ndash;2010), then an <strong>MBA</strong> from the University of Houston (2012&ndash;2015). Spent the next decade running marketing and IT for small businesses across the city — clinics, restaurants, retail, home services — the kind of work where one person has to be the strategist, the engineer, and the one who actually pushes the deploy.
           </p>
           <p>
-            That work eventually became the question behind <strong>Frequentor</strong>: why is it that the businesses we walk into every week know less about us than a website we&rsquo;ve never visited? I&rsquo;m building the answer with a small team out of Houston, backed by patents we&rsquo;ve filed at the USPTO and credits from ElevenLabs, PostHog, NVIDIA, Lambda, AWS, and Anthropic.
+            That work eventually became the question behind <strong>Frequentor</strong>: why is it that the businesses we walk into every week know less about us than a website we&rsquo;ve never visited? I&rsquo;m building the answer with a small team out of Houston, backed by <strong>7 patents filed at the USPTO</strong> and credits from ElevenLabs, PostHog, NVIDIA, Lambda, AWS, and Anthropic. A global authority play around World Cup 2026 is in motion.
           </p>
         </div>
 
         <aside class="about__side">
-          <h3 class="side__h">Credentials</h3>
+          <h3 class="side__h">Education</h3>
           <ul class="side__list">
-            <li><strong>M.B.A.</strong> · University of Houston, 2015</li>
-            <li><strong>B.B.A. Finance</strong> · University of Houston, 2010</li>
-            <li>Google Ads · Analytics IQ · Digital Garage</li>
+            <li><strong>MBA</strong> · University of Houston (2012&ndash;2015)</li>
+            <li><strong>BBA</strong> · University of Houston (2004&ndash;2010)</li>
+          </ul>
+          <h3 class="side__h side__h--mt">Certifications</h3>
+          <ul class="side__list">
+            <li>Google Ads Search</li>
+            <li>Google Analytics IQ</li>
+            <li>Google Generative AI Fundamentals</li>
             <li>Meta Marketing Strategy Professional</li>
-            <li>Amazon Advertising · HubSpot</li>
+            <li>HubSpot Digital Marketing</li>
+            <li>HubSpot Social Media</li>
+            <li>Google &amp; IAB Fundamentals of Digital Marketing</li>
           </ul>
         </aside>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="section contact" id="contact">
+    <section class="section section--alt contact" id="contact">
       <div class="container">
         <p class="eyebrow">Contact</p>
         <h2 class="h2">Let&rsquo;s talk.</h2>
-        <p class="lead">Email is the fastest way to reach me. For Frequentor partnership or press, use the Frequentor address; for consulting, the personal one.</p>
+        <p class="lead">Email is the fastest way to reach me. Use the Frequentor address for product, partnerships, or investor conversations; the personal one for consulting and everything else.</p>
 
         <div class="grid grid--2 contact__grid">
           <a class="contact__card" href="mailto:faisel@frequentor.com">
             <span class="contact__label">Frequentor</span>
             <span class="contact__value">faisel@frequentor.com</span>
-            <span class="contact__hint">Product, partnerships, investors</span>
+            <span class="contact__hint">Product · partnerships · investors · press</span>
           </a>
-          <a class="contact__card" href="mailto:faiselt@gmail.com">
+          <a class="contact__card" href="mailto:faisel@faiseltajiran.com">
             <span class="contact__label">Personal</span>
-            <span class="contact__value">faiselt@gmail.com</span>
-            <span class="contact__hint">Consulting &amp; everything else</span>
+            <span class="contact__value">faisel@faiseltajiran.com</span>
+            <span class="contact__hint">Consulting &amp; everything else &middot; (832) 928-1561</span>
           </a>
         </div>
 
@@ -297,6 +483,8 @@
           <a href="https://www.linkedin.com/in/faiseltajiran/" rel="me noopener">LinkedIn</a>
           <span aria-hidden="true">·</span>
           <a href="https://frequentor.com" rel="noopener">Frequentor</a>
+          <span aria-hidden="true">·</span>
+          <a href="/Faisel-Tajiran-Resume-2026.pdf" download>Résumé (PDF)</a>
         </div>
       </div>
     </section>
@@ -306,7 +494,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <span>&copy; <span id="year"></span> Faisel Tajiran. Houston, TX.</span>
-      <span class="footer__tag">Static site · open source on <a href="https://github.com/faisetaj/faiseltajiran" rel="noopener">GitHub</a></span>
+      <span class="footer__tag">Static site &middot; open source on <a href="https://github.com/faisetaj/faiseltajiran" rel="noopener">GitHub</a></span>
     </div>
   </footer>
 
