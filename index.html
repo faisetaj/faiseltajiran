@@ -5,20 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
   <title>Faisel Tajiran — Founder · Engineer · Inventor</title>
-  <meta name="description" content="Faisel Tajiran builds ventures end-to-end — IoT hardware, mobile apps, cloud backends, fine-tuned LLMs, and the growth engine behind them. Founder & CEO of Frequentor, 7 U.S. patents pending. Houston, TX." />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ft-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+  <meta name="description" content="Faisel Tajiran builds ventures end-to-end — IoT hardware, mobile apps, cloud backends, fine-tuned LLMs, and the growth engine behind them. Founder & CEO of Frequentor, 9 U.S. patents pending. Houston, TX." />
   <meta name="author" content="Faisel Tajiran" />
   <link rel="canonical" href="https://faiseltajiran.com/" />
 
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://faiseltajiran.com/" />
   <meta property="og:title" content="Faisel Tajiran — Founder · Engineer · Inventor" />
-  <meta property="og:description" content="Ventures built end-to-end: IoT hardware, mobile, cloud, fine-tuned LLMs, growth. Founder & CEO of Frequentor. 7 U.S. patents pending." />
+  <meta property="og:description" content="Ventures built end-to-end: IoT hardware, mobile, cloud, fine-tuned LLMs, growth. Founder & CEO of Frequentor. 9 U.S. patents pending." />
   <meta property="og:image" content="https://faiseltajiran.com/og.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Faisel Tajiran — Founder · Engineer · Inventor" />
-  <meta name="twitter:description" content="Ventures built end-to-end: hardware, mobile, cloud, AI, growth. 7 U.S. patents pending." />
+  <meta name="twitter:description" content="Ventures built end-to-end: hardware, mobile, cloud, AI, growth. 9 U.S. patents pending." />
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff5c28'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif,system-ui' font-weight='800' font-size='17' fill='%230a0a0a'%3EFT%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2300d98e'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif,system-ui' font-weight='800' font-size='17' fill='%230a0a0a'%3EFT%3C/text%3E%3C/svg%3E" />
 
   <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
@@ -81,6 +82,7 @@
     <div class="nav__aux mono">
       <span class="nav__status"><span class="dot dot--live"></span>OPEN TO CONVERSATIONS</span>
       <span class="nav__clock" data-clock>HOU&nbsp;--:--:--</span>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark / light theme"></button>
     </div>
   </header>
 
@@ -102,7 +104,7 @@
             and shipped <em>solo</em>.
           </p>
           <ul class="hero__stats mono" aria-label="At a glance">
-            <li data-reveal><strong data-count="7">0</strong>U.S. PATENTS PENDING</li>
+            <li data-reveal><strong data-count="9">0</strong>U.S. PATENTS PENDING</li>
             <li data-reveal><strong data-count="40" data-suffix="+">0</strong>LLM BUILDS SHIPPED</li>
             <li data-reveal><strong data-count="15" data-suffix="+">0</strong>YEARS SHIPPING</li>
             <li data-reveal><strong data-count="11">0</strong>BUILDS DOCUMENTED</li>
@@ -149,7 +151,7 @@
           <li class="work__group mono" data-reveal>I&nbsp;—&nbsp;VENTURES&nbsp;&amp;&nbsp;STARTUPS</li>
           <li>
             <a class="work__row" href="/work/frequentor/" data-transition data-cursor="view"
-               data-hue="#ff5c28" data-motif="frequentor" data-tag="IOT × MOBILE × AI">
+               data-hue="#00d98e" data-motif="frequentor" data-tag="IOT × MOBILE × AI">
               <span class="work__nr mono">01</span>
               <span class="work__title">Frequentor</span>
               <span class="work__meta mono"><span>HOSPITALITY INTELLIGENCE</span><span>2025 —</span><span class="chip chip--live">LIVE PILOT</span></span>
@@ -173,7 +175,7 @@
           </li>
           <li>
             <a class="work__row" href="/work/authyr/" data-transition data-cursor="view"
-               data-hue="#2ee6a8" data-motif="authyr" data-tag="CRYPTOGRAPHY × SAAS">
+               data-hue="#ff5c28" data-motif="authyr" data-tag="CRYPTOGRAPHY × SAAS">
               <span class="work__nr mono">04</span>
               <span class="work__title">Authyr</span>
               <span class="work__meta mono"><span>CRYPTOGRAPHIC TRUST RAILS</span><span>2026</span><span class="chip">MVP IN BUILD</span></span>
@@ -253,10 +255,19 @@
     <section class="about section--paper" id="about">
       <div class="container">
         <p class="mono section-head__eyebrow" data-reveal>02&nbsp;—&nbsp;ABOUT</p>
-        <h2 class="about__statement" data-words>
-          Builder by default. Marketer by training. Hospitality operator by domain.
-          I learned to ship by being the only person in the room who could.
-        </h2>
+        <div class="about__layout">
+          <h2 class="about__statement" data-words>
+            Builder by default. Marketer by training. Hospitality operator by domain.
+            I learned to ship by being the only person in the room who could.
+          </h2>
+          <figure class="about__media" data-reveal>
+            <img src="/assets/img/faisel.webp"
+                 srcset="/assets/img/faisel-sm.webp 480w, /assets/img/faisel.webp 900w"
+                 sizes="(max-width: 860px) 86vw, 30vw"
+                 width="900" height="1381" alt="Faisel Tajiran" loading="lazy" />
+            <figcaption class="mono">FAISEL&nbsp;TAJIRAN&nbsp;—&nbsp;29.76°N&nbsp;95.36°W</figcaption>
+          </figure>
+        </div>
         <div class="about__cols">
           <div class="about__col" data-reveal>
             <p>I grew up taking computers apart in Houston. BBA, then MBA from the University of Houston. I spent a decade running growth and IT for small businesses — clinics, restaurants, retail — where one person has to be the strategist, the engineer, and the one who pushes the deploy. Then I ran paid digital for Landry's: 60+ brands, 500+ locations, one of the largest hospitality companies in the country.</p>
@@ -322,17 +333,19 @@
       <div class="patents__pin">
         <div class="container patents__head">
           <p class="mono section-head__eyebrow">04&nbsp;—&nbsp;INTELLECTUAL&nbsp;PROPERTY</p>
-          <h2 class="section-head__title">Seven filings,<br /><em>one thesis.</em></h2>
-          <p class="section-head__note">Verified physical presence is the missing primitive of local commerce. Each provisional patent covers one layer of that stack — filed at the USPTO, prior-art research done myself.</p>
+          <h2 class="section-head__title">Nine filings,<br /><em>one thesis.</em></h2>
+          <p class="section-head__note">Verified physical presence is the missing primitive of local commerce. Each provisional patent covers one layer of that stack — drafted and filed at the USPTO, prior-art research done myself.</p>
         </div>
         <div class="patents__track">
-          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#1</span><h3>Geofence silent check-in</h3><p>Passive, permission-scoped presence detection that turns walking in the door into a verified event — no QR, no tap.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
-          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#2</span><h3>Push attribution</h3><p>Closing the loop between a push notification sent and a body that physically showed up.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
-          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#3</span><h3>Presence-based loyalty</h3><p>Loyalty accrual keyed to verified visits instead of receipts or self-reports.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
-          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#4</span><h3>Hardware fusion architecture</h3><p>mmWave radar + thermal IR + WiFi RSSI fused on-edge into a live busyness score.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
+          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#1&nbsp;·&nbsp;64/035,536</span><h3>Geofence silent check-in</h3><p>Passive, permission-scoped presence detection that turns walking in the door into a verified event — no QR, no tap.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
+          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#2&nbsp;·&nbsp;64/035,553</span><h3>Push attribution</h3><p>Closing the loop between a push notification sent and a body that physically showed up.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
+          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#3&nbsp;·&nbsp;64/035,564</span><h3>Presence-based loyalty</h3><p>Loyalty accrual keyed to verified visits instead of receipts or self-reports.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
+          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#4&nbsp;·&nbsp;64/035,584</span><h3>Hardware fusion architecture</h3><p>mmWave radar + thermal IR + WiFi RSSI fused on-edge into a live busyness score.</p><span class="pcard__date mono">FILED 04·10·2026</span></article>
           <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#5&nbsp;·&nbsp;64/049,701</span><h3>Verified-content authority</h3><p>EXIF-geofence-verified articles and bilateral attribution — content that proves its author was there.</p><span class="pcard__date mono">FILED 04·26·2026</span></article>
           <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#6&nbsp;·&nbsp;64/053,550</span><h3>Agentic forecasting engine</h3><p>FAHE: forward-projecting hospitality intelligence with one-tap executable actions, plus verification-not-detection moderation.</p><span class="pcard__date mono">FILED 04·30·2026</span></article>
-          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#13&nbsp;·&nbsp;64/057,597</span><h3>Cross-venue intelligence</h3><p>Network-level intelligence across venues + WiFi promiscuous-mode passive sensor fusion.</p><span class="pcard__date mono">FILED 05·05·2026</span></article>
+          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#7</span><h3>Review-mitigation window</h3><p>Pre-publication negative-review mitigation: a time-bounded private window with threaded resolution, auto-publication on expiry, and outcome-indexed public badging.</p><span class="pcard__date mono">FILED 2026</span></article>
+          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#13&nbsp;·&nbsp;64/057,597</span><h3>Cross-venue intelligence</h3><p>Network-level behavioral-graph intelligence across venues + WiFi promiscuous-mode passive sensor fusion.</p><span class="pcard__date mono">FILED 05·05·2026</span></article>
+          <article class="pcard"><span class="pcard__nr mono">PPA&nbsp;#14</span><h3>Venue entity resolution</h3><p>GPS-anchored multi-signal resolution of a venue’s identity across social and commerce platforms — weighted confidence scoring, corporate-contamination filtering, owner-verified feedback loop.</p><span class="pcard__date mono">FILED 2026</span></article>
         </div>
       </div>
     </section>
@@ -350,7 +363,7 @@
             <div class="xp__when mono"><span>2025&nbsp;—&nbsp;NOW</span><span class="chip chip--live">CURRENT</span></div>
             <div class="xp__what">
               <h3>Founder &amp; CEO — Frequentor</h3>
-              <p>Sole engineer, designer, and operator across mobile, cloud, hardware, AI, and go-to-market. 7 U.S. provisional patents filed. Live multi-venue pilot pipeline in Houston; full sensing→app chain field-validated 2026.</p>
+              <p>Sole engineer, designer, and operator across mobile, cloud, hardware, AI, and go-to-market. 9 U.S. provisional patents filed. Live multi-venue pilot pipeline in Houston; full sensing→app chain field-validated 2026.</p>
             </div>
           </li>
           <li class="xp__item" data-reveal>

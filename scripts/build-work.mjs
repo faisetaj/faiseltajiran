@@ -21,6 +21,7 @@ const page = (p, next) => `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ft-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
   <title>${p.title.replace(/&nbsp;/g, ' ')} — Case Study — Faisel Tajiran</title>
   <meta name="description" content="${p.description}" />
   <meta name="author" content="Faisel Tajiran" />
@@ -55,6 +56,7 @@ const page = (p, next) => `<!DOCTYPE html>
     <div class="nav__aux mono">
       <span class="nav__status"><span class="dot dot--live"></span>OPEN TO CONVERSATIONS</span>
       <span class="nav__clock" data-clock>HOU&nbsp;--:--:--</span>
+      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark / light theme"></button>
     </div>
   </header>
 

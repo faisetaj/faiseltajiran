@@ -20,6 +20,20 @@
   tick(); setInterval(tick, 1000);
   document.querySelectorAll('[data-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
 
+  // Theme toggle (dark default; persisted)
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('ft-theme', next); } catch (e) {}
+    });
+  });
+
+  // Per-project hue on work rows
+  document.querySelectorAll('.work__row[data-hue]').forEach(row => {
+    row.style.setProperty('--row-hue', row.dataset.hue);
+  });
+
   if (reduceMotion || typeof gsap === 'undefined') {
     document.documentElement.classList.add('no-motion');
     const pre = document.querySelector('.preloader');
@@ -329,14 +343,21 @@
       });
     }
 
+    const PALETTES = {
+      dark:  { base: '236,233,226', baseRing: 0.07, baseCross: 0.045, dot: 0.28, linkMax: 0.055 },
+      light: { base: '10,10,10',    baseRing: 0.09, baseCross: 0.06,  dot: 0.32, linkMax: 0.07 },
+    };
+    const ACCENT = '0,217,142';
+
     let angle = 0;
     const draw = () => {
       if (!visible) { raf = null; return; }
+      const P = PALETTES[document.documentElement.dataset.theme === 'light' ? 'light' : 'dark'];
       ctx.clearRect(0, 0, w, h);
       angle += 0.0038;
 
       // rings
-      ctx.strokeStyle = 'rgba(236,233,226,0.07)';
+      ctx.strokeStyle = `rgba(${P.base},${P.baseRing})`;
       ctx.lineWidth = 1;
       for (let i = 1; i <= 4; i++) {
         ctx.beginPath(); ctx.arc(cx, cy, (maxR / 4) * i, 0, Math.PI * 2); ctx.stroke();
@@ -345,21 +366,21 @@
       ctx.beginPath();
       ctx.moveTo(cx - maxR, cy); ctx.lineTo(cx + maxR, cy);
       ctx.moveTo(cx, cy - maxR); ctx.lineTo(cx, cy + maxR);
-      ctx.strokeStyle = 'rgba(236,233,226,0.045)'; ctx.stroke();
+      ctx.strokeStyle = `rgba(${P.base},${P.baseCross})`; ctx.stroke();
 
       // sweep
       const grad = ctx.createConicGradient ? ctx.createConicGradient(angle, cx, cy) : null;
       if (grad) {
-        grad.addColorStop(0, 'rgba(255,92,40,0.13)');
-        grad.addColorStop(0.12, 'rgba(255,92,40,0)');
-        grad.addColorStop(1, 'rgba(255,92,40,0)');
+        grad.addColorStop(0, `rgba(${ACCENT},0.13)`);
+        grad.addColorStop(0.12, `rgba(${ACCENT},0)`);
+        grad.addColorStop(1, `rgba(${ACCENT},0)`);
         ctx.fillStyle = grad;
         ctx.beginPath(); ctx.moveTo(cx, cy); ctx.arc(cx, cy, maxR, 0, Math.PI * 2); ctx.fill();
       }
       ctx.beginPath();
       ctx.moveTo(cx, cy);
       ctx.lineTo(cx + Math.cos(angle) * maxR, cy + Math.sin(angle) * maxR);
-      ctx.strokeStyle = 'rgba(255,92,40,0.35)'; ctx.stroke();
+      ctx.strokeStyle = `rgba(${ACCENT},0.35)`; ctx.stroke();
 
       // particles + links
       for (const d of dots) {
@@ -375,7 +396,7 @@
           const ddx = (a.x - b.x) * w, ddy = (a.y - b.y) * h;
           const dist = ddx * ddx + ddy * ddy;
           if (dist < 12000) {
-            ctx.strokeStyle = `rgba(236,233,226,${0.055 * (1 - dist / 12000)})`;
+            ctx.strokeStyle = `rgba(${P.base},${P.linkMax * (1 - dist / 12000)})`;
             ctx.beginPath(); ctx.moveTo(a.x * w, a.y * h); ctx.lineTo(b.x * w, b.y * h); ctx.stroke();
           }
         }
@@ -385,8 +406,8 @@
         const dAngle = ((Math.atan2(py - cy, px - cx) - angle) % (Math.PI * 2) + Math.PI * 2) % (Math.PI * 2);
         const glow = dAngle < 0.5 ? (0.5 - dAngle) * 2 : 0;
         ctx.fillStyle = glow > 0.05
-          ? `rgba(255,92,40,${0.35 + glow * 0.65})`
-          : 'rgba(236,233,226,0.28)';
+          ? `rgba(${ACCENT},${0.35 + glow * 0.65})`
+          : `rgba(${P.base},${P.dot})`;
         ctx.beginPath(); ctx.arc(px, py, d.r + glow * 1.4, 0, Math.PI * 2); ctx.fill();
       }
       raf = requestAnimationFrame(draw);
