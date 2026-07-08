@@ -1,24 +1,12 @@
 # faiseltajiran.com
 
-Personal site for Faisel Tajiran — founder of [Frequentor](https://frequentor.com), Houston, TX.
+Personal portfolio of Faisel Tajiran — founder, engineer, inventor. Houston, TX.
 
-Static HTML/CSS/JS. No build step. Deployed via GitHub Pages with a custom domain.
+Hand-built static site, no frameworks, no build step for the main page:
 
-## Local preview
+- **Stack** — vanilla HTML/CSS/JS · GSAP 3.13 (ScrollTrigger, SplitText, ScrambleText) · Lenis smooth scroll · Canvas 2D radar hero. All libraries and fonts vendored locally (`assets/vendor`, `assets/fonts`) — zero external requests.
+- **Type** — Archivo (variable weight + width), Instrument Serif (accent italics), JetBrains Mono (data labels).
+- **Case studies** — `work/<slug>/` pages are generated from `scripts/projects-data.mjs` by `node scripts/build-work.mjs`. Edit the data file, re-run, commit.
+- **Deploy** — GitHub Pages from the `main` branch root (CNAME → www.faiseltajiran.com). Push to deploy.
 
-```bash
-python3 -m http.server 8000
-# open http://localhost:8000
-```
-
-## Deploy
-
-GitHub Pages serves the contents of `main` directly. The `CNAME` file maps the apex `faiseltajiran.com` and `.nojekyll` disables Jekyll processing.
-
-DNS at the registrar should point `faiseltajiran.com` (apex) to GitHub Pages IPs (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153) and `www` to `faisetaj.github.io` via CNAME.
-
-## Edit
-
-- `index.html` — content + structure
-- `styles.css` — tokens at the top of the file
-- `main.js` — nav + reveal-on-scroll only
+© Faisel Tajiran. Design + engineering by me.
