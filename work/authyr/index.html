@@ -9,12 +9,41 @@
   <meta name="description" content="A cryptographic evidence layer for consumer-service disputes: ed25519 hash-chained attestations, a 30-day mitigation window, and an AWS Amplify Gen 2 backend." />
   <meta name="author" content="Faisel Tajiran" />
   <link rel="canonical" href="https://faiseltajiran.com/work/authyr/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Faisel Tajiran" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://faiseltajiran.com/work/authyr/" />
   <meta property="og:title" content="Authyr — Case Study — Faisel Tajiran" />
   <meta property="og:description" content="A cryptographic evidence layer for consumer-service disputes: ed25519 hash-chained attestations, a 30-day mitigation window, and an AWS Amplify Gen 2 backend." />
   <meta property="og:image" content="https://faiseltajiran.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://faiseltajiran.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://faiseltajiran.com/#work" },
+          { "@type": "ListItem", "position": 3, "name": "Authyr", "item": "https://faiseltajiran.com/work/authyr/" }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Authyr",
+        "description": "A cryptographic evidence layer for consumer-service disputes: ed25519 hash-chained attestations, a 30-day mitigation window, and an AWS Amplify Gen 2 backend.",
+        "url": "https://faiseltajiran.com/work/authyr/",
+        "author": { "@type": "Person", "name": "Faisel Tajiran", "url": "https://faiseltajiran.com" },
+        "genre": "Cryptographic Trust Rails"
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23ff5c28'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif,system-ui' font-weight='800' font-size='17' fill='%230a0a0a'%3EFT%3C/text%3E%3C/svg%3E" />
   <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
@@ -84,6 +113,17 @@
           <article class="case-card" data-reveal><span class="mono">BACKEND</span><h3>Amplify Gen 2, done properly</h3><p>Six DynamoDB tables, Cognito custom-auth magic links (three challenge Lambdas), SES email, owner-scoped authorization with server-side IAM writers for webhooks, and Stripe Connect — where payment itself becomes a verification signal.</p></article>
           <article class="case-card" data-reveal><span class="mono">AI</span><h3>A draft-only reputation agent</h3><p>A pure, unit-testable prompt builder under hard rules: never posts, never invents facts, never leaks PII — it cites the verifiable receipt URL instead of arguing with anyone.</p></article>
           <article class="case-card" data-reveal><span class="mono">SEEDING</span><h3>Cold-start from public records</h3><p>A trust-score engine ingesting Texas TDLR license data with §230-aware public/private field separation — so day-one pages are useful without a single signup.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <p class="mono case-section__label" data-reveal>SCREENS</p>
+        <h2 class="case-section__title" data-split>In the wild</h2>
+        <div class="case-media">
+          <figure class="wide" data-reveal><img src="/assets/img/work/authyr/home.webp" alt="authyr.com — the live trust-rails surface" loading="lazy" decoding="async" width="1600" height="1000"/><figcaption>AUTHYR.COM — THE LIVE TRUST-RAILS SURFACE</figcaption></figure>
+          <figure data-reveal><img src="/assets/img/work/authyr/flow.webp" alt="Verified-attestation flow — receipts a third party can check offline" loading="lazy" decoding="async" width="1600" height="1000"/><figcaption>VERIFIED-ATTESTATION FLOW — RECEIPTS A THIRD PARTY CAN CHECK OFFLINE</figcaption></figure>
         </div>
       </div>
     </section>

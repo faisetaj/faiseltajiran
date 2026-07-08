@@ -9,12 +9,41 @@
   <meta name="description" content="Verified radiation-oncology AI: nnU-Net auto-contouring on real CT data, an in-browser 3D medical viewer, and a hash-chained physicist attestation ledger." />
   <meta name="author" content="Faisel Tajiran" />
   <link rel="canonical" href="https://faiseltajiran.com/work/veridose/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Faisel Tajiran" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://faiseltajiran.com/work/veridose/" />
   <meta property="og:title" content="Veridose — Case Study — Faisel Tajiran" />
   <meta property="og:description" content="Verified radiation-oncology AI: nnU-Net auto-contouring on real CT data, an in-browser 3D medical viewer, and a hash-chained physicist attestation ledger." />
   <meta property="og:image" content="https://faiseltajiran.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://faiseltajiran.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://faiseltajiran.com/#work" },
+          { "@type": "ListItem", "position": 3, "name": "Veridose", "item": "https://faiseltajiran.com/work/veridose/" }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "Veridose",
+        "description": "Verified radiation-oncology AI: nnU-Net auto-contouring on real CT data, an in-browser 3D medical viewer, and a hash-chained physicist attestation ledger.",
+        "url": "https://faiseltajiran.com/work/veridose/",
+        "author": { "@type": "Person", "name": "Faisel Tajiran", "url": "https://faiseltajiran.com" },
+        "genre": "Radiation-Oncology AI"
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232e6bff'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif,system-ui' font-weight='800' font-size='17' fill='%230a0a0a'%3EFT%3C/text%3E%3C/svg%3E" />
   <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
@@ -84,6 +113,17 @@
           <article class="case-card" data-reveal><span class="mono">LEDGER</span><h3>witness.py — the trust primitive</h3><p>A hash-chained, tamper-evident ledger for linac calibration attestations (TG-51 / TG-142). Flip a single byte anywhere in history and the chain visibly breaks; validation runs on every read. The signature-as-moat thesis, embodied in code.</p></article>
           <article class="case-card" data-reveal><span class="mono">SHADER</span><h3>Hand-written WebGL scanner</h3><p>A from-scratch GLSL fragment shader — FBM tissue grain, a sweeping scan line, converging dose beams, pulsing isodose rings — with a 30 fps cap, DPR clamping, IntersectionObserver pausing, context-loss recovery, and full reduced-motion fallback.</p></article>
           <article class="case-card" data-reveal><span class="mono">SITE</span><h3>Clinical-grade marketing front</h3><p>Next.js 16 / React 19 / Tailwind v4 with bespoke effects (no component library), NASA-blue trust palette, monospace verification motifs, and honest labeling: every illustrative number marked as such.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <p class="mono case-section__label" data-reveal>SCREENS</p>
+        <h2 class="case-section__title" data-split>In the wild</h2>
+        <div class="case-media">
+          <figure class="wide" data-reveal><img src="/assets/img/work/veridose/ct-vs-masks.webp" alt="Raw pelvis CT vs. TotalSegmentator output — the soft-tissue region where thresholding has no edge to find" loading="lazy" decoding="async" width="1600" height="821"/><figcaption>RAW PELVIS CT VS. TOTALSEGMENTATOR OUTPUT — THE SOFT-TISSUE REGION WHERE THRESHOLDING HAS NO EDGE TO FIND</figcaption></figure>
+          <figure class="wide" data-reveal><img src="/assets/img/work/veridose/prostate-contour.webp" alt="Prostate contoured on a real CT slice — learned shape priors where intensity fails" loading="lazy" decoding="async" width="1600" height="832"/><figcaption>PROSTATE CONTOURED ON A REAL CT SLICE — LEARNED SHAPE PRIORS WHERE INTENSITY FAILS</figcaption></figure>
         </div>
       </div>
     </section>

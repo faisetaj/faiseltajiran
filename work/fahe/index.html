@@ -9,12 +9,41 @@
   <meta name="description" content="A custom fine-tuned LLM for hospitality operations: 40+ training runs, a 410-test eval battery at 99%, GGUF quantization, and an inference-orchestration layer." />
   <meta name="author" content="Faisel Tajiran" />
   <link rel="canonical" href="https://faiseltajiran.com/work/fahe/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Faisel Tajiran" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://faiseltajiran.com/work/fahe/" />
   <meta property="og:title" content="FAHE — Case Study — Faisel Tajiran" />
   <meta property="og:description" content="A custom fine-tuned LLM for hospitality operations: 40+ training runs, a 410-test eval battery at 99%, GGUF quantization, and an inference-orchestration layer." />
   <meta property="og:image" content="https://faiseltajiran.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://faiseltajiran.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Work", "item": "https://faiseltajiran.com/#work" },
+          { "@type": "ListItem", "position": 3, "name": "FAHE", "item": "https://faiseltajiran.com/work/fahe/" }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "name": "FAHE",
+        "description": "A custom fine-tuned LLM for hospitality operations: 40+ training runs, a 410-test eval battery at 99%, GGUF quantization, and an inference-orchestration layer.",
+        "url": "https://faiseltajiran.com/work/fahe/",
+        "author": { "@type": "Person", "name": "Faisel Tajiran", "url": "https://faiseltajiran.com" },
+        "genre": "Proprietary LLM Engine"
+      }
+    ]
+  }
+  </script>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%237c5cff'/%3E%3Ctext x='50%25' y='56%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif,system-ui' font-weight='800' font-size='17' fill='%230a0a0a'%3EFT%3C/text%3E%3C/svg%3E" />
   <link rel="preload" href="/assets/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/assets/fonts/instrument-serif-italic.woff2" as="font" type="font/woff2" crossorigin />
@@ -86,6 +115,17 @@
           <article class="case-card" data-reveal><span class="mono">SIMULATOR</span><h3>Anti-hallucination by design</h3><p>A Python/SQLite venue simulator (101 MB of synthetic Toast-style POS data) where each venue gets a different POS provider profile and a visibility engine masks the fields that provider can’t see — so the model learns to say “I don’t have that data.”</p></article>
           <article class="case-card" data-reveal><span class="mono">VOICE</span><h3>A spoken operator</h3><p>ElevenLabs streaming TTS conductor with barge-in, SSML break injection, and number normalization — about 593 ms to first audio. 18/18 end-to-end voice tests passing.</p></article>
           <article class="case-card" data-reveal><span class="mono">THE METAL</span><h3>Blackwell debugging diaries</h3><p>Documented and fixed TorchInductor/Triton crashes on sm_120, fused cross-entropy OOMs, and stale compile-cache corruption — the unglamorous 20% that makes local training on brand-new silicon actually work.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="container">
+        <p class="mono case-section__label" data-reveal>SCREENS</p>
+        <h2 class="case-section__title" data-split>In the wild</h2>
+        <div class="case-media">
+          <figure class="wide" data-reveal><img src="/assets/img/work/fahe/command-center.webp" alt="FAHE command center — captured live from the local 7B model behind this demo" loading="lazy" decoding="async" width="1600" height="1000"/><figcaption>FAHE COMMAND CENTER — CAPTURED LIVE FROM THE LOCAL 7B MODEL BEHIND THIS DEMO</figcaption></figure>
+          <figure class="wide" data-reveal><img src="/assets/img/work/fahe/preview.webp" alt="Venue-facing FAHE — one-tap executable recommendations" loading="lazy" decoding="async" width="1460" height="1271"/><figcaption>VENUE-FACING FAHE — ONE-TAP EXECUTABLE RECOMMENDATIONS</figcaption></figure>
         </div>
       </div>
     </section>

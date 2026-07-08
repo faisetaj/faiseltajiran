@@ -1,0 +1,232 @@
+{
+  "frequentor": [
+    {
+      "file": "dashboard.webp",
+      "alt": "Owner dashboard — live busyness, occupancy trend, FAHE recommendations",
+      "caption": "OWNER DASHBOARD — LIVE BUSYNESS, OCCUPANCY TREND, FAHE RECOMMENDATIONS",
+      "w": 1344,
+      "h": 768,
+      "wide": true
+    },
+    {
+      "file": "app-explore.webp",
+      "alt": "iOS app — explore surface with live venue signals",
+      "caption": "IOS APP — EXPLORE SURFACE WITH LIVE VENUE SIGNALS",
+      "w": 700,
+      "h": 1521,
+      "wide": false
+    },
+    {
+      "file": "app-busyness.webp",
+      "alt": "Live busyness — fused from mmWave + thermal IR + WiFi RSSI",
+      "caption": "LIVE BUSYNESS — FUSED FROM MMWAVE + THERMAL IR + WIFI RSSI",
+      "w": 700,
+      "h": 1521,
+      "wide": false
+    },
+    {
+      "file": "web-home.webp",
+      "alt": "frequentor.com — multi-tenant web platform",
+      "caption": "FREQUENTOR.COM — MULTI-TENANT WEB PLATFORM",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    }
+  ],
+  "fahe": [
+    {
+      "file": "command-center.webp",
+      "alt": "FAHE command center — captured live from the local 7B model behind this demo",
+      "caption": "FAHE COMMAND CENTER — CAPTURED LIVE FROM THE LOCAL 7B MODEL BEHIND THIS DEMO",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    },
+    {
+      "file": "preview.webp",
+      "alt": "Venue-facing FAHE — one-tap executable recommendations",
+      "caption": "VENUE-FACING FAHE — ONE-TAP EXECUTABLE RECOMMENDATIONS",
+      "w": 1460,
+      "h": 1271,
+      "wide": true
+    }
+  ],
+  "veridose": [
+    {
+      "file": "ct-vs-masks.webp",
+      "alt": "Raw pelvis CT vs. TotalSegmentator output — the soft-tissue region where thresholding has no edge to find",
+      "caption": "RAW PELVIS CT VS. TOTALSEGMENTATOR OUTPUT — THE SOFT-TISSUE REGION WHERE THRESHOLDING HAS NO EDGE TO FIND",
+      "w": 1600,
+      "h": 821,
+      "wide": true
+    },
+    {
+      "file": "prostate-contour.webp",
+      "alt": "Prostate contoured on a real CT slice — learned shape priors where intensity fails",
+      "caption": "PROSTATE CONTOURED ON A REAL CT SLICE — LEARNED SHAPE PRIORS WHERE INTENSITY FAILS",
+      "w": 1600,
+      "h": 832,
+      "wide": true
+    }
+  ],
+  "authyr": [
+    {
+      "file": "home.webp",
+      "alt": "authyr.com — the live trust-rails surface",
+      "caption": "AUTHYR.COM — THE LIVE TRUST-RAILS SURFACE",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    },
+    {
+      "file": "flow.webp",
+      "alt": "Verified-attestation flow — receipts a third party can check offline",
+      "caption": "VERIFIED-ATTESTATION FLOW — RECEIPTS A THIRD PARTY CAN CHECK OFFLINE",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    }
+  ],
+  "hydrova": [
+    {
+      "file": "deck-hero.webp",
+      "alt": "HYDROVA CORE V1.1 — 125 PSI max, 0.05s response, real-time cloud sync",
+      "caption": "HYDROVA CORE V1.1 — 125 PSI MAX, 0.05S RESPONSE, REAL-TIME CLOUD SYNC",
+      "w": 1600,
+      "h": 840,
+      "wide": true
+    },
+    {
+      "file": "deck-platform.webp",
+      "alt": "Investor deck — the platform narrative",
+      "caption": "INVESTOR DECK — THE PLATFORM NARRATIVE",
+      "w": 1600,
+      "h": 840,
+      "wide": false
+    }
+  ],
+  "thisiscredit": [
+    {
+      "file": "dashboard.webp",
+      "alt": "Three-bureau dashboard — hand-rolled SVG trend chart, zero libraries",
+      "caption": "THREE-BUREAU DASHBOARD — HAND-ROLLED SVG TREND CHART, ZERO LIBRARIES",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    },
+    {
+      "file": "mortgage.webp",
+      "alt": "Mortgage readiness engine — middle score, DTI, program flags",
+      "caption": "MORTGAGE READINESS ENGINE — MIDDLE SCORE, DTI, PROGRAM FLAGS",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    },
+    {
+      "file": "landing.webp",
+      "alt": "Landing — dependency-free canvas plexus hero",
+      "caption": "LANDING — DEPENDENCY-FREE CANVAS PLEXUS HERO",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    }
+  ],
+  "alitherep": [
+    {
+      "file": "home.webp",
+      "alt": "www.alitherep.com — live volt-on-ink redesign with Remotion hero",
+      "caption": "WWW.ALITHEREP.COM — LIVE VOLT-ON-INK REDESIGN WITH REMOTION HERO",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    },
+    {
+      "file": "bikes.webp",
+      "alt": "Brand catalog — data-driven bike lineup",
+      "caption": "BRAND CATALOG — DATA-DRIVEN BIKE LINEUP",
+      "w": 1440,
+      "h": 900,
+      "wide": false
+    },
+    {
+      "file": "kali.webp",
+      "alt": "Brand page — Kali Protectives",
+      "caption": "BRAND PAGE — KALI PROTECTIVES",
+      "w": 1440,
+      "h": 900,
+      "wide": false
+    }
+  ],
+  "cruise-reels": [
+    {
+      "file": "ad1.webp",
+      "alt": "Ad 01 — spring-animated caption system (frame from rendered MP4)",
+      "caption": "AD 01 — SPRING-ANIMATED CAPTION SYSTEM (FRAME FROM RENDERED MP4)",
+      "w": 700,
+      "h": 1244,
+      "wide": false
+    },
+    {
+      "file": "ad4.webp",
+      "alt": "Ad 04 — staggered thumbnail fly-ins",
+      "caption": "AD 04 — STAGGERED THUMBNAIL FLY-INS",
+      "w": 700,
+      "h": 1244,
+      "wide": false
+    },
+    {
+      "file": "ad9.webp",
+      "alt": "Ad 09 — CTA pulse + phone/text response row",
+      "caption": "AD 09 — CTA PULSE + PHONE/TEXT RESPONSE ROW",
+      "w": 700,
+      "h": 1244,
+      "wide": false
+    }
+  ],
+  "newspeed": [
+    {
+      "file": "home.webp",
+      "alt": "Video-first hero — credibility at a glance",
+      "caption": "VIDEO-FIRST HERO — CREDIBILITY AT A GLANCE",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    },
+    {
+      "file": "services.webp",
+      "alt": "Services — brand-token layout",
+      "caption": "SERVICES — BRAND-TOKEN LAYOUT",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    }
+  ],
+  "ptc-promotions": [
+    {
+      "file": "landing.webp",
+      "alt": "Variant 2 — video-background hero, type tuned for a 55+ audience",
+      "caption": "VARIANT 2 — VIDEO-BACKGROUND HERO, TYPE TUNED FOR A 55+ AUDIENCE",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    },
+    {
+      "file": "form.webp",
+      "alt": "Qualifying survey — branching multi-step engine",
+      "caption": "QUALIFYING SURVEY — BRANCHING MULTI-STEP ENGINE",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    }
+  ],
+  "ghl-rc-bridge": [
+    {
+      "file": "composer.webp",
+      "alt": "RC Text Interface — the agent composer console, live against RingCentral",
+      "caption": "RC TEXT INTERFACE — THE AGENT COMPOSER CONSOLE, LIVE AGAINST RINGCENTRAL",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    }
+  ]
+}

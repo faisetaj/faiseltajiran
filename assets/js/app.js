@@ -258,6 +258,7 @@
   if (peek && !isTouch) {
     const peekUse = peek.querySelector('use');
     const peekTag = peek.querySelector('.peek__tag');
+    const peekImg = peek.querySelector('.peek__img');
     const px = gsap.quickTo(peek, 'x', { duration: 0.5, ease: 'power3.out' });
     const py = gsap.quickTo(peek, 'y', { duration: 0.5, ease: 'power3.out' });
     let active = false;
@@ -271,6 +272,10 @@
         peek.style.setProperty('--peek-hue', row.dataset.hue);
         peekUse.setAttribute('href', '#m-' + row.dataset.motif);
         peekTag.textContent = row.dataset.tag;
+        if (peekImg) {
+          if (row.dataset.shot) { peekImg.src = row.dataset.shot; peek.classList.add('has-img'); }
+          else { peek.classList.remove('has-img'); peekImg.removeAttribute('src'); }
+        }
         gsap.to(peek, { opacity: 1, scale: 1, duration: 0.35, ease: 'power3.out' });
       });
       row.addEventListener('mouseleave', () => {
@@ -280,8 +285,8 @@
     });
   }
 
-  /* ---------- Patents: pinned horizontal scroll ---------- */
-  const pTrack = document.querySelector('.patents__track');
+  /* ---------- Patents: pinned horizontal scroll (desktop only) ---------- */
+  const pTrack = window.innerWidth > 760 ? document.querySelector('.patents__track') : null;
   if (pTrack) {
     const pin = document.querySelector('.patents__pin');
     const distance = () => pTrack.scrollWidth - window.innerWidth + 64;
