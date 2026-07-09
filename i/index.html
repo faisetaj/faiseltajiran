@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0a0c0a" />
+  <title>Faisel Tajiran — Design I (Neon Studio · Green)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c0a'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='700' font-size='14' fill='%2300ff9d'%3EFT%3C/text%3E%3C/svg%3E" />
+  <style>
+    @font-face { font-family: 'Archivo'; src: url('/assets/fonts/archivo-var.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+    @font-face { font-family: 'Instrument Serif'; src: url('/assets/fonts/instrument-serif-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }
+    :root {
+      --bg: #0a0c0a; --bg-2: #101310; --text: #f1f0ea; --muted: #8b8e87;
+      --hl: #00ff9d; --hl-dim: rgba(0,255,157,0.5); --hl-soft: rgba(0,255,157,0.14);
+      --line: rgba(241,240,234,0.11);
+      --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(.22,1,.36,1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background: radial-gradient(60% 42% at 50% -6%, var(--hl-soft), transparent 70%); }
+    ::selection { background: var(--hl); color: #052a1c; }
+    a { color: inherit; text-decoration: none; } img { display: block; max-width: 100%; }
+    .wrap { max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
+    .mono { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
+    .glow { color: var(--hl); text-shadow: 0 0 18px var(--hl-dim), 0 0 46px var(--hl-soft); }
+
+    .top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center;
+      padding: 20px clamp(20px, 4vw, 56px); background: linear-gradient(rgba(10,12,10,0.85), transparent); }
+    .top__brand { font-weight: 700; font-size: 15px; }
+    .top__brand sup { color: var(--hl); }
+    .top__links { display: flex; gap: 22px; }
+    .top__links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--muted); transition: .3s; }
+    .top__links a:hover { color: var(--hl); text-shadow: 0 0 14px var(--hl-dim); }
+
+    /* hero */
+    .hero { padding: clamp(140px, 20vh, 200px) 0 clamp(50px, 8vh, 90px); }
+    .hero__eyebrow { color: var(--muted); display: flex; align-items: center; gap: 14px; margin-bottom: clamp(28px, 5vh, 50px); }
+    .hero__eyebrow::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--hl-dim), var(--line)); }
+    .hero__eyebrow b { color: var(--hl); font-weight: 500; text-shadow: 0 0 14px var(--hl-dim); }
+    .spec { border-top: 1px solid var(--line); }
+    .spec__row { display: flex; align-items: baseline; gap: clamp(16px, 3vw, 40px); padding: clamp(13px, 2.3vh, 25px) 0; border-bottom: 1px solid var(--line); transition: padding-left .4s var(--ease); position: relative; }
+    .spec__row::before { content: ''; position: absolute; left: 0; bottom: -1px; height: 1px; width: 0; background: var(--hl); box-shadow: 0 0 12px var(--hl-dim); transition: width .55s var(--ease); }
+    .spec__row:hover::before { width: 100%; }
+    .spec__row:hover { padding-left: clamp(10px, 1.6vw, 26px); }
+    .spec__nr { font-family: var(--mono); font-size: 11px; color: var(--muted); width: 34px; flex: none; }
+    .spec__name { font-weight: 680; font-stretch: 113%; font-size: clamp(33px, 6vw, 90px); line-height: 1; letter-spacing: -0.03em; transition: color .35s, text-shadow .35s; }
+    .spec__row:hover .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
+    .spec__hint { margin-left: auto; color: var(--muted); font-size: 13.5px; max-width: 250px; text-align: right; }
+    @media (max-width: 800px) { .spec__hint { display: none; } }
+    .hero__sub { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-top: clamp(28px, 4.5vh, 48px); flex-wrap: wrap; }
+    .hero__sub p { color: var(--muted); max-width: 56ch; font-size: clamp(15px, 1.3vw, 18px); }
+    .hero__sub p b { color: var(--text); font-weight: 600; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 800; background: var(--hl); color: #06281b; box-shadow: 0 0 26px var(--hl-dim), 0 0 70px var(--hl-soft); transition: transform .3s, box-shadow .3s; flex: none; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px var(--hl-dim), 0 0 100px var(--hl-soft); }
+
+    /* counters */
+    .nums { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); border-block: 1px solid var(--line); margin-top: clamp(40px, 7vh, 80px); }
+    .nums div { padding: clamp(24px, 3.5vh, 40px) clamp(16px, 2vw, 30px); border-right: 1px solid var(--line); }
+    .nums div:last-child { border-right: 0; }
+    .nums strong { display: block; font-weight: 750; font-stretch: 116%; font-size: clamp(38px, 4.4vw, 66px); line-height: 1; letter-spacing: -0.03em; margin-bottom: 10px; color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
+    .nums span { color: var(--muted); }
+
+    /* glowing icon marquee (from H, tiles removed) */
+    .imarq { overflow: clip; padding: clamp(26px, 4vh, 44px) 0; border-bottom: 1px solid var(--line); }
+    .imarq__track { display: flex; align-items: center; gap: clamp(34px, 4vw, 64px); width: max-content; animation: slide 40s linear infinite; }
+    @keyframes slide { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .imarq__track { animation: none; flex-wrap: wrap; } }
+    .gi { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: none; }
+    .gi svg { width: 34px; height: 34px; filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 26px color-mix(in srgb, currentColor 45%, transparent)); transition: transform .35s var(--ease); }
+    .gi:hover svg { transform: translateY(-4px) scale(1.12); }
+    .gi span { font-family: var(--mono); font-size: 8px; letter-spacing: 0.14em; color: var(--muted); text-transform: uppercase; }
+
+    section { padding: clamp(60px, 10vh, 120px) 0 0; }
+    .shead { display: flex; align-items: baseline; gap: 18px; margin-bottom: clamp(28px, 5vh, 50px); }
+    .shead .mono { color: var(--hl); flex: none; text-shadow: 0 0 12px var(--hl-dim); }
+    .shead h2 { font-weight: 680; font-stretch: 113%; font-size: clamp(28px, 3.6vw, 52px); letter-spacing: -0.025em; }
+    .shead::after { content: ''; flex: 1; height: 1px; background: var(--line); align-self: center; }
+
+    /* services */
+    .svc { border-top: 1px solid var(--line); }
+    .svc__row { display: grid; grid-template-columns: 60px 1fr 1.2fr; gap: clamp(16px, 3vw, 50px); padding: clamp(24px, 4vh, 42px) 0; border-bottom: 1px solid var(--line); }
+    @media (max-width: 800px) { .svc__row { grid-template-columns: 1fr; gap: 10px; } }
+    .svc__nr { font-family: var(--mono); color: var(--muted); font-size: 11px; padding-top: 8px; }
+    .svc__row h3 { font-weight: 700; font-stretch: 113%; font-size: clamp(22px, 2.4vw, 34px); letter-spacing: -0.02em; line-height: 1.05; }
+    .svc__row h3 span { color: var(--hl); text-shadow: 0 0 16px var(--hl-dim); }
+    .svc__body p { color: var(--muted); font-size: 15px; max-width: 62ch; }
+    .svc__tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+    .svc__tags i { font-style: normal; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--muted); transition: .3s; }
+    .svc__row:hover .svc__tags i { border-color: color-mix(in srgb, var(--hl) 45%, transparent); color: var(--text); }
+
+    /* work */
+    .feat { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 70px); align-items: center; padding: clamp(28px, 5vh, 56px) 0; border-bottom: 1px solid var(--line); }
+    .feat:nth-child(even) .feat__media { order: 2; }
+    @media (max-width: 860px) { .feat { grid-template-columns: 1fr; } .feat:nth-child(even) .feat__media { order: 0; } }
+    .feat__media { border-radius: 14px; overflow: hidden; border: 1px solid var(--line); background: var(--bg-2); transition: border-color .4s, box-shadow .5s; }
+    .feat:hover .feat__media { border-color: color-mix(in srgb, var(--hl) 55%, transparent); box-shadow: 0 0 34px var(--hl-soft), 0 24px 60px rgba(0,0,0,0.5); }
+    .feat__media img { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; transition: transform 1.2s var(--ease); }
+    .feat:hover .feat__media img { transform: scale(1.04); }
+    .feat__kind { color: var(--hl); margin-bottom: 14px; text-shadow: 0 0 12px var(--hl-dim); }
+    .feat h3 { font-weight: 740; font-stretch: 116%; font-size: clamp(30px, 3.6vw, 54px); letter-spacing: -0.025em; line-height: 1; }
+    .feat p { color: var(--muted); margin-top: 12px; max-width: 46ch; font-size: 15.5px; }
+    .feat__go { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; color: var(--hl); font-weight: 600; font-size: 14px; text-shadow: 0 0 12px var(--hl-dim); }
+    .feat__go i { font-style: normal; transition: transform .3s; }
+    .feat:hover .feat__go i { transform: translateX(4px); }
+
+    .more { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; padding-top: clamp(24px, 4vh, 44px); }
+    .more a { border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; display: flex; flex-direction: column; gap: 5px; transition: .35s; }
+    .more a:hover { border-color: color-mix(in srgb, var(--hl) 55%, transparent); box-shadow: 0 0 24px var(--hl-soft); }
+    .more b { font-weight: 660; font-size: 16.5px; letter-spacing: -0.01em; }
+    .more span { color: var(--muted); font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; }
+
+    /* toolbox — transparent glowing icons, no tiles */
+    .tools { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: clamp(18px, 2.6vw, 36px) 10px; padding: clamp(10px, 2vh, 20px) 0 0; }
+    .tool { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 14px 6px; border-radius: 14px; transition: background .35s, transform .35s var(--ease); }
+    .tool:hover { background: rgba(255,255,255,0.03); transform: translateY(-4px); }
+    .tool svg { width: 34px; height: 34px; filter: drop-shadow(0 0 10px currentColor) drop-shadow(0 0 28px color-mix(in srgb, currentColor 45%, transparent)); }
+    .tool span { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; text-align: center; }
+    .grants { display: flex; flex-wrap: wrap; gap: 10px; margin-top: clamp(30px, 5vh, 50px); align-items: center; }
+    .grant { display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 999px; padding: 10px 18px 10px 13px; transition: .35s; }
+    .grant:hover { border-color: color-mix(in srgb, var(--hl) 5??5%, transparent); }
+    .grant svg { width: 19px; height: 19px; filter: drop-shadow(0 0 8px currentColor); }
+    .grant span { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; }
+    .grant b { color: var(--muted); font-weight: 500; }
+
+    /* about + contact */
+    .about { display: grid; grid-template-columns: 300px 1fr; gap: clamp(28px, 5vw, 80px); align-items: center; }
+    @media (max-width: 800px) { .about { grid-template-columns: 1fr; } .about img { max-width: 260px; } }
+    .about img { border-radius: 16px; aspect-ratio: 4/5; object-fit: cover; object-position: top; border: 1px solid var(--line); filter: grayscale(1); transition: filter .7s, box-shadow .7s; }
+    .about img:hover { filter: none; box-shadow: 0 0 44px var(--hl-soft); }
+    .about h2 { font-weight: 680; font-stretch: 113%; font-size: clamp(26px, 3.2vw, 44px); letter-spacing: -0.025em; line-height: 1.08; margin-bottom: 18px; }
+    .about h2 span { color: var(--hl); text-shadow: 0 0 18px var(--hl-dim); }
+    .about p { color: var(--muted); font-size: 15.5px; max-width: 64ch; }
+    .about p + p { margin-top: 12px; }
+
+    .contact { padding-bottom: clamp(40px, 6vh, 70px); }
+    .contact a.big { display: block; border-top: 1px solid var(--line); padding: clamp(40px, 8vh, 90px) 0; }
+    .contact .big span.line2 { display: block; font-weight: 750; font-stretch: 118%; font-size: clamp(28px, 5.6vw, 92px); overflow-wrap: anywhere; letter-spacing: -0.035em; line-height: 0.95; transition: .4s; }
+    .contact .big:hover span.line2 { color: var(--hl); text-shadow: 0 0 30px var(--hl-dim), 0 0 90px var(--hl-soft); }
+    .contact .big .mono { display: block; font-size: 10px; color: var(--muted); margin-bottom: 18px; letter-spacing: 0.18em; }
+    .foot { border-top: 1px solid var(--line); padding: 24px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
+
+    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: rgba(16,19,16,0.85); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 999px; padding: 5px; }
+    .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 10px; border-radius: 999px; color: var(--muted); }
+    .vswitch a.on { background: var(--hl); color: #06281b; box-shadow: 0 0 16px var(--hl-dim); }
+
+    [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+    [data-fade].in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { [data-fade] { opacity: 1 !important; transform: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span class="top__brand">FAISEL TAJIRAN<sup>®</sup></span>
+    <div class="top__links"><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:faisel@faiseltajiran.com">CONTACT ↗</a></div>
+  </div>
+
+  <header class="hero wrap">
+    <p class="hero__eyebrow mono" data-fade>HOUSTON, TX — FOUNDER &amp; OPERATOR · <b>17+ YEARS</b> · 9 U.S. PATENTS PENDING</p>
+    <div class="spec">
+      <div class="spec__row" data-fade><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span></div>
+      <div class="spec__row" data-fade><span class="spec__nr">02</span><span class="spec__name">Strategy</span><span class="spec__hint">0→1 ventures, GTM, patents as moats</span></div>
+      <div class="spec__row" data-fade><span class="spec__nr">03</span><span class="spec__name">Web Development</span><span class="spec__hint">React · Next.js · React Native · AWS</span></div>
+      <div class="spec__row" data-fade><span class="spec__nr">04</span><span class="spec__name">Branding</span><span class="spec__hint">Identities for 11 builds and counting</span></div>
+      <div class="spec__row" data-fade><span class="spec__nr">05</span><span class="spec__name">UI&nbsp;/&nbsp;UX</span><span class="spec__hint">Dashboards to medical viewers to mobile</span></div>
+    </div>
+    <div class="hero__sub">
+      <p data-fade>Five disciplines, one operator. I'm <b>Faisel Tajiran</b> — founder &amp; CEO of Frequentor, with <b>eleven ventures and platforms</b> built end-to-end: the strategy, the brand, the code, the marketing engine.</p>
+      <a class="btn" data-fade href="#work">See the work ↓</a>
+    </div>
+    <div class="nums">
+      <div data-fade><strong data-n="17" data-s="+">0</strong><span class="mono">YEARS EXPERIENCE</span></div>
+      <div data-fade><strong data-n="9">0</strong><span class="mono">U.S. PATENTS PENDING</span></div>
+      <div data-fade><strong data-n="11">0</strong><span class="mono">BUILDS DOCUMENTED</span></div>
+      <div data-fade><strong data-n="500" data-s="+">0</strong><span class="mono">LOCATIONS MARKETED</span></div>
+    </div>
+  </header>
+
+  <div class="imarq" aria-hidden="true"><div class="imarq__track">
+    <span class="gi"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg><span>React</span></span>
+    <span class="gi"><svg style="color:#3178C6"><use href="/assets/icons/brands.svg#i-typescript"/></svg><span>TypeScript</span></span>
+    <span class="gi"><svg style="color:#F7DF1E"><use href="/assets/icons/brands.svg#i-javascript"/></svg><span>JavaScript</span></span>
+    <span class="gi"><svg style="color:#4B8BBE"><use href="/assets/icons/brands.svg#i-python"/></svg><span>Python</span></span>
+    <span class="gi"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg><span>PyTorch</span></span>
+    <span class="gi"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg><span>Node.js</span></span>
+    <span class="gi"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></span>
+    <span class="gi"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg><span>Tailwind</span></span>
+    <span class="gi"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS</span></span>
+    <span class="gi"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg><span>Stripe</span></span>
+    <span class="gi"><svg style="color:#F38020"><use href="/assets/icons/brands.svg#i-cloudflare"/></svg><span>Cloudflare</span></span>
+    <span class="gi"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg><span>Google Ads</span></span>
+    <span class="gi"><svg style="color:#0082FB"><use href="/assets/icons/brands.svg#i-meta"/></svg><span>Meta</span></span>
+    <span class="gi"><svg style="color:#E37400"><use href="/assets/icons/brands.svg#i-googleanalytics"/></svg><span>GA4</span></span>
+    <span class="gi"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><span>HubSpot</span></span>
+    <span class="gi"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg><span>Figma</span></span>
+    <span class="gi"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg><span>React</span></span>
+    <span class="gi"><svg style="color:#3178C6"><use href="/assets/icons/brands.svg#i-typescript"/></svg><span>TypeScript</span></span>
+    <span class="gi"><svg style="color:#F7DF1E"><use href="/assets/icons/brands.svg#i-javascript"/></svg><span>JavaScript</span></span>
+    <span class="gi"><svg style="color:#4B8BBE"><use href="/assets/icons/brands.svg#i-python"/></svg><span>Python</span></span>
+    <span class="gi"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg><span>PyTorch</span></span>
+    <span class="gi"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg><span>Node.js</span></span>
+    <span class="gi"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></span>
+    <span class="gi"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg><span>Tailwind</span></span>
+    <span class="gi"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS</span></span>
+    <span class="gi"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg><span>Stripe</span></span>
+    <span class="gi"><svg style="color:#F38020"><use href="/assets/icons/brands.svg#i-cloudflare"/></svg><span>Cloudflare</span></span>
+    <span class="gi"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg><span>Google Ads</span></span>
+    <span class="gi"><svg style="color:#0082FB"><use href="/assets/icons/brands.svg#i-meta"/></svg><span>Meta</span></span>
+    <span class="gi"><svg style="color:#E37400"><use href="/assets/icons/brands.svg#i-googleanalytics"/></svg><span>GA4</span></span>
+    <span class="gi"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><span>HubSpot</span></span>
+    <span class="gi"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg><span>Figma</span></span>
+  </div></div>
+
+  <section class="wrap" id="services">
+    <div class="shead" data-fade><span class="mono">SERVICES</span><h2>What I actually do</h2></div>
+    <div class="svc">
+      <div class="svc__row" data-fade><span class="svc__nr">S/01</span>
+        <h3>Digital <span>Marketing</span></h3>
+        <div class="svc__body"><p>Seventeen years of paid media, technical SEO, and conversion architecture — from single-location SMBs to Landry's 60+ brands and 500+ locations. 6,500% renewal lift, $300K new ARR, 400% ROI pilots.</p>
+        <div class="svc__tags"><i>GOOGLE ADS</i><i>META</i><i>GA4 · GTM</i><i>SEO</i><i>CRO</i><i>PROGRAMMATIC CTV</i></div></div></div>
+      <div class="svc__row" data-fade><span class="svc__nr">S/02</span>
+        <h3><span>Strategy</span></h3>
+        <div class="svc__body"><p>Venture design from zero: market thesis, GTM, pricing, IP posture. Nine USPTO provisional patents filed across two ventures — prior-art research done personally. Cold-start playbooks that get pilots signed.</p>
+        <div class="svc__tags"><i>0→1 SAAS</i><i>GTM DESIGN</i><i>PATENT / IP</i><i>PRICING</i><i>FOUNDER SALES</i></div></div></div>
+      <div class="svc__row" data-fade><span class="svc__nr">S/03</span>
+        <h3>Web <span>Development</span></h3>
+        <div class="svc__body"><p>Production code across the stack: React 19 / Next.js 16 frontends, React Native mobile with native modules, AWS Amplify Gen 2 backends, Python ML services, ESP32 firmware when the product needs hardware.</p>
+        <div class="svc__tags"><i>REACT / NEXT</i><i>REACT NATIVE</i><i>AWS</i><i>TYPESCRIPT</i><i>PYTHON</i><i>LLM FINE-TUNING</i></div></div></div>
+      <div class="svc__row" data-fade><span class="svc__nr">S/04</span>
+        <h3><span>Branding</span></h3>
+        <div class="svc__body"><p>Identity systems that survive contact with real products — Frequentor's presence-green, Hydrova's deep-water investor deck, Authyr's trust marks, AliTheRep's volt-on-ink. Naming, voice, and the design language to carry them.</p>
+        <div class="svc__tags"><i>IDENTITY</i><i>NAMING</i><i>DESIGN SYSTEMS</i><i>PITCH DECKS</i></div></div></div>
+      <div class="svc__row" data-fade><span class="svc__nr">S/05</span>
+        <h3>UI&nbsp;/&nbsp;<span>UX</span></h3>
+        <div class="svc__body"><p>Interfaces with jobs to do: owner dashboards that surface one decisive action, a 3D medical viewer clinicians can trust, multi-role mobile apps, conversion funnels tuned for a 55+ audience. Design and build, same person.</p>
+        <div class="svc__tags"><i>PRODUCT DESIGN</i><i>DESIGN→CODE</i><i>MOTION</i><i>ACCESSIBILITY</i></div></div></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="work">
+    <div class="shead" data-fade><span class="mono">SELECTED WORK</span><h2>Eleven builds, every layer mine</h2></div>
+    <a class="feat" href="/work/frequentor/" data-fade>
+      <div class="feat__media"><img src="/assets/img/work/frequentor/dashboard.webp" alt="Frequentor" loading="lazy" /></div>
+      <div><p class="feat__kind mono">VENTURE — LIVE PILOT · 2025—</p><h3>Frequentor</h3>
+      <p>Hospitality intelligence from verified physical presence: IoT sensor fusion, a 460-file mobile app, AWS Gen 2 backend, 9 patents. Built solo, live in Houston venues.</p>
+      <span class="feat__go">Case study <i>→</i></span></div>
+    </a>
+    <a class="feat" href="/work/fahe/" data-fade>
+      <div class="feat__media"><img src="/assets/img/work/fahe/command-center.webp" alt="FAHE" loading="lazy" /></div>
+      <div><p class="feat__kind mono">VENTURE — IN PRODUCTION · 2026</p><h3>FAHE</h3>
+      <p>A proprietary fine-tuned LLM that answers like an operator: 40+ training runs, GGUF quantization, and 99% on a 410-test evaluation battery.</p>
+      <span class="feat__go">Case study <i>→</i></span></div>
+    </a>
+    <a class="feat" href="/work/veridose/" data-fade>
+      <div class="feat__media"><img src="/assets/img/work/veridose/ct-vs-masks.webp" alt="Veridose" loading="lazy" /></div>
+      <div><p class="feat__kind mono">VENTURE — WORKING DEMO · 2026</p><h3>Veridose</h3>
+      <p>Radiation-oncology AI: GPU auto-contouring on real CT where thresholding has no edge to find, plus a hash-chained physicist attestation ledger.</p>
+      <span class="feat__go">Case study <i>→</i></span></div>
+    </a>
+    <a class="feat" href="/work/alitherep/" data-fade>
+      <div class="feat__media"><img src="/assets/img/work/alitherep/home.webp" alt="AliTheRep" loading="lazy" /></div>
+      <div><p class="feat__kind mono">CLIENT — LIVE · 2026</p><h3>AliTheRep</h3>
+      <p>Full redesign for a cycling sales rep covering three states: volt-on-ink brand, Remotion kinetic hero, dealer portal, dual-deploy pipeline.</p>
+      <span class="feat__go">Case study <i>→</i></span></div>
+    </a>
+    <a class="feat" href="/work/thisiscredit/" data-fade>
+      <div class="feat__media"><img src="/assets/img/work/thisiscredit/dashboard.webp" alt="This Is Credit" loading="lazy" /></div>
+      <div><p class="feat__kind mono">VENTURE — PROTOTYPE · 2026</p><h3>This Is Credit</h3>
+      <p>Consumer fintech behind a swap-one-file provider abstraction — three-bureau dashboard, hand-rolled SVG charts, real mortgage math.</p>
+      <span class="feat__go">Case study <i>→</i></span></div>
+    </a>
+    <div class="more" data-fade>
+      <a href="/work/authyr/"><b>Authyr</b><span>CRYPTOGRAPHIC TRUST RAILS</span></a>
+      <a href="/work/hydrova/"><b>Hydrova</b><span>WATER-INFRA VENTURE DESIGN</span></a>
+      <a href="/work/ghl-rc-bridge/"><b>GHL×RC Bridge</b><span>SMS SYNC · SERVERLESS</span></a>
+      <a href="/work/ptc-promotions/"><b>PTC Promotions</b><span>LEAD-GEN SYSTEM</span></a>
+      <a href="/work/cruise-reels/"><b>Cruise Reels</b><span>PROGRAMMATIC VIDEO</span></a>
+      <a href="/work/newspeed/"><b>Newspeed</b><span>AUTOMOTIVE WEB</span></a>
+    </div>
+  </section>
+
+  <section class="wrap" id="toolbox">
+    <div class="shead" data-fade><span class="mono">TOOLBOX</span><h2>Software I ship with</h2></div>
+    <div class="tools" data-fade>
+      <div class="tool"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg><span>React</span></div>
+      <div class="tool"><svg style="color:#3178C6"><use href="/assets/icons/brands.svg#i-typescript"/></svg><span>TypeScript</span></div>
+      <div class="tool"><svg style="color:#F7DF1E"><use href="/assets/icons/brands.svg#i-javascript"/></svg><span>JavaScript</span></div>
+      <div class="tool"><svg style="color:#4B8BBE"><use href="/assets/icons/brands.svg#i-python"/></svg><span>Python</span></div>
+      <div class="tool"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg><span>PyTorch</span></div>
+      <div class="tool"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg><span>Node.js</span></div>
+      <div class="tool"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></div>
+      <div class="tool"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg><span>Tailwind</span></div>
+      <div class="tool"><svg style="color:#c8c8ff"><use href="/assets/icons/brands.svg#i-expo"/></svg><span>Expo</span></div>
+      <div class="tool"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-apple"/></svg><span>iOS</span></div>
+      <div class="tool"><svg style="color:#34A853"><use href="/assets/icons/brands.svg#i-android"/></svg><span>Android</span></div>
+      <div class="tool"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS</span></div>
+      <div class="tool"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-awslambda"/></svg><span>Lambda</span></div>
+      <div class="tool"><svg style="color:#7a8bff"><use href="/assets/icons/brands.svg#i-amazondynamodb"/></svg><span>DynamoDB</span></div>
+      <div class="tool"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg><span>Stripe</span></div>
+      <div class="tool"><svg style="color:#F38020"><use href="/assets/icons/brands.svg#i-cloudflare"/></svg><span>Cloudflare</span></div>
+      <div class="tool"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg><span>Google Ads</span></div>
+      <div class="tool"><svg style="color:#0082FB"><use href="/assets/icons/brands.svg#i-meta"/></svg><span>Meta Ads</span></div>
+      <div class="tool"><svg style="color:#E37400"><use href="/assets/icons/brands.svg#i-googleanalytics"/></svg><span>GA4</span></div>
+      <div class="tool"><svg style="color:#246FDB"><use href="/assets/icons/brands.svg#i-googletagmanager"/></svg><span>Tag Manager</span></div>
+      <div class="tool"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><span>HubSpot</span></div>
+      <div class="tool"><svg style="color:#FF4F00"><use href="/assets/icons/brands.svg#i-zapier"/></svg><span>Zapier</span></div>
+      <div class="tool"><svg style="color:#51a8dd"><use href="/assets/icons/brands.svg#i-wordpress"/></svg><span>WordPress</span></div>
+      <div class="tool"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg><span>Figma</span></div>
+      <div class="tool"><svg style="color:#e8ded1"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><span>Claude</span></div>
+      <div class="tool"><svg style="color:#0B84F3"><use href="/assets/icons/brands.svg#i-remotion"/></svg><span>Remotion</span></div>
+      <div class="tool"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-github"/></svg><span>GitHub</span></div>
+      <div class="tool"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg><span>PostHog</span></div>
+    </div>
+    <div class="grants" data-fade>
+      <span class="mono" style="color:var(--muted)">FREQUENTOR IS BACKED BY →</span>
+      <span class="grant"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-elevenlabs"/></svg><span>ELEVENLABS <b>· STARTUP GRANT</b></span></span>
+      <span class="grant"><svg style="color:#76B900"><use href="/assets/icons/brands.svg#i-nvidia"/></svg><span>NVIDIA <b>· INCEPTION</b></span></span>
+      <span class="grant"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS <b>· ACTIVATE</b></span></span>
+      <span class="grant"><svg style="color:#e8ded1"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><span>ANTHROPIC <b>· BUILDER</b></span></span>
+      <span class="grant"><span style="font-family:var(--mono);font-weight:700;font-size:15px;color:var(--hl);text-shadow:0 0 10px var(--hl-dim)">λ</span><span>LAMBDA <b>· FOR STARTUPS</b></span></span>
+      <span class="grant"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg><span>POSTHOG <b>· FOR STARTUPS</b></span></span>
+      <span class="grant"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><span>HUBSPOT <b>· FOR STARTUPS</b></span></span>
+    </div>
+  </section>
+
+  <section class="wrap" id="about">
+    <div class="shead" data-fade><span class="mono">ABOUT</span><h2>The operator behind it</h2></div>
+    <div class="about" data-fade>
+      <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" loading="lazy" />
+      <div>
+        <h2>Builder by default. Marketer by training. <span>Operator by domain.</span></h2>
+        <p>BBA + MBA from the University of Houston. Seventeen years running digital marketing, strategy, and web development — from Houston small businesses to Landry's (60+ brands, 500+ locations), then all-in on founding.</p>
+        <p>Frequentor is the thesis those years produced. Building it solo meant learning ESP32 firmware, mmWave radar, React Native internals, AWS IAM, LLM fine-tuning, and USPTO patent drafting in a single year — and the other ten builds on this site are the same velocity, pointed elsewhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact">
+    <a class="big" href="mailto:faisel@faiseltajiran.com" data-fade>
+      <span class="mono">HAVE A VENTURE, A BRAND, OR A FUNNEL THAT NEEDS ALL FIVE?</span>
+      <span class="line2">faisel@faiseltajiran.com&nbsp;↗</span>
+    </a>
+    <div class="foot">
+      <span>© <span id="y"></span> FAISEL TAJIRAN — HOUSTON, TX</span>
+      <span class="mono glow">DESIGN I — NEON STUDIO · GREEN</span>
+      <span><a href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener">LINKEDIN</a> · <a href="/Faisel-Tajiran-Resume-2026.pdf" download>RÉSUMÉ</a></span>
+    </div>
+  </section>
+
+  <nav class="vswitch" aria-label="Design variants"><a href="/">A</a><a href="/d/">D</a><a href="/f/">F</a><a href="/g/">G</a><a href="/h/">H</a><a class="on" href="/i/">I</a><a href="/j/">J</a></nav>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('[data-fade]').forEach((el, i) => { el.style.transitionDelay = (i % 5) * 70 + 'ms'; io.observe(el); });
+    const cio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return; cio.unobserve(e.target);
+      const el = e.target, end = +el.dataset.n, sfx = el.dataset.s || '';
+      const t0 = performance.now(), dur = 1400;
+      const step = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + sfx; if (p < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    }), { threshold: 0.6 });
+    document.querySelectorAll('[data-n]').forEach(el => cio.observe(el));
+  </script>
+</body>
+</html>
