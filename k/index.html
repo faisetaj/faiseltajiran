@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0c0a" />
   <title>Faisel Tajiran — Design K (Neon Studio · Portrait)</title>
-  <script>try{document.documentElement.dataset.accent=localStorage.getItem('ft-accent')||'green'}catch(e){document.documentElement.dataset.accent='green'}</script>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ft-theme2')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
   <meta name="description" content="Faisel Tajiran — Houston founder & operator. 17+ years across digital marketing, strategy, web development, mobile app development, branding, and UI/UX. Founder & CEO of Frequentor, 9 U.S. patents pending, 11 ventures and platforms built end-to-end." />
   <meta name="author" content="Faisel Tajiran" />
   <meta name="robots" content="noindex, nofollow" />
@@ -22,20 +22,24 @@
   <meta name="twitter:title" content="Faisel Tajiran — Founder · Operator · Inventor" />
   <meta name="twitter:description" content="Digital marketing, strategy, web & mobile development, branding, UI/UX — one operator. 9 U.S. patents pending." />
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c0a'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='700' font-size='14' fill='%2300ff9d'%3EFT%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c0a'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='700' font-size='14' fill='%23d4ff00'%3EFT%3C/text%3E%3C/svg%3E" />
   <style>
     @font-face { font-family: 'Archivo'; src: url('/assets/fonts/archivo-var.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
     @font-face { font-family: 'Instrument Serif'; src: url('/assets/fonts/instrument-serif-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
     @font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }
     :root {
       --bg: #0a0c0a; --bg-2: #101310; --text: #f1f0ea; --muted: #8b8e87;
-      --hl: #00ff9d; --hl-dim: rgba(0,255,157,0.5); --hl-soft: rgba(0,255,157,0.14); --hl-ink: #06281b;
+      --hl: #d4ff00; --hl-fill: #d4ff00; --hl-dim: rgba(212,255,0,0.5); --hl-soft: rgba(212,255,0,0.13); --hl-ink: #222a00;
+      --top-fade: rgba(10,12,10,0.85); --chip-bg: rgba(12,15,12,0.82);
       --line: rgba(241,240,234,0.11);
       --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
       --ease: cubic-bezier(.22,1,.36,1);
     }
-    html[data-accent="volt"] {
-      --hl: #d4ff00; --hl-dim: rgba(212,255,0,0.5); --hl-soft: rgba(212,255,0,0.13); --hl-ink: #222a00;
+    html[data-theme="light"] {
+      --bg: #f7f7f1; --bg-2: #edeee4; --text: #15160b; --muted: #6d7163;
+      --hl: #6f8f00; --hl-fill: #d4ff00; --hl-dim: rgba(129,161,0,0.38); --hl-soft: rgba(212,255,0,0.28); --hl-ink: #1c2300;
+      --line: rgba(21,22,11,0.14);
+      --top-fade: rgba(247,247,241,0.88); --chip-bg: rgba(255,255,255,0.88);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -49,13 +53,13 @@
     .glow { color: var(--hl); text-shadow: 0 0 18px var(--hl-dim), 0 0 46px var(--hl-soft); }
 
     .top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center;
-      padding: 20px clamp(20px, 4vw, 56px); background: linear-gradient(rgba(10,12,10,0.85), transparent); }
+      padding: 20px clamp(20px, 4vw, 56px); background: linear-gradient(var(--top-fade), transparent); }
     .top__brand { font-weight: 700; font-size: 15px; }
     .top__brand sup { color: var(--hl); }
     .top__links { display: flex; gap: 22px; }
     .top__links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--muted); transition: .3s; }
     .top__links a:hover { color: var(--hl); text-shadow: 0 0 14px var(--hl-dim); }
-    .acc { width: 19px; height: 19px; border-radius: 50%; border: 0; cursor: pointer; background: var(--hl);
+    .acc { width: 19px; height: 19px; border-radius: 50%; border: 0; cursor: pointer; background: var(--hl-fill);
       box-shadow: 0 0 14px var(--hl-dim), 0 0 34px var(--hl-soft); transition: transform .3s, box-shadow .3s; align-self: center; }
     .acc:hover { transform: scale(1.2); }
 
@@ -87,7 +91,7 @@
       border: 1px solid color-mix(in srgb, var(--hl) 40%, transparent);
       box-shadow: 0 0 44px var(--hl-soft), 0 30px 70px rgba(0,0,0,0.55); }
     .pchip { position: absolute; display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(12,15,12,0.82); backdrop-filter: blur(8px); border: 1px solid var(--line);
+      background: var(--chip-bg); backdrop-filter: blur(8px); border: 1px solid var(--line);
       border-radius: 999px; padding: 8px 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em;
       text-transform: uppercase; color: var(--text); animation: pfloat 5.5s ease-in-out infinite; white-space: nowrap; }
     .pchip svg { width: 16px; height: 16px; filter: drop-shadow(0 0 8px currentColor); }
@@ -113,24 +117,19 @@
     .spec__name { font-weight: 680; font-stretch: 113%; font-size: clamp(29px, 5.4vw, 80px); line-height: 1; letter-spacing: -0.03em; transition: color .35s, text-shadow .35s; }
     .spec__row:hover .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
     .spec__item { border-bottom: 1px solid var(--line); }
-    .spec__item .spec__row { border-bottom: 0; width: 100%; text-align: left; background: none; color: inherit; cursor: pointer; font: inherit; border: 0; }
-    .spec__plus { flex: none; width: 24px; height: 24px; margin-left: 18px; position: relative; opacity: .7; transition: transform .45s var(--ease), color .35s; align-self: center; }
-    .spec__plus::before, .spec__plus::after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: currentColor; }
-    .spec__plus::after { transform: rotate(90deg); }
-    .spec__item.open .spec__plus { transform: rotate(45deg); color: var(--hl); }
-    .spec__detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .55s var(--ease); }
+    .spec__item .spec__row { border-bottom: 0; width: 100%; cursor: default; }
+    .spec__detail { display: grid; grid-template-rows: 1fr; }
     .spec__detail > div { overflow: hidden; }
     .spec__detail p { color: var(--muted); max-width: 68ch; font-size: 15px; padding: 2px 0 4px calc(34px + clamp(16px, 3vw, 40px)); }
     .spec__detail .svc__tags { display: flex; flex-wrap: wrap; gap: 7px; padding: 10px 0 26px calc(34px + clamp(16px, 3vw, 40px)); }
     .spec__detail .svc__tags i { font-style: normal; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--muted); }
-    .spec__item.open .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
-    .spec__item.open .spec__detail { grid-template-rows: 1fr; }
+    .spec__item .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
     .spec__hint { margin-left: auto; color: var(--muted); font-size: 13.5px; max-width: 250px; text-align: right; }
     @media (max-width: 800px) { .spec__hint { display: none; } }
     .hero__sub { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-top: clamp(28px, 4.5vh, 48px); flex-wrap: wrap; }
     .hero__sub p { color: var(--muted); max-width: 56ch; font-size: clamp(15px, 1.3vw, 18px); }
     .hero__sub p b { color: var(--text); font-weight: 600; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 800; background: var(--hl); color: var(--hl-ink); box-shadow: 0 0 26px var(--hl-dim), 0 0 70px var(--hl-soft); transition: transform .3s, box-shadow .3s; flex: none; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 800; background: var(--hl-fill); color: #222a00; box-shadow: 0 0 26px var(--hl-dim), 0 0 70px var(--hl-soft); transition: transform .3s, box-shadow .3s; flex: none; }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px var(--hl-dim), 0 0 100px var(--hl-soft); }
 
     /* counters */
@@ -171,7 +170,7 @@
     /* work — inline hover list with cursor peek (design-A style) */
     .wlist { list-style: none; border-top: 1px solid var(--line); }
     .wgroup { color: var(--muted); padding: clamp(28px, 5vh, 52px) 0 12px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; }
-    .wgroup::before { content: ''; width: 8px; height: 8px; background: var(--hl); box-shadow: 0 0 12px var(--hl-dim); }
+    .wgroup::before { content: ''; width: 8px; height: 8px; background: var(--hl-fill); box-shadow: 0 0 12px var(--hl-dim); }
     .wrow { display: grid; grid-template-columns: 60px 1fr auto; align-items: center; gap: clamp(12px, 3vw, 44px);
       padding: clamp(16px, 2.8vh, 30px) 0; border-bottom: 1px solid var(--line); position: relative; transition: padding-left .4s var(--ease); }
     .wrow::after { content: ''; position: absolute; inset: 0 -12px; z-index: -1; transform: scaleY(0); transform-origin: bottom;
@@ -247,13 +246,14 @@
     .contact .big:hover span.line2 { color: var(--hl); text-shadow: 0 0 30px var(--hl-dim), 0 0 90px var(--hl-soft); }
     .contact .big .mono { display: block; font-size: 10px; color: var(--muted); margin-bottom: 18px; letter-spacing: 0.18em; }
     .contact__links { display: flex; gap: clamp(22px, 4vw, 54px); flex-wrap: wrap; padding: 6px 0 clamp(36px, 6vh, 64px); }
-    .contact__links a { font-weight: 740; font-stretch: 114%; font-size: clamp(20px, 2.8vw, 42px); letter-spacing: -0.02em; transition: color .35s, text-shadow .35s; }
+    .contact__links a { display: inline-flex; align-items: center; gap: clamp(10px, 1.2vw, 18px); font-weight: 740; font-stretch: 114%; font-size: clamp(20px, 2.8vw, 42px); letter-spacing: -0.02em; transition: color .35s, text-shadow .35s; }
+    .contact__links a svg { width: clamp(24px, 2.4vw, 38px); height: clamp(24px, 2.4vw, 38px); filter: drop-shadow(0 0 10px currentColor); flex: none; }
     .contact__links a:hover { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
     .foot { border-top: 1px solid var(--line); padding: 24px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
 
-    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: rgba(16,19,16,0.85); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 999px; padding: 5px; }
+    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: var(--chip-bg); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 999px; padding: 5px; }
     .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 10px; border-radius: 999px; color: var(--muted); }
-    .vswitch a.on { background: var(--hl); color: var(--hl-ink); box-shadow: 0 0 16px var(--hl-dim); }
+    .vswitch a.on { background: var(--hl-fill); color: #222a00; box-shadow: 0 0 16px var(--hl-dim); }
 
     [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
     [data-fade].in { opacity: 1; transform: none; }
@@ -263,7 +263,7 @@
 <body>
   <div class="top">
     <span class="top__brand">FAISEL TAJIRAN<sup>®</sup></span>
-    <div class="top__links"><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:faisel@faiseltajiran.com">CONTACT ↗</a><button class="acc" data-acc aria-label="Switch accent: green / volt" title="Green ⇄ Volt"></button></div>
+    <div class="top__links"><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:faisel@faiseltajiran.com">CONTACT ↗</a><button class="acc" data-acc aria-label="Switch dark / light theme" title="Dark ⇄ Light"></button></div>
   </div>
 
   <div class="hero-wave"><canvas id="wavy" aria-hidden="true"></canvas>
@@ -278,7 +278,7 @@
     </div>
     <div>
       <p class="phero__eyebrow mono"><i></i>FAISEL TAJIRAN — HOUSTON, TX · 9 U.S. PATENTS PENDING</p>
-      <h1>Builder by default. Marketer by training. <span>Operator by domain.</span></h1>
+      <h1>From napkin to patent <span>to production.</span></h1>
       <p class="phero__role">Digital Marketing · Strategy · Web &amp; Mobile Development · Branding · UI/UX — <em>one operator.</em></p>
       <p class="phero__bio">Founder &amp; CEO of Frequentor. <b>17+ years</b> taking ideas from strategy to shipped product to sold-out funnel — <b>eleven ventures and platforms</b>, every layer designed, engineered, and marketed by one person.</p>
       <div class="phero__row">
@@ -293,27 +293,27 @@
     <div class="shead" data-fade><span class="mono">SERVICES</span><h2>Six disciplines, one person accountable</h2></div>
     <div class="spec" id="services">
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span></div>
         <div class="spec__detail"><div><p>Seventeen years of paid media, technical SEO, and conversion architecture — from single-location SMBs to Landry's 60+ brands and 500+ locations. 6,500% renewal lift, $300K new ARR, 400% ROI pilots.</p><div class="svc__tags"><i>GOOGLE ADS</i><i>META</i><i>GA4 · GTM</i><i>SEO</i><i>CRO</i><i>PROGRAMMATIC CTV</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">02</span><span class="spec__name">Strategy</span><span class="spec__hint">0→1 ventures, GTM, patents as moats</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">02</span><span class="spec__name">Strategy</span><span class="spec__hint">0→1 ventures, GTM, patents as moats</span></div>
         <div class="spec__detail"><div><p>Venture design from zero: market thesis, GTM, pricing, IP posture. Nine USPTO provisional patents filed across two ventures — prior-art research done personally. Cold-start playbooks that get pilots signed.</p><div class="svc__tags"><i>0→1 SAAS</i><i>GTM DESIGN</i><i>PATENT / IP</i><i>PRICING</i><i>FOUNDER SALES</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">03</span><span class="spec__name">Web Development</span><span class="spec__hint">React · Next.js · React Native · AWS</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">03</span><span class="spec__name">Web Development</span><span class="spec__hint">React · Next.js · React Native · AWS</span></div>
         <div class="spec__detail"><div><p>Production code across the stack: React 19 / Next.js 16 frontends, React Native mobile with native modules, AWS Amplify Gen 2 backends, Python ML services, ESP32 firmware when the product needs hardware.</p><div class="svc__tags"><i>REACT / NEXT</i><i>REACT NATIVE</i><i>AWS</i><i>TYPESCRIPT</i><i>PYTHON</i><i>LLM FINE-TUNING</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">04</span><span class="spec__name">Mobile App Development</span><span class="spec__hint">React Native · Expo · native iOS — live on TestFlight</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">04</span><span class="spec__name">Mobile App Development</span><span class="spec__hint">React Native · Expo · native iOS — live on TestFlight</span></div>
         <div class="spec__detail"><div><p>Native-grade mobile shipped solo: a 460-file React Native / Expo app with background geofencing, APNs push, Apple Wallet passes, lock-screen widgets, and OTA delivery — live on TestFlight with multi-device field validation.</p><div class="svc__tags"><i>REACT NATIVE</i><i>EXPO · EAS</i><i>NATIVE IOS MODULES</i><i>GEOFENCING</i><i>APNS · WALLET</i><i>APP STORE</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">05</span><span class="spec__name">Branding</span><span class="spec__hint">Identities for 11 builds and counting</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">05</span><span class="spec__name">Branding</span><span class="spec__hint">Identities for 11 builds and counting</span></div>
         <div class="spec__detail"><div><p>Identity systems that survive contact with real products — Frequentor's presence-green, Hydrova's deep-water investor deck, Authyr's trust marks, AliTheRep's volt-on-ink. Naming, voice, and the design language to carry them.</p><div class="svc__tags"><i>IDENTITY</i><i>NAMING</i><i>DESIGN SYSTEMS</i><i>PITCH DECKS</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">06</span><span class="spec__name">UI&nbsp;/&nbsp;UX</span><span class="spec__hint">Dashboards to medical viewers to mobile</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">06</span><span class="spec__name">UI&nbsp;/&nbsp;UX</span><span class="spec__hint">Dashboards to medical viewers to mobile</span></div>
         <div class="spec__detail"><div><p>Interfaces with jobs to do: owner dashboards that surface one decisive action, a 3D medical viewer clinicians can trust, multi-role mobile apps, conversion funnels tuned for a 55+ audience. Design and build, same person.</p><div class="svc__tags"><i>PRODUCT DESIGN</i><i>DESIGN→CODE</i><i>MOTION</i><i>ACCESSIBILITY</i></div></div></div>
       </div>
     </div>
@@ -442,13 +442,13 @@
       <span class="line2">faisel@faiseltajiran.com</span>
     </a>
     <div class="contact__links">
-      <a href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener">LinkedIn&nbsp;↗</a>
-      <a href="/Faisel-Tajiran-Resume-2026.pdf" download>Résumé (PDF)&nbsp;↓</a>
+      <a href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener"><svg style="color:#0A66C2"><use href="/assets/icons/brands.svg#i-linkedin"/></svg>LinkedIn</a>
+      <a href="/Faisel-Tajiran-Resume-2026.pdf" download><svg style="color:var(--hl)"><use href="/assets/icons/brands.svg#i-resume"/></svg>Résumé (PDF)</a>
     </div>
     <div class="foot">
       <span>© <span id="y"></span> FAISEL TAJIRAN — HOUSTON, TX</span>
-      <span class="mono glow">DESIGN K — NEON STUDIO · PORTRAIT · <button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)">GREEN ⇄ VOLT</button></span>
-      <span><button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)" class="mono">GREEN ⇄ VOLT</button></span>
+      <span class="mono glow">DESIGN K — NEON STUDIO · PORTRAIT · <button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)">DARK ⇄ LIGHT</button></span>
+      <span><button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)" class="mono">DARK ⇄ LIGHT</button></span>
     </div>
   </section>
 
@@ -523,18 +523,19 @@
         return 32 * (n0 + n1 + n2 + n3);
       }
       const PALETTES = {
-        green: ['#00ff9d', '#2dd4bf', '#38bdf8', '#818cf8', '#00d98e'],
-        volt:  ['#d4ff00', '#a3e635', '#facc15', '#38bdf8', '#84cc16'],
+        dark:  ['#d4ff00', '#a3e635', '#facc15', '#38bdf8', '#84cc16'],
+        light: ['#b7d600', '#84bb2e', '#eab308', '#60a5fa', '#98bf1f'],
       };
       let w, h, t = 0, visible = true, raf = null;
       const resize = () => { w = c.width = c.offsetWidth; h = c.height = c.offsetHeight; };
       resize(); addEventListener('resize', resize);
       const draw = () => {
         if (!visible) { raf = null; return; }
-        const cols = PALETTES[document.documentElement.dataset.accent === 'volt' ? 'volt' : 'green'];
+        const light = document.documentElement.dataset.theme === 'light';
+        const cols = PALETTES[light ? 'light' : 'dark'];
         x.clearRect(0, 0, w, h);
         x.filter = 'blur(9px)';
-        x.globalAlpha = 0.45;
+        x.globalAlpha = light ? 0.3 : 0.45;
         t += 0.0016;
         for (let i = 0; i < 5; i++) {
           x.beginPath(); x.lineWidth = 42; x.strokeStyle = cols[i];
@@ -550,16 +551,10 @@
       raf = requestAnimationFrame(draw);
     })();
     document.querySelectorAll('[data-acc]').forEach(b => b.addEventListener('click', () => {
-      const next = document.documentElement.dataset.accent === 'volt' ? 'green' : 'volt';
-      document.documentElement.dataset.accent = next;
-      try { localStorage.setItem('ft-accent', next); } catch (e) {}
+      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('ft-theme2', next); } catch (e) {}
     }));
-    document.querySelectorAll('.spec__item').forEach(item => {
-      item.querySelector('.spec__row').addEventListener('click', () => {
-        const open = item.classList.toggle('open');
-        item.querySelector('.spec__row').setAttribute('aria-expanded', open);
-      });
-    });
 
   </script>
 </body>
