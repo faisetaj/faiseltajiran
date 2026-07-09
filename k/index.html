@@ -4,8 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0c0a" />
-  <title>Faisel Tajiran — Design I (Neon Studio · Green)</title>
+  <title>Faisel Tajiran — Design K (Neon Studio · Portrait)</title>
+  <script>try{document.documentElement.dataset.accent=localStorage.getItem('ft-accent')||'green'}catch(e){document.documentElement.dataset.accent='green'}</script>
+  <meta name="description" content="Faisel Tajiran — Houston founder & operator. 17+ years across digital marketing, strategy, web development, mobile app development, branding, and UI/UX. Founder & CEO of Frequentor, 9 U.S. patents pending, 11 ventures and platforms built end-to-end." />
+  <meta name="author" content="Faisel Tajiran" />
   <meta name="robots" content="noindex, nofollow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Faisel Tajiran" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://faiseltajiran.com/" />
+  <meta property="og:title" content="Faisel Tajiran — Digital Marketing, Strategy, Web & Mobile Development, Branding, UI/UX" />
+  <meta property="og:description" content="17+ years, 9 U.S. patents pending, 11 ventures and platforms built end-to-end. Houston, TX." />
+  <meta property="og:image" content="https://faiseltajiran.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Faisel Tajiran — Founder · Operator · Inventor" />
+  <meta name="twitter:description" content="Digital marketing, strategy, web & mobile development, branding, UI/UX — one operator. 9 U.S. patents pending." />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c0a'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='700' font-size='14' fill='%2300ff9d'%3EFT%3C/text%3E%3C/svg%3E" />
   <style>
     @font-face { font-family: 'Archivo'; src: url('/assets/fonts/archivo-var.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
@@ -13,17 +29,20 @@
     @font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }
     :root {
       --bg: #0a0c0a; --bg-2: #101310; --text: #f1f0ea; --muted: #8b8e87;
-      --hl: #00ff9d; --hl-dim: rgba(0,255,157,0.5); --hl-soft: rgba(0,255,157,0.14);
+      --hl: #00ff9d; --hl-dim: rgba(0,255,157,0.5); --hl-soft: rgba(0,255,157,0.14); --hl-ink: #06281b;
       --line: rgba(241,240,234,0.11);
       --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
       --ease: cubic-bezier(.22,1,.36,1);
+    }
+    html[data-accent="volt"] {
+      --hl: #d4ff00; --hl-dim: rgba(212,255,0,0.5); --hl-soft: rgba(212,255,0,0.13); --hl-ink: #222a00;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
     body::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none;
       background: radial-gradient(60% 42% at 50% -6%, var(--hl-soft), transparent 70%); }
-    ::selection { background: var(--hl); color: #052a1c; }
+    ::selection { background: var(--hl); color: var(--hl-ink); }
     a { color: inherit; text-decoration: none; } img { display: block; max-width: 100%; }
     .wrap { max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 56px); }
     .mono { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
@@ -36,7 +55,43 @@
     .top__links { display: flex; gap: 22px; }
     .top__links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--muted); transition: .3s; }
     .top__links a:hover { color: var(--hl); text-shadow: 0 0 14px var(--hl-dim); }
+    .acc { width: 19px; height: 19px; border-radius: 50%; border: 0; cursor: pointer; background: var(--hl);
+      box-shadow: 0 0 14px var(--hl-dim), 0 0 34px var(--hl-soft); transition: transform .3s, box-shadow .3s; align-self: center; }
+    .acc:hover { transform: scale(1.2); }
 
+    /* portrait hero (K) */
+    .phero { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(30px, 5vw, 80px); align-items: center;
+      padding: clamp(120px, 17vh, 180px) 0 clamp(40px, 6vh, 70px); }
+    @media (max-width: 880px) { .phero { grid-template-columns: 1fr; } }
+    .phero__eyebrow { color: var(--muted); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+    .phero__eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--hl); box-shadow: 0 0 12px var(--hl-dim); animation: ppulse 2.2s infinite; }
+    @keyframes ppulse { 50% { opacity: .35; } }
+    .phero h1 { font-weight: 720; font-stretch: 113%; font-size: clamp(30px, 3.9vw, 60px); line-height: 1.04; letter-spacing: -0.03em; max-width: 17ch; }
+    .phero h1 span { color: var(--hl); text-shadow: 0 0 24px var(--hl-dim), 0 0 70px var(--hl-soft); }
+    .phero__role { margin-top: 20px; font-size: clamp(15px, 1.35vw, 19px); color: var(--text); font-weight: 600; max-width: 46ch; }
+    .phero__role em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--hl); }
+    .phero__bio { color: var(--muted); margin-top: 14px; max-width: 52ch; font-size: clamp(14.5px, 1.25vw, 17px); }
+    .phero__bio b { color: var(--text); }
+    .phero__row { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+    .btn--ghost { background: none; color: var(--text); border: 1px solid var(--line); box-shadow: none; font-weight: 700; }
+    .btn--ghost:hover { border-color: var(--hl); color: var(--hl); box-shadow: 0 0 24px var(--hl-soft); }
+    .phero__vis { position: relative; justify-self: center; width: min(100%, 400px); }
+    .phero__vis img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; border-radius: 20px;
+      border: 1px solid color-mix(in srgb, var(--hl) 40%, transparent);
+      box-shadow: 0 0 44px var(--hl-soft), 0 30px 70px rgba(0,0,0,0.55); }
+    .pchip { position: absolute; display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(12,15,12,0.82); backdrop-filter: blur(8px); border: 1px solid var(--line);
+      border-radius: 999px; padding: 8px 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text); animation: pfloat 5.5s ease-in-out infinite; white-space: nowrap; }
+    .pchip svg { width: 16px; height: 16px; filter: drop-shadow(0 0 8px currentColor); }
+    .pchip:nth-of-type(1) { top: 5%; left: -4%; animation-delay: -1s; }
+    .pchip:nth-of-type(2) { top: 24%; right: -11%; animation-delay: -2.4s; }
+    .pchip:nth-of-type(3) { bottom: 34%; left: -6%; animation-delay: -3.6s; }
+    .pchip:nth-of-type(4) { bottom: 12%; right: -7%; animation-delay: -4.4s; }
+    .pchip:nth-of-type(5) { top: 52%; right: -14%; animation-delay: -0.6s; }
+    @keyframes pfloat { 50% { transform: translateY(-9px); } }
+    @media (max-width: 880px) { .pchip { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .pchip { animation: none; } }
     /* hero */
     .hero { padding: clamp(140px, 20vh, 200px) 0 clamp(50px, 8vh, 90px); }
     .hero__eyebrow { color: var(--muted); display: flex; align-items: center; gap: 14px; margin-bottom: clamp(28px, 5vh, 50px); }
@@ -68,7 +123,7 @@
     .hero__sub { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-top: clamp(28px, 4.5vh, 48px); flex-wrap: wrap; }
     .hero__sub p { color: var(--muted); max-width: 56ch; font-size: clamp(15px, 1.3vw, 18px); }
     .hero__sub p b { color: var(--text); font-weight: 600; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 800; background: var(--hl); color: #06281b; box-shadow: 0 0 26px var(--hl-dim), 0 0 70px var(--hl-soft); transition: transform .3s, box-shadow .3s; flex: none; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 800; background: var(--hl); color: var(--hl-ink); box-shadow: 0 0 26px var(--hl-dim), 0 0 70px var(--hl-soft); transition: transform .3s, box-shadow .3s; flex: none; }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px var(--hl-dim), 0 0 100px var(--hl-soft); }
 
     /* counters */
@@ -159,7 +214,7 @@
 
     .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: rgba(16,19,16,0.85); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 999px; padding: 5px; }
     .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 10px; border-radius: 999px; color: var(--muted); }
-    .vswitch a.on { background: var(--hl); color: #06281b; box-shadow: 0 0 16px var(--hl-dim); }
+    .vswitch a.on { background: var(--hl); color: var(--hl-ink); box-shadow: 0 0 16px var(--hl-dim); }
 
     [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
     [data-fade].in { opacity: 1; transform: none; }
@@ -169,11 +224,32 @@
 <body>
   <div class="top">
     <span class="top__brand">FAISEL TAJIRAN<sup>®</sup></span>
-    <div class="top__links"><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:faisel@faiseltajiran.com">CONTACT ↗</a></div>
+    <div class="top__links"><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:faisel@faiseltajiran.com">CONTACT ↗</a><button class="acc" data-acc aria-label="Switch accent: green / volt" title="Green ⇄ Volt"></button></div>
   </div>
 
-  <header class="hero wrap">
-    <p class="hero__eyebrow mono" data-fade>HOUSTON, TX — FOUNDER &amp; OPERATOR · <b>17+ YEARS</b> · 9 U.S. PATENTS PENDING</p>
+  <header class="phero wrap">
+    <div class="phero__vis" data-fade>
+      <span class="pchip"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg>Google Ads</span>
+      <span class="pchip"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg>React</span>
+      <span class="pchip"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg>AWS</span>
+      <span class="pchip"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg>Figma</span>
+      <span class="pchip"><svg style="color:#e8ded1"><use href="/assets/icons/brands.svg#i-anthropic"/></svg>Claude</span>
+      <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" />
+    </div>
+    <div>
+      <p class="phero__eyebrow mono"><i></i>FAISEL TAJIRAN — HOUSTON, TX · 9 U.S. PATENTS PENDING</p>
+      <h1>Builder by default. Marketer by training. <span>Operator by domain.</span></h1>
+      <p class="phero__role">Digital Marketing · Strategy · Web &amp; Mobile Development · Branding · UI/UX — <em>one operator.</em></p>
+      <p class="phero__bio">Founder &amp; CEO of Frequentor. <b>17+ years</b> taking ideas from strategy to shipped product to sold-out funnel — <b>eleven ventures and platforms</b>, every layer designed, engineered, and marketed by one person.</p>
+      <div class="phero__row">
+        <a class="btn" href="#work">See the work ↓</a>
+        <a class="btn btn--ghost" href="/Faisel-Tajiran-Resume-2026.pdf" download>Résumé (PDF)</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="wrap" style="padding-top: clamp(20px, 4vh, 40px)">
+    <div class="shead" data-fade><span class="mono">SERVICES</span><h2>Six disciplines, one person accountable</h2></div>
     <div class="spec" id="services">
       <div class="spec__item" data-fade>
         <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span><span class="spec__plus" aria-hidden="true"></span></button>
@@ -200,17 +276,13 @@
         <div class="spec__detail"><div><p>Interfaces with jobs to do: owner dashboards that surface one decisive action, a 3D medical viewer clinicians can trust, multi-role mobile apps, conversion funnels tuned for a 55+ audience. Design and build, same person.</p><div class="svc__tags"><i>PRODUCT DESIGN</i><i>DESIGN→CODE</i><i>MOTION</i><i>ACCESSIBILITY</i></div></div></div>
       </div>
     </div>
-    <div class="hero__sub">
-      <p data-fade>Six disciplines, one operator. I'm <b>Faisel Tajiran</b> — founder &amp; CEO of Frequentor, with <b>eleven ventures and platforms</b> built end-to-end: the strategy, the brand, the code, the marketing engine.</p>
-      <a class="btn" data-fade href="#work">See the work ↓</a>
-    </div>
     <div class="nums">
       <div data-fade><strong data-n="17" data-s="+">0</strong><span class="mono">YEARS EXPERIENCE</span></div>
       <div data-fade><strong data-n="9">0</strong><span class="mono">U.S. PATENTS PENDING</span></div>
       <div data-fade><strong data-n="11">0</strong><span class="mono">BUILDS DOCUMENTED</span></div>
       <div data-fade><strong data-n="500" data-s="+">0</strong><span class="mono">LOCATIONS MARKETED</span></div>
     </div>
-  </header>
+  </section>
 
   <div class="imarq" aria-hidden="true"><div class="imarq__track">
     <span class="gi"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg><span>React</span></span>
@@ -335,10 +407,9 @@
 
   <section class="wrap" id="about">
     <div class="shead" data-fade><span class="mono">ABOUT</span><h2>The operator behind it</h2></div>
-    <div class="about" data-fade>
-      <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" loading="lazy" />
+    <div class="about" style="grid-template-columns: 1fr" data-fade>
       <div>
-        <h2>Builder by default. Marketer by training. <span>Operator by domain.</span></h2>
+        <h2>From building PCs at 13 to <span>filing patents at 40.</span></h2>
         <p>BBA + MBA from the University of Houston. Seventeen years running digital marketing, strategy, and web development — from Houston small businesses to Landry's (60+ brands, 500+ locations), then all-in on founding.</p>
         <p>Frequentor is the thesis those years produced. Building it solo meant learning ESP32 firmware, mmWave radar, React Native internals, AWS IAM, LLM fine-tuning, and USPTO patent drafting in a single year — and the other ten builds on this site are the same velocity, pointed elsewhere.</p>
       </div>
@@ -352,12 +423,12 @@
     </a>
     <div class="foot">
       <span>© <span id="y"></span> FAISEL TAJIRAN — HOUSTON, TX</span>
-      <span class="mono glow">DESIGN I — NEON STUDIO · GREEN</span>
+      <span class="mono glow">DESIGN K — NEON STUDIO · PORTRAIT · <button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)">GREEN ⇄ VOLT</button></span>
       <span><a href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener">LINKEDIN</a> · <a href="/Faisel-Tajiran-Resume-2026.pdf" download>RÉSUMÉ</a></span>
     </div>
   </section>
 
-  <nav class="vswitch" aria-label="Design variants"><a href="/">★</a><a href="/a/">A</a><a href="/d/">D</a><a href="/f/">F</a><a href="/g/">G</a><a href="/h/">H</a><a class="on" href="/i/">I</a><a href="/j/">J</a><a href="/k/">K</a></nav>
+  <nav class="vswitch" aria-label="Design variants"><a href="/">★</a><a href="/a/">A</a><a href="/d/">D</a><a href="/f/">F</a><a href="/g/">G</a><a href="/h/">H</a><a href="/i/">I</a><a href="/j/">J</a><a class="on" href="/k/">K</a></nav>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -371,6 +442,11 @@
       requestAnimationFrame(step);
     }), { threshold: 0.6 });
     document.querySelectorAll('[data-n]').forEach(el => cio.observe(el));
+    document.querySelectorAll('[data-acc]').forEach(b => b.addEventListener('click', () => {
+      const next = document.documentElement.dataset.accent === 'volt' ? 'green' : 'volt';
+      document.documentElement.dataset.accent = next;
+      try { localStorage.setItem('ft-accent', next); } catch (e) {}
+    }));
     document.querySelectorAll('.spec__item').forEach(item => {
       item.querySelector('.spec__row').addEventListener('click', () => {
         const open = item.classList.toggle('open');
