@@ -291,9 +291,6 @@
     .contact__links a:hover { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
     .foot { border-top: 1px solid var(--line); padding: 24px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
 
-    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: var(--chip-bg); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 999px; padding: 5px; }
-    .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 10px; border-radius: 999px; color: var(--muted); }
-    .vswitch a.on { background: var(--hl-fill); color: #222a00; box-shadow: 0 0 16px var(--hl-dim); }
 
     [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
     [data-fade].in { opacity: 1; transform: none; }
@@ -491,8 +488,6 @@
       <span><button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)" class="mono">DARK ⇄ LIGHT</button></span>
     </div>
   </section>
-
-  <nav class="vswitch" aria-label="Design variants"><a class="on" href="/">★</a><a href="/a/">A</a><a href="/d/">D</a><a href="/f/">F</a><a href="/g/">G</a><a href="/h/">H</a><a href="/i/">I</a><a href="/j/">J</a><a href="/k/">K</a></nav>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
