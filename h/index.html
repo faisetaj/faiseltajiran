@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fafaf7" />
+  <title>Faisel Tajiran — Design H (Spectrum)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23101018'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='800' font-size='14' fill='%23fafaf7'%3EFT%3C/text%3E%3C/svg%3E" />
+  <style>
+    @font-face { font-family: 'Archivo'; src: url('/assets/fonts/archivo-var.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+    @font-face { font-family: 'Instrument Serif'; src: url('/assets/fonts/instrument-serif-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }
+    :root {
+      --bg: #fafaf7; --ink: #101018; --muted: #6d6d78; --line: rgba(16,16,24,0.1);
+      --mkt: #FF6A45; --strat: #635BFF; --dev: #00B478; --brand: #F5A800; --ux: #3B82F6;
+      --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(.22,1,.36,1);
+      --shadow: 0 2px 4px rgba(16,16,24,0.05), 0 14px 40px rgba(16,16,24,0.09);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    ::selection { background: var(--ink); color: #fff; }
+    a { color: inherit; text-decoration: none; } img { display: block; max-width: 100%; }
+    .wrap { max-width: 1300px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    .mono { font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; }
+
+    .nav { position: sticky; top: 14px; z-index: 100; display: flex; justify-content: space-between; align-items: center;
+      margin: 14px auto 0; max-width: 1300px; width: calc(100% - clamp(32px, 6vw, 72px));
+      background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 10px 12px 10px 24px; box-shadow: var(--shadow); }
+    .nav__brand { font-weight: 800; font-stretch: 114%; font-size: 16px; letter-spacing: -0.01em; }
+    .nav__links { display: flex; gap: 2px; }
+    .nav__links a { font-size: 13.5px; font-weight: 600; padding: 9px 15px; border-radius: 999px; color: var(--muted); transition: .25s; }
+    .nav__links a:hover { background: var(--bg); color: var(--ink); }
+    .nav__cta { background: var(--ink); color: #fff; border-radius: 999px; padding: 11px 22px; font-size: 13.5px; font-weight: 700; }
+    @media (max-width: 720px) { .nav__links { display: none; } }
+
+    /* hero */
+    .hero { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(30px, 5vw, 80px); align-items: center; padding: clamp(60px, 10vh, 120px) 0 clamp(46px, 7vh, 80px); }
+    @media (max-width: 880px) { .hero { grid-template-columns: 1fr; } }
+    .hero__eyebrow { color: var(--muted); margin-bottom: 22px; display: inline-flex; align-items: center; gap: 10px; }
+    .hero__eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--dev); animation: pulse 2.2s infinite; }
+    @keyframes pulse { 50% { opacity: .3; } }
+    h1 { font-weight: 780; font-stretch: 114%; font-size: clamp(38px, 4.9vw, 72px); line-height: 1.02; letter-spacing: -0.03em; }
+    h1 .u { text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 7px; }
+    h1 .u1 { text-decoration-color: var(--mkt); } h1 .u2 { text-decoration-color: var(--strat); }
+    h1 .u3 { text-decoration-color: var(--dev); } h1 .u4 { text-decoration-color: var(--brand); } h1 .u5 { text-decoration-color: var(--ux); }
+    h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .hero__sub { color: var(--muted); margin-top: 24px; max-width: 50ch; font-size: clamp(15px, 1.3vw, 18px); }
+    .hero__sub b { color: var(--ink); }
+    .hero__row { display: flex; gap: 12px; margin-top: 32px; flex-wrap: wrap; }
+    .btn { border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 700; transition: transform .3s, box-shadow .3s; }
+    .btn--dark { background: var(--ink); color: #fff; }
+    .btn--line { border: 1.5px solid var(--line); background: #fff; }
+    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+    .hero__nums { display: flex; gap: clamp(20px, 3vw, 44px); margin-top: clamp(34px, 5vh, 54px); flex-wrap: wrap; }
+    .hero__nums strong { display: block; font-weight: 800; font-stretch: 116%; font-size: clamp(26px, 2.8vw, 42px); letter-spacing: -0.02em; line-height: 1; margin-bottom: 6px; }
+    .hero__nums span { color: var(--muted); font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; }
+
+    .hero__vis { position: relative; }
+    .hero__photo { border-radius: 28px; aspect-ratio: 4/5; object-fit: cover; object-position: top; width: 100%; max-width: 420px; margin: 0 auto; box-shadow: var(--shadow); }
+    .chip { position: absolute; display: inline-flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 9px 15px; box-shadow: var(--shadow); font-weight: 700; font-size: 12.5px; animation: floaty 5.5s ease-in-out infinite; }
+    .chip svg { width: 18px; height: 18px; }
+    .chip:nth-of-type(1) { top: 6%; left: -2%; animation-delay: -1s; }
+    .chip:nth-of-type(2) { top: 26%; right: -4%; animation-delay: -2.4s; }
+    .chip:nth-of-type(3) { bottom: 30%; left: -6%; animation-delay: -3.6s; }
+    .chip:nth-of-type(4) { bottom: 10%; right: 0%; animation-delay: -4.4s; }
+    .chip:nth-of-type(5) { top: 52%; right: -7%; animation-delay: -0.6s; }
+    @keyframes floaty { 50% { transform: translateY(-10px); } }
+    @media (max-width: 880px) { .chip { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .chip { animation: none; } }
+
+    /* tools marquee */
+    .tmarq { overflow: clip; border-block: 1px solid var(--line); padding: 16px 0; background: #fff; }
+    .tmarq + .tmarq { border-top: 0; }
+    .tmarq__track { display: flex; gap: 12px; width: max-content; animation: slide 34s linear infinite; }
+    .tmarq--rev .tmarq__track { animation-direction: reverse; }
+    @keyframes slide { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .tmarq__track { animation: none; } }
+    .tchip { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 999px; padding: 9px 17px; font-weight: 650; font-size: 13px; background: var(--bg); white-space: nowrap; }
+    .tchip svg { width: 17px; height: 17px; }
+
+    section { padding: clamp(56px, 9vh, 110px) 0; }
+    .shead { text-align: center; max-width: 720px; margin: 0 auto clamp(30px, 5vh, 54px); }
+    .shead .mono { color: var(--muted); display: block; margin-bottom: 14px; }
+    .shead h2 { font-weight: 780; font-stretch: 114%; font-size: clamp(28px, 3.8vw, 52px); letter-spacing: -0.03em; line-height: 1.04; }
+    .shead h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .shead p { color: var(--muted); margin-top: 14px; }
+
+    /* services cards */
+    .svc { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .svc__card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 26px 24px; transition: transform .4s var(--ease), box-shadow .4s; position: relative; overflow: hidden; }
+    .svc__card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .svc__card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--c); }
+    .svc__ico { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: color-mix(in srgb, var(--c) 12%, #fff); color: var(--c); font-size: 20px; margin-bottom: 16px; font-weight: 800; }
+    .svc__card h3 { font-weight: 750; font-stretch: 112%; font-size: 19px; letter-spacing: -0.015em; margin-bottom: 8px; }
+    .svc__card p { color: var(--muted); font-size: 13.8px; }
+
+    /* work */
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 16px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column; transition: transform .4s var(--ease), box-shadow .4s; }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .card--wide { grid-column: span 2; }
+    @media (max-width: 760px) { .card--wide { grid-column: span 1; } }
+    .card__media { aspect-ratio: 16/10; overflow: hidden; background: #f0f0ec; position: relative; }
+    .card--wide .card__media { aspect-ratio: 21/10; }
+    .card__media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1s var(--ease); }
+    .card:hover .card__media img { transform: scale(1.04); }
+    .card__badge { position: absolute; top: 12px; left: 12px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.12em; font-weight: 600; }
+    .card__body { padding: 18px 20px 20px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .card__body b { font-weight: 750; font-stretch: 112%; font-size: 19px; letter-spacing: -0.015em; }
+    .card__body span { color: var(--muted); font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.12em; text-align: right; }
+
+    /* grants */
+    .grants { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+    .grant { display: inline-flex; align-items: center; gap: 10px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 11px 20px 11px 14px; box-shadow: 0 1px 3px rgba(16,16,24,0.04); }
+    .grant svg { width: 20px; height: 20px; }
+    .grant span { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; }
+    .grant b { color: var(--muted); font-weight: 500; }
+
+    /* about + contact */
+    .about { background: var(--ink); color: #fff; border-radius: 28px; display: grid; grid-template-columns: 280px 1fr; gap: clamp(28px, 5vw, 70px); align-items: center; padding: clamp(28px, 4vw, 60px); }
+    @media (max-width: 800px) { .about { grid-template-columns: 1fr; } .about img { max-width: 240px; } }
+    .about img { border-radius: 18px; aspect-ratio: 4/5; object-fit: cover; object-position: top; }
+    .about h2 { font-weight: 760; font-stretch: 114%; font-size: clamp(24px, 3vw, 40px); letter-spacing: -0.025em; line-height: 1.06; margin-bottom: 16px; }
+    .about h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: #8ef0cd; }
+    .about p { color: #b9b9c4; font-size: 15.5px; max-width: 62ch; }
+    .about p + p { margin-top: 12px; }
+
+    .contact { text-align: center; }
+    .contact h2 { font-weight: 800; font-stretch: 116%; font-size: clamp(36px, 6.4vw, 88px); letter-spacing: -0.035em; line-height: 1; }
+    .contact h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .contact p { color: var(--muted); margin: 18px 0 30px; }
+
+    .foot { border-top: 1px solid var(--line); padding: 26px 0 90px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12.5px; }
+
+    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 5px; box-shadow: var(--shadow); }
+    .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 11px; border-radius: 999px; color: var(--muted); }
+    .vswitch a.on { background: var(--ink); color: #fff; }
+
+    [data-fade] { opacity: 0; transform: translateY(24px); transition: opacity .85s var(--ease), transform .85s var(--ease); }
+    [data-fade].in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { [data-fade] { opacity: 1 !important; transform: none !important; } }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <span class="nav__brand">FAISEL&nbsp;TAJIRAN<sup>®</sup></span>
+    <div class="nav__links"><a href="#services">Services</a><a href="#work">Work</a><a href="#about">About</a><a href="/Faisel-Tajiran-Resume-2026.pdf" download>Résumé</a></div>
+    <a class="nav__cta" href="mailto:faisel@faiseltajiran.com">Get in touch</a>
+  </nav>
+
+  <header class="hero wrap">
+    <div>
+      <p class="hero__eyebrow mono" data-fade><i></i>HOUSTON, TX · OPEN TO CONVERSATIONS</p>
+      <h1 data-fade><span class="u u1">Digital&nbsp;Marketing</span>, <span class="u u2">Strategy</span>, <span class="u u3">Web&nbsp;Development</span>, <span class="u u4">Branding</span> &amp; <span class="u u5">UI/UX</span> — <em>one operator.</em></h1>
+      <p class="hero__sub" data-fade>I'm <b>Faisel Tajiran</b> — founder &amp; CEO of Frequentor, with <b>17+ years</b> taking ideas from strategy to shipped product to sold-out funnel. Eleven ventures and platforms, every layer mine.</p>
+      <div class="hero__row" data-fade>
+        <a class="btn btn--dark" href="#work">See the work ↓</a>
+        <a class="btn btn--line" href="mailto:faisel@faiseltajiran.com">Start a project</a>
+      </div>
+      <div class="hero__nums" data-fade>
+        <div><strong data-n="17" data-s="+">0</strong><span>YEARS EXPERIENCE</span></div>
+        <div><strong data-n="9">0</strong><span>PATENTS PENDING</span></div>
+        <div><strong data-n="11">0</strong><span>BUILDS DOCUMENTED</span></div>
+        <div><strong data-n="500" data-s="+">0</strong><span>LOCATIONS MARKETED</span></div>
+      </div>
+    </div>
+    <div class="hero__vis" data-fade>
+      <span class="chip"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg>Google Ads</span>
+      <span class="chip"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg>React</span>
+      <span class="chip"><svg style="color:#232F3E"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg>AWS</span>
+      <span class="chip"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg>Figma</span>
+      <span class="chip"><svg style="color:#191919"><use href="/assets/icons/brands.svg#i-anthropic"/></svg>Claude</span>
+      <img class="hero__photo" src="/assets/img/faisel.webp" alt="Faisel Tajiran" />
+    </div>
+  </header>
+
+  <div class="tmarq" aria-hidden="true"><div class="tmarq__track">
+    <span class="tchip"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg>React</span>
+    <span class="tchip"><svg style="color:#3178C6"><use href="/assets/icons/brands.svg#i-typescript"/></svg>TypeScript</span>
+    <span class="tchip"><svg style="color:#3776AB"><use href="/assets/icons/brands.svg#i-python"/></svg>Python</span>
+    <span class="tchip"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg>PyTorch</span>
+    <span class="tchip"><svg style="color:#111"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg>Next.js</span>
+    <span class="tchip"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg>Tailwind</span>
+    <span class="tchip"><svg style="color:#000020"><use href="/assets/icons/brands.svg#i-expo"/></svg>Expo</span>
+    <span class="tchip"><svg style="color:#232F3E"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg>AWS</span>
+    <span class="tchip"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-awslambda"/></svg>Lambda</span>
+    <span class="tchip"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg>Stripe</span>
+    <span class="tchip"><svg style="color:#F38020"><use href="/assets/icons/brands.svg#i-cloudflare"/></svg>Cloudflare</span>
+    <span class="tchip"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg>Node.js</span>
+    <span class="tchip"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg>React</span>
+    <span class="tchip"><svg style="color:#3178C6"><use href="/assets/icons/brands.svg#i-typescript"/></svg>TypeScript</span>
+    <span class="tchip"><svg style="color:#3776AB"><use href="/assets/icons/brands.svg#i-python"/></svg>Python</span>
+    <span class="tchip"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg>PyTorch</span>
+    <span class="tchip"><svg style="color:#111"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg>Next.js</span>
+    <span class="tchip"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg>Tailwind</span>
+    <span class="tchip"><svg style="color:#000020"><use href="/assets/icons/brands.svg#i-expo"/></svg>Expo</span>
+    <span class="tchip"><svg style="color:#232F3E"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg>AWS</span>
+    <span class="tchip"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-awslambda"/></svg>Lambda</span>
+    <span class="tchip"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg>Stripe</span>
+    <span class="tchip"><svg style="color:#F38020"><use href="/assets/icons/brands.svg#i-cloudflare"/></svg>Cloudflare</span>
+    <span class="tchip"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg>Node.js</span>
+  </div></div>
+  <div class="tmarq tmarq--rev" aria-hidden="true"><div class="tmarq__track">
+    <span class="tchip"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg>Google Ads</span>
+    <span class="tchip"><svg style="color:#0467DF"><use href="/assets/icons/brands.svg#i-meta"/></svg>Meta Ads</span>
+    <span class="tchip"><svg style="color:#E37400"><use href="/assets/icons/brands.svg#i-googleanalytics"/></svg>GA4</span>
+    <span class="tchip"><svg style="color:#246FDB"><use href="/assets/icons/brands.svg#i-googletagmanager"/></svg>Tag Manager</span>
+    <span class="tchip"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg>HubSpot</span>
+    <span class="tchip"><svg style="color:#FF4F00"><use href="/assets/icons/brands.svg#i-zapier"/></svg>Zapier</span>
+    <span class="tchip"><svg style="color:#21759B"><use href="/assets/icons/brands.svg#i-wordpress"/></svg>WordPress</span>
+    <span class="tchip"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg>Figma</span>
+    <span class="tchip"><svg style="color:#191919"><use href="/assets/icons/brands.svg#i-anthropic"/></svg>Claude</span>
+    <span class="tchip"><svg style="color:#0B84F3"><use href="/assets/icons/brands.svg#i-remotion"/></svg>Remotion</span>
+    <span class="tchip"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg>PostHog</span>
+    <span class="tchip"><svg style="color:#181717"><use href="/assets/icons/brands.svg#i-github"/></svg>GitHub</span>
+    <span class="tchip"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg>Google Ads</span>
+    <span class="tchip"><svg style="color:#0467DF"><use href="/assets/icons/brands.svg#i-meta"/></svg>Meta Ads</span>
+    <span class="tchip"><svg style="color:#E37400"><use href="/assets/icons/brands.svg#i-googleanalytics"/></svg>GA4</span>
+    <span class="tchip"><svg style="color:#246FDB"><use href="/assets/icons/brands.svg#i-googletagmanager"/></svg>Tag Manager</span>
+    <span class="tchip"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg>HubSpot</span>
+    <span class="tchip"><svg style="color:#FF4F00"><use href="/assets/icons/brands.svg#i-zapier"/></svg>Zapier</span>
+    <span class="tchip"><svg style="color:#21759B"><use href="/assets/icons/brands.svg#i-wordpress"/></svg>WordPress</span>
+    <span class="tchip"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg>Figma</span>
+    <span class="tchip"><svg style="color:#191919"><use href="/assets/icons/brands.svg#i-anthropic"/></svg>Claude</span>
+    <span class="tchip"><svg style="color:#0B84F3"><use href="/assets/icons/brands.svg#i-remotion"/></svg>Remotion</span>
+    <span class="tchip"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg>PostHog</span>
+    <span class="tchip"><svg style="color:#181717"><use href="/assets/icons/brands.svg#i-github"/></svg>GitHub</span>
+  </div></div>
+
+  <section class="wrap" id="services">
+    <div class="shead" data-fade><span class="mono">CORE SPECIALTIES</span><h2>Five disciplines. <em>One person accountable.</em></h2></div>
+    <div class="svc">
+      <div class="svc__card" style="--c:var(--mkt)" data-fade><div class="svc__ico">M</div><h3>Digital Marketing</h3><p>17 years of paid media, SEO, and funnels — from SMBs to Landry's 500+ locations. 6,500% renewal lift, 400% ROI pilots.</p></div>
+      <div class="svc__card" style="--c:var(--strat)" data-fade><div class="svc__ico">S</div><h3>Strategy</h3><p>Venture design from zero: market thesis, GTM, pricing, and IP posture — 9 USPTO provisionals filed across two ventures.</p></div>
+      <div class="svc__card" style="--c:var(--dev)" data-fade><div class="svc__ico">W</div><h3>Web Development</h3><p>Production code across the stack: React 19, Next.js 16, React Native, AWS Amplify Gen 2, Python ML — and firmware when needed.</p></div>
+      <div class="svc__card" style="--c:var(--brand)" data-fade><div class="svc__ico">B</div><h3>Branding</h3><p>Identity systems that survive real products — naming, voice, decks, and the design language to carry them.</p></div>
+      <div class="svc__card" style="--c:var(--ux)" data-fade><div class="svc__ico">U</div><h3>UI / UX</h3><p>Interfaces with jobs to do: owner dashboards, a 3D medical viewer, multi-role mobile apps, funnels tuned for 55+ audiences.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="work">
+    <div class="shead" data-fade><span class="mono">SELECTED WORK</span><h2>Eleven builds, <em>every layer mine.</em></h2><p>Ventures, client platforms, and day-job improvisations — each with a full case study.</p></div>
+    <div class="grid">
+      <a class="card card--wide" href="/work/frequentor/" data-fade><div class="card__media"><span class="card__badge">VENTURE · LIVE PILOT</span><img src="/assets/img/work/frequentor/dashboard.webp" alt="Frequentor" loading="lazy" /></div><div class="card__body"><b>Frequentor</b><span>HOSPITALITY INTELLIGENCE · 9 PATENTS</span></div></a>
+      <a class="card" href="/work/fahe/" data-fade><div class="card__media"><span class="card__badge">VENTURE · IN PRODUCTION</span><img src="/assets/img/work/fahe/command-center.webp" alt="FAHE" loading="lazy" /></div><div class="card__body"><b>FAHE</b><span>FINE-TUNED LLM · 99%</span></div></a>
+      <a class="card" href="/work/veridose/" data-fade><div class="card__media"><span class="card__badge">VENTURE · DEMO</span><img src="/assets/img/work/veridose/ct-vs-masks.webp" alt="Veridose" loading="lazy" /></div><div class="card__body"><b>Veridose</b><span>MEDICAL AI</span></div></a>
+      <a class="card" href="/work/authyr/" data-fade><div class="card__media"><span class="card__badge">VENTURE · MVP</span><img src="/assets/img/work/authyr/home.webp" alt="Authyr" loading="lazy" /></div><div class="card__body"><b>Authyr</b><span>TRUST RAILS</span></div></a>
+      <a class="card" href="/work/hydrova/" data-fade><div class="card__media"><span class="card__badge">VENTURE · CONCEPT</span><img src="/assets/img/work/hydrova/deck-hero.webp" alt="Hydrova" loading="lazy" /></div><div class="card__body"><b>Hydrova</b><span>VENTURE DESIGN</span></div></a>
+      <a class="card" href="/work/thisiscredit/" data-fade><div class="card__media"><span class="card__badge">VENTURE · PROTOTYPE</span><img src="/assets/img/work/thisiscredit/dashboard.webp" alt="This Is Credit" loading="lazy" /></div><div class="card__body"><b>This Is Credit</b><span>FINTECH</span></div></a>
+      <a class="card" href="/work/alitherep/" data-fade><div class="card__media"><span class="card__badge">CLIENT · LIVE</span><img src="/assets/img/work/alitherep/home.webp" alt="AliTheRep" loading="lazy" /></div><div class="card__body"><b>AliTheRep</b><span>PLATFORM REDESIGN</span></div></a>
+      <a class="card" href="/work/newspeed/" data-fade><div class="card__media"><span class="card__badge">CLIENT · DELIVERED</span><img src="/assets/img/work/newspeed/home.webp" alt="Newspeed" loading="lazy" /></div><div class="card__body"><b>Newspeed</b><span>AUTOMOTIVE WEB</span></div></a>
+      <a class="card" href="/work/ghl-rc-bridge/" data-fade><div class="card__media"><span class="card__badge">TOOL · DEPLOYED</span><img src="/assets/img/work/ghl-rc-bridge/composer.webp" alt="GHL Bridge" loading="lazy" /></div><div class="card__body"><b>GHL×RC Bridge</b><span>SYSTEMS</span></div></a>
+      <a class="card" href="/work/ptc-promotions/" data-fade><div class="card__media"><span class="card__badge">GROWTH · READY</span><img src="/assets/img/work/ptc-promotions/landing.webp" alt="PTC" loading="lazy" /></div><div class="card__body"><b>PTC Promotions</b><span>LEAD-GEN</span></div></a>
+      <a class="card" href="/work/cruise-reels/" data-fade><div class="card__media"><span class="card__badge">VIDEO · SHIPPED</span><img src="/assets/img/work/cruise-reels/ad1.webp" alt="Cruise Reels" loading="lazy" style="object-position:center 20%" /></div><div class="card__body"><b>Cruise Reels</b><span>VIDEO-AS-CODE</span></div></a>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="shead" data-fade><span class="mono">GRANTS &amp; PROGRAMS</span><h2>Frequentor is <em>backed by</em></h2></div>
+    <div class="grants" data-fade>
+      <span class="grant"><svg style="color:#111"><use href="/assets/icons/brands.svg#i-elevenlabs"/></svg><span>ELEVENLABS <b>· STARTUP GRANT</b></span></span>
+      <span class="grant"><svg style="color:#76B900"><use href="/assets/icons/brands.svg#i-nvidia"/></svg><span>NVIDIA <b>· INCEPTION</b></span></span>
+      <span class="grant"><svg style="color:#232F3E"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS <b>· ACTIVATE</b></span></span>
+      <span class="grant"><svg style="color:#191919"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><span>ANTHROPIC <b>· BUILDER</b></span></span>
+      <span class="grant"><span style="font-family:var(--mono);font-weight:700;font-size:15px">λ</span><span>LAMBDA <b>· FOR STARTUPS</b></span></span>
+      <span class="grant"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg><span>POSTHOG <b>· FOR STARTUPS</b></span></span>
+      <span class="grant"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><span>HUBSPOT <b>· FOR STARTUPS</b></span></span>
+    </div>
+  </section>
+
+  <section class="wrap" id="about">
+    <div class="about" data-fade>
+      <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" loading="lazy" />
+      <div>
+        <h2>Builder by default. Marketer by training. <em>Operator by domain.</em></h2>
+        <p>BBA + MBA from the University of Houston. Seventeen years across digital marketing, strategy, and web development — from Houston small businesses to Landry's 60+ brands and 500+ locations — before going all-in on founding.</p>
+        <p>Frequentor is the thesis those years produced. Building it solo meant learning firmware, radar, native mobile, cloud security, LLM fine-tuning, and USPTO patent drafting in one year. The other ten builds are the same velocity, pointed elsewhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap contact">
+    <h2 data-fade>Have a project that <em>needs all five?</em></h2>
+    <p data-fade>faisel@faiseltajiran.com · faisel@frequentor.com · Houston, TX</p>
+    <div class="hero__row" style="justify-content:center" data-fade>
+      <a class="btn btn--dark" href="mailto:faisel@faiseltajiran.com">Email me</a>
+      <a class="btn btn--line" href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="wrap foot">
+    <span>© <span id="y"></span> Faisel Tajiran</span>
+    <span class="mono">DESIGN H — SPECTRUM</span>
+    <span>Designed &amp; engineered by me</span>
+  </footer>
+
+  <nav class="vswitch" aria-label="Design variants"><a href="/">A</a><a href="/d/">D</a><a href="/f/">F</a><a href="/g/">G</a><a class="on" href="/h/">H</a></nav>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('[data-fade]').forEach((el, i) => { el.style.transitionDelay = (i % 5) * 65 + 'ms'; io.observe(el); });
+    const cio = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return; cio.unobserve(e.target);
+      const el = e.target, end = +el.dataset.n, sfx = el.dataset.s || '';
+      const t0 = performance.now(), dur = 1400;
+      const step = t => { const p = Math.min(1, (t - t0) / dur); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + sfx; if (p < 1) requestAnimationFrame(step); };
+      requestAnimationFrame(step);
+    }), { threshold: 0.6 });
+    document.querySelectorAll('[data-n]').forEach(el => cio.observe(el));
+  </script>
+</body>
+</html>
