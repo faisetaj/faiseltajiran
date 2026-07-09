@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0c0a" />
   <title>Faisel Tajiran — Digital Marketing, Strategy, Web & Mobile Development, Branding, UI/UX</title>
-  <script>try{document.documentElement.dataset.accent=localStorage.getItem('ft-accent')||'volt'}catch(e){document.documentElement.dataset.accent='volt'}</script>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ft-theme2')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
   <meta name="description" content="Faisel Tajiran — Houston founder & operator. 17+ years across digital marketing, strategy, web development, mobile app development, branding, and UI/UX. Founder & CEO of Frequentor, 9 U.S. patents pending, 11 ventures and platforms built end-to-end." />
   <meta name="author" content="Faisel Tajiran" />
   <link rel="canonical" href="https://faiseltajiran.com/" />
@@ -49,20 +49,37 @@
     "author": { "@type": "Person", "name": "Faisel Tajiran" }
   }
   </script>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c0a'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='700' font-size='14' fill='%2300ff9d'%3EFT%3C/text%3E%3C/svg%3E" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Faisel Tajiran" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://faiseltajiran.com/" />
+  <meta property="og:title" content="Faisel Tajiran — Digital Marketing, Strategy, Web & Mobile Development, Branding, UI/UX" />
+  <meta property="og:description" content="17+ years, 9 U.S. patents pending, 11 ventures and platforms built end-to-end. Houston, TX." />
+  <meta property="og:image" content="https://faiseltajiran.com/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Faisel Tajiran — Founder · Operator · Inventor" />
+  <meta name="twitter:description" content="Digital marketing, strategy, web & mobile development, branding, UI/UX — one operator. 9 U.S. patents pending." />
+  <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c0a'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='700' font-size='14' fill='%23d4ff00'%3EFT%3C/text%3E%3C/svg%3E" />
   <style>
     @font-face { font-family: 'Archivo'; src: url('/assets/fonts/archivo-var.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
     @font-face { font-family: 'Instrument Serif'; src: url('/assets/fonts/instrument-serif-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
     @font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }
     :root {
       --bg: #0a0c0a; --bg-2: #101310; --text: #f1f0ea; --muted: #8b8e87;
-      --hl: #00ff9d; --hl-dim: rgba(0,255,157,0.5); --hl-soft: rgba(0,255,157,0.14); --hl-ink: #06281b;
+      --hl: #d4ff00; --hl-fill: #d4ff00; --hl-dim: rgba(212,255,0,0.5); --hl-soft: rgba(212,255,0,0.13); --hl-ink: #222a00;
+      --top-fade: rgba(10,12,10,0.85); --chip-bg: rgba(12,15,12,0.82);
       --line: rgba(241,240,234,0.11);
       --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
       --ease: cubic-bezier(.22,1,.36,1);
     }
-    html[data-accent="volt"] {
-      --hl: #d4ff00; --hl-dim: rgba(212,255,0,0.5); --hl-soft: rgba(212,255,0,0.13); --hl-ink: #222a00;
+    html[data-theme="light"] {
+      --bg: #f7f7f1; --bg-2: #edeee4; --text: #15160b; --muted: #6d7163;
+      --hl: #6f8f00; --hl-fill: #d4ff00; --hl-dim: rgba(129,161,0,0.38); --hl-soft: rgba(212,255,0,0.28); --hl-ink: #1c2300;
+      --line: rgba(21,22,11,0.14);
+      --top-fade: rgba(247,247,241,0.88); --chip-bg: rgba(255,255,255,0.88);
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -76,16 +93,56 @@
     .glow { color: var(--hl); text-shadow: 0 0 18px var(--hl-dim), 0 0 46px var(--hl-soft); }
 
     .top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center;
-      padding: 20px clamp(20px, 4vw, 56px); background: linear-gradient(rgba(10,12,10,0.85), transparent); }
+      padding: 20px clamp(20px, 4vw, 56px); background: linear-gradient(var(--top-fade), transparent); }
     .top__brand { font-weight: 700; font-size: 15px; }
     .top__brand sup { color: var(--hl); }
     .top__links { display: flex; gap: 22px; }
     .top__links a { font-family: var(--mono); font-size: 10px; letter-spacing: 0.15em; color: var(--muted); transition: .3s; }
     .top__links a:hover { color: var(--hl); text-shadow: 0 0 14px var(--hl-dim); }
-    .acc { width: 19px; height: 19px; border-radius: 50%; border: 0; cursor: pointer; background: var(--hl);
+    .acc { width: 19px; height: 19px; border-radius: 50%; border: 0; cursor: pointer; background: var(--hl-fill);
       box-shadow: 0 0 14px var(--hl-dim), 0 0 34px var(--hl-soft); transition: transform .3s, box-shadow .3s; align-self: center; }
     .acc:hover { transform: scale(1.2); }
 
+    /* wavy hero background */
+    .hero-wave { position: relative; overflow: clip; }
+    #wavy { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; opacity: .5;
+      -webkit-mask-image: linear-gradient(#000 50%, transparent 97%); mask-image: linear-gradient(#000 50%, transparent 97%); }
+    .hero-wave .phero { position: relative; z-index: 1; }
+    @media (prefers-reduced-motion: reduce) { #wavy { display: none; } }
+
+    /* portrait hero (K) */
+    .phero { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(30px, 5vw, 80px); align-items: center;
+      padding: clamp(120px, 17vh, 180px) 0 clamp(40px, 6vh, 70px); }
+    @media (max-width: 880px) { .phero { grid-template-columns: 1fr; } }
+    .phero__eyebrow { color: var(--muted); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
+    .phero__eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--hl); box-shadow: 0 0 12px var(--hl-dim); animation: ppulse 2.2s infinite; }
+    @keyframes ppulse { 50% { opacity: .35; } }
+    .phero h1 { font-weight: 720; font-stretch: 113%; font-size: clamp(30px, 3.9vw, 60px); line-height: 1.04; letter-spacing: -0.03em; max-width: 17ch; }
+    .phero h1 span { color: var(--hl); text-shadow: 0 0 24px var(--hl-dim), 0 0 70px var(--hl-soft); }
+    .phero__role { margin-top: 20px; font-size: clamp(15px, 1.35vw, 19px); color: var(--text); font-weight: 600; max-width: 46ch; }
+    .phero__role em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--hl); }
+    .phero__bio { color: var(--muted); margin-top: 14px; max-width: 52ch; font-size: clamp(14.5px, 1.25vw, 17px); }
+    .phero__bio b { color: var(--text); }
+    .phero__row { display: flex; gap: 12px; margin-top: 30px; flex-wrap: wrap; }
+    .btn--ghost { background: none; color: var(--text); border: 1px solid var(--line); box-shadow: none; font-weight: 700; }
+    .btn--ghost:hover { border-color: var(--hl); color: var(--hl); box-shadow: 0 0 24px var(--hl-soft); }
+    .phero__vis { position: relative; justify-self: center; width: min(100%, 400px); }
+    .phero__vis img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; border-radius: 20px;
+      border: 1px solid color-mix(in srgb, var(--hl) 40%, transparent);
+      box-shadow: 0 0 44px var(--hl-soft), 0 30px 70px rgba(0,0,0,0.55); }
+    .pchip { position: absolute; display: inline-flex; align-items: center; gap: 8px;
+      background: var(--chip-bg); backdrop-filter: blur(8px); border: 1px solid var(--line);
+      border-radius: 999px; padding: 8px 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--text); animation: pfloat 5.5s ease-in-out infinite; white-space: nowrap; }
+    .pchip svg { width: 16px; height: 16px; filter: drop-shadow(0 0 8px currentColor); }
+    .pchip:nth-of-type(1) { top: 5%; left: -4%; animation-delay: -1s; }
+    .pchip:nth-of-type(2) { top: 24%; right: -11%; animation-delay: -2.4s; }
+    .pchip:nth-of-type(3) { bottom: 34%; left: -6%; animation-delay: -3.6s; }
+    .pchip:nth-of-type(4) { bottom: 12%; right: -7%; animation-delay: -4.4s; }
+    .pchip:nth-of-type(5) { top: 52%; right: -14%; animation-delay: -0.6s; }
+    @keyframes pfloat { 50% { transform: translateY(-9px); } }
+    @media (max-width: 880px) { .pchip { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .pchip { animation: none; } }
     /* hero */
     .hero { padding: clamp(140px, 20vh, 200px) 0 clamp(50px, 8vh, 90px); }
     .hero__eyebrow { color: var(--muted); display: flex; align-items: center; gap: 14px; margin-bottom: clamp(28px, 5vh, 50px); }
@@ -100,24 +157,19 @@
     .spec__name { font-weight: 680; font-stretch: 113%; font-size: clamp(29px, 5.4vw, 80px); line-height: 1; letter-spacing: -0.03em; transition: color .35s, text-shadow .35s; }
     .spec__row:hover .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
     .spec__item { border-bottom: 1px solid var(--line); }
-    .spec__item .spec__row { border-bottom: 0; width: 100%; text-align: left; background: none; color: inherit; cursor: pointer; font: inherit; border: 0; }
-    .spec__plus { flex: none; width: 24px; height: 24px; margin-left: 18px; position: relative; opacity: .7; transition: transform .45s var(--ease), color .35s; align-self: center; }
-    .spec__plus::before, .spec__plus::after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: currentColor; }
-    .spec__plus::after { transform: rotate(90deg); }
-    .spec__item.open .spec__plus { transform: rotate(45deg); color: var(--hl); }
-    .spec__detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .55s var(--ease); }
+    .spec__item .spec__row { border-bottom: 0; width: 100%; cursor: default; }
+    .spec__detail { display: grid; grid-template-rows: 1fr; }
     .spec__detail > div { overflow: hidden; }
     .spec__detail p { color: var(--muted); max-width: 68ch; font-size: 15px; padding: 2px 0 4px calc(34px + clamp(16px, 3vw, 40px)); }
     .spec__detail .svc__tags { display: flex; flex-wrap: wrap; gap: 7px; padding: 10px 0 26px calc(34px + clamp(16px, 3vw, 40px)); }
     .spec__detail .svc__tags i { font-style: normal; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--muted); }
-    .spec__item.open .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
-    .spec__item.open .spec__detail { grid-template-rows: 1fr; }
+    .spec__item .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
     .spec__hint { margin-left: auto; color: var(--muted); font-size: 13.5px; max-width: 250px; text-align: right; }
     @media (max-width: 800px) { .spec__hint { display: none; } }
     .hero__sub { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-top: clamp(28px, 4.5vh, 48px); flex-wrap: wrap; }
     .hero__sub p { color: var(--muted); max-width: 56ch; font-size: clamp(15px, 1.3vw, 18px); }
     .hero__sub p b { color: var(--text); font-weight: 600; }
-    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 800; background: var(--hl); color: var(--hl-ink); box-shadow: 0 0 26px var(--hl-dim), 0 0 70px var(--hl-soft); transition: transform .3s, box-shadow .3s; flex: none; }
+    .btn { display: inline-flex; align-items: center; gap: 10px; border-radius: 999px; padding: 15px 28px; font-size: 14px; font-weight: 800; background: var(--hl-fill); color: #222a00; box-shadow: 0 0 26px var(--hl-dim), 0 0 70px var(--hl-soft); transition: transform .3s, box-shadow .3s; flex: none; }
     .btn:hover { transform: translateY(-2px); box-shadow: 0 0 40px var(--hl-dim), 0 0 100px var(--hl-soft); }
 
     /* counters */
@@ -154,6 +206,35 @@
     .svc__tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
     .svc__tags i { font-style: normal; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--muted); transition: .3s; }
     .svc__row:hover .svc__tags i { border-color: color-mix(in srgb, var(--hl) 45%, transparent); color: var(--text); }
+
+    /* work — inline hover list with cursor peek (design-A style) */
+    .wlist { list-style: none; border-top: 1px solid var(--line); }
+    .wgroup { color: var(--muted); padding: clamp(28px, 5vh, 52px) 0 12px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 12px; }
+    .wgroup::before { content: ''; width: 8px; height: 8px; background: var(--hl-fill); box-shadow: 0 0 12px var(--hl-dim); }
+    .wrow { display: grid; grid-template-columns: 60px 1fr auto; align-items: center; gap: clamp(12px, 3vw, 44px);
+      padding: clamp(16px, 2.8vh, 30px) 0; border-bottom: 1px solid var(--line); position: relative; transition: padding-left .4s var(--ease); }
+    .wrow::after { content: ''; position: absolute; inset: 0 -12px; z-index: -1; transform: scaleY(0); transform-origin: bottom;
+      background: color-mix(in srgb, var(--rh, var(--hl)) 8%, transparent); transition: transform .4s var(--ease); }
+    .wrow:hover::after { transform: scaleY(1); }
+    .wrow:hover { padding-left: clamp(8px, 1.4vw, 22px); }
+    .wrow__nr { color: var(--muted); }
+    .wrow__title { font-weight: 720; font-stretch: 115%; text-transform: uppercase; letter-spacing: -0.02em;
+      font-size: clamp(26px, 4.6vw, 64px); line-height: 1; transition: color .35s, text-shadow .35s; }
+    .wrow:hover .wrow__title { color: var(--rh, var(--hl)); text-shadow: 0 0 22px color-mix(in srgb, var(--rh, var(--hl)) 50%, transparent); }
+    .wrow__meta { display: flex; gap: clamp(10px, 2vw, 26px); align-items: center; color: var(--muted); text-align: right; }
+    .wrow__meta > span:first-child { max-width: 190px; }
+    .wchip { font-style: normal; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-size: 9px; letter-spacing: 0.12em; white-space: nowrap; color: var(--text); transition: .35s; }
+    .wrow:hover .wchip { border-color: color-mix(in srgb, var(--rh, var(--hl)) 55%, transparent); color: var(--rh, var(--hl)); }
+    @media (max-width: 760px) { .wrow { grid-template-columns: 40px 1fr; } .wrow__meta { grid-column: 2; justify-content: flex-start; text-align: left; flex-wrap: wrap; gap: 8px; } }
+    .peek { position: fixed; top: 0; left: 0; z-index: 300; width: min(330px, 26vw); aspect-ratio: 4 / 3; border-radius: 10px;
+      overflow: hidden; pointer-events: none; opacity: 0; scale: .94; transition: opacity .3s, scale .3s;
+      border: 1px solid color-mix(in srgb, var(--rh, var(--hl)) 55%, transparent);
+      box-shadow: 0 0 34px color-mix(in srgb, var(--rh, var(--hl)) 22%, transparent), 0 24px 60px rgba(0,0,0,.6); }
+    .peek img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .peek__tag { position: absolute; left: 12px; bottom: 10px; color: #fff; font-size: 8.5px;
+      background: rgba(8,10,8,0.72); backdrop-filter: blur(6px); padding: 6px 10px; border-radius: 5px; }
+    .peek.on { opacity: 1; scale: 1; }
+    @media (hover: none), (pointer: coarse), (max-width: 900px) { .peek { display: none; } }
 
     /* work */
     .feat { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(24px, 4vw, 70px); align-items: center; padding: clamp(28px, 5vh, 56px) 0; border-bottom: 1px solid var(--line); }
@@ -204,11 +285,15 @@
     .contact .big span.line2 { display: block; font-weight: 750; font-stretch: 118%; font-size: clamp(28px, 5.6vw, 92px); overflow-wrap: anywhere; letter-spacing: -0.035em; line-height: 0.95; transition: .4s; }
     .contact .big:hover span.line2 { color: var(--hl); text-shadow: 0 0 30px var(--hl-dim), 0 0 90px var(--hl-soft); }
     .contact .big .mono { display: block; font-size: 10px; color: var(--muted); margin-bottom: 18px; letter-spacing: 0.18em; }
+    .contact__links { display: flex; gap: clamp(22px, 4vw, 54px); flex-wrap: wrap; padding: 6px 0 clamp(36px, 6vh, 64px); }
+    .contact__links a { display: inline-flex; align-items: center; gap: clamp(10px, 1.2vw, 18px); font-weight: 740; font-stretch: 114%; font-size: clamp(20px, 2.8vw, 42px); letter-spacing: -0.02em; transition: color .35s, text-shadow .35s; }
+    .contact__links a svg { width: clamp(24px, 2.4vw, 38px); height: clamp(24px, 2.4vw, 38px); filter: drop-shadow(0 0 10px currentColor); flex: none; }
+    .contact__links a:hover { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
     .foot { border-top: 1px solid var(--line); padding: 24px 0; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
 
-    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: rgba(16,19,16,0.85); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 999px; padding: 5px; }
+    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: var(--chip-bg); backdrop-filter: blur(12px); border: 1px solid var(--line); border-radius: 999px; padding: 5px; }
     .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 10px; border-radius: 999px; color: var(--muted); }
-    .vswitch a.on { background: var(--hl); color: var(--hl-ink); box-shadow: 0 0 16px var(--hl-dim); }
+    .vswitch a.on { background: var(--hl-fill); color: #222a00; box-shadow: 0 0 16px var(--hl-dim); }
 
     [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
     [data-fade].in { opacity: 1; transform: none; }
@@ -218,40 +303,59 @@
 <body>
   <div class="top">
     <span class="top__brand">FAISEL TAJIRAN<sup>®</sup></span>
-    <div class="top__links"><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:faisel@faiseltajiran.com">CONTACT ↗</a><button class="acc" data-acc aria-label="Switch accent: green / volt" title="Green ⇄ Volt"></button></div>
+    <div class="top__links"><a href="#services">SERVICES</a><a href="#work">WORK</a><a href="#about">ABOUT</a><a href="mailto:faisel@faiseltajiran.com">CONTACT ↗</a><button class="acc" data-acc aria-label="Switch dark / light theme" title="Dark ⇄ Light"></button></div>
   </div>
 
-  <header class="hero wrap">
-    <p class="hero__eyebrow mono" data-fade>HOUSTON, TX — FOUNDER &amp; OPERATOR · <b>17+ YEARS</b> · 9 U.S. PATENTS PENDING</p>
+  <div class="hero-wave"><canvas id="wavy" aria-hidden="true"></canvas>
+  <header class="phero wrap">
+    <div class="phero__vis" data-fade>
+      <span class="pchip"><svg style="color:#0082FB"><use href="/assets/icons/brands.svg#i-meta"/></svg>Meta Ads</span>
+      <span class="pchip"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg>Google Ads</span>
+      <span class="pchip"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg>React</span>
+      <span class="pchip"><svg style="color:#E37400"><use href="/assets/icons/brands.svg#i-googleanalytics"/></svg>Google Analytics 4</span>
+      <span class="pchip"><svg style="color:#e8ded1"><use href="/assets/icons/brands.svg#i-anthropic"/></svg>Anthropic</span>
+      <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" />
+    </div>
+    <div>
+      <p class="phero__eyebrow mono"><i></i>FAISEL TAJIRAN — HOUSTON, TX · 9 U.S. PATENTS PENDING</p>
+      <h1>From napkin to patent <span>to production.</span></h1>
+      <p class="phero__role">Digital Marketing · Strategy · Web &amp; Mobile Development · Branding · UI/UX — <em>one operator.</em></p>
+      <p class="phero__bio">Founder &amp; CEO of Frequentor. <b>17+ years</b> taking ideas from strategy to shipped product to sold-out funnel — <b>eleven ventures and platforms</b>, every layer designed, engineered, and marketed by one person.</p>
+      <div class="phero__row">
+        <a class="btn" href="#work">See the work ↓</a>
+        <a class="btn btn--ghost" href="/Faisel-Tajiran-Resume-2026.pdf" download>Résumé (PDF)</a>
+      </div>
+    </div>
+  </header>
+  </div>
+
+  <section class="wrap" style="padding-top: clamp(20px, 4vh, 40px)">
+    <div class="shead" data-fade><span class="mono">SERVICES</span><h2>Six disciplines, one person accountable</h2></div>
     <div class="spec" id="services">
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span></div>
         <div class="spec__detail"><div><p>Seventeen years of paid media, technical SEO, and conversion architecture — from single-location SMBs to Landry's 60+ brands and 500+ locations. 6,500% renewal lift, $300K new ARR, 400% ROI pilots.</p><div class="svc__tags"><i>GOOGLE ADS</i><i>META</i><i>GA4 · GTM</i><i>SEO</i><i>CRO</i><i>PROGRAMMATIC CTV</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">02</span><span class="spec__name">Strategy</span><span class="spec__hint">0→1 ventures, GTM, patents as moats</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">02</span><span class="spec__name">Strategy</span><span class="spec__hint">0→1 ventures, GTM, patents as moats</span></div>
         <div class="spec__detail"><div><p>Venture design from zero: market thesis, GTM, pricing, IP posture. Nine USPTO provisional patents filed across two ventures — prior-art research done personally. Cold-start playbooks that get pilots signed.</p><div class="svc__tags"><i>0→1 SAAS</i><i>GTM DESIGN</i><i>PATENT / IP</i><i>PRICING</i><i>FOUNDER SALES</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">03</span><span class="spec__name">Web Development</span><span class="spec__hint">React · Next.js · React Native · AWS</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">03</span><span class="spec__name">Web Development</span><span class="spec__hint">React · Next.js · React Native · AWS</span></div>
         <div class="spec__detail"><div><p>Production code across the stack: React 19 / Next.js 16 frontends, React Native mobile with native modules, AWS Amplify Gen 2 backends, Python ML services, ESP32 firmware when the product needs hardware.</p><div class="svc__tags"><i>REACT / NEXT</i><i>REACT NATIVE</i><i>AWS</i><i>TYPESCRIPT</i><i>PYTHON</i><i>LLM FINE-TUNING</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">04</span><span class="spec__name">Mobile App Development</span><span class="spec__hint">React Native · Expo · native iOS — live on TestFlight</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">04</span><span class="spec__name">Mobile App Development</span><span class="spec__hint">React Native · Expo · native iOS — live on TestFlight</span></div>
         <div class="spec__detail"><div><p>Native-grade mobile shipped solo: a 460-file React Native / Expo app with background geofencing, APNs push, Apple Wallet passes, lock-screen widgets, and OTA delivery — live on TestFlight with multi-device field validation.</p><div class="svc__tags"><i>REACT NATIVE</i><i>EXPO · EAS</i><i>NATIVE IOS MODULES</i><i>GEOFENCING</i><i>APNS · WALLET</i><i>APP STORE</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">05</span><span class="spec__name">Branding</span><span class="spec__hint">Identities for 11 builds and counting</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">05</span><span class="spec__name">Branding</span><span class="spec__hint">Identities for 11 builds and counting</span></div>
         <div class="spec__detail"><div><p>Identity systems that survive contact with real products — Frequentor's presence-green, Hydrova's deep-water investor deck, Authyr's trust marks, AliTheRep's volt-on-ink. Naming, voice, and the design language to carry them.</p><div class="svc__tags"><i>IDENTITY</i><i>NAMING</i><i>DESIGN SYSTEMS</i><i>PITCH DECKS</i></div></div></div>
       </div>
       <div class="spec__item" data-fade>
-        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">06</span><span class="spec__name">UI&nbsp;/&nbsp;UX</span><span class="spec__hint">Dashboards to medical viewers to mobile</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__row"><span class="spec__nr">06</span><span class="spec__name">UI&nbsp;/&nbsp;UX</span><span class="spec__hint">Dashboards to medical viewers to mobile</span></div>
         <div class="spec__detail"><div><p>Interfaces with jobs to do: owner dashboards that surface one decisive action, a 3D medical viewer clinicians can trust, multi-role mobile apps, conversion funnels tuned for a 55+ audience. Design and build, same person.</p><div class="svc__tags"><i>PRODUCT DESIGN</i><i>DESIGN→CODE</i><i>MOTION</i><i>ACCESSIBILITY</i></div></div></div>
       </div>
-    </div>
-    <div class="hero__sub">
-      <p data-fade>Six disciplines, one operator. I'm <b>Faisel Tajiran</b> — founder &amp; CEO of Frequentor, with <b>eleven ventures and platforms</b> built end-to-end: the strategy, the brand, the code, the marketing engine.</p>
-      <a class="btn" data-fade href="#work">See the work ↓</a>
     </div>
     <div class="nums">
       <div data-fade><strong data-n="17" data-s="+">0</strong><span class="mono">YEARS EXPERIENCE</span></div>
@@ -259,7 +363,7 @@
       <div data-fade><strong data-n="11">0</strong><span class="mono">BUILDS DOCUMENTED</span></div>
       <div data-fade><strong data-n="500" data-s="+">0</strong><span class="mono">LOCATIONS MARKETED</span></div>
     </div>
-  </header>
+  </section>
 
   <div class="imarq" aria-hidden="true"><div class="imarq__track">
     <span class="gi"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg><span>React</span></span>
@@ -298,44 +402,23 @@
 
   <section class="wrap" id="work">
     <div class="shead" data-fade><span class="mono">SELECTED WORK</span><h2>Eleven builds, every layer mine</h2></div>
-    <a class="feat" href="/work/frequentor/" data-fade>
-      <div class="feat__media"><img src="/assets/img/work/frequentor/dashboard.webp" alt="Frequentor" loading="lazy" /></div>
-      <div><p class="feat__kind mono">VENTURE — LIVE PILOT · 2025—</p><h3>Frequentor</h3>
-      <p>Hospitality intelligence from verified physical presence: IoT sensor fusion, a 460-file mobile app, AWS Gen 2 backend, 9 patents. Built solo, live in Houston venues.</p>
-      <span class="feat__go">Case study <i>→</i></span></div>
-    </a>
-    <a class="feat" href="/work/fahe/" data-fade>
-      <div class="feat__media"><img src="/assets/img/work/fahe/command-center.webp" alt="FAHE" loading="lazy" /></div>
-      <div><p class="feat__kind mono">VENTURE — IN PRODUCTION · 2026</p><h3>FAHE</h3>
-      <p>A proprietary fine-tuned LLM that answers like an operator: 40+ training runs, GGUF quantization, and 99% on a 410-test evaluation battery.</p>
-      <span class="feat__go">Case study <i>→</i></span></div>
-    </a>
-    <a class="feat" href="/work/veridose/" data-fade>
-      <div class="feat__media"><img src="/assets/img/work/veridose/ct-vs-masks.webp" alt="Veridose" loading="lazy" /></div>
-      <div><p class="feat__kind mono">VENTURE — WORKING DEMO · 2026</p><h3>Veridose</h3>
-      <p>Radiation-oncology AI: GPU auto-contouring on real CT where thresholding has no edge to find, plus a hash-chained physicist attestation ledger.</p>
-      <span class="feat__go">Case study <i>→</i></span></div>
-    </a>
-    <a class="feat" href="/work/alitherep/" data-fade>
-      <div class="feat__media"><img src="/assets/img/work/alitherep/home.webp" alt="AliTheRep" loading="lazy" /></div>
-      <div><p class="feat__kind mono">CLIENT — LIVE · 2026</p><h3>AliTheRep</h3>
-      <p>Full redesign for a cycling sales rep covering three states: volt-on-ink brand, Remotion kinetic hero, dealer portal, dual-deploy pipeline.</p>
-      <span class="feat__go">Case study <i>→</i></span></div>
-    </a>
-    <a class="feat" href="/work/thisiscredit/" data-fade>
-      <div class="feat__media"><img src="/assets/img/work/thisiscredit/dashboard.webp" alt="This Is Credit" loading="lazy" /></div>
-      <div><p class="feat__kind mono">VENTURE — PROTOTYPE · 2026</p><h3>This Is Credit</h3>
-      <p>Consumer fintech behind a swap-one-file provider abstraction — three-bureau dashboard, hand-rolled SVG charts, real mortgage math.</p>
-      <span class="feat__go">Case study <i>→</i></span></div>
-    </a>
-    <div class="more" data-fade>
-      <a href="/work/authyr/"><b>Authyr</b><span>CRYPTOGRAPHIC TRUST RAILS</span></a>
-      <a href="/work/hydrova/"><b>Hydrova</b><span>WATER-INFRA VENTURE DESIGN</span></a>
-      <a href="/work/ghl-rc-bridge/"><b>GHL×RC Bridge</b><span>SMS SYNC · SERVERLESS</span></a>
-      <a href="/work/ptc-promotions/"><b>PTC Promotions</b><span>LEAD-GEN SYSTEM</span></a>
-      <a href="/work/cruise-reels/"><b>Cruise Reels</b><span>PROGRAMMATIC VIDEO</span></a>
-      <a href="/work/newspeed/"><b>Newspeed</b><span>AUTOMOTIVE WEB</span></a>
-    </div>
+    <ul class="wlist">
+      <li class="wgroup mono" data-fade>I — VENTURES &amp; STARTUPS</li>
+      <li data-fade><a class="wrow" href="/work/frequentor/" data-hue="#00ff9d" data-shot="/assets/img/work/frequentor/dashboard.webp" data-tag="IOT × MOBILE × AI"><span class="wrow__nr mono">01</span><span class="wrow__title">Frequentor</span><span class="wrow__meta mono"><span>HOSPITALITY INTELLIGENCE</span><span>2025 —</span><i class="wchip">LIVE PILOT</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/fahe/" data-hue="#7c5cff" data-shot="/assets/img/work/fahe/command-center.webp" data-tag="LLM FINE-TUNING × EVALS"><span class="wrow__nr mono">02</span><span class="wrow__title">FAHE</span><span class="wrow__meta mono"><span>PROPRIETARY LLM ENGINE</span><span>2026</span><i class="wchip">IN PRODUCTION</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/veridose/" data-hue="#2e6bff" data-shot="/assets/img/work/veridose/ct-vs-masks.webp" data-tag="MEDICAL AI × 3D IMAGING"><span class="wrow__nr mono">03</span><span class="wrow__title">Veridose</span><span class="wrow__meta mono"><span>RADIATION-ONCOLOGY AI</span><span>2026</span><i class="wchip">WORKING DEMO</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/authyr/" data-hue="#ff5c28" data-shot="/assets/img/work/authyr/home.webp" data-tag="CRYPTOGRAPHY × SAAS"><span class="wrow__nr mono">04</span><span class="wrow__title">Authyr</span><span class="wrow__meta mono"><span>CRYPTOGRAPHIC TRUST RAILS</span><span>2026</span><i class="wchip">MVP IN BUILD</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/hydrova/" data-hue="#35e0d6" data-shot="/assets/img/work/hydrova/deck-hero.webp" data-tag="HARDWARE VENTURE DESIGN"><span class="wrow__nr mono">05</span><span class="wrow__title">Hydrova</span><span class="wrow__meta mono"><span>WATER INFRASTRUCTURE</span><span>2026</span><i class="wchip">CONCEPT</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/thisiscredit/" data-hue="#ffd23f" data-shot="/assets/img/work/thisiscredit/dashboard.webp" data-tag="FINTECH × ARCHITECTURE"><span class="wrow__nr mono">06</span><span class="wrow__title">This&nbsp;Is&nbsp;Credit</span><span class="wrow__meta mono"><span>CONSUMER FINTECH</span><span>2026</span><i class="wchip">PROTOTYPE</i></span></a></li>
+      <li class="wgroup mono" data-fade>II — CLIENT &amp; WEB</li>
+      <li data-fade><a class="wrow" href="/work/alitherep/" data-hue="#c8ff3d" data-shot="/assets/img/work/alitherep/home.webp" data-tag="CLIENT × REMOTION"><span class="wrow__nr mono">07</span><span class="wrow__title">AliTheRep</span><span class="wrow__meta mono"><span>PLATFORM REDESIGN</span><span>2026</span><i class="wchip">LIVE</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/newspeed/" data-hue="#ff3d3d" data-shot="/assets/img/work/newspeed/home.webp" data-tag="CLIENT WEB"><span class="wrow__nr mono">08</span><span class="wrow__title">Newspeed</span><span class="wrow__meta mono"><span>AUTOMOTIVE WEB</span><span>2026</span><i class="wchip">DELIVERED</i></span></a></li>
+      <li class="wgroup mono" data-fade>III — WORK IMPROVISATIONS &amp; GROWTH TOOLS</li>
+      <li data-fade><a class="wrow" href="/work/ghl-rc-bridge/" data-hue="#ffb02e" data-shot="/assets/img/work/ghl-rc-bridge/composer.webp" data-tag="SYSTEMS INTEGRATION"><span class="wrow__nr mono">09</span><span class="wrow__title">GHL×RC&nbsp;Bridge</span><span class="wrow__meta mono"><span>SMS SYNC · SERVERLESS</span><span>2026</span><i class="wchip">DEPLOYED</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/ptc-promotions/" data-hue="#38b6ff" data-shot="/assets/img/work/ptc-promotions/landing.webp" data-tag="GROWTH ENGINEERING"><span class="wrow__nr mono">10</span><span class="wrow__title">PTC&nbsp;Promotions</span><span class="wrow__meta mono"><span>LEAD-GEN SYSTEM</span><span>2026</span><i class="wchip">DEPLOY-READY</i></span></a></li>
+      <li data-fade><a class="wrow" href="/work/cruise-reels/" data-hue="#ff4f9a" data-shot="/assets/img/work/cruise-reels/ad1.webp" data-tag="PROGRAMMATIC VIDEO"><span class="wrow__nr mono">11</span><span class="wrow__title">Cruise&nbsp;Reels</span><span class="wrow__meta mono"><span>VIDEO-AS-CODE</span><span>2026</span><i class="wchip">SHIPPED</i></span></a></li>
+    </ul>
+    <div class="peek" aria-hidden="true"><img alt="" /><span class="peek__tag mono"></span></div>
   </section>
 
   <section class="wrap" id="toolbox">
@@ -384,12 +467,11 @@
 
   <section class="wrap" id="about">
     <div class="shead" data-fade><span class="mono">ABOUT</span><h2>The operator behind it</h2></div>
-    <div class="about" data-fade>
-      <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" loading="lazy" />
+    <div class="about" style="grid-template-columns: 1fr" data-fade>
       <div>
-        <h2>Builder by default. Marketer by training. <span>Operator by domain.</span></h2>
-        <p>BBA + MBA from the University of Houston. Seventeen years running digital marketing, strategy, and web development — from Houston small businesses to Landry's (60+ brands, 500+ locations), then all-in on founding.</p>
-        <p>Frequentor is the thesis those years produced. Building it solo meant learning ESP32 firmware, mmWave radar, React Native internals, AWS IAM, LLM fine-tuning, and USPTO patent drafting in a single year — and the other ten builds on this site are the same velocity, pointed elsewhere.</p>
+        <h2>Every venture needed a skill I didn’t have yet. <span>So I learned it — and shipped it.</span></h2>
+        <p>BBA + MBA from the University of Houston. Seventeen years across digital marketing, strategy, and web development — from Houston small businesses to Landry's (60+ brands, 500+ locations) — before going all-in as a founder.</p>
+        <p>The clearest proof: over the last two years I taught myself machine learning end-to-end — 40+ LLM fine-tunes across Mistral-7B and Llama-3.3-70B on Lambda H100 clusters and my own GPU, custom dataset design, GGUF quantization, and a 410-test evaluation battery, shipped to production at 99%. The same self-taught pattern produced cloud architecture, native mobile, applied cryptography, and USPTO patent drafting. Frequentor is where those skills point today — every one of them transfers anywhere.</p>
       </div>
     </div>
   </section>
@@ -397,12 +479,16 @@
   <section class="wrap contact">
     <a class="big" href="mailto:faisel@faiseltajiran.com" data-fade>
       <span class="mono">HAVE A VENTURE, A BRAND, OR A FUNNEL THAT NEEDS ALL FIVE?</span>
-      <span class="line2">faisel@faiseltajiran.com&nbsp;↗</span>
+      <span class="line2">faisel@faiseltajiran.com</span>
     </a>
+    <div class="contact__links">
+      <a href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener"><svg style="color:#0A66C2"><use href="/assets/icons/brands.svg#i-linkedin"/></svg>LinkedIn</a>
+      <a href="/Faisel-Tajiran-Resume-2026.pdf" download><svg style="color:var(--hl)"><use href="/assets/icons/brands.svg#i-resume"/></svg>Résumé (PDF)</a>
+    </div>
     <div class="foot">
       <span>© <span id="y"></span> FAISEL TAJIRAN — HOUSTON, TX</span>
-      <span class="mono glow">FAISELTAJIRAN.COM — NEON STUDIO · <button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)">GREEN ⇄ VOLT</button></span>
-      <span><a href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener">LINKEDIN</a> · <a href="/Faisel-Tajiran-Resume-2026.pdf" download>RÉSUMÉ</a></span>
+      <span class="mono glow">DESIGN K — NEON STUDIO · PORTRAIT · <button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)">DARK ⇄ LIGHT</button></span>
+      <span><button data-acc style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)" class="mono">DARK ⇄ LIGHT</button></span>
     </div>
   </section>
 
@@ -420,17 +506,95 @@
       requestAnimationFrame(step);
     }), { threshold: 0.6 });
     document.querySelectorAll('[data-n]').forEach(el => cio.observe(el));
-    document.querySelectorAll('[data-acc]').forEach(b => b.addEventListener('click', () => {
-      const next = document.documentElement.dataset.accent === 'volt' ? 'green' : 'volt';
-      document.documentElement.dataset.accent = next;
-      try { localStorage.setItem('ft-accent', next); } catch (e) {}
-    }));
-    document.querySelectorAll('.spec__item').forEach(item => {
-      item.querySelector('.spec__row').addEventListener('click', () => {
-        const open = item.classList.toggle('open');
-        item.querySelector('.spec__row').setAttribute('aria-expanded', open);
+
+    // cursor-following screenshot peek (design-A style)
+    (() => {
+      const peek = document.querySelector('.peek');
+      if (!peek || matchMedia('(hover: none), (pointer: coarse)').matches) return;
+      const img = peek.querySelector('img');
+      const tag = peek.querySelector('.peek__tag');
+      let tx = 0, ty = 0, px = -999, py = -999;
+      addEventListener('mousemove', e => {
+        tx = Math.min(e.clientX + 26, innerWidth - peek.offsetWidth - 12);
+        ty = e.clientY - peek.offsetHeight / 2;
+        if (px === -999) { px = tx; py = ty; }
+      }, { passive: true });
+      (function loop() { px += (tx - px) * .13; py += (ty - py) * .13;
+        peek.style.transform = `translate(${px}px, ${py}px)`; requestAnimationFrame(loop); })();
+      document.querySelectorAll('.wrow').forEach(row => {
+        row.addEventListener('mouseenter', () => {
+          row.style.setProperty('--rh', row.dataset.hue);
+          peek.style.setProperty('--rh', row.dataset.hue);
+          img.src = row.dataset.shot; tag.textContent = row.dataset.tag;
+          peek.classList.add('on');
+        });
+        row.addEventListener('mouseleave', () => peek.classList.remove('on'));
       });
-    });
+    })();
+
+    // wavy hero background (vanilla port of the shadcn/aceternity wavy background)
+    (() => {
+      const c = document.getElementById('wavy');
+      if (!c || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const x = c.getContext('2d');
+      const G3 = [[1,1,0],[-1,1,0],[1,-1,0],[-1,-1,0],[1,0,1],[-1,0,1],[1,0,-1],[-1,0,-1],[0,1,1],[0,-1,1],[0,1,-1],[0,-1,-1]];
+      const p = new Uint8Array(256); for (let i = 0; i < 256; i++) p[i] = i;
+      let seed = 7; for (let i = 255; i > 0; i--) { seed = (seed * 16807) % 2147483647; const r = seed % (i + 1); const t2 = p[i]; p[i] = p[r]; p[r] = t2; }
+      const perm = new Uint8Array(512), pm12 = new Uint8Array(512);
+      for (let i = 0; i < 512; i++) { perm[i] = p[i & 255]; pm12[i] = perm[i] % 12; }
+      const F3 = 1 / 3, G = 1 / 6;
+      function noise(xi, yi, zi) {
+        let n0 = 0, n1 = 0, n2 = 0, n3 = 0;
+        const sVal = (xi + yi + zi) * F3, i = Math.floor(xi + sVal), j = Math.floor(yi + sVal), k = Math.floor(zi + sVal);
+        const t = (i + j + k) * G, x0 = xi - (i - t), y0 = yi - (j - t), z0 = zi - (k - t);
+        let i1, j1, k1, i2, j2, k2;
+        if (x0 >= y0) { if (y0 >= z0) { i1=1;j1=0;k1=0;i2=1;j2=1;k2=0; } else if (x0 >= z0) { i1=1;j1=0;k1=0;i2=1;j2=0;k2=1; } else { i1=0;j1=0;k1=1;i2=1;j2=0;k2=1; } }
+        else { if (y0 < z0) { i1=0;j1=0;k1=1;i2=0;j2=1;k2=1; } else if (x0 < z0) { i1=0;j1=1;k1=0;i2=0;j2=1;k2=1; } else { i1=0;j1=1;k1=0;i2=1;j2=1;k2=0; } }
+        const x1 = x0-i1+G, y1 = y0-j1+G, z1 = z0-k1+G, x2 = x0-i2+2*G, y2 = y0-j2+2*G, z2 = z0-k2+2*G, x3 = x0-1+3*G, y3 = y0-1+3*G, z3 = z0-1+3*G;
+        const ii = i & 255, jj = j & 255, kk = k & 255;
+        let t0 = .6 - x0*x0 - y0*y0 - z0*z0;
+        if (t0 > 0) { const g = G3[pm12[ii+perm[jj+perm[kk]]]]; t0 *= t0; n0 = t0*t0*(g[0]*x0+g[1]*y0+g[2]*z0); }
+        let t1 = .6 - x1*x1 - y1*y1 - z1*z1;
+        if (t1 > 0) { const g = G3[pm12[ii+i1+perm[jj+j1+perm[kk+k1]]]]; t1 *= t1; n1 = t1*t1*(g[0]*x1+g[1]*y1+g[2]*z1); }
+        let t2 = .6 - x2*x2 - y2*y2 - z2*z2;
+        if (t2 > 0) { const g = G3[pm12[ii+i2+perm[jj+j2+perm[kk+k2]]]]; t2 *= t2; n2 = t2*t2*(g[0]*x2+g[1]*y2+g[2]*z2); }
+        let t3 = .6 - x3*x3 - y3*y3 - z3*z3;
+        if (t3 > 0) { const g = G3[pm12[ii+1+perm[jj+1+perm[kk+1]]]]; t3 *= t3; n3 = t3*t3*(g[0]*x3+g[1]*y3+g[2]*z3); }
+        return 32 * (n0 + n1 + n2 + n3);
+      }
+      const PALETTES = {
+        dark:  ['#d4ff00', '#a3e635', '#facc15', '#38bdf8', '#84cc16'],
+        light: ['#b7d600', '#84bb2e', '#eab308', '#60a5fa', '#98bf1f'],
+      };
+      let w, h, t = 0, visible = true, raf = null;
+      const resize = () => { w = c.width = c.offsetWidth; h = c.height = c.offsetHeight; };
+      resize(); addEventListener('resize', resize);
+      const draw = () => {
+        if (!visible) { raf = null; return; }
+        const light = document.documentElement.dataset.theme === 'light';
+        const cols = PALETTES[light ? 'light' : 'dark'];
+        x.clearRect(0, 0, w, h);
+        x.filter = 'blur(9px)';
+        x.globalAlpha = light ? 0.3 : 0.45;
+        t += 0.0016;
+        for (let i = 0; i < 5; i++) {
+          x.beginPath(); x.lineWidth = 42; x.strokeStyle = cols[i];
+          for (let sx = -60; sx < w + 60; sx += 7) {
+            const y = noise(sx / 850, 0.32 * i, t) * h * 0.16;
+            sx === -60 ? x.moveTo(sx, h * 0.62 + y) : x.lineTo(sx, h * 0.62 + y);
+          }
+          x.stroke();
+        }
+        raf = requestAnimationFrame(draw);
+      };
+      new IntersectionObserver((es) => { visible = es[0].isIntersecting; if (visible && !raf) raf = requestAnimationFrame(draw); }).observe(c);
+      raf = requestAnimationFrame(draw);
+    })();
+    document.querySelectorAll('[data-acc]').forEach(b => b.addEventListener('click', () => {
+      const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+      document.documentElement.dataset.theme = next;
+      try { localStorage.setItem('ft-theme2', next); } catch (e) {}
+    }));
 
   </script>
 </body>
