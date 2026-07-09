@@ -141,6 +141,8 @@
     .pchip:nth-of-type(4) { bottom: 12%; right: -7%; animation-delay: -4.4s; }
     .pchip:nth-of-type(5) { top: 52%; right: -14%; animation-delay: -0.6s; }
     @keyframes pfloat { 50% { transform: translateY(-9px); } }
+    .pchip { transition: opacity .38s ease; }
+    .pchip.cycling { opacity: 0; }
     @media (max-width: 880px) { .pchip { display: none; } }
     @media (prefers-reduced-motion: reduce) { .pchip { animation: none; } }
     /* hero */
@@ -584,6 +586,37 @@
       };
       new IntersectionObserver((es) => { visible = es[0].isIntersecting; if (visible && !raf) raf = requestAnimationFrame(draw); }).observe(c);
       raf = requestAnimationFrame(draw);
+    })();
+
+    // hero badges cycle through the full app roster
+    (() => {
+      const chips = [...document.querySelectorAll('.pchip')];
+      if (!chips.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const APPS = [
+        ['i-meta','Meta Ads','#0082FB'], ['i-googleads','Google Ads','#4285F4'], ['i-react','React','#61DAFB'],
+        ['i-googleanalytics','Google Analytics 4','#E37400'], ['i-anthropic','Anthropic','#e8ded1'],
+        ['i-typescript','TypeScript','#3178C6'], ['i-python','Python','#4B8BBE'], ['i-pytorch','PyTorch','#EE4C2C'],
+        ['i-nextdotjs','Next.js','#ffffff'], ['i-tailwindcss','Tailwind','#06B6D4'], ['i-expo','Expo','#c8c8ff'],
+        ['i-amazonwebservices','AWS','#FF9900'], ['i-awslambda','AWS Lambda','#FF9900'], ['i-amazondynamodb','DynamoDB','#7a8bff'],
+        ['i-stripe','Stripe','#635BFF'], ['i-cloudflare','Cloudflare','#F38020'], ['i-googletagmanager','Tag Manager','#246FDB'],
+        ['i-hubspot','HubSpot','#FF7A59'], ['i-zapier','Zapier','#FF4F00'], ['i-wordpress','WordPress','#51a8dd'],
+        ['i-figma','Figma','#F24E1E'], ['i-remotion','Remotion','#0B84F3'], ['i-github','GitHub','#ffffff'],
+        ['i-posthog','PostHog','#F54E00'], ['i-nodedotjs','Node.js','#5FA04E'], ['i-javascript','JavaScript','#F7DF1E'],
+        ['i-apple','iOS','#ffffff'], ['i-android','Android','#34A853'],
+      ];
+      let cursor = 5, turn = 0; // markup already shows the first five
+      setInterval(() => {
+        const chip = chips[turn % chips.length]; turn++;
+        const app = APPS[cursor % APPS.length]; cursor++;
+        chip.classList.add('cycling');
+        setTimeout(() => {
+          const svg = chip.querySelector('svg');
+          svg.style.color = app[2];
+          svg.querySelector('use').setAttribute('href', '/assets/icons/brands.svg#' + app[0]);
+          chip.lastChild.textContent = app[1];
+          chip.classList.remove('cycling');
+        }, 400);
+      }, 2400);
     })();
     document.querySelectorAll('[data-acc]').forEach(b => b.addEventListener('click', () => {
       const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
