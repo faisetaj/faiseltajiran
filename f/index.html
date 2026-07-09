@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b0b0e" />
+  <title>Faisel Tajiran — Design F (Chromatic Deck)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b0b0e'/%3E%3Crect x='7' y='7' width='18' height='18' rx='4' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Crect x='11' y='3' width='18' height='18' rx='4' fill='none' stroke='%2300d98e' stroke-width='2'/%3E%3C/svg%3E" />
+  <style>
+    @font-face { font-family: 'Archivo'; src: url('/assets/fonts/archivo-var.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+    @font-face { font-family: 'Instrument Serif'; src: url('/assets/fonts/instrument-serif-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }
+    :root {
+      --bg: #0b0b0e; --text: #f2f0ea; --muted: #8f8d95;
+      --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    ::selection { background: #fff; color: #000; }
+    a { color: inherit; text-decoration: none; } img { display: block; max-width: 100%; }
+    .mono { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
+
+    .top { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center;
+      padding: 18px clamp(18px, 3vw, 40px); mix-blend-mode: difference; color: #fff; }
+    .top a { font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; }
+
+    /* intro */
+    .intro { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; position: relative; }
+    .intro .mono { color: var(--muted); margin-bottom: 24px; }
+    .intro h1 { font-weight: 800; font-stretch: 120%; text-transform: uppercase; font-size: clamp(48px, 10vw, 170px); line-height: 0.9; letter-spacing: -0.03em; }
+    .intro h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; font-size: 0.9em; }
+    .intro p { color: var(--muted); max-width: 50ch; margin-top: 26px; font-size: clamp(15px, 1.3vw, 18px); }
+    .intro__cue { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: var(--muted); display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .intro__cue i { width: 1px; height: 42px; background: linear-gradient(var(--text), transparent); animation: cue 1.6s ease-in-out infinite; }
+    @keyframes cue { 50% { opacity: .3; } }
+
+    /* deck */
+    .deck { position: relative; }
+    .panel { position: sticky; top: 0; min-height: 100svh; display: flex; align-items: center;
+      border-radius: 34px 34px 0 0; overflow: clip; will-change: transform, filter;
+      background:
+        radial-gradient(130% 110% at 85% -10%, color-mix(in srgb, var(--hue) 34%, transparent), transparent 55%),
+        color-mix(in srgb, var(--hue) 9%, #0d0d10);
+      box-shadow: 0 -30px 80px rgba(0,0,0,0.55);
+    }
+    .panel__in { width: 100%; max-width: 1380px; margin: 0 auto; padding: clamp(70px, 10vh, 110px) clamp(20px, 4vw, 52px);
+      display: grid; grid-template-columns: minmax(300px, 0.9fr) 1.1fr; gap: clamp(26px, 4vw, 70px); align-items: center; }
+    @media (max-width: 880px) { .panel__in { grid-template-columns: 1fr; } }
+    .panel__nr { font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--hue); margin-bottom: 18px; display: flex; gap: 14px; align-items: center; }
+    .panel__nr::after { content: ''; height: 1px; flex: 1; background: color-mix(in srgb, var(--hue) 40%, transparent); }
+    .panel__title { font-weight: 800; font-stretch: 118%; text-transform: uppercase; font-size: clamp(40px, 5.6vw, 92px); line-height: 0.92; letter-spacing: -0.025em; }
+    .panel__tag { font-family: var(--serif); font-style: italic; font-size: clamp(17px, 1.7vw, 26px); color: #cfccc5; margin-top: 16px; max-width: 34ch; }
+    .panel__meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .panel__meta span { border: 1px solid color-mix(in srgb, var(--hue) 45%, transparent); color: color-mix(in srgb, var(--hue) 80%, #fff); border-radius: 999px; padding: 7px 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; }
+    .panel__cta { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; background: var(--hue); color: #0a0a0c; border-radius: 999px; padding: 14px 26px; font-weight: 800; font-size: 14px; transition: transform .3s, box-shadow .3s; }
+    .panel__cta:hover { transform: translateY(-2px); box-shadow: 0 0 40px color-mix(in srgb, var(--hue) 55%, transparent); }
+    .panel__shot { border-radius: 18px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--hue) 35%, transparent);
+      transform: rotate(1.6deg); box-shadow: 0 40px 90px rgba(0,0,0,0.55); transition: transform .6s cubic-bezier(.22,1,.36,1); }
+    .panel:nth-child(even) .panel__shot { transform: rotate(-1.6deg); }
+    .panel:hover .panel__shot { transform: rotate(0deg) scale(1.01); }
+    .panel__shot img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+    .panel--tall .panel__shot img { aspect-ratio: 4 / 5; object-position: center 15%; }
+
+    /* interludes + outro reuse panel mechanics */
+    .panel--text { background: #0d0d10; }
+    .panel--text .panel__in { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+    .panel--text h2 { font-weight: 800; font-stretch: 118%; text-transform: uppercase; font-size: clamp(34px, 6.4vw, 100px); line-height: 0.94; letter-spacing: -0.025em; max-width: 16ch; }
+    .panel--text h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; color: var(--hue); }
+    .panel--text p { color: var(--muted); max-width: 58ch; margin-top: 22px; font-size: 16px; }
+    .panel--text .pills { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 28px; max-width: 900px; }
+    .panel--text .pills span { border: 1px solid rgba(255,255,255,0.16); border-radius: 999px; padding: 9px 16px; font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.13em; color: #c9c6bf; }
+    .panel__me { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; object-position: top; border: 3px solid var(--hue); margin-bottom: 24px; }
+    .panel--text .row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+
+    .foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; padding: 24px clamp(20px, 4vw, 52px) 90px; }
+
+    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: rgba(20,20,24,0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 5px; }
+    .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 11px; border-radius: 999px; color: var(--muted); }
+    .vswitch a.on { background: #fff; color: #000; }
+
+    @media (prefers-reduced-motion: reduce) { .intro__cue i { animation: none; } .panel { position: relative; } }
+  </style>
+</head>
+<body>
+  <div class="top">
+    <a href="/f/">FT® — CHROMATIC DECK</a>
+    <a href="mailto:faisel@faiseltajiran.com">GET IN TOUCH ↗</a>
+  </div>
+
+  <header class="intro">
+    <p class="mono">FAISEL TAJIRAN — HOUSTON, TX · 9 U.S. PATENTS PENDING</p>
+    <h1>ELEVEN BUILDS.<br /><em>One deck.</em></h1>
+    <p>Every card below is a venture, platform, or improvisation built end-to-end by one person. Scroll to deal the deck.</p>
+    <div class="intro__cue"><span class="mono">SCROLL</span><i></i></div>
+  </header>
+
+  <main class="deck" id="deck">
+    <article class="panel" style="--hue:#00d98e"><div class="panel__in">
+      <div><p class="panel__nr">01 / VENTURE — LIVE PILOT</p><h2 class="panel__title">Frequentor</h2>
+      <p class="panel__tag">Hospitality intelligence from verified physical presence — hardware to app store, built solo.</p>
+      <div class="panel__meta"><span>IOT FUSION</span><span>REACT NATIVE</span><span>AWS GEN 2</span><span>9 PATENTS</span></div>
+      <a class="panel__cta" href="/work/frequentor/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/frequentor/dashboard.webp" alt="Frequentor dashboard" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#7c5cff"><div class="panel__in">
+      <div><p class="panel__nr">02 / VENTURE — IN PRODUCTION</p><h2 class="panel__title">FAHE</h2>
+      <p class="panel__tag">A fine-tuned LLM that answers like an operator — 40+ versions, 99% on a 410-test battery.</p>
+      <div class="panel__meta"><span>QLORA</span><span>GGUF</span><span>EVAL BATTERY</span><span>VOICE 593MS</span></div>
+      <a class="panel__cta" href="/work/fahe/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/fahe/command-center.webp" alt="FAHE command center" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#2e6bff"><div class="panel__in">
+      <div><p class="panel__nr">03 / VENTURE — WORKING DEMO</p><h2 class="panel__title">Veridose</h2>
+      <p class="panel__tag">Radiation-oncology AI: GPU auto-contouring where the CT has no visible edge to find.</p>
+      <div class="panel__meta"><span>NNU-NET</span><span>NIIVUE 3D</span><span>HASH-CHAIN LEDGER</span></div>
+      <a class="panel__cta" href="/work/veridose/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/veridose/ct-vs-masks.webp" alt="Veridose segmentation" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#ff5c28"><div class="panel__in">
+      <div><p class="panel__nr">04 / VENTURE — MVP IN BUILD</p><h2 class="panel__title">Authyr</h2>
+      <p class="panel__tag">Cryptographic trust rails for disputes — ed25519 receipts no one can rewrite.</p>
+      <div class="panel__meta"><span>ED25519 CHAINS</span><span>AMPLIFY GEN 2</span><span>STRIPE CONNECT</span></div>
+      <a class="panel__cta" href="/work/authyr/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/authyr/home.webp" alt="Authyr" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#35e0d6"><div class="panel__in">
+      <div><p class="panel__nr">05 / VENTURE — CONCEPT</p><h2 class="panel__title">Hydrova</h2>
+      <p class="panel__tag">The water-heater closet, reimagined as the smartest room in the house. Patent-pending venture design.</p>
+      <div class="panel__meta"><span>125 PSI</span><span>0.05S RESPONSE</span><span>INVESTOR DECK</span></div>
+      <a class="panel__cta" href="/work/hydrova/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/hydrova/deck-hero.webp" alt="Hydrova" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#ffd23f"><div class="panel__in">
+      <div><p class="panel__nr">06 / VENTURE — PROTOTYPE</p><h2 class="panel__title">This Is Credit</h2>
+      <p class="panel__tag">A financial identity scattered across nine industries, one dashboard — behind a swap-one-file provider abstraction.</p>
+      <div class="panel__meta"><span>NEXT.JS 16</span><span>SVG CHARTS</span><span>FCRA-AWARE</span></div>
+      <a class="panel__cta" href="/work/thisiscredit/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/thisiscredit/dashboard.webp" alt="This Is Credit" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel panel--text" style="--hue:#00d98e"><div class="panel__in">
+      <div><img class="panel__me" src="/assets/img/faisel-sm.webp" alt="Faisel Tajiran" loading="lazy" />
+      <h2>Builder by default. <em>Marketer by training.</em></h2>
+      <p>BBA + MBA, University of Houston. A decade of growth and IT for Houston small businesses, then Landry's — 60+ brands, 500+ locations. Frequentor is what those years produced; the rest of this deck is the same velocity, pointed elsewhere.</p>
+      <div class="pills"><span>ESP32 · MMWAVE</span><span>REACT NATIVE</span><span>AWS · IAM</span><span>QLORA · GGUF</span><span>SEO · GA4 · CRO</span><span>USPTO × 9</span></div></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#c8ff3d"><div class="panel__in">
+      <div><p class="panel__nr">07 / CLIENT — LIVE</p><h2 class="panel__title">AliTheRep</h2>
+      <p class="panel__tag">A one-man cycling sales territory, replatformed — Remotion hero, dealer portal, dual deploy.</p>
+      <div class="panel__meta"><span>REACT 19</span><span>REMOTION</span><span>ALITHEREP.COM</span></div>
+      <a class="panel__cta" href="/work/alitherep/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/alitherep/home.webp" alt="AliTheRep" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#ff3d3d"><div class="panel__in">
+      <div><p class="panel__nr">08 / CLIENT — DELIVERED</p><h2 class="panel__title">Newspeed</h2>
+      <p class="panel__tag">Credibility at a glance for an Austin auto-body shop — lean, token-driven, video-first.</p>
+      <div class="panel__meta"><span>VITE</span><span>TAILWIND V4</span><span>4 ROUTES</span></div>
+      <a class="panel__cta" href="/work/newspeed/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/newspeed/home.webp" alt="Newspeed" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#ffb02e"><div class="panel__in">
+      <div><p class="panel__nr">09 / WORK TOOL — DEPLOYED</p><h2 class="panel__title">GHL×RC Bridge</h2>
+      <p class="panel__tag">The CRM couldn’t hear the phone system — five serverless functions gave it an ear.</p>
+      <div class="panel__meta"><span>NETLIFY FUNCTIONS</span><span>RINGCENTRAL</span><span>GOHIGHLEVEL</span></div>
+      <a class="panel__cta" href="/work/ghl-rc-bridge/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/ghl-rc-bridge/composer.webp" alt="GHL Bridge" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel" style="--hue:#38b6ff"><div class="panel__in">
+      <div><p class="panel__nr">10 / GROWTH — DEPLOY-READY</p><h2 class="panel__title">PTC Promotions</h2>
+      <p class="panel__tag">The funnel is the product — three A/B landings and a branching qualification survey.</p>
+      <div class="panel__meta"><span>ZERO DEPS</span><span>TCPA</span><span>GHL WEBHOOKS</span></div>
+      <a class="panel__cta" href="/work/ptc-promotions/">Open case study →</a></div>
+      <div class="panel__shot"><img src="/assets/img/work/ptc-promotions/landing.webp" alt="PTC Promotions" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel panel--tall" style="--hue:#ff4f9a"><div class="panel__in">
+      <div><p class="panel__nr">11 / VIDEO — SHIPPED</p><h2 class="panel__title">Cruise Reels</h2>
+      <p class="panel__tag">Twelve vertical ad variants, one codebase — motion design that renders like software.</p>
+      <div class="panel__meta"><span>REMOTION 4</span><span>1080×1920</span><span>SPRING PHYSICS</span></div>
+      <a class="panel__cta" href="/work/cruise-reels/">Open case study →</a></div>
+      <div class="panel__shot" style="max-width:360px; justify-self:center"><img src="/assets/img/work/cruise-reels/ad1.webp" alt="Cruise Reels" loading="lazy" /></div>
+    </div></article>
+
+    <article class="panel panel--text" style="--hue:#00d98e"><div class="panel__in">
+      <div><h2>Let’s build something <em>worth patenting.</em></h2>
+      <p>faisel@faiseltajiran.com · faisel@frequentor.com · Houston, TX</p>
+      <div class="row">
+        <a class="panel__cta" href="mailto:faisel@faiseltajiran.com">Email me →</a>
+        <a class="panel__cta" style="background:transparent;border:1px solid rgba(255,255,255,0.25);color:var(--text)" href="/Faisel-Tajiran-Resume-2026.pdf" download>Résumé (PDF)</a>
+      </div></div>
+    </div></article>
+  </main>
+
+  <footer class="foot">
+    <span>© <span id="y"></span> FAISEL TAJIRAN</span>
+    <span class="mono">DESIGN F — CHROMATIC DECK</span>
+    <span>DESIGNED &amp; ENGINEERED BY ME</span>
+  </footer>
+
+  <nav class="vswitch" aria-label="Design variants"><a href="/">A</a><a href="/b/">B</a><a href="/c/">C</a><a href="/d/">D</a><a href="/e/">E</a><a class="on" href="/f/">F</a></nav>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    // stacking: scale + dim panels as the next one covers them
+    const panels = [...document.querySelectorAll('.panel')];
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const vh = window.innerHeight;
+      panels.forEach((p, i) => {
+        const next = panels[i + 1];
+        if (!next) return;
+        const r = next.getBoundingClientRect();
+        const progress = Math.min(1, Math.max(0, 1 - r.top / vh));
+        p.style.transform = `scale(${1 - progress * 0.05}) translateY(${progress * -14}px)`;
+        p.style.filter = `brightness(${1 - progress * 0.4})`;
+      });
+    };
+    window.addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    update();
+  </script>
+</body>
+</html>

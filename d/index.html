@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070a09" />
+  <title>Faisel Tajiran — Design D (Aurora Gallery)</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='10' fill='%23070a09'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%2300d98e' stroke-width='2.5'/%3E%3C/svg%3E" />
+  <style>
+    @font-face { font-family: 'Archivo'; src: url('/assets/fonts/archivo-var.woff2') format('woff2'); font-weight: 100 900; font-stretch: 62% 125%; font-display: swap; }
+    @font-face { font-family: 'Instrument Serif'; src: url('/assets/fonts/instrument-serif-italic.woff2') format('woff2'); font-weight: 400; font-style: italic; font-display: swap; }
+    @font-face { font-family: 'JetBrains Mono'; src: url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2'); font-weight: 100 800; font-display: swap; }
+    :root {
+      --bg: #070a09; --panel: rgba(255,255,255,0.04); --pline: rgba(255,255,255,0.1);
+      --text: #eef2ef; --muted: #8b948e; --green: #00d98e;
+      --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: clip; }
+    ::selection { background: var(--green); color: #05231a; }
+    a { color: inherit; text-decoration: none; } img { display: block; max-width: 100%; }
+    .wrap { max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 4vw, 48px); }
+    .mono { font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; }
+    .aurora { position: fixed; inset: 0; z-index: -1; overflow: hidden; }
+    .aurora i { position: absolute; border-radius: 50%; filter: blur(90px); opacity: .5; animation: drift 24s ease-in-out infinite alternate; }
+    .aurora i:nth-child(1) { width: 52vw; height: 52vw; background: radial-gradient(circle, rgba(0,217,142,0.26), transparent 65%); top: -20vw; right: -10vw; }
+    .aurora i:nth-child(2) { width: 40vw; height: 40vw; background: radial-gradient(circle, rgba(0,110,255,0.13), transparent 65%); bottom: -16vw; left: -12vw; animation-delay: -9s; }
+    .aurora i:nth-child(3) { width: 26vw; height: 26vw; background: radial-gradient(circle, rgba(0,217,142,0.1), transparent 65%); top: 46vh; left: 34vw; animation-delay: -15s; }
+    @keyframes drift { to { transform: translate(5vw, 5vh) scale(1.1); } }
+    @media (prefers-reduced-motion: reduce) { .aurora i { animation: none; } }
+
+    .nav { position: fixed; top: 16px; left: 50%; transform: translateX(-50%); z-index: 100; display: flex; align-items: center; gap: 6px;
+      background: rgba(10,14,12,0.62); backdrop-filter: blur(16px); border: 1px solid var(--pline); border-radius: 999px; padding: 8px; }
+    .nav a { font-size: 13px; padding: 9px 18px; border-radius: 999px; color: var(--muted); transition: .3s; white-space: nowrap; }
+    .nav a:hover { color: var(--text); }
+    .nav .brand { color: var(--text); font-weight: 700; }
+    .nav .cta { background: var(--green); color: #05231a; font-weight: 700; }
+    @media (max-width: 640px) { .nav a:not(.cta):not(.brand) { display: none; } }
+
+    .hero { padding: clamp(150px, 22vh, 220px) 0 clamp(50px, 8vh, 90px); text-align: center; }
+    .me { display: inline-flex; align-items: center; gap: 12px; background: var(--panel); border: 1px solid var(--pline); backdrop-filter: blur(10px); border-radius: 999px; padding: 8px 20px 8px 8px; margin-bottom: 32px; }
+    .me img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; object-position: top; }
+    .me span { font-size: 13px; color: var(--muted); } .me b { color: var(--text); }
+    .me .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 12px var(--green); animation: pulse 2.2s infinite; }
+    @keyframes pulse { 50% { opacity: .35; } }
+    h1 { font-weight: 620; font-size: clamp(42px, 7.4vw, 100px); line-height: 1.03; letter-spacing: -0.03em; max-width: 17ch; margin: 0 auto; }
+    h1 .g { background: linear-gradient(100deg, var(--green), #86efc9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    h1 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .sub { color: var(--muted); max-width: 54ch; margin: 26px auto 0; font-size: clamp(15px, 1.35vw, 19px); }
+    .row { display: flex; gap: 12px; justify-content: center; margin-top: 36px; flex-wrap: wrap; }
+    .btn { border-radius: 999px; padding: 15px 30px; font-size: 14.5px; font-weight: 700; transition: .3s; }
+    .btn--g { background: var(--green); color: #05231a; box-shadow: 0 0 34px rgba(0,217,142,0.3); }
+    .btn--g:hover { transform: translateY(-2px); box-shadow: 0 0 54px rgba(0,217,142,0.5); }
+    .btn--o { border: 1px solid var(--pline); background: var(--panel); backdrop-filter: blur(8px); }
+    .stats { display: flex; gap: 8px; justify-content: center; margin-top: clamp(44px, 7vh, 70px); flex-wrap: wrap; }
+    .stats div { border: 1px solid var(--pline); background: var(--panel); backdrop-filter: blur(8px); border-radius: 16px; padding: 16px 26px; min-width: 148px; }
+    .stats strong { display: block; font-size: clamp(24px, 2.6vw, 34px); font-weight: 700; color: var(--green); letter-spacing: -0.02em; }
+    .stats span { color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; }
+
+    section { padding: clamp(56px, 9vh, 120px) 0; }
+    .shead { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: clamp(30px, 5vh, 54px); }
+    .shead h2 { font-weight: 640; font-size: clamp(30px, 4.4vw, 56px); letter-spacing: -0.025em; }
+    .shead h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--green); }
+    .shead .mono { color: var(--muted); }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: clamp(14px, 1.8vw, 24px); }
+    .card { background: var(--panel); border: 1px solid var(--pline); backdrop-filter: blur(10px); border-radius: 20px; overflow: hidden; display: flex; flex-direction: column;
+      transition: transform .45s cubic-bezier(.22,1,.36,1), border-color .45s, box-shadow .45s; }
+    .card:hover { transform: translateY(-6px); border-color: rgba(0,217,142,0.45); box-shadow: 0 18px 50px rgba(0,0,0,0.5), 0 0 44px rgba(0,217,142,0.12); }
+    .card--wide { grid-column: span 2; }
+    @media (max-width: 780px) { .card--wide { grid-column: span 1; } }
+    .card__media { aspect-ratio: 16 / 10; overflow: hidden; position: relative; background: #0d1210; }
+    .card--wide .card__media { aspect-ratio: 21 / 10; }
+    .card__media img { width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform 1.1s cubic-bezier(.22,1,.36,1); }
+    .card:hover .card__media img { transform: scale(1.05); }
+    .badge { position: absolute; top: 14px; left: 14px; background: rgba(7,10,9,0.72); border: 1px solid var(--pline); color: var(--green); backdrop-filter: blur(8px); border-radius: 999px; padding: 7px 14px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; }
+    .card__body { padding: 20px 22px 22px; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .card__top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+    .card__title { font-size: clamp(22px, 2vw, 30px); font-weight: 700; letter-spacing: -0.02em; }
+    .card__year { color: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; }
+    .card__desc { color: var(--muted); font-size: 14.5px; }
+    .card__foot { margin-top: auto; padding-top: 12px; color: var(--green); font-size: 13.5px; font-weight: 600; display: flex; gap: 8px; align-items: center; }
+    .card__foot i { font-style: normal; transition: transform .3s; }
+    .card:hover .card__foot i { transform: translateX(4px); }
+
+    .about { }
+    .about__card { display: grid; grid-template-columns: 280px 1fr; gap: clamp(28px, 5vw, 80px); align-items: center;
+      border: 1px solid var(--pline); background: var(--panel); backdrop-filter: blur(12px); border-radius: 26px; padding: clamp(26px, 4vw, 60px); }
+    .about__card img { border-radius: 18px; aspect-ratio: 4/5; object-fit: cover; object-position: top; }
+    .about__card h2 { font-weight: 640; font-size: clamp(24px, 3vw, 42px); letter-spacing: -0.02em; margin-bottom: 16px; }
+    .about__card h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; color: var(--green); }
+    .about__card p { color: var(--muted); font-size: 15.5px; }
+    .about__card p + p { margin-top: 12px; }
+    @media (max-width: 780px) { .about__card { grid-template-columns: 1fr; } .about__card img { max-width: 230px; } }
+
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chips span { border: 1px solid var(--pline); background: var(--panel); backdrop-filter: blur(8px); border-radius: 999px; padding: 11px 20px; font-size: 13.5px; }
+    .chips span b { color: var(--green); font-weight: 600; }
+    .chips--mono span { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--muted); }
+
+    .contact { text-align: center; }
+    .contact h2 { font-weight: 680; font-size: clamp(38px, 6.4vw, 88px); letter-spacing: -0.03em; line-height: 1.02; }
+    .contact h2 .g { background: linear-gradient(100deg, var(--green), #8df0c9); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .contact h2 em { font-family: var(--serif); font-style: italic; font-weight: 400; }
+    .contact p { color: var(--muted); margin: 20px 0 32px; }
+    .foot { border-top: 1px solid var(--pline); padding: 26px 0; }
+    .foot__in { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12.5px; }
+
+    .vswitch { position: fixed; bottom: 18px; left: 18px; z-index: 200; display: flex; gap: 3px; background: rgba(10,14,12,0.7); backdrop-filter: blur(12px); border: 1px solid var(--pline); border-radius: 999px; padding: 5px; }
+    .vswitch a { font-family: var(--mono); font-size: 10px; padding: 7px 11px; border-radius: 999px; color: var(--muted); }
+    .vswitch a.on { background: var(--green); color: #05231a; }
+
+    [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+    [data-fade].in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { [data-fade] { opacity: 1 !important; transform: none !important; } }
+  </style>
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <nav class="nav">
+    <a class="brand" href="/d/">FT</a><a href="#work">Work</a><a href="#about">About</a><a href="#capabilities">Capabilities</a><a href="#patents">Patents</a>
+    <a class="cta" href="mailto:faisel@faiseltajiran.com">Get in touch</a>
+  </nav>
+
+  <header class="hero wrap">
+    <div class="me" data-fade><img src="/assets/img/faisel-sm.webp" alt="Faisel Tajiran" /><span class="dot"></span><span><b>Faisel Tajiran</b> · Houston, TX · open to conversations</span></div>
+    <h1 data-fade>Ventures built <span class="g">end-to-end</span> — <em>from napkin to patent to production.</em></h1>
+    <p class="sub" data-fade>Hardware, mobile, cloud, fine-tuned AI, and the growth engine behind them. Every layer designed, engineered, and shipped by one person.</p>
+    <div class="row" data-fade>
+      <a class="btn btn--g" href="#work">See the work ↓</a>
+      <a class="btn btn--o" href="/Faisel-Tajiran-Resume-2026.pdf" download>Résumé (PDF)</a>
+    </div>
+    <div class="stats" data-fade>
+      <div><strong>9</strong><span>PATENTS PENDING</span></div>
+      <div><strong>40+</strong><span>LLM BUILDS</span></div>
+      <div><strong>15+</strong><span>YEARS SHIPPING</span></div>
+      <div><strong>11</strong><span>BUILDS DOCUMENTED</span></div>
+    </div>
+  </header>
+
+  <section class="wrap" id="work">
+    <div class="shead" data-fade><h2>Selected <em>work</em></h2><span class="mono">11 BUILDS — VENTURES · CLIENT · IMPROVISATIONS</span></div>
+    <div class="grid">
+      <a class="card card--wide" href="/work/frequentor/" data-fade><div class="card__media"><span class="badge">VENTURE · LIVE PILOT</span><img src="/assets/img/work/frequentor/dashboard.webp" alt="Frequentor" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">Frequentor</span><span class="card__year">2025 —</span></div><p class="card__desc">Hospitality intelligence: IoT sensor fusion, a 460-file mobile app, AWS backend, and 9 patents — built solo.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/fahe/" data-fade><div class="card__media"><span class="badge">VENTURE · IN PRODUCTION</span><img src="/assets/img/work/fahe/command-center.webp" alt="FAHE" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">FAHE</span><span class="card__year">2026</span></div><p class="card__desc">Proprietary fine-tuned LLM — 40+ versions, 99% on a 410-test battery.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/veridose/" data-fade><div class="card__media"><span class="badge">VENTURE · WORKING DEMO</span><img src="/assets/img/work/veridose/ct-vs-masks.webp" alt="Veridose" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">Veridose</span><span class="card__year">2026</span></div><p class="card__desc">Radiation-oncology AI — GPU auto-contouring with a signed trust chain.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/authyr/" data-fade><div class="card__media"><span class="badge">VENTURE · MVP IN BUILD</span><img src="/assets/img/work/authyr/home.webp" alt="Authyr" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">Authyr</span><span class="card__year">2026</span></div><p class="card__desc">Cryptographic trust rails — ed25519 receipts no one can rewrite.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/hydrova/" data-fade><div class="card__media"><span class="badge">VENTURE · CONCEPT</span><img src="/assets/img/work/hydrova/deck-hero.webp" alt="Hydrova" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">Hydrova</span><span class="card__year">2026</span></div><p class="card__desc">Patent-pending residential water platform — venture design from zero.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/thisiscredit/" data-fade><div class="card__media"><span class="badge">VENTURE · PROTOTYPE</span><img src="/assets/img/work/thisiscredit/dashboard.webp" alt="This Is Credit" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">This Is Credit</span><span class="card__year">2026</span></div><p class="card__desc">Consumer fintech on a swap-one-file provider abstraction.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/alitherep/" data-fade><div class="card__media"><span class="badge">CLIENT · LIVE</span><img src="/assets/img/work/alitherep/home.webp" alt="AliTheRep" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">AliTheRep</span><span class="card__year">2026</span></div><p class="card__desc">Live platform redesign — Remotion hero, dealer portal, dual deploy.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/newspeed/" data-fade><div class="card__media"><span class="badge">CLIENT · DELIVERED</span><img src="/assets/img/work/newspeed/home.webp" alt="Newspeed" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">Newspeed</span><span class="card__year">2026</span></div><p class="card__desc">Automotive trust design — lean React SPA for an Austin shop.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/ghl-rc-bridge/" data-fade><div class="card__media"><span class="badge">WORK TOOL · DEPLOYED</span><img src="/assets/img/work/ghl-rc-bridge/composer.webp" alt="GHL Bridge" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">GHL×RC Bridge</span><span class="card__year">2026</span></div><p class="card__desc">Bidirectional SMS sync between RingCentral and GoHighLevel.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/ptc-promotions/" data-fade><div class="card__media"><span class="badge">GROWTH · DEPLOY-READY</span><img src="/assets/img/work/ptc-promotions/landing.webp" alt="PTC" loading="lazy" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">PTC Promotions</span><span class="card__year">2026</span></div><p class="card__desc">Three A/B landings + a branching qualification survey → GHL.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+      <a class="card" href="/work/cruise-reels/" data-fade><div class="card__media"><span class="badge">VIDEO · SHIPPED</span><img src="/assets/img/work/cruise-reels/ad1.webp" alt="Cruise Reels" loading="lazy" style="object-position:center 20%" /></div>
+        <div class="card__body"><div class="card__top"><span class="card__title">Cruise Reels</span><span class="card__year">2026</span></div><p class="card__desc">Twelve vertical ad variants rendered as code with Remotion.</p><span class="card__foot">Case study <i>→</i></span></div></a>
+    </div>
+  </section>
+
+  <section class="wrap about" id="about">
+    <div class="about__card" data-fade>
+      <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" loading="lazy" />
+      <div>
+        <h2>Builder by default. Marketer by training. <em>Operator by domain.</em></h2>
+        <p>BBA + MBA from the University of Houston. A decade running growth and IT for Houston small businesses, then paid digital for Landry's — 60+ brands, 500+ locations.</p>
+        <p>Frequentor is the thesis those years produced — and building it solo meant learning firmware, radar, native mobile, cloud security, LLM fine-tuning, and patent drafting in one year. The other ten builds are the same velocity, pointed elsewhere.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="capabilities">
+    <div class="shead" data-fade><h2>Full stack, <em>down to the metal</em></h2><span class="mono">CAPABILITIES</span></div>
+    <div class="chips" data-fade>
+      <span><b>AI</b> · fine-tuning · QLoRA · GGUF · evals · Bedrock · Claude · MCP</span>
+      <span><b>Hardware</b> · ESP32 · mmWave · thermal IR · fusion · CAD</span>
+      <span><b>Mobile</b> · React Native · geofencing · APNs · Wallet · EAS</span>
+      <span><b>Cloud</b> · Amplify Gen 2 · AppSync · DynamoDB · Cognito · IAM</span>
+      <span><b>Web</b> · Next.js · React 19 · TypeScript · Stripe · Cloudflare</span>
+      <span><b>Growth</b> · SEO · Google/Meta · GA4 · CRO · attribution</span>
+      <span><b>Founding</b> · 0→1 SaaS · USPTO · GTM · founder-led sales</span>
+    </div>
+  </section>
+
+  <section class="wrap" id="patents">
+    <div class="shead" data-fade><h2>Nine filings, <em>one thesis</em></h2><span class="mono">INTELLECTUAL PROPERTY — USPTO</span></div>
+    <div class="chips chips--mono" data-fade>
+      <span>#1 GEOFENCE CHECK-IN</span><span>#2 PUSH ATTRIBUTION</span><span>#3 PRESENCE LOYALTY</span><span>#4 HARDWARE FUSION</span><span>#5 VERIFIED CONTENT</span><span>#6 AGENTIC FORECASTING</span><span>#13 CROSS-VENUE INTEL</span><span>#15 DEMAND FORECASTING</span><span>AUTHYR #1 ATTESTATION API</span>
+    </div>
+  </section>
+
+  <section class="contact wrap">
+    <h2 data-fade>Let’s build <span class="g">something</span> <em>worth patenting.</em></h2>
+    <p data-fade>faisel@faiseltajiran.com · faisel@frequentor.com · Houston, TX</p>
+    <div class="row" data-fade>
+      <a class="btn btn--g" href="mailto:faisel@faiseltajiran.com">Email me</a>
+      <a class="btn btn--o" href="https://www.linkedin.com/in/faiseltajiran/" rel="noopener">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer class="foot"><div class="wrap foot__in">
+    <span>© <span id="y"></span> Faisel Tajiran</span>
+    <span class="mono" style="color:var(--green)">DESIGN D — AURORA GALLERY</span>
+    <span>Designed &amp; engineered by me</span>
+  </div></footer>
+
+  <nav class="vswitch" aria-label="Design variants"><a href="/">A</a><a href="/b/">B</a><a href="/c/">C</a><a class="on" href="/d/">D</a><a href="/e/">E</a><a href="/f/">F</a></nav>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.1 });
+    document.querySelectorAll('[data-fade]').forEach((el, i) => { el.style.transitionDelay = (i % 6) * 60 + 'ms'; io.observe(el); });
+  </script>
+</body>
+</html>
