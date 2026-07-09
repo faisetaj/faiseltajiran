@@ -42,7 +42,7 @@ export const projects = [
       { icon: 'googlecloud', color: '#4285F4', name: 'GOOGLE CLOUD', program: '$2,000+ CREDITS' },
       { icon: 'anthropic', color: '#ece9e2', name: 'ANTHROPIC', program: 'BUILDER' },
       { icon: 'lambdaai', color: '#A78BFA', name: 'LAMBDA', program: '$7,500 GRANT' },
-      { icon: 'digitalocean', color: '#0080FF', name: 'DIGITALOCEAN', program: 'HATCH' },
+      { icon: 'digitalocean', color: '#0080FF', name: 'DIGITALOCEAN', program: 'HATCH · $5,000' },
       { icon: 'stripe', color: '#635BFF', name: 'STRIPE', program: 'STARTUPS' },
       { icon: 'posthog', color: '#F54E00', name: 'POSTHOG', program: '$50,000 PLAN' },
       { icon: 'hubspot', color: '#FF7A59', name: 'HUBSPOT', program: 'FOR STARTUPS' },
