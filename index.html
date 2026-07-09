@@ -70,7 +70,7 @@
     :root {
       --bg: #0a0c0a; --bg-2: #101310; --text: #f1f0ea; --muted: #8b8e87;
       --hl: #d4ff00; --hl-fill: #d4ff00; --hl-dim: rgba(212,255,0,0.5); --hl-soft: rgba(212,255,0,0.13); --hl-ink: #222a00;
-      --top-fade: rgba(10,12,10,0.85); --chip-bg: rgba(12,15,12,0.82);
+      --top-fade: rgba(10,12,10,0.85); --chip-bg: rgba(12,15,12,0.82); --ico-mono: #f1f0ea;
       --line: rgba(241,240,234,0.11);
       --sans: 'Archivo', system-ui, sans-serif; --serif: 'Instrument Serif', Georgia, serif; --mono: 'JetBrains Mono', monospace;
       --ease: cubic-bezier(.22,1,.36,1);
@@ -79,7 +79,7 @@
       --bg: #f7f7f1; --bg-2: #edeee4; --text: #15160b; --muted: #6d7163;
       --hl: #6f8f00; --hl-fill: #d4ff00; --hl-dim: rgba(129,161,0,0.38); --hl-soft: rgba(212,255,0,0.28); --hl-ink: #1c2300;
       --line: rgba(21,22,11,0.14);
-      --top-fade: rgba(247,247,241,0.88); --chip-bg: rgba(255,255,255,0.88);
+      --top-fade: rgba(247,247,241,0.88); --chip-bg: rgba(255,255,255,0.88); --ico-mono: #15160b;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -102,6 +102,14 @@
     .acc { width: 19px; height: 19px; border-radius: 50%; border: 0; cursor: pointer; background: var(--hl-fill);
       box-shadow: 0 0 14px var(--hl-dim), 0 0 34px var(--hl-soft); transition: transform .3s, box-shadow .3s; align-self: center; }
     .acc:hover { transform: scale(1.2); }
+
+    /* grants bar */
+    .gbar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px clamp(18px, 2.4vw, 34px);
+      padding-top: clamp(20px, 3.2vh, 34px); padding-bottom: clamp(6px, 1vh, 10px); }
+    .gbar__label { color: var(--hl); text-shadow: 0 0 12px var(--hl-dim); }
+    .gbar__item { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-size: 9px; letter-spacing: 0.14em; }
+    .gbar__item b { color: var(--text); font-weight: 500; }
+    .gbar__item svg { width: 16px; height: 16px; flex: none; filter: drop-shadow(0 0 7px currentColor); }
 
     /* wavy hero background */
     .hero-wave { position: relative; overflow: clip; }
@@ -312,7 +320,7 @@
       <span class="pchip"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googleads"/></svg>Google Ads</span>
       <span class="pchip"><svg style="color:#61DAFB"><use href="/assets/icons/brands.svg#i-react"/></svg>React</span>
       <span class="pchip"><svg style="color:#E37400"><use href="/assets/icons/brands.svg#i-googleanalytics"/></svg>Google Analytics 4</span>
-      <span class="pchip"><svg style="color:#e8ded1"><use href="/assets/icons/brands.svg#i-anthropic"/></svg>Anthropic</span>
+      <span class="pchip"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-anthropic"/></svg>Anthropic</span>
       <img src="/assets/img/faisel.webp" alt="Faisel Tajiran" />
     </div>
     <div>
@@ -328,7 +336,21 @@
   </header>
   </div>
 
-  <section class="wrap" style="padding-top: clamp(20px, 4vh, 40px)">
+  <div class="wrap gbar" data-fade aria-label="Startup programs backing Frequentor">
+    <span class="gbar__label mono">CURRENT GRANTS</span>
+    <span class="gbar__item mono"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-elevenlabs"/></svg><b>ELEVENLABS</b>· STARTUP GRANT</span>
+    <span class="gbar__item mono"><svg style="color:#76B900"><use href="/assets/icons/brands.svg#i-nvidia"/></svg><b>NVIDIA</b>· INCEPTION</span>
+    <span class="gbar__item mono"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><b>AWS</b>· ACTIVATE</span>
+    <span class="gbar__item mono"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googlecloud"/></svg><b>GOOGLE CLOUD</b>· $3,000 GRANT</span>
+    <span class="gbar__item mono"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><b>ANTHROPIC</b>· BUILDER</span>
+    <span class="gbar__item mono"><svg style="color:#A78BFA"><use href="/assets/icons/brands.svg#i-lambdaai"/></svg><b>LAMBDA</b>· $7,500 GRANT</span>
+    <span class="gbar__item mono"><svg style="color:#0080FF"><use href="/assets/icons/brands.svg#i-digitalocean"/></svg><b>DIGITALOCEAN</b>· HATCH</span>
+    <span class="gbar__item mono"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg><b>STRIPE</b>· STARTUPS</span>
+    <span class="gbar__item mono"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg><b>POSTHOG</b>· FOR STARTUPS</span>
+    <span class="gbar__item mono"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><b>HUBSPOT</b>· FOR STARTUPS</span>
+  </div>
+
+  <section class="wrap" style="padding-top: clamp(6px, 1.5vh, 16px)">
     <div class="shead" data-fade><span class="mono">SERVICES</span><h2>Six disciplines, one person accountable</h2></div>
     <div class="spec" id="services">
       <div class="spec__item" data-fade>
@@ -371,7 +393,7 @@
     <span class="gi"><svg style="color:#4B8BBE"><use href="/assets/icons/brands.svg#i-python"/></svg><span>Python</span></span>
     <span class="gi"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg><span>PyTorch</span></span>
     <span class="gi"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg><span>Node.js</span></span>
-    <span class="gi"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></span>
+    <span class="gi"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></span>
     <span class="gi"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg><span>Tailwind</span></span>
     <span class="gi"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS</span></span>
     <span class="gi"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg><span>Stripe</span></span>
@@ -387,7 +409,7 @@
     <span class="gi"><svg style="color:#4B8BBE"><use href="/assets/icons/brands.svg#i-python"/></svg><span>Python</span></span>
     <span class="gi"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg><span>PyTorch</span></span>
     <span class="gi"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg><span>Node.js</span></span>
-    <span class="gi"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></span>
+    <span class="gi"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></span>
     <span class="gi"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg><span>Tailwind</span></span>
     <span class="gi"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS</span></span>
     <span class="gi"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg><span>Stripe</span></span>
@@ -429,10 +451,10 @@
       <div class="tool"><svg style="color:#4B8BBE"><use href="/assets/icons/brands.svg#i-python"/></svg><span>Python</span></div>
       <div class="tool"><svg style="color:#EE4C2C"><use href="/assets/icons/brands.svg#i-pytorch"/></svg><span>PyTorch</span></div>
       <div class="tool"><svg style="color:#5FA04E"><use href="/assets/icons/brands.svg#i-nodedotjs"/></svg><span>Node.js</span></div>
-      <div class="tool"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></div>
+      <div class="tool"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-nextdotjs"/></svg><span>Next.js</span></div>
       <div class="tool"><svg style="color:#06B6D4"><use href="/assets/icons/brands.svg#i-tailwindcss"/></svg><span>Tailwind</span></div>
-      <div class="tool"><svg style="color:#c8c8ff"><use href="/assets/icons/brands.svg#i-expo"/></svg><span>Expo</span></div>
-      <div class="tool"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-apple"/></svg><span>iOS</span></div>
+      <div class="tool"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-expo"/></svg><span>Expo</span></div>
+      <div class="tool"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-apple"/></svg><span>iOS</span></div>
       <div class="tool"><svg style="color:#34A853"><use href="/assets/icons/brands.svg#i-android"/></svg><span>Android</span></div>
       <div class="tool"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS</span></div>
       <div class="tool"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-awslambda"/></svg><span>AWS Lambda</span></div>
@@ -448,18 +470,21 @@
       <div class="tool"><svg style="color:#FF4F00"><use href="/assets/icons/brands.svg#i-zapier"/></svg><span>Zapier</span></div>
       <div class="tool"><svg style="color:#51a8dd"><use href="/assets/icons/brands.svg#i-wordpress"/></svg><span>WordPress</span></div>
       <div class="tool"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg><span>Figma</span></div>
-      <div class="tool"><svg style="color:#e8ded1"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><span>Claude</span></div>
+      <div class="tool"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><span>Claude</span></div>
       <div class="tool"><svg style="color:#0B84F3"><use href="/assets/icons/brands.svg#i-remotion"/></svg><span>Remotion</span></div>
-      <div class="tool"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-github"/></svg><span>GitHub</span></div>
+      <div class="tool"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-github"/></svg><span>GitHub</span></div>
       <div class="tool"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg><span>PostHog</span></div>
     </div>
     <div class="grants" data-fade>
       <span class="mono" style="color:var(--muted)">FREQUENTOR IS BACKED BY →</span>
-      <span class="grant"><svg style="color:#fff"><use href="/assets/icons/brands.svg#i-elevenlabs"/></svg><span>ELEVENLABS <b>· STARTUP GRANT</b></span></span>
+      <span class="grant"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-elevenlabs"/></svg><span>ELEVENLABS <b>· STARTUP GRANT</b></span></span>
       <span class="grant"><svg style="color:#76B900"><use href="/assets/icons/brands.svg#i-nvidia"/></svg><span>NVIDIA <b>· INCEPTION</b></span></span>
       <span class="grant"><svg style="color:#FF9900"><use href="/assets/icons/brands.svg#i-amazonwebservices"/></svg><span>AWS <b>· ACTIVATE</b></span></span>
-      <span class="grant"><svg style="color:#e8ded1"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><span>ANTHROPIC <b>· BUILDER</b></span></span>
+      <span class="grant"><svg style="color:#4285F4"><use href="/assets/icons/brands.svg#i-googlecloud"/></svg><span>GOOGLE CLOUD <b>· $3,000 GRANT</b></span></span>
+      <span class="grant"><svg style="color:var(--ico-mono)"><use href="/assets/icons/brands.svg#i-anthropic"/></svg><span>ANTHROPIC <b>· BUILDER</b></span></span>
       <span class="grant"><svg style="color:#A78BFA"><use href="/assets/icons/brands.svg#i-lambdaai"/></svg><span>LAMBDA <b>· $7,500 GRANT</b></span></span>
+      <span class="grant"><svg style="color:#0080FF"><use href="/assets/icons/brands.svg#i-digitalocean"/></svg><span>DIGITALOCEAN <b>· HATCH</b></span></span>
+      <span class="grant"><svg style="color:#635BFF"><use href="/assets/icons/brands.svg#i-stripe"/></svg><span>STRIPE <b>· STARTUPS</b></span></span>
       <span class="grant"><svg style="color:#F54E00"><use href="/assets/icons/brands.svg#i-posthog"/></svg><span>POSTHOG <b>· FOR STARTUPS</b></span></span>
       <span class="grant"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><span>HUBSPOT <b>· FOR STARTUPS</b></span></span>
     </div>
@@ -595,15 +620,15 @@
       if (!chips.length || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       const APPS = [
         ['i-meta','Meta Ads','#0082FB'], ['i-googleads','Google Ads','#4285F4'], ['i-react','React','#61DAFB'],
-        ['i-googleanalytics','Google Analytics 4','#E37400'], ['i-anthropic','Anthropic','#e8ded1'],
+        ['i-googleanalytics','Google Analytics 4','#E37400'], ['i-anthropic','Anthropic','var(--ico-mono)'],
         ['i-typescript','TypeScript','#3178C6'], ['i-python','Python','#4B8BBE'], ['i-pytorch','PyTorch','#EE4C2C'],
-        ['i-nextdotjs','Next.js','#ffffff'], ['i-tailwindcss','Tailwind','#06B6D4'], ['i-expo','Expo','#c8c8ff'],
+        ['i-nextdotjs','Next.js','var(--ico-mono)'], ['i-tailwindcss','Tailwind','#06B6D4'], ['i-expo','Expo','var(--ico-mono)'],
         ['i-amazonwebservices','AWS','#FF9900'], ['i-awslambda','AWS Lambda','#FF9900'], ['i-lambdaai','Lambda GPU Cloud','#A78BFA'], ['i-amazondynamodb','DynamoDB','#7a8bff'],
         ['i-stripe','Stripe','#635BFF'], ['i-cloudflare','Cloudflare','#F38020'], ['i-googletagmanager','Tag Manager','#246FDB'],
         ['i-hubspot','HubSpot','#FF7A59'], ['i-zapier','Zapier','#FF4F00'], ['i-wordpress','WordPress','#51a8dd'],
-        ['i-figma','Figma','#F24E1E'], ['i-remotion','Remotion','#0B84F3'], ['i-github','GitHub','#ffffff'],
+        ['i-figma','Figma','#F24E1E'], ['i-remotion','Remotion','#0B84F3'], ['i-github','GitHub','var(--ico-mono)'],
         ['i-posthog','PostHog','#F54E00'], ['i-nodedotjs','Node.js','#5FA04E'], ['i-javascript','JavaScript','#F7DF1E'],
-        ['i-apple','iOS','#ffffff'], ['i-android','Android','#34A853'],
+        ['i-apple','iOS','var(--ico-mono)'], ['i-android','Android','#34A853'],
       ];
       let cursor = 5, turn = 0; // markup already shows the first five
       setInterval(() => {

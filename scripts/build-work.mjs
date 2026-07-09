@@ -158,7 +158,7 @@ ${p.backers ? `
         <p class="mono case-section__label" data-reveal>GRANTS &amp; PROGRAMS</p>
         <h2 class="case-section__title" data-split>Backed by</h2>
         <div class="case-backers">
-          ${p.backers.map(b => `<div class="backer" data-reveal><svg class="backer__icon" aria-hidden="true"><use href="#b-${b.icon}"/></svg><span class="mono">${b.name}<br /><b>${b.program}</b></span></div>`).join('\n          ')}
+          ${p.backers.map(b => `<div class="backer" data-reveal><svg class="backer__icon" aria-hidden="true" style="color:${b.color}; filter: drop-shadow(0 0 7px currentColor)"><use href="/assets/icons/brands.svg#i-${b.icon}"/></svg><span class="mono">${b.name}<br /><b>${b.program}</b></span></div>`).join('\n          ')}
         </div>
       </div>
     </section>` : ''}
