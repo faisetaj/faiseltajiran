@@ -40,7 +40,7 @@ export const projects = [
       { icon: 'nvidia', name: 'NVIDIA', program: 'INCEPTION' },
       { icon: 'aws', name: 'AWS', program: 'ACTIVATE' },
       { icon: 'anthropic', name: 'ANTHROPIC', program: 'BUILDER' },
-      { icon: 'lambda', name: 'LAMBDA', program: 'FOR STARTUPS' },
+      { icon: 'lambda', name: 'LAMBDA', program: '$7,500 GRANT' },
       { icon: 'posthog', name: 'POSTHOG', program: 'FOR STARTUPS' },
       { icon: 'hubspot', name: 'HUBSPOT', program: 'FOR STARTUPS' },
     ],
