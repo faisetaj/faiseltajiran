@@ -48,8 +48,21 @@
     .spec__row:hover::before { width: 100%; }
     .spec__row:hover { padding-left: clamp(10px, 1.6vw, 26px); }
     .spec__nr { font-family: var(--mono); font-size: 11px; color: var(--muted); width: 34px; flex: none; }
-    .spec__name { font-weight: 680; font-stretch: 113%; font-size: clamp(33px, 6vw, 90px); line-height: 1; letter-spacing: -0.03em; transition: color .35s, text-shadow .35s; }
+    .spec__name { font-weight: 680; font-stretch: 113%; font-size: clamp(29px, 5.4vw, 80px); line-height: 1; letter-spacing: -0.03em; transition: color .35s, text-shadow .35s; }
     .spec__row:hover .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
+    .spec__item { border-bottom: 1px solid var(--line); }
+    .spec__item .spec__row { border-bottom: 0; width: 100%; text-align: left; background: none; color: inherit; cursor: pointer; font: inherit; border: 0; }
+    .spec__plus { flex: none; width: 24px; height: 24px; margin-left: 18px; position: relative; opacity: .7; transition: transform .45s var(--ease), color .35s; align-self: center; }
+    .spec__plus::before, .spec__plus::after { content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 2px; background: currentColor; }
+    .spec__plus::after { transform: rotate(90deg); }
+    .spec__item.open .spec__plus { transform: rotate(45deg); color: var(--hl); }
+    .spec__detail { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .55s var(--ease); }
+    .spec__detail > div { overflow: hidden; }
+    .spec__detail p { color: var(--muted); max-width: 68ch; font-size: 15px; padding: 2px 0 4px calc(34px + clamp(16px, 3vw, 40px)); }
+    .spec__detail .svc__tags { display: flex; flex-wrap: wrap; gap: 7px; padding: 10px 0 26px calc(34px + clamp(16px, 3vw, 40px)); }
+    .spec__detail .svc__tags i { font-style: normal; border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; color: var(--muted); }
+    .spec__item.open .spec__name { color: var(--hl); text-shadow: 0 0 22px var(--hl-dim), 0 0 60px var(--hl-soft); }
+    .spec__item.open .spec__detail { grid-template-rows: 1fr; }
     .spec__hint { margin-left: auto; color: var(--muted); font-size: 13.5px; max-width: 250px; text-align: right; }
     @media (max-width: 800px) { .spec__hint { display: none; } }
     .hero__sub { display: flex; justify-content: space-between; align-items: flex-end; gap: 30px; margin-top: clamp(28px, 4.5vh, 48px); flex-wrap: wrap; }
@@ -161,15 +174,34 @@
 
   <header class="hero wrap">
     <p class="hero__eyebrow mono" data-fade>HOUSTON, TX — FOUNDER &amp; OPERATOR · <b>17+ YEARS</b> · 9 U.S. PATENTS PENDING</p>
-    <div class="spec">
-      <div class="spec__row" data-fade><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span></div>
-      <div class="spec__row" data-fade><span class="spec__nr">02</span><span class="spec__name">Strategy</span><span class="spec__hint">0→1 ventures, GTM, patents as moats</span></div>
-      <div class="spec__row" data-fade><span class="spec__nr">03</span><span class="spec__name">Web Development</span><span class="spec__hint">React · Next.js · React Native · AWS</span></div>
-      <div class="spec__row" data-fade><span class="spec__nr">04</span><span class="spec__name">Branding</span><span class="spec__hint">Identities for 11 builds and counting</span></div>
-      <div class="spec__row" data-fade><span class="spec__nr">05</span><span class="spec__name">UI&nbsp;/&nbsp;UX</span><span class="spec__hint">Dashboards to medical viewers to mobile</span></div>
+    <div class="spec" id="services">
+      <div class="spec__item" data-fade>
+        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">01</span><span class="spec__name">Digital Marketing</span><span class="spec__hint">Paid media, SEO, funnels — 17 years of receipts</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__detail"><div><p>Seventeen years of paid media, technical SEO, and conversion architecture — from single-location SMBs to Landry's 60+ brands and 500+ locations. 6,500% renewal lift, $300K new ARR, 400% ROI pilots.</p><div class="svc__tags"><i>GOOGLE ADS</i><i>META</i><i>GA4 · GTM</i><i>SEO</i><i>CRO</i><i>PROGRAMMATIC CTV</i></div></div></div>
+      </div>
+      <div class="spec__item" data-fade>
+        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">02</span><span class="spec__name">Strategy</span><span class="spec__hint">0→1 ventures, GTM, patents as moats</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__detail"><div><p>Venture design from zero: market thesis, GTM, pricing, IP posture. Nine USPTO provisional patents filed across two ventures — prior-art research done personally. Cold-start playbooks that get pilots signed.</p><div class="svc__tags"><i>0→1 SAAS</i><i>GTM DESIGN</i><i>PATENT / IP</i><i>PRICING</i><i>FOUNDER SALES</i></div></div></div>
+      </div>
+      <div class="spec__item" data-fade>
+        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">03</span><span class="spec__name">Web Development</span><span class="spec__hint">React · Next.js · React Native · AWS</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__detail"><div><p>Production code across the stack: React 19 / Next.js 16 frontends, React Native mobile with native modules, AWS Amplify Gen 2 backends, Python ML services, ESP32 firmware when the product needs hardware.</p><div class="svc__tags"><i>REACT / NEXT</i><i>REACT NATIVE</i><i>AWS</i><i>TYPESCRIPT</i><i>PYTHON</i><i>LLM FINE-TUNING</i></div></div></div>
+      </div>
+      <div class="spec__item" data-fade>
+        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">04</span><span class="spec__name">Mobile App Development</span><span class="spec__hint">React Native · Expo · native iOS — live on TestFlight</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__detail"><div><p>Native-grade mobile shipped solo: a 460-file React Native / Expo app with background geofencing, APNs push, Apple Wallet passes, lock-screen widgets, and OTA delivery — live on TestFlight with multi-device field validation.</p><div class="svc__tags"><i>REACT NATIVE</i><i>EXPO · EAS</i><i>NATIVE IOS MODULES</i><i>GEOFENCING</i><i>APNS · WALLET</i><i>APP STORE</i></div></div></div>
+      </div>
+      <div class="spec__item" data-fade>
+        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">05</span><span class="spec__name">Branding</span><span class="spec__hint">Identities for 11 builds and counting</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__detail"><div><p>Identity systems that survive contact with real products — Frequentor's presence-green, Hydrova's deep-water investor deck, Authyr's trust marks, AliTheRep's volt-on-ink. Naming, voice, and the design language to carry them.</p><div class="svc__tags"><i>IDENTITY</i><i>NAMING</i><i>DESIGN SYSTEMS</i><i>PITCH DECKS</i></div></div></div>
+      </div>
+      <div class="spec__item" data-fade>
+        <button class="spec__row" type="button" aria-expanded="false"><span class="spec__nr">06</span><span class="spec__name">UI&nbsp;/&nbsp;UX</span><span class="spec__hint">Dashboards to medical viewers to mobile</span><span class="spec__plus" aria-hidden="true"></span></button>
+        <div class="spec__detail"><div><p>Interfaces with jobs to do: owner dashboards that surface one decisive action, a 3D medical viewer clinicians can trust, multi-role mobile apps, conversion funnels tuned for a 55+ audience. Design and build, same person.</p><div class="svc__tags"><i>PRODUCT DESIGN</i><i>DESIGN→CODE</i><i>MOTION</i><i>ACCESSIBILITY</i></div></div></div>
+      </div>
     </div>
     <div class="hero__sub">
-      <p data-fade>Five disciplines, one operator. I'm <b>Faisel Tajiran</b> — founder &amp; CEO of Frequentor, with <b>eleven ventures and platforms</b> built end-to-end: the strategy, the brand, the code, the marketing engine.</p>
+      <p data-fade>Six disciplines, one operator. I'm <b>Faisel Tajiran</b> — founder &amp; CEO of Frequentor, with <b>eleven ventures and platforms</b> built end-to-end: the strategy, the brand, the code, the marketing engine.</p>
       <a class="btn" data-fade href="#work">See the work ↓</a>
     </div>
     <div class="nums">
@@ -214,32 +246,6 @@
     <span class="gi"><svg style="color:#FF7A59"><use href="/assets/icons/brands.svg#i-hubspot"/></svg><span>HubSpot</span></span>
     <span class="gi"><svg style="color:#F24E1E"><use href="/assets/icons/brands.svg#i-figma"/></svg><span>Figma</span></span>
   </div></div>
-
-  <section class="wrap" id="services">
-    <div class="shead" data-fade><span class="mono">SERVICES</span><h2>What I actually do</h2></div>
-    <div class="svc">
-      <div class="svc__row" data-fade><span class="svc__nr">S/01</span>
-        <h3>Digital <span>Marketing</span></h3>
-        <div class="svc__body"><p>Seventeen years of paid media, technical SEO, and conversion architecture — from single-location SMBs to Landry's 60+ brands and 500+ locations. 6,500% renewal lift, $300K new ARR, 400% ROI pilots.</p>
-        <div class="svc__tags"><i>GOOGLE ADS</i><i>META</i><i>GA4 · GTM</i><i>SEO</i><i>CRO</i><i>PROGRAMMATIC CTV</i></div></div></div>
-      <div class="svc__row" data-fade><span class="svc__nr">S/02</span>
-        <h3><span>Strategy</span></h3>
-        <div class="svc__body"><p>Venture design from zero: market thesis, GTM, pricing, IP posture. Nine USPTO provisional patents filed across two ventures — prior-art research done personally. Cold-start playbooks that get pilots signed.</p>
-        <div class="svc__tags"><i>0→1 SAAS</i><i>GTM DESIGN</i><i>PATENT / IP</i><i>PRICING</i><i>FOUNDER SALES</i></div></div></div>
-      <div class="svc__row" data-fade><span class="svc__nr">S/03</span>
-        <h3>Web <span>Development</span></h3>
-        <div class="svc__body"><p>Production code across the stack: React 19 / Next.js 16 frontends, React Native mobile with native modules, AWS Amplify Gen 2 backends, Python ML services, ESP32 firmware when the product needs hardware.</p>
-        <div class="svc__tags"><i>REACT / NEXT</i><i>REACT NATIVE</i><i>AWS</i><i>TYPESCRIPT</i><i>PYTHON</i><i>LLM FINE-TUNING</i></div></div></div>
-      <div class="svc__row" data-fade><span class="svc__nr">S/04</span>
-        <h3><span>Branding</span></h3>
-        <div class="svc__body"><p>Identity systems that survive contact with real products — Frequentor's presence-green, Hydrova's deep-water investor deck, Authyr's trust marks, AliTheRep's volt-on-ink. Naming, voice, and the design language to carry them.</p>
-        <div class="svc__tags"><i>IDENTITY</i><i>NAMING</i><i>DESIGN SYSTEMS</i><i>PITCH DECKS</i></div></div></div>
-      <div class="svc__row" data-fade><span class="svc__nr">S/05</span>
-        <h3>UI&nbsp;/&nbsp;<span>UX</span></h3>
-        <div class="svc__body"><p>Interfaces with jobs to do: owner dashboards that surface one decisive action, a 3D medical viewer clinicians can trust, multi-role mobile apps, conversion funnels tuned for a 55+ audience. Design and build, same person.</p>
-        <div class="svc__tags"><i>PRODUCT DESIGN</i><i>DESIGN→CODE</i><i>MOTION</i><i>ACCESSIBILITY</i></div></div></div>
-    </div>
-  </section>
 
   <section class="wrap" id="work">
     <div class="shead" data-fade><span class="mono">SELECTED WORK</span><h2>Eleven builds, every layer mine</h2></div>
@@ -351,7 +357,7 @@
     </div>
   </section>
 
-  <nav class="vswitch" aria-label="Design variants"><a href="/">A</a><a href="/d/">D</a><a href="/f/">F</a><a href="/g/">G</a><a href="/h/">H</a><a href="/i/">I</a><a class="on" href="/j/">J</a></nav>
+  <nav class="vswitch" aria-label="Design variants"><a href="/">★</a><a href="/a/">A</a><a href="/d/">D</a><a href="/f/">F</a><a href="/g/">G</a><a href="/h/">H</a><a href="/i/">I</a><a class="on" href="/j/">J</a></nav>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
@@ -365,6 +371,13 @@
       requestAnimationFrame(step);
     }), { threshold: 0.6 });
     document.querySelectorAll('[data-n]').forEach(el => cio.observe(el));
+    document.querySelectorAll('.spec__item').forEach(item => {
+      item.querySelector('.spec__row').addEventListener('click', () => {
+        const open = item.classList.toggle('open');
+        item.querySelector('.spec__row').setAttribute('aria-expanded', open);
+      });
+    });
+
   </script>
 </body>
 </html>

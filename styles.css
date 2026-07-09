@@ -542,7 +542,7 @@ body.cursor-link .cursor__ring { transform: scale(1.6); border-color: var(--acce
 .case-hero__nr { color: var(--case-hue, var(--accent)); margin-bottom: 18px; font-size: 12px; }
 .case-hero__title {
   font-weight: 800; font-stretch: 120%; text-transform: uppercase;
-  font-size: clamp(40px, 11vw, 190px); line-height: 0.88; letter-spacing: -0.025em;
+  font-size: clamp(38px, 9.2vw, 160px); line-height: 0.9; letter-spacing: -0.025em;
 }
 .case-hero__tagline {
   font-family: var(--font-serif); font-style: italic; font-size: clamp(20px, 2.6vw, 40px);
@@ -646,4 +646,23 @@ html.no-motion [data-reveal] { opacity: 1; transform: none; }
   .grain, .hero__scroll, .preloader { display: none !important; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
   *, *::before, *::after { animation-duration: 0.001s !important; transition-duration: 0.001s !important; }
+}
+
+/* ---------- Neon glow pass (case pages) ---------- */
+body[data-page="case"] .case-section__label,
+body[data-page="case"] .case-hero__nr {
+  text-shadow: 0 0 14px color-mix(in srgb, var(--case-hue, var(--accent)) 55%, transparent);
+}
+body[data-page="case"] .case-signal strong {
+  text-shadow: 0 0 20px color-mix(in srgb, var(--case-hue, var(--accent)) 50%, transparent);
+}
+body[data-page="case"] .case-card:hover {
+  box-shadow: 0 0 30px color-mix(in srgb, var(--case-hue, var(--accent)) 16%, transparent), 0 18px 44px rgba(0,0,0,0.45);
+}
+body[data-page="case"] .case-next a:hover .case-next__title {
+  text-shadow: 0 0 28px color-mix(in srgb, var(--next-hue, var(--accent)) 45%, transparent);
+}
+body[data-page="case"] .u-link:hover,
+body[data-page="case"] .case-hero__crumb a:hover {
+  text-shadow: 0 0 12px color-mix(in srgb, var(--case-hue, var(--accent)) 55%, transparent);
 }

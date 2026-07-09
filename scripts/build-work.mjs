@@ -17,7 +17,7 @@ if (existsSync(manifestPath)) {
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 // Reuse the motif symbol library straight from index.html so it can't drift.
-const indexHtml = readFileSync(join(root, 'index.html'), 'utf8');
+const indexHtml = readFileSync(join(root, 'a', 'index.html'), 'utf8');
 const defs = indexHtml.match(/<svg class="defs"[\s\S]*?<\/svg>/)?.[0];
 if (!defs) throw new Error('Could not find motif defs in index.html');
 
@@ -29,7 +29,7 @@ const page = (p, next) => `<!DOCTYPE html>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#0a0a0a" />
-  <script>try{document.documentElement.dataset.theme=localStorage.getItem('ft-theme')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+  <script>document.documentElement.dataset.theme='dark'</script>
   <title>${p.title.replace(/&nbsp;/g, ' ')} — Case Study — Faisel Tajiran</title>
   <meta name="description" content="${p.description}" />
   <meta name="author" content="Faisel Tajiran" />
@@ -82,18 +82,15 @@ const page = (p, next) => `<!DOCTYPE html>
   <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"></div><div class="cursor__label mono">VIEW</div></div>
 
   <header class="nav">
-    <a class="nav__brand mono" href="/" data-transition>FT<sup>®</sup></a>
+    <a class="nav__brand mono" href="/">FAISEL&nbsp;TAJIRAN<sup>®</sup></a>
     <nav class="nav__links" aria-label="Primary">
+      <a href="/#services" data-scramble>Services</a>
       <a href="/#work" data-scramble>Work</a>
       <a href="/#about" data-scramble>About</a>
-      <a href="/#capabilities" data-scramble>Capabilities</a>
-      <a href="/#patents" data-scramble>Patents</a>
-      <a href="/#contact" data-scramble>Contact</a>
+      <a href="mailto:faisel@faiseltajiran.com" data-scramble>Contact</a>
     </nav>
     <div class="nav__aux mono">
       <span class="nav__status"><span class="dot dot--live"></span>OPEN TO CONVERSATIONS</span>
-      <span class="nav__clock" data-clock>HOU&nbsp;--:--:--</span>
-      <button class="theme-toggle" data-theme-toggle aria-label="Toggle dark / light theme"></button>
     </div>
   </header>
 
