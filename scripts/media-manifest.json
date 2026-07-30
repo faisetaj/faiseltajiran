@@ -201,6 +201,24 @@
       "wide": false
     }
   ],
+  "ptc-ai-operator": [
+    {
+      "file": "plan-cover.webp",
+      "alt": "The AI Phone Operator plan — owner deliverable cover, navy and gold",
+      "caption": "THE OWNER PITCH — FROM ZERO TO A WORKING SERVICE, IN THE OWNER'S LANGUAGE",
+      "w": 935,
+      "h": 1210,
+      "wide": false
+    },
+    {
+      "file": "scope-doc.webp",
+      "alt": "PTC AI Call Platform project scope — one platform, two agent roles, hard data isolation",
+      "caption": "PROJECT SCOPE — ONE PLATFORM, TWO AGENT ROLES, ISOLATION BY ARCHITECTURE",
+      "w": 935,
+      "h": 1210,
+      "wide": false
+    }
+  ],
   "ptc-promotions": [
     {
       "file": "landing.webp",

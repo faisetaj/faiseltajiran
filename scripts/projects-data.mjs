@@ -276,7 +276,7 @@ export const projects = [
 
   {
     slug: 'cruise-reels',
-    nr: '11',
+    nr: '12',
     group: 'Work improvisation · PTC',
     title: 'Cruise Reels',
     hue: '#ff4f9a',
@@ -344,7 +344,7 @@ export const projects = [
 
   {
     slug: 'ptc-promotions',
-    nr: '10',
+    nr: '11',
     group: 'Work improvisation · PTC',
     title: 'PTC Promotions',
     hue: '#38b6ff',
@@ -377,8 +377,48 @@ export const projects = [
   },
 
   {
-    slug: 'ghl-rc-bridge',
+    slug: 'ptc-ai-operator',
     nr: '09',
+    group: 'Work improvisation · PTC',
+    title: 'PTC AI Operator',
+    hue: '#e8b84b',
+    motif: 'ptcai',
+    category: 'Agentic Voice AI',
+    year: '2026',
+    role: 'Architect · Engineer · Trained on the operators it relieves',
+    status: 'Greenlit & paid · Phase 1 in build',
+    scope: 'Voice AI · Telephony · Call mining · Integrations',
+    tagline: 'An AI operator that answers the marketing line, follows the script, and books the appointment — trained by mining <b>3,200 real calls</b>.',
+    description: 'AI phone platform for Professional Travel Center: ElevenLabs ConvAI voice agents on the live marketing line, booking real appointments into the company’s fulfillment system — with a script mined from 3,200 recorded operator calls.',
+    thesis: [
+      'Professional Travel Center’s marketing line rings all day with prospects responding to mail campaigns. Human operators answer during business hours and book about <strong>42% of answered calls</strong> into group sales presentations; after hours and on weekends, callers hit voicemail and die there. The fix: one shared platform, two AI agent roles — an <strong>Inbound Marketing Operator</strong> that answers, qualifies, and books appointments 24/7, and a Customer Service agent that captures member requests with pre-fetched research. The owner greenlit it as a real, paid build.',
+      'The part that makes it work is the training data. Before writing a line of agent prompt, I built a Playwright harvester over the company’s call-tracking system and mined <em>~3,200 recorded calls with outcome labels</em> — then read 79 full transcripts line by line. The result is a script-as-performed: the exact beats top operators run, objections ranked by real frequency, phonetic-alphabet email readbacks, timezone handling, and the wording that loses calls. The AI doesn’t follow the script as written; it follows the script as it actually wins.',
+    ],
+    build: [
+      { label: 'CALL MINING', title: 'A harvester over 3,200 real calls', body: 'Playwright automation over the iovox call-tracking layer — login/recon/full-harvest modes, deep-pagination survival, idempotent re-runs. 79 transcripts pulled (booked and lost calls both), objections ranked by frequency, and the human booking baseline measured: 42% of answered calls. That number is the benchmark the AI has to beat.' },
+      { label: 'VOICE', title: 'ElevenLabs ConvAI on the live line', body: 'The company’s RingCentral marketing number forwards via answering rule to a bridge DID fronting the ConvAI agent — so soft launch is literally a phone-system rule: humans keep business hours, AI takes nights and weekends. Recording-consent and AI-disclosure greeting on every call; off-script callers transfer to a human in hours, queue for callback after.' },
+      { label: 'BOOKINGS', title: 'Real appointments, not demo rows', body: 'A direct client for the company’s fulfillment-system API (reverse-engineered from its Swagger spec): customer lookup → create → appointment write, validated against live per-slot capacity. Resilience rule: if the API errors mid-call, the agent completes the booking conversationally and the platform queues, retries, and flags — a caller never hears “our system is down.”' },
+      { label: 'API', title: 'The glue layer', body: 'Express + TypeScript tool endpoints, Bearer-authed per role, with an HMAC-verified post-call webhook ingesting transcript and recording — <code>conversation_id</code> ties every write together. Session capacity is enforced atomically in a Postgres function, never trusted to the agent prompt.' },
+      { label: 'ISOLATION', title: 'Two stores, three enforcement layers', body: 'Owner’s hard rule: prospect data and member data never touch. Two separate Supabase projects with separate credentials, row-level security within each, and route guards in the dashboard — isolation by architecture, not policy. Three user roles see exactly their queue and nothing else.' },
+      { label: 'DASHBOARD', title: 'Queues + the built-in ROI report', body: 'Next.js dashboard with per-role working queues — appointment rosters with capacity, statuses, transcript and audio playback — plus an owner overview comparing the AI against the 42% human baseline: calls answered, bookings, show rate, cost per call.' },
+      { label: 'ROLE 2', title: 'The deal-hunter CSR, already built', body: 'The second agent’s MVP shipped first: 24/7 member-request intake with pre-fetched deal research and a confirmation-only email — AI output never reaches a customer unsupervised. Its domain model is PTC-Database, my Next.js + Prisma rebuild of the company’s request database.' },
+      { label: 'OWNER OPS', title: 'Deliverables an owner can sign', body: 'Branded navy-and-gold PDFs — the plan, the scope, the call-mining report, an operator coaching card distilled from the mined calls (now coaching the humans too). Plus compliance built in from day one (recording consent, AI disclosure, TCPA, A2P 10DLC), a one-click Render deploy blueprint, and a written incident postmortem for a DNS outage found along the way.' },
+    ],
+    signals: [
+      { value: '3,200', label: 'CALLS MINED FOR THE SCRIPT' },
+      { value: '79', label: 'TRANSCRIPTS READ LINE-BY-LINE' },
+      { value: '42%', label: 'HUMAN BASELINE TO BEAT' },
+      { value: '24/7', label: 'ANSWER RATE VS BUSINESS HOURS' },
+    ],
+    stack: ['ElevenLabs ConvAI', 'Twilio · RingCentral', 'Playwright', 'Express · TypeScript', 'Supabase Postgres · RLS', 'Next.js', 'Prisma', 'HMAC webhooks', 'Resend · SMTP', 'Render', 'Serper · Brave Search'],
+    proves: [
+      'Forward-deployed engineering in its purest form: standing inside a real business, seeing the phones, the script, and the booking system as one system — then mining the company’s own calls into training data and shipping an AI operator the owner greenlit, funded, and staked real revenue on.',
+    ],
+  },
+
+  {
+    slug: 'ghl-rc-bridge',
+    nr: '10',
     group: 'Work improvisation · PTC',
     title: 'GHL×RC Bridge',
     hue: '#ffb02e',
@@ -392,7 +432,7 @@ export const projects = [
     description: 'A bidirectional SMS/MMS bridge between RingCentral and GoHighLevel: webhook sync, conversation threading, and campaign keyword automation on Netlify Functions.',
     thesis: [
       'At Professional Travel Center, the phones live on RingCentral and the CRM lives in GoHighLevel — and out of the box, neither knows the other exists. Every customer text was invisible to the system of record; every agent reply lived in the wrong tool.',
-      'No vendor sold the fix, so I built it: a <strong>bidirectional SMS/MMS bridge</strong>. Inbound texts thread into the right GHL conversation with contact upsert; agent replies in GHL go out through RingCentral and log back into the thread; and campaign keywords — the cruise-expo finalist numbers from №10 — trigger an automatic confirmation MMS. A phone line became an automation surface.',
+      'No vendor sold the fix, so I built it: a <strong>bidirectional SMS/MMS bridge</strong>. Inbound texts thread into the right GHL conversation with contact upsert; agent replies in GHL go out through RingCentral and log back into the thread; and campaign keywords — the cruise-expo finalist numbers from №11 — trigger an automatic confirmation MMS. A phone line became an automation surface.',
     ],
     build: [
       { label: 'INBOUND', title: 'RingCentral webhooks, handled properly', body: 'Message-store notifications with the RC validation-token handshake, full message fetch, phone-number contact matching with upsert, and conversation threading into GoHighLevel — <code>rc-inbound.js</code>.' },
