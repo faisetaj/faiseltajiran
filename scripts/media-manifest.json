@@ -203,20 +203,20 @@
   ],
   "ptc-ai-operator": [
     {
-      "file": "plan-cover.webp",
-      "alt": "The AI Phone Operator plan — owner deliverable cover, navy and gold",
-      "caption": "THE OWNER PITCH — FROM ZERO TO A WORKING SERVICE, IN THE OWNER'S LANGUAGE",
-      "w": 935,
-      "h": 1210,
-      "wide": false
+      "file": "training-pipeline.svg",
+      "alt": "Training pipeline — 3,200 mined calls distilled through a Playwright harvester and pattern mining into the agent's system prompt, benchmarked against the 42% human baseline",
+      "caption": "THE TRAINING LOOP — 3,200 CALLS → HARVESTER → PATTERN MINING → SYSTEM PROMPT, BENCHMARKED AT 42%",
+      "w": 1600,
+      "h": 900,
+      "wide": true
     },
     {
-      "file": "scope-doc.webp",
-      "alt": "PTC AI Call Platform project scope — one platform, two agent roles, hard data isolation",
-      "caption": "PROJECT SCOPE — ONE PLATFORM, TWO AGENT ROLES, ISOLATION BY ARCHITECTURE",
-      "w": 935,
-      "h": 1210,
-      "wide": false
+      "file": "call-flow.svg",
+      "alt": "Live call architecture — answer via RingCentral bridge, availability and booking through the Bearer-authed API, instant email and SMS confirmation, HMAC-verified post-call audit",
+      "caption": "ONE CALL, END TO END — ANSWER → BOOK → EMAIL → TEXT → AUDIT, THREADED ON conversation_id",
+      "w": 1600,
+      "h": 1060,
+      "wide": true
     }
   ],
   "ptc-promotions": [

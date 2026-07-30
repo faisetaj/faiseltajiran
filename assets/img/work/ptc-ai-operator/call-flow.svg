@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1060" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e8b84b"/>
+    </marker>
+    <marker id="ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8f8c80"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="1060" fill="#0e0d0a"/>
+  <g stroke="#f1efe6" stroke-opacity="0.03">
+    <path d="M0 180 H1600 M0 330 H1600 M0 480 H1600 M0 630 H1600 M0 780 H1600"/>
+    <path d="M266 0 V1060 M532 0 V1060 M798 0 V1060 M1064 0 V1060 M1330 0 V1060"/>
+  </g>
+
+  <!-- header -->
+  <text x="70" y="78" fill="#e8b84b" font-size="15" letter-spacing="5">ONE CALL, END TO END</text>
+  <text x="70" y="120" fill="#f1efe6" font-size="34" font-weight="700" letter-spacing="1">ANSWER → BOOK → EMAIL → TEXT → AUDIT</text>
+  <text x="1530" y="78" fill="#8f8c80" font-size="13" letter-spacing="3" text-anchor="end">PTC AI OPERATOR — LIVE CALL ARCHITECTURE</text>
+  <path d="M70 145 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+
+  <!-- ============ BAND 1 : ANSWER ============ -->
+  <g>
+    <circle cx="96" cy="248" r="20" fill="none" stroke="#e8b84b" stroke-width="2"/>
+    <text x="96" y="254" fill="#e8b84b" font-size="16" font-weight="700" text-anchor="middle">1</text>
+    <text x="140" y="212" fill="#e8b84b" font-size="13" letter-spacing="4">ANSWER — A PHONE-SYSTEM RULE IS THE WHOLE ROLLOUT</text>
+
+    <rect x="140" y="228" width="150" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="215" y="256" fill="#f1efe6" font-size="17" font-weight="700" text-anchor="middle">CALLER</text>
+    <text x="215" y="278" fill="#8f8c80" font-size="13" text-anchor="middle">marketing line</text>
+    <path d="M290 261 H336" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="344" y="228" width="252" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="470" y="256" fill="#f1efe6" font-size="17" font-weight="700" text-anchor="middle">RINGCENTRAL RULE</text>
+    <text x="470" y="278" fill="#8f8c80" font-size="13" text-anchor="middle">hours → humans · after-hours → AI</text>
+    <path d="M596 261 H642" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="650" y="228" width="184" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="742" y="256" fill="#f1efe6" font-size="17" font-weight="700" text-anchor="middle">BRIDGE DID</text>
+    <text x="742" y="278" fill="#8f8c80" font-size="13" text-anchor="middle">SIP front door</text>
+    <path d="M834 261 H880" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="888" y="222" width="300" height="78" rx="12" fill="#1a160c" stroke="#e8b84b" stroke-opacity="0.5" stroke-width="8"/>
+    <rect x="888" y="222" width="300" height="78" rx="12" fill="none" stroke="#e8b84b" stroke-width="2"/>
+    <text x="1038" y="252" fill="#f1efe6" font-size="18" font-weight="700" text-anchor="middle">CONVAI VOICE AGENT</text>
+    <text x="1038" y="276" fill="#8f8c80" font-size="13" text-anchor="middle">recording consent + AI disclosure,</text>
+    <text x="1038" y="293" fill="#8f8c80" font-size="13" text-anchor="middle">then the mined script — 24/7</text>
+
+    <text x="1220" y="250" fill="#8f8c80" font-size="13">off-script → human transfer in hours,</text>
+    <text x="1220" y="270" fill="#8f8c80" font-size="13">callback queue after — never a dead end</text>
+  </g>
+
+  <!-- ============ BAND 2 : AVAILABILITY ============ -->
+  <g>
+    <circle cx="96" cy="398" r="20" fill="none" stroke="#e8b84b" stroke-width="2"/>
+    <text x="96" y="404" fill="#e8b84b" font-size="16" font-weight="700" text-anchor="middle">2</text>
+    <text x="140" y="362" fill="#e8b84b" font-size="13" letter-spacing="4">AVAILABILITY — THE AGENT ONLY OFFERS TIMES A TOOL RETURNED</text>
+
+    <rect x="140" y="378" width="252" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="266" y="406" fill="#f1efe6" font-size="16" font-weight="700" text-anchor="middle">get_available_sessions</text>
+    <text x="266" y="428" fill="#8f8c80" font-size="13" text-anchor="middle">tool call · Bearer-authed</text>
+    <path d="M392 411 H438" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="446" y="378" width="200" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="546" y="406" fill="#f1efe6" font-size="17" font-weight="700" text-anchor="middle">EXPRESS API</text>
+    <text x="546" y="428" fill="#8f8c80" font-size="13" text-anchor="middle">TypeScript glue layer</text>
+    <path d="M646 411 H692" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="700" y="378" width="300" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="850" y="406" fill="#f1efe6" font-size="16" font-weight="700" text-anchor="middle">FULFILLMENT API · /Waves</text>
+    <text x="850" y="428" fill="#8f8c80" font-size="13" text-anchor="middle">live per-slot capacity, system of record</text>
+
+    <path d="M1000 411 H1046" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+    <rect x="1054" y="378" width="330" height="66" rx="12" fill="none" stroke="#e8b84b" stroke-opacity="0.45" stroke-dasharray="5 6"/>
+    <text x="1219" y="406" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">SLOTS SPOKEN BACK TO THE CALLER</text>
+    <text x="1219" y="428" fill="#8f8c80" font-size="13" text-anchor="middle">slot full? → next open time, same day</text>
+  </g>
+
+  <!-- ============ BAND 3 : BOOK ============ -->
+  <g>
+    <circle cx="96" cy="548" r="20" fill="none" stroke="#e8b84b" stroke-width="2"/>
+    <text x="96" y="554" fill="#e8b84b" font-size="16" font-weight="700" text-anchor="middle">3</text>
+    <text x="140" y="512" fill="#e8b84b" font-size="13" letter-spacing="4">BOOK — A REAL APPOINTMENT, NOT A DEMO ROW</text>
+
+    <rect x="140" y="528" width="252" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="266" y="556" fill="#f1efe6" font-size="16" font-weight="700" text-anchor="middle">book_appointment</text>
+    <text x="266" y="578" fill="#8f8c80" font-size="13" text-anchor="middle">name · phone · email · party · code</text>
+    <path d="M392 561 H438" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="446" y="528" width="200" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="546" y="556" fill="#f1efe6" font-size="17" font-weight="700" text-anchor="middle">EXPRESS API</text>
+    <text x="546" y="578" fill="#8f8c80" font-size="13" text-anchor="middle">re-checks capacity at write</text>
+
+    <path d="M646 546 H692" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+    <rect x="700" y="504" width="384" height="60" rx="12" fill="#15130c" stroke="#e8b84b" stroke-opacity="0.55" stroke-width="2"/>
+    <text x="892" y="529" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">FULFILLMENT WRITE — SOURCE OF TRUTH</text>
+    <text x="892" y="551" fill="#8f8c80" font-size="13" text-anchor="middle">customer lookup → create → appointment/create</text>
+
+    <path d="M646 576 H692" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+    <rect x="700" y="572" width="384" height="60" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="892" y="597" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">SUPABASE SHADOW ROW — POSTGRES</text>
+    <text x="892" y="619" fill="#8f8c80" font-size="13" text-anchor="middle">capacity enforced atomically in a DB function</text>
+
+    <rect x="1124" y="522" width="406" height="104" rx="12" fill="none" stroke="#e8b84b" stroke-opacity="0.45" stroke-dasharray="5 6"/>
+    <text x="1148" y="550" fill="#e8b84b" font-size="13" letter-spacing="2">RESILIENCE RULE</text>
+    <text x="1148" y="572" fill="#c9c6ba" font-size="13.5">API down mid-call? Booking completes by voice;</text>
+    <text x="1148" y="592" fill="#c9c6ba" font-size="13.5">write queues, retries, flags. A caller never</text>
+    <text x="1148" y="612" fill="#c9c6ba" font-size="13.5">hears &#8220;our system is down.&#8221;</text>
+  </g>
+
+  <!-- ============ BAND 4 : CONFIRM ============ -->
+  <g>
+    <circle cx="96" cy="698" r="20" fill="none" stroke="#e8b84b" stroke-width="2"/>
+    <text x="96" y="704" fill="#e8b84b" font-size="16" font-weight="700" text-anchor="middle">4</text>
+    <text x="140" y="662" fill="#e8b84b" font-size="13" letter-spacing="4">CONFIRM — BEFORE THE CALLER HANGS UP, PROOF IS IN THEIR POCKET</text>
+
+    <rect x="140" y="678" width="200" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="240" y="706" fill="#f1efe6" font-size="17" font-weight="700" text-anchor="middle">EXPRESS API</text>
+    <text x="240" y="728" fill="#8f8c80" font-size="13" text-anchor="middle">fan-out on booking</text>
+
+    <path d="M340 696 H386" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+    <rect x="394" y="662" width="360" height="60" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="574" y="687" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">EMAIL — INSTANT CONFIRMATION</text>
+    <text x="574" y="709" fill="#8f8c80" font-size="13" text-anchor="middle">meeting link + details · verified live on-call</text>
+
+    <path d="M340 726 H386" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+    <rect x="394" y="730" width="360" height="60" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="574" y="755" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">SMS — REPLY-Y TEXT CONFIRM</text>
+    <text x="574" y="777" fill="#8f8c80" font-size="13" text-anchor="middle">A2P 10DLC registered · consent captured on-call</text>
+
+    <path d="M754 722 H800" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+    <rect x="808" y="678" width="330" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="973" y="706" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">REMINDERS — T-24H AND T-2H</text>
+    <text x="973" y="728" fill="#8f8c80" font-size="13" text-anchor="middle">scheduled jobs · no-show tracking feeds ROI</text>
+
+    <text x="1170" y="700" fill="#8f8c80" font-size="13">the #1 mined loss pattern — confirmations</text>
+    <text x="1170" y="720" fill="#8f8c80" font-size="13">landing in spam — is engineered against here</text>
+  </g>
+
+  <!-- ============ BAND 5 : AUDIT ============ -->
+  <g>
+    <circle cx="96" cy="868" r="20" fill="none" stroke="#e8b84b" stroke-width="2"/>
+    <text x="96" y="874" fill="#e8b84b" font-size="16" font-weight="700" text-anchor="middle">5</text>
+    <text x="140" y="832" fill="#e8b84b" font-size="13" letter-spacing="4">AUDIT — EVERY CALL LANDS IN A HUMAN QUEUE WITH RECEIPTS</text>
+
+    <rect x="140" y="848" width="300" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="290" y="876" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">POST-CALL WEBHOOK — HMAC</text>
+    <text x="290" y="898" fill="#8f8c80" font-size="13" text-anchor="middle">signature-verified · transcript + recording</text>
+    <path d="M440 881 H486" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="494" y="848" width="200" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="594" y="876" fill="#f1efe6" font-size="17" font-weight="700" text-anchor="middle">EXPRESS API</text>
+    <text x="594" y="898" fill="#8f8c80" font-size="13" text-anchor="middle">joins on conversation_id</text>
+    <path d="M694 881 H740" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="748" y="848" width="330" height="66" rx="12" fill="#15130c" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="913" y="876" fill="#f1efe6" font-size="15" font-weight="700" text-anchor="middle">DASHBOARD — NEXT.JS QUEUES</text>
+    <text x="913" y="898" fill="#8f8c80" font-size="13" text-anchor="middle">rosters · statuses · audio playback · RLS roles</text>
+    <path d="M1078 881 H1124" stroke="#e8b84b" stroke-width="2.5" marker-end="url(#a)"/>
+
+    <rect x="1132" y="842" width="398" height="78" rx="12" fill="#1a160c" stroke="#e8b84b" stroke-opacity="0.5" stroke-width="8"/>
+    <rect x="1132" y="842" width="398" height="78" rx="12" fill="none" stroke="#e8b84b" stroke-width="2"/>
+    <text x="1331" y="872" fill="#f1efe6" font-size="16" font-weight="700" text-anchor="middle">OWNER ROI VIEW — AI vs 42% HUMAN</text>
+    <text x="1331" y="896" fill="#8f8c80" font-size="13" text-anchor="middle">answer rate · bookings · show rate · cost per call</text>
+  </g>
+
+  <!-- conversation_id thread -->
+  <path d="M1558 360 V920" stroke="#e8b84b" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="3 7"/>
+  <text x="1568" y="640" fill="#e8b84b" font-size="13" letter-spacing="4" text-anchor="middle" transform="rotate(90 1568 640)">conversation_id — ONE KEY THREADS EVERY WRITE, CALL TO DASHBOARD</text>
+
+  <path d="M70 968 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+  <text x="70" y="998" fill="#8f8c80" font-size="12" letter-spacing="3">BEARER-AUTHED ENDPOINTS · HMAC-VERIFIED WEBHOOKS · PROSPECT + MEMBER DATA ISOLATED BY ARCHITECTURE</text>
+  <text x="1530" y="998" fill="#e8b84b" font-size="12" letter-spacing="3" text-anchor="end">FAISELTAJIRAN.COM</text>
+</svg>
