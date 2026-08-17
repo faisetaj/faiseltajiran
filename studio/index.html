@@ -4,7 +4,10 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#0a0c0a" />
-<script>try{document.documentElement.dataset.theme=localStorage.getItem('ft-theme2')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}</script>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('ft-theme2')||'dark'}catch(e){document.documentElement.dataset.theme='dark'}
+/* Scroll reveals are opt-in via this class, so if the script below never runs the page still
+   renders fully instead of hiding the contact form behind an observer that failed. */
+document.documentElement.classList.add('js')</script>
 <title>Web Design in Spring &amp; The Woodlands, TX — Small Business Websites &amp; Google Setup | Faisel Tajiran</title>
 <meta name="description" content="Custom small-business websites from $900, plus a monthly care plan where you text me changes instead of logging into WordPress. Google Business Profile, Google Ads, Meta Ads, branding. 17+ years. Local to Spring, The Woodlands, and north Houston." />
 <meta name="author" content="Faisel Tajiran" />
@@ -31,6 +34,7 @@
   "name": "Faisel Tajiran — Web Design & Digital Presence",
   "url": "https://faiseltajiran.com/studio/",
   "email": "faisel@faiseltajiran.com",
+  "telephone": "+1-832-928-1561",
   "image": "https://faiseltajiran.com/og.png",
   "priceRange": "$$",
   "founder": { "@type": "Person", "name": "Faisel Tajiran" },
@@ -141,6 +145,16 @@
     box-shadow: 0 0 14px var(--hl-dim), 0 0 34px var(--hl-soft); transition: transform .3s; flex: none; }
   .acc:hover { transform: scale(1.2); }
   .btn__short { display: none; }
+  /* Desktop shows the number as a link; on phones the header CTA becomes the call itself,
+     because tap-to-call outranks an anchor scroll for a local-services visitor. */
+  .top__tel { color: var(--muted); white-space: nowrap; transition: color .25s, text-shadow .25s; }
+  .top__tel:hover { color: var(--hl); text-shadow: 0 0 12px var(--hl-dim); }
+  .btn--call { display: none; }
+  @media (max-width: 700px) {
+    .top__tel { display: none; }
+    .btn--book { display: none; }
+    .btn--call { display: inline-flex; }
+  }
   @media (max-width: 430px) {
     .top { padding: 14px 18px; }
     .top__brand { font-size: 13px; }
@@ -316,6 +330,11 @@
   .cform__foot { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
   .cform__foot .btn:disabled { opacity: .6; cursor: wait; transform: none; }
   .cform__status { color: var(--hl); text-shadow: 0 0 10px var(--hl-dim); }
+  .bigs { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line);
+    margin-top: clamp(36px, 5.5vh, 62px); }
+  @media (min-width: 860px) { .bigs { grid-template-columns: 1fr 1fr; column-gap: 44px; } }
+  .bigs .big { border-top: 0; margin-top: 0; padding: clamp(26px, 4vh, 40px) 0 clamp(6px, 1.5vh, 14px); }
+  .bigs .big .line2 { font-size: clamp(24px, 3.4vw, 46px); }
   .big { display: block; border-top: 1px solid var(--line); margin-top: clamp(40px, 7vh, 76px); padding: clamp(36px, 7vh, 78px) 0 0; }
   .big .mono { display: block; color: var(--muted); margin-bottom: 18px; }
   .big .line2 { display: block; font-weight: 750; font-stretch: 118%; font-size: clamp(26px, 5.2vw, 84px);
@@ -472,8 +491,8 @@
   @media (prefers-reduced-motion: reduce) { .offer { transform: none; } }
 
   /* ── reveal ── */
-  [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
-  [data-fade].in { opacity: 1; transform: none; }
+  .js [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+  .js [data-fade].in { opacity: 1; transform: none; }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     [data-fade] { opacity: 1 !important; transform: none !important; }
@@ -486,7 +505,9 @@
 <div class="top">
   <a class="top__brand" href="/">FAISEL TAJIRAN<sup>®</sup></a>
   <div class="top__right">
-    <a class="btn" href="#start"><span class="btn__long">Book a free consult</span><span class="btn__short">Free consult</span></a>
+    <a class="top__tel mono" href="tel:+18329281561">832 · 928 · 1561</a>
+    <a class="btn btn--call" href="tel:+18329281561">Call or text</a>
+    <a class="btn btn--book" href="#start"><span class="btn__long">Book a free consult</span><span class="btn__short">Free consult</span></a>
     <button class="acc" data-acc aria-label="Switch dark / light theme" title="Dark ⇄ Light"></button>
   </div>
 </div>
@@ -524,7 +545,8 @@
       <a class="btn" href="#start">Book a free 45-min consult</a>
       <a class="btn btn--ghost" href="#pricing">See pricing &amp; add-ons</a>
     </div>
-    <p class="mono hero__note" data-fade>I'll come to your business · First meeting costs nothing</p>
+    <p class="mono hero__note" data-fade>I'll come to your business · First meeting costs nothing ·
+      Call or text <a href="tel:+18329281561" style="color:var(--hl);text-shadow:0 0 12px var(--hl-dim)">832&nbsp;928&nbsp;1561</a></p>
 
     <div class="strip" data-fade>
       <div><b>17+</b><span>Years building brands &amp; funnels</span></div>
@@ -1095,17 +1117,23 @@
       </div>
     </form>
 
-    <a class="big" href="mailto:faisel@faiseltajiran.com?subject=Web%20design%20inquiry" data-fade>
-      <span class="mono">Prefer email? Or want to just talk it through?</span>
-      <span class="line2">faisel@faiseltajiran.com</span>
-    </a>
+    <div class="bigs" data-fade>
+      <a class="big" href="tel:+18329281561">
+        <span class="mono">Rather just talk? Call or text me directly</span>
+        <span class="line2">832&nbsp;928&nbsp;1561</span>
+      </a>
+      <a class="big" href="mailto:faisel@faiseltajiran.com?subject=Web%20design%20inquiry">
+        <span class="mono">Or email, if that's easier</span>
+        <span class="line2">faisel@faiseltajiran.com</span>
+      </a>
+    </div>
 
     <p class="area" data-fade><b>Serving:</b> Spring · The Woodlands · Conroe · Tomball · Magnolia ·
       Cypress · Klein · Oak Ridge North · Shenandoah · Willis · Montgomery · Humble · Kingwood ·
       north Houston. If you're a little outside that, ask anyway — I travel for good projects.</p>
 
     <div class="foot">
-      <span>© <span id="y"></span> FAISEL TAJIRAN — SPRING, TX</span>
+      <span>© <span id="y"></span> FAISEL TAJIRAN — SPRING, TX · <a href="tel:+18329281561">832 928 1561</a></span>
       <span class="mono glow"><a href="/">FAISELTAJIRAN.COM ↗</a></span>
       <span><button data-acc class="mono" style="background:none;border:0;cursor:pointer;color:var(--hl);font:inherit;text-shadow:0 0 10px var(--hl-dim)">DARK ⇄ LIGHT</button></span>
     </div>
@@ -1131,12 +1159,30 @@
   document.getElementById('y').textContent = new Date().getFullYear();
 
   // Reveal on scroll — one observer, unobserved after firing.
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-    });
-  }, { rootMargin: '0px 0px -6% 0px', threshold: 0.04 });
-  document.querySelectorAll('[data-fade]').forEach(function(el){ io.observe(el); });
+  // rootMargin stays at 0: a negative bottom margin strands anything inside that band at the
+  // very end of the document, which is exactly where the contact form and phone number live.
+  var faders = [].slice.call(document.querySelectorAll('[data-fade]'));
+  var reveal = function(el){ el.classList.add('in'); };
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting){ reveal(e.target); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px', threshold: 0.02 });
+    faders.forEach(function(el){ io.observe(el); });
+    // Safety sweep: anything already scrolled past or sitting in view is revealed outright,
+    // so a missed observer callback can never leave a section permanently blank.
+    var sweep = function(){
+      faders.forEach(function(el){
+        if (el.classList.contains('in')) return;
+        if (el.getBoundingClientRect().top < window.innerHeight) { reveal(el); io.unobserve(el); }
+      });
+    };
+    window.addEventListener('load', sweep);
+    setTimeout(sweep, 1200);
+  } else {
+    faders.forEach(reveal);
+  }
 
   // Theme toggle — shares the ft-theme2 key with the main site so it carries across pages.
   document.querySelectorAll('[data-acc]').forEach(function(b){
@@ -1238,7 +1284,12 @@
         body: JSON.stringify({
           name: data.name, business: data.business, email: data.email, phone: data.phone,
           service: data.service, website: data.website, message: data.message,
-          _subject: 'Studio inquiry — ' + data.service, _template: 'table'
+          // Front-load the subject so the phone's notification preview is the whole lead:
+          // who, what they want, and the number to call back.
+          _subject: '📱 ' + (data.name || 'Lead') + ' — ' + (data.service || 'inquiry') +
+                    (data.phone ? ' — ' + data.phone : ''),
+          _replyto: data.email,
+          _template: 'table'
         })
       });
       if (!r.ok) throw new Error();
