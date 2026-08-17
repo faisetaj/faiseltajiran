@@ -160,25 +160,25 @@
   .btn--ghost:hover { border-color: var(--hl); color: var(--hl); box-shadow: 0 0 24px var(--hl-soft); }
 
   /* ── sections ── */
-  section { padding: clamp(64px, 10vh, 118px) 0; }
+  section { padding: clamp(52px, 7.4vh, 92px) 0; }
   .alt { background: var(--bg-2); }
   .shead { display: flex; align-items: baseline; gap: 18px; margin-bottom: 22px; }
   .shead .mono { color: var(--hl); flex: none; text-shadow: 0 0 12px var(--hl-dim); }
   .shead h2 { font-weight: 680; font-stretch: 113%; font-size: clamp(28px, 3.6vw, 52px);
     letter-spacing: -0.025em; line-height: 1.05; text-wrap: balance; min-width: 0; overflow-wrap: break-word; }
   .shead::after { content: ''; flex: 1; height: 1px; background: var(--line); align-self: center; }
-  .shead--solo { margin-bottom: clamp(28px, 5vh, 50px); }
+  .shead--solo { margin-bottom: clamp(24px, 3.6vh, 38px); }
   /* On narrow phones the flex row can't give the heading enough room — stack it. */
   @media (max-width: 640px) {
     .shead { flex-direction: column; align-items: flex-start; gap: 11px; }
     .shead::after { display: none; }
   }
   .slede { color: var(--muted); max-width: 64ch; font-size: clamp(15px, 1.25vw, 17px);
-    margin-bottom: clamp(28px, 5vh, 50px); text-wrap: pretty; }
+    margin-bottom: clamp(24px, 3.6vh, 38px); text-wrap: pretty; }
   .slede b { color: var(--text); font-weight: 600; }
 
   /* ── hero ── */
-  .hero { padding: clamp(118px, 17vh, 176px) 0 clamp(44px, 7vh, 78px); }
+  .hero { padding: clamp(112px, 15vh, 160px) 0 clamp(38px, 5.4vh, 60px); }
   .hero__eyebrow { color: var(--muted); display: inline-flex; align-items: center; gap: 10px; margin-bottom: 24px; }
   .hero__eyebrow i { width: 8px; height: 8px; border-radius: 50%; background: var(--hl); flex: none;
     box-shadow: 0 0 12px var(--hl-dim); animation: ppulse 2.2s infinite; }
@@ -388,6 +388,33 @@
     100% { transform: translateX(696px); opacity: 0; }
   }
 
+  /* ── local search result diagram ── */
+  .serp { display: grid; gap: 26px; align-items: center; grid-template-columns: minmax(0, 1fr); }
+  @media (min-width: 900px) { .serp { grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr); gap: 40px; } }
+  .serp svg { width: 100%; height: auto; color: var(--hl); }
+  .serp .panel { fill: var(--bg-2); stroke: var(--line); }
+  .serp .field { fill: var(--bg); stroke: var(--line); }
+  .serp .row { fill: var(--bg); stroke: var(--line); }
+  .serp .row--win { fill: color-mix(in srgb, var(--hl) 13%, var(--bg));
+    stroke: color-mix(in srgb, var(--hl) 55%, transparent); }
+  .serp .bar { fill: var(--muted); opacity: .5; }
+  .serp .bar--win { fill: currentColor; opacity: .95; }
+  .serp .star { fill: currentColor; opacity: .8; }
+  .serp .star--dim { fill: var(--muted); opacity: .45; }
+  .serp .lbl { fill: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .14em; }
+  .serp .lbl--hl { fill: currentColor; }
+  .serp .qt { fill: var(--text); font-family: var(--sans); font-size: 12.5px; }
+  .serp .mapbg { fill: var(--bg); stroke: var(--line); }
+  .serp .street { stroke: var(--muted); opacity: .22; }
+  .serp .mpin { fill: var(--muted); opacity: .5; }
+  .serp .mpin--win { fill: currentColor; opacity: 1; }
+  .serp .mhalo { fill: none; stroke: currentColor; transform-box: fill-box; transform-origin: center;
+    animation: ping 3.2s ease-out infinite; }
+  .serp__note h3 { font-weight: 700; font-size: clamp(19px, 2.1vw, 26px); letter-spacing: -.02em;
+    line-height: 1.15; margin-bottom: 12px; }
+  .serp__note p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
+  .serp__note b { color: var(--text); font-weight: 650; }
+
   /* ── speed race ── */
   .race { display: grid; gap: 16px; margin-top: 6px; }
   .race__row { display: grid; grid-template-columns: minmax(96px, 148px) 1fr auto; gap: 14px; align-items: center; }
@@ -508,65 +535,6 @@
   </div>
 </header>
 
-<!-- ══════════════ THE PROBLEM ══════════════ -->
-<section class="alt">
-  <div class="wrap">
-    <div class="shead" data-fade><span class="mono">Why you're here</span>
-      <h2>You don't need a website. You need customers to find you.</h2></div>
-    <p class="slede" data-fade>Most small businesses I meet already have a site. It just isn't doing
-      anything — it's slow, it's three years out of date, and nobody can find it on Google. That's
-      not a design problem. It's a presence problem, and it's fixable.</p>
-    <div class="cards" data-fade>
-      <div class="card">
-        <span class="card__k">Problem 01</span>
-        <h3>Your site is a museum</h3>
-        <p>Built once, never touched again, because updating it means logging into a builder you
-          don't remember how to use — so you don't. Hours are wrong. Prices are old. That special
-          ended last spring.</p>
-      </div>
-      <div class="card">
-        <span class="card__k">Problem 02</span>
-        <h3>Google doesn't know you exist</h3>
-        <p>Your Google Business Profile is unclaimed, unverified, or has a photo from 2019. That
-          listing sends more customers to a local business than the website does — and it's usually
-          the first thing I fix.</p>
-      </div>
-      <div class="card">
-        <span class="card__k">Problem 03</span>
-        <h3>You're paying for nothing</h3>
-        <p>Hosting, a theme license, three plugin subscriptions, a security tool, and a maintenance
-          retainer to somebody who stopped answering. Add it up. It's usually more than a real care
-          plan costs.</p>
-      </div>
-    </div>
-
-    <div class="shead shead--solo" style="margin-top:clamp(48px,7vh,80px)" data-fade>
-      <span class="mono">Why it matters</span>
-      <h2 style="font-size:clamp(22px,2.6vw,34px)">Half your visitors leave before a slow site loads.</h2></div>
-    <div class="race" id="race" data-fade>
-      <div class="race__row race__row--me">
-        <span class="race__n">A site I build</span>
-        <div class="race__bar"><div class="race__fill" style="--w:12%"></div></div>
-        <span class="race__t">under 1s</span>
-      </div>
-      <div class="race__row">
-        <span class="race__n">Typical WordPress + builder</span>
-        <div class="race__bar"><div class="race__fill" style="--w:62%"></div></div>
-        <span class="race__t">~5s</span>
-      </div>
-      <div class="race__row">
-        <span class="race__n">Same, on phone data</span>
-        <div class="race__bar"><div class="race__fill" style="--w:100%"></div></div>
-        <span class="race__t">8s+</span>
-      </div>
-    </div>
-    <p class="kw" data-fade style="max-width:70ch">Those aren't invented numbers — a stock WordPress
-      install with a page builder and a dozen plugins is loading megabytes of theme code before it
-      shows a customer your phone number. Mine ships one HTML file. That gap is most of why a fast
-      site outranks a pretty one.</p>
-  </div>
-</section>
-
 <!-- ══════════════ PROOF ══════════════ -->
 <section id="work">
   <div class="wrap">
@@ -601,21 +569,144 @@
         </div>
       </a>
 
-      <a class="shot" href="https://borderlinemind.com" target="_blank" rel="noopener">
-        <div class="shot__bar"><i></i><i></i><i></i><span class="shot__url">borderlinemind.com</span></div>
-        <img src="/assets/img/studio/borderlinemind.webp" width="880" height="550" loading="lazy" decoding="async"
-             alt="Borderline Mind website — a mental-health journal with a blog and moderated community." />
+      <a class="shot" href="https://etotalhome.com" target="_blank" rel="noopener">
+        <div class="shot__bar"><i></i><i></i><i></i><span class="shot__url">etotalhome.com</span></div>
+        <img src="/assets/img/studio/etotalhome.webp" width="880" height="550" loading="lazy" decoding="async"
+             alt="eTotalHome website — Houston interior design center for premium home products, services and installation." />
         <div class="shot__cap">
-          <b>Borderline Mind</b>
-          <span>A writer who publishes weekly, so this one got a real admin panel — drafts,
-            autosave, moderated comments.</span>
-          <div class="shot__tags"><i>Publishing</i><i>Admin panel</i><i>Moderation</i></div>
+          <b>eTotalHome</b>
+          <span>Houston home-products and installation company. Product catalogue, services,
+            portfolio, and booking, all under one roof.</span>
+          <div class="shot__tags"><i>Home services</i><i>Catalogue</i><i>Booking</i></div>
+        </div>
+      </a>
+
+      <a class="shot" href="https://professionaltravelcenter.com" target="_blank" rel="noopener">
+        <div class="shot__bar"><i></i><i></i><i></i><span class="shot__url">professionaltravelcenter.com</span></div>
+        <img src="/assets/img/studio/ptc.webp" width="880" height="550" loading="lazy" decoding="async"
+             alt="Professional Travel Center website — private membership travel club, reading More Than Travel. A Life Elevated." />
+        <div class="shot__cap">
+          <b>Professional Travel Center</b>
+          <span>Thirty-year private membership club. Editorial rebuild with member stories,
+            reviews, and a members-only entrance.</span>
+          <div class="shot__tags"><i>Membership</i><i>Editorial</i><i>Member portal</i></div>
         </div>
       </a>
     </div>
 
     <p class="kw" data-fade>More, including full case studies:
       <a href="/#work">see all thirteen builds →</a></p>
+  </div>
+</section>
+
+<!-- ══════════════ THE PROBLEM ══════════════ -->
+<section class="alt">
+  <div class="wrap">
+    <div class="shead" data-fade><span class="mono">Why you're here</span>
+      <h2>You don't need a website. You need customers to find you.</h2></div>
+    <p class="slede" data-fade>Most small businesses I meet already have a site. It just isn't doing
+      anything — it's slow, it's three years out of date, and nobody can find it on Google. That's
+      not a design problem. It's a presence problem, and it's fixable.</p>
+    <div class="cards" data-fade>
+      <div class="card">
+        <span class="card__k">Problem 01</span>
+        <h3>Your site is a museum</h3>
+        <p>Built once, never touched again, because updating it means logging into a builder you
+          don't remember how to use — so you don't. Hours are wrong. Prices are old. That special
+          ended last spring.</p>
+      </div>
+      <div class="card">
+        <span class="card__k">Problem 02</span>
+        <h3>Google doesn't know you exist</h3>
+        <p>Your Google Business Profile is unclaimed, unverified, or has a photo from 2019. That
+          listing sends more customers to a local business than the website does — and it's usually
+          the first thing I fix.</p>
+      </div>
+      <div class="card">
+        <span class="card__k">Problem 03</span>
+        <h3>You're paying for nothing</h3>
+        <p>Hosting, a theme license, three plugin subscriptions, a security tool, and a maintenance
+          retainer to somebody who stopped answering. Add it up. It's usually more than a real care
+          plan costs.</p>
+      </div>
+    </div>
+
+    <div class="serp" data-fade style="margin-top:clamp(48px,7vh,80px)">
+      <svg viewBox="0 0 460 330" role="img" aria-label="A local Google search result: a map with pins beside the three-listing map pack that sits above every website on the page.">
+        <rect class="panel" x="1" y="1" width="458" height="328" rx="14"/>
+        <rect class="field" x="18" y="18" width="424" height="34" rx="17"/>
+        <g class="bar" opacity=".55"><circle cx="41" cy="35" r="5.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M45 39l4 4" stroke="currentColor" stroke-width="2" fill="none"/></g>
+        <text class="qt" x="58" y="39">general contractor near me</text>
+        <text class="lbl lbl--hl" x="18" y="74">THE MAP PACK — ABOVE EVERY WEBSITE</text>
+        <g>
+          <rect class="row row--win" x="18" y="86" width="424" height="62" rx="10"/>
+          <rect class="bar bar--win" x="34" y="102" width="122" height="9" rx="4.5"/>
+          <g class="star"><circle cx="38" cy="128" r="3.5"/><circle cx="50" cy="128" r="3.5"/><circle cx="62" cy="128" r="3.5"/><circle cx="74" cy="128" r="3.5"/><circle cx="86" cy="128" r="3.5"/></g>
+          <rect class="bar bar--win" x="102" y="124" width="74" height="8" rx="4" opacity=".55"/>
+          <text class="lbl lbl--hl" x="356" y="120">YOU</text>
+        </g>
+        <g>
+          <rect class="row" x="18" y="158" width="424" height="56" rx="10"/>
+          <rect class="bar" x="34" y="174" width="98" height="8" rx="4"/>
+          <g class="star--dim"><circle cx="38" cy="196" r="3"/><circle cx="49" cy="196" r="3"/><circle cx="60" cy="196" r="3"/><circle cx="71" cy="196" r="3"/></g>
+          <rect class="bar" x="86" y="192" width="60" height="7" rx="3.5" opacity=".3"/>
+        </g>
+        <g>
+          <rect class="row" x="18" y="224" width="424" height="56" rx="10"/>
+          <rect class="bar" x="34" y="240" width="116" height="8" rx="4"/>
+          <g class="star--dim"><circle cx="38" cy="262" r="3"/><circle cx="49" cy="262" r="3"/><circle cx="60" cy="262" r="3"/></g>
+          <rect class="bar" x="76" y="258" width="54" height="7" rx="3.5" opacity=".3"/>
+        </g>
+        <text class="lbl" x="18" y="304">↓ EVERY WEBSITE ON THE PAGE STARTS HERE</text>
+        <rect class="bar" x="18" y="312" width="240" height="7" rx="3.5" opacity=".25"/>
+      </svg>
+
+      <div class="serp__note">
+        <svg viewBox="0 0 380 190" style="margin-bottom:18px" role="img" aria-label="Map showing three competing businesses, with yours highlighted.">
+          <rect class="mapbg" x="1" y="1" width="378" height="188" rx="12"/>
+          <g class="street" stroke-width="1.4">
+            <path d="M0 52 H380 M0 108 H380 M0 154 H380"/>
+            <path d="M74 0 V190 M162 0 V190 M256 0 V190 M330 0 V190"/>
+          </g>
+          <g class="street" stroke-width="2.6"><path d="M0 108 H380"/><path d="M162 0 V190"/></g>
+          <g transform="translate(162,108)"><circle class="mhalo" r="4"/><circle class="mpin--win" r="7"/></g>
+          <circle class="mpin" cx="76" cy="54" r="5"/>
+          <circle class="mpin" cx="298" cy="152" r="5"/>
+        </svg>
+        <h3>"On the map" isn't a metaphor.</h3>
+        <p>For anything local, Google puts <b>three businesses in a box above every website on
+          the page</b> — with a map, hours, reviews, and a call button. Most people tap one of
+          those and never scroll.</p>
+        <p>That box is your <b>Google Business Profile</b>, not your website. It's free, most
+          local businesses have it half-filled or unclaimed, and it's usually the fastest thing
+          I can fix for you. Your site's job is to close whoever taps through.</p>
+      </div>
+    </div>
+
+    <div class="shead shead--solo" style="margin-top:clamp(48px,7vh,80px)" data-fade>
+      <span class="mono">Why it matters</span>
+      <h2 style="font-size:clamp(22px,2.6vw,34px)">Half your visitors leave before a slow site loads.</h2></div>
+    <div class="race" id="race" data-fade>
+      <div class="race__row race__row--me">
+        <span class="race__n">A site I build</span>
+        <div class="race__bar"><div class="race__fill" style="--w:12%"></div></div>
+        <span class="race__t">under 1s</span>
+      </div>
+      <div class="race__row">
+        <span class="race__n">Typical WordPress + builder</span>
+        <div class="race__bar"><div class="race__fill" style="--w:62%"></div></div>
+        <span class="race__t">~5s</span>
+      </div>
+      <div class="race__row">
+        <span class="race__n">Same, on phone data</span>
+        <div class="race__bar"><div class="race__fill" style="--w:100%"></div></div>
+        <span class="race__t">8s+</span>
+      </div>
+    </div>
+    <p class="kw" data-fade style="max-width:70ch">Those aren't invented numbers — a stock WordPress
+      install with a page builder and a dozen plugins is loading megabytes of theme code before it
+      shows a customer your phone number. Mine ships one HTML file. That gap is most of why a fast
+      site outranks a pretty one.</p>
   </div>
 </section>
 
@@ -765,27 +856,6 @@
       </g>
     </svg>
 
-    <div class="flow" data-fade>
-      <div class="card">
-        <span class="card__k">Step 01</span>
-        <p>"Change the Tuesday special to $12." Or fill out the one-page form on your site. Photos
-          welcome. Voice memos welcome.</p>
-      </div>
-      <div class="card">
-        <span class="card__k">Step 02</span>
-        <p>Every client request lands in one place I check every morning. Nothing gets lost in a text
-          thread or an inbox.</p>
-      </div>
-      <div class="card">
-        <span class="card__k">Step 03</span>
-        <p>A private link showing the change on your real site. Not a description of it — the actual
-          thing, before anyone else sees it.</p>
-      </div>
-      <div class="card">
-        <span class="card__k">Step 04</span>
-        <p>It's live in about a minute. Usually the same day you asked. Often within the hour.</p>
-      </div>
-    </div>
 
     <div class="compare" data-fade>
       <div>
@@ -823,24 +893,19 @@
       local businesses for seventeen years. It doesn't cost extra; it's how I launch.</p>
     <div class="cards" data-fade>
       <div class="card"><span class="card__k">Findable</span><h3>Google Business Profile</h3>
-        <p>Claimed, verified, categorized correctly, hours and service area set, photos that look like
-          a real business. This is the single highest-leverage thing most local businesses get wrong,
-          and it's free.</p></div>
+        <p>Claimed, verified, categorized correctly, hours and service area set, photos that look
+          like a real business — and your name, address and phone identical everywhere Google
+          looks. A mismatched suite number genuinely costs you map rankings.</p></div>
       <div class="card"><span class="card__k">Credible</span><h3>Reviews &amp; reputation</h3>
-        <p>A system that asks happy customers at the right moment, and a habit of responding to every
-          review — including the bad one. Ten recent reviews beat forty from 2021.</p></div>
-      <div class="card"><span class="card__k">Consistent</span><h3>Name, address, phone</h3>
-        <p>Identical everywhere Google looks — your site, your listing, directories, your Facebook
-          page. A mismatched suite number genuinely costs you map rankings.</p></div>
+        <p>A system that asks happy customers at the right moment, and a habit of responding to
+          every review — including the bad one. Ten recent reviews beat forty from 2021.</p></div>
       <div class="card"><span class="card__k">Recognizable</span><h3>Branding that holds up</h3>
-        <p>A logo, colors, and type that work on a sign, a truck, a business card, and a phone screen.
-          Built once, used everywhere, so you stop looking like four different companies.</p></div>
-      <div class="card"><span class="card__k">Paid reach</span><h3>Google &amp; Meta ads</h3>
-        <p>When you need customers now, not in six months. Built to a real budget and measured against
-          real calls — not impressions, not "engagement."</p></div>
-      <div class="card"><span class="card__k">Measured</span><h3>Knowing what worked</h3>
-        <p>Call tracking and analytics wired up from day one, so in ninety days you can tell which of
-          these actually brought people through the door.</p></div>
+        <p>A logo, colors, and type that work on a sign, a truck, a business card, and a phone
+          screen. Built once, used everywhere, so you stop looking like four different companies.</p></div>
+      <div class="card"><span class="card__k">Measured</span><h3>Ads, and knowing what worked</h3>
+        <p>Google and Meta ads when you need customers now, not in six months — built to a real
+          budget. Call tracking and analytics from day one, so in ninety days you can tell which
+          of this actually brought people through the door.</p></div>
     </div>
   </div>
 </section>
