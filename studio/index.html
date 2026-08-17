@@ -42,9 +42,18 @@
     { "@type": "City", "name": "Tomball, TX" },
     { "@type": "City", "name": "Magnolia, TX" },
     { "@type": "City", "name": "Cypress, TX" },
+    { "@type": "City", "name": "Klein, TX" },
+    { "@type": "City", "name": "Oak Ridge North, TX" },
+    { "@type": "City", "name": "Shenandoah, TX" },
+    { "@type": "City", "name": "Kingwood, TX" },
+    { "@type": "City", "name": "Humble, TX" },
+    { "@type": "City", "name": "Atascocita, TX" },
+    { "@type": "City", "name": "Porter, TX" },
+    { "@type": "City", "name": "Willis, TX" },
+    { "@type": "City", "name": "Montgomery, TX" },
     { "@type": "City", "name": "Houston, TX" }
   ],
-  "knowsAbout": ["Web Design","Local SEO","Google Business Profile","Google Ads","Meta Ads","Branding","E-commerce"],
+  "knowsAbout": ["Web Design","Website Redesign","Small Business Websites","WordPress Migration","Local SEO","Google Business Profile","Google Ads","Meta Ads","Branding","Logo Design","E-commerce","Website Maintenance"],
   "sameAs": ["https://www.linkedin.com/in/faiseltajiran/","https://github.com/faisetaj"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -318,6 +327,95 @@
     justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
   .foot a:hover { color: var(--hl); }
 
+  /* ── hero ambient map ── */
+  /* clip, not hidden: the map is sized with `slice` and deliberately overruns the section,
+     and clip avoids creating a scroll container the way overflow:hidden would. */
+  .hero { position: relative; overflow: clip; }
+  /* Two masks intersected: a soft radial to the right, plus a horizontal wipe that keeps the
+     left column clear so the headline never competes with the map behind it. */
+  .heromap { position: absolute; inset: -6% -4% auto -4%; height: 118%; z-index: 0; pointer-events: none;
+    opacity: .4; color: var(--hl);
+    -webkit-mask-image: radial-gradient(66% 62% at 76% 40%, #000 0%, rgba(0,0,0,.5) 52%, transparent 82%),
+                        linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 30%, #000 58%);
+    -webkit-mask-composite: source-in;
+    mask-image: radial-gradient(66% 62% at 76% 40%, #000 0%, rgba(0,0,0,.5) 52%, transparent 82%),
+                linear-gradient(90deg, transparent 0%, rgba(0,0,0,.18) 30%, #000 58%);
+    mask-composite: intersect; }
+  .heromap .rd { stroke: currentColor; fill: none; opacity: .14; }
+  .heromap .hw { stroke: currentColor; fill: none; opacity: .3; stroke-dasharray: 5 9;
+    animation: flow 9s linear infinite; }
+  @keyframes flow { to { stroke-dashoffset: -140; } }
+  .heromap .pin circle { fill: currentColor; }
+  .heromap .halo { fill: none; stroke: currentColor; transform-box: fill-box; transform-origin: center;
+    animation: ping 3.4s ease-out infinite; }
+  @keyframes ping { 0% { r: 4; opacity: .85; } 70%, 100% { r: 26; opacity: 0; } }
+  .heromap .lbl { fill: currentColor; font-family: var(--mono); font-size: 11px; letter-spacing: .14em;
+    opacity: .45; text-transform: uppercase; }
+  .hero > .wrap { position: relative; z-index: 1; }
+
+  /* ── proof strip ── */
+  .proof { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px; }
+  .shot { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--bg-2);
+    display: flex; flex-direction: column; transition: border-color .35s, transform .35s var(--ease); }
+  .shot:hover { border-color: color-mix(in srgb, var(--hl) 45%, transparent); transform: translateY(-4px); }
+  .shot__bar { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  .shot__bar i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); flex: none; }
+  .shot__url { font-family: var(--mono); font-size: 9px; letter-spacing: .1em; color: var(--muted);
+    margin-left: 8px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .shot img { width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; object-position: top; }
+  .shot__cap { padding: 16px 18px 18px; }
+  .shot__cap b { display: block; font-weight: 700; font-size: 15px; letter-spacing: -.01em; margin-bottom: 5px; }
+  .shot__cap span { color: var(--muted); font-size: 13.5px; }
+  .shot__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .shot__tags i { font-style: normal; border: 1px solid var(--line); border-radius: 999px; padding: 4px 9px;
+    font-family: var(--mono); font-size: 8.5px; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+
+  /* ── pipeline diagram ── */
+  .pipe { width: 100%; height: auto; color: var(--hl); margin-bottom: 26px; }
+  .pipe .track { stroke: var(--line); stroke-width: 2; fill: none; }
+  .pipe .node { fill: var(--bg-2); stroke: color-mix(in srgb, var(--hl) 45%, transparent); stroke-width: 1.5; }
+  .pipe .ico { stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .pipe .cap { fill: var(--text); font-family: var(--sans); font-size: 13px; font-weight: 650; }
+  .pipe .sub { fill: var(--muted); font-family: var(--mono); font-size: 9px; letter-spacing: .12em; }
+  .pipe .bead { fill: currentColor; animation: bead 7s var(--ease) infinite; }
+  @keyframes bead {
+    0%   { transform: translateX(0);    opacity: 0; }
+    6%   { opacity: 1; }
+    28%  { transform: translateX(232px); }
+    50%  { transform: translateX(464px); }
+    72%  { transform: translateX(696px); }
+    94%  { transform: translateX(696px); opacity: 1; }
+    100% { transform: translateX(696px); opacity: 0; }
+  }
+
+  /* ── speed race ── */
+  .race { display: grid; gap: 16px; margin-top: 6px; }
+  .race__row { display: grid; grid-template-columns: minmax(96px, 148px) 1fr auto; gap: 14px; align-items: center; }
+  .race__n { font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .race__bar { height: 10px; background: var(--bg-2); border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
+  .race__fill { height: 100%; width: 0; border-radius: 999px; background: var(--line-strong, var(--muted));
+    transition: width 1.5s var(--ease); }
+  .race__row--me .race__fill { background: var(--hl-fill); box-shadow: 0 0 16px var(--hl-dim); }
+  .race__t { font-family: var(--mono); font-size: 12px; font-weight: 600; color: var(--muted); white-space: nowrap; }
+  .race__row--me .race__t { color: var(--hl); }
+  .race.in .race__fill { width: var(--w); }
+  @media (max-width: 560px) { .race__row { grid-template-columns: 1fr auto; } .race__bar { grid-column: 1 / -1; order: 3; } }
+
+  /* ── service geography ── */
+  /* Hairlines come from the cells, not a gap-over-background: an incomplete final row would
+     otherwise leave the container colour showing as an empty block. */
+  .geo { display: grid; grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
+    border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .geo__c { padding: 18px 20px 20px; border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line); }
+  .geo__c h3 { font-weight: 700; font-size: 15.5px; letter-spacing: -.01em; margin-bottom: 4px; }
+  .geo__c .tag { font-family: var(--mono); font-size: 8.5px; letter-spacing: .12em; color: var(--hl);
+    text-transform: uppercase; display: block; margin-bottom: 10px; }
+  .geo__c p { color: var(--muted); font-size: 13px; line-height: 1.75; }
+  .kw { color: var(--muted); font-size: 13.5px; line-height: 2; margin-top: 26px; }
+  .kw a { color: var(--muted); border-bottom: 1px solid var(--line); transition: color .25s, border-color .25s; }
+  .kw a:hover { color: var(--hl); border-color: var(--hl); }
+
   /* ── founding-offer card — corner card, never a blocking modal ── */
   .offer { position: fixed; z-index: 200; right: 22px; bottom: 22px; width: min(360px, calc(100vw - 32px));
     background: linear-gradient(160deg, var(--hl-soft), transparent 60%), var(--bg-2);
@@ -368,6 +466,26 @@
 
 <!-- ══════════════ HERO ══════════════ -->
 <header class="hero">
+  <!-- Ambient service-area map. Decorative: the real geography is written out in #areas. -->
+  <svg class="heromap" viewBox="0 0 1200 620" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+    <g class="rd" stroke-width="1.2">
+      <path d="M0 96 H1200 M0 188 H1200 M0 268 H1200 M0 352 H1200 M0 436 H1200 M0 524 H1200"/>
+      <path d="M148 0 V620 M296 0 V620 M430 0 V620 M566 0 V620 M712 0 V620 M848 0 V620 M984 0 V620 M1108 0 V620"/>
+    </g>
+    <g class="rd" stroke-width="2.2">
+      <path d="M0 268 H1200"/><path d="M712 0 V620"/>
+    </g>
+    <path class="hw" stroke-width="2.6" d="M754 -20 C736 130 700 210 688 300 C676 392 660 470 636 640"/>
+    <path class="hw" stroke-width="2" d="M-20 468 C180 452 300 430 430 402 C570 372 660 344 1220 330"/>
+    <g class="pin">
+      <g transform="translate(700,90)"><circle class="halo" r="4"/><circle r="4.5"/><text class="lbl" x="14" y="4">Conroe</text></g>
+      <g transform="translate(646,206)"><circle class="halo" r="4" style="animation-delay:.5s"/><circle r="4.5"/><text class="lbl" x="14" y="4">The Woodlands</text></g>
+      <g transform="translate(694,336)"><circle class="halo" r="4" style="animation-delay:1s"/><circle r="5.5"/><text class="lbl" x="15" y="4">Spring</text></g>
+      <g transform="translate(432,300)"><circle class="halo" r="4" style="animation-delay:1.5s"/><circle r="4.5"/><text class="lbl" x="14" y="4">Tomball</text></g>
+      <g transform="translate(352,452)"><circle class="halo" r="4" style="animation-delay:2s"/><circle r="4.5"/><text class="lbl" x="14" y="4">Cypress</text></g>
+      <g transform="translate(962,382)"><circle class="halo" r="4" style="animation-delay:2.5s"/><circle r="4.5"/><text class="lbl" x="14" y="4">Kingwood</text></g>
+    </g>
+  </svg>
   <div class="wrap">
     <p class="mono hero__eyebrow" data-fade><i></i>Spring · The Woodlands · North Houston</p>
     <h1 data-fade>Get your business <span>on the map</span> — and off WordPress.</h1>
@@ -421,6 +539,83 @@
           plan costs.</p>
       </div>
     </div>
+
+    <div class="shead shead--solo" style="margin-top:clamp(48px,7vh,80px)" data-fade>
+      <span class="mono">Why it matters</span>
+      <h2 style="font-size:clamp(22px,2.6vw,34px)">Half your visitors leave before a slow site loads.</h2></div>
+    <div class="race" id="race" data-fade>
+      <div class="race__row race__row--me">
+        <span class="race__n">A site I build</span>
+        <div class="race__bar"><div class="race__fill" style="--w:12%"></div></div>
+        <span class="race__t">under 1s</span>
+      </div>
+      <div class="race__row">
+        <span class="race__n">Typical WordPress + builder</span>
+        <div class="race__bar"><div class="race__fill" style="--w:62%"></div></div>
+        <span class="race__t">~5s</span>
+      </div>
+      <div class="race__row">
+        <span class="race__n">Same, on phone data</span>
+        <div class="race__bar"><div class="race__fill" style="--w:100%"></div></div>
+        <span class="race__t">8s+</span>
+      </div>
+    </div>
+    <p class="kw" data-fade style="max-width:70ch">Those aren't invented numbers — a stock WordPress
+      install with a page builder and a dozen plugins is loading megabytes of theme code before it
+      shows a customer your phone number. Mine ships one HTML file. That gap is most of why a fast
+      site outranks a pretty one.</p>
+  </div>
+</section>
+
+<!-- ══════════════ PROOF ══════════════ -->
+<section id="work">
+  <div class="wrap">
+    <div class="shead" data-fade><span class="mono">Recent work</span>
+      <h2>Sites I built, running in the wild.</h2></div>
+    <p class="slede" data-fade>Every one of these is a front end I designed and coded myself —
+      no template, no page builder, no theme purchased and reskinned. Click through and
+      look at them on your phone.</p>
+
+    <div class="proof" data-fade>
+      <a class="shot" href="https://www.mwwrenovations.com" target="_blank" rel="noopener">
+        <div class="shot__bar"><i></i><i></i><i></i><span class="shot__url">mwwrenovations.com</span></div>
+        <img src="/assets/img/studio/mww.webp" width="880" height="550" loading="lazy" decoding="async"
+             alt="MWW Renovations website — full-bleed jobsite video hero reading Build it once. Build it right." />
+        <div class="shot__cap">
+          <b>MWW Renovations</b>
+          <span>Houston general contractor. Replaced a 2011 Weebly site — three design directions
+            built, the client picked one.</span>
+          <div class="shot__tags"><i>General contractor</i><i>Local SEO</i><i>Video hero</i></div>
+        </div>
+      </a>
+
+      <a class="shot" href="https://www.alitherep.com" target="_blank" rel="noopener">
+        <div class="shot__bar"><i></i><i></i><i></i><span class="shot__url">alitherep.com</span></div>
+        <img src="/assets/img/studio/alitherep.webp" width="880" height="550" loading="lazy" decoding="async"
+             alt="AliTheRep website — independent cycling sales representation across Texas, Louisiana, Oklahoma and Arkansas." />
+        <div class="shot__cap">
+          <b>AliTheRep</b>
+          <span>Cycling sales rep covering four states. Sixteen brands, a dealer portal, and a
+            platform redesign end to end.</span>
+          <div class="shot__tags"><i>B2B</i><i>Platform redesign</i><i>Dealer portal</i></div>
+        </div>
+      </a>
+
+      <a class="shot" href="https://borderlinemind.com" target="_blank" rel="noopener">
+        <div class="shot__bar"><i></i><i></i><i></i><span class="shot__url">borderlinemind.com</span></div>
+        <img src="/assets/img/studio/borderlinemind.webp" width="880" height="550" loading="lazy" decoding="async"
+             alt="Borderline Mind website — a mental-health journal with a blog and moderated community." />
+        <div class="shot__cap">
+          <b>Borderline Mind</b>
+          <span>A writer who publishes weekly, so this one got a real admin panel — drafts,
+            autosave, moderated comments.</span>
+          <div class="shot__tags"><i>Publishing</i><i>Admin panel</i><i>Moderation</i></div>
+        </div>
+      </a>
+    </div>
+
+    <p class="kw" data-fade>More, including full case studies:
+      <a href="/#work">see all thirteen builds →</a></p>
   </div>
 </section>
 
@@ -541,28 +736,53 @@
       What you're buying is a webmaster who answers — the thing you thought you were getting when
       someone sold you WordPress.</p>
 
+    <svg class="pipe" viewBox="0 0 800 132" role="img" aria-label="How a change ships: you text me, it lands on my board, you get a preview link, then it goes live.">
+      <path class="track" d="M52 52 H748"/>
+      <g class="bead"><circle cx="52" cy="52" r="5"/></g>
+      <g>
+        <circle class="node" cx="52" cy="52" r="26"/>
+        <g class="ico" transform="translate(40,40)"><rect x="3" y="1" width="14" height="22" rx="3"/><path d="M9 19h6"/></g>
+        <text class="cap" x="52" y="102" text-anchor="middle">You text me</text>
+        <text class="sub" x="52" y="120" text-anchor="middle">ANY TIME</text>
+      </g>
+      <g>
+        <circle class="node" cx="284" cy="52" r="26"/>
+        <g class="ico" transform="translate(272,41)"><rect x="1" y="2" width="22" height="17" rx="3"/><path d="M1 8h22M8 19v3M16 19v3"/></g>
+        <text class="cap" x="284" y="102" text-anchor="middle">It hits my board</text>
+        <text class="sub" x="284" y="120" text-anchor="middle">CHECKED DAILY</text>
+      </g>
+      <g>
+        <circle class="node" cx="516" cy="52" r="26"/>
+        <g class="ico" transform="translate(504,42)"><path d="M1 10s4-7 11-7 11 7 11 7-4 7-11 7S1 10 1 10Z"/><circle cx="12" cy="10" r="3"/></g>
+        <text class="cap" x="516" y="102" text-anchor="middle">You get a preview</text>
+        <text class="sub" x="516" y="120" text-anchor="middle">PRIVATE LINK</text>
+      </g>
+      <g>
+        <circle class="node" cx="748" cy="52" r="26"/>
+        <g class="ico" transform="translate(736,41)"><path d="M2 12l7 7L22 5"/></g>
+        <text class="cap" x="748" y="102" text-anchor="middle">It goes live</text>
+        <text class="sub" x="748" y="120" text-anchor="middle">~60 SECONDS</text>
+      </g>
+    </svg>
+
     <div class="flow" data-fade>
       <div class="card">
         <span class="card__k">Step 01</span>
-        <h3>You text me</h3>
         <p>"Change the Tuesday special to $12." Or fill out the one-page form on your site. Photos
           welcome. Voice memos welcome.</p>
       </div>
       <div class="card">
         <span class="card__k">Step 02</span>
-        <h3>It hits my board</h3>
         <p>Every client request lands in one place I check every morning. Nothing gets lost in a text
           thread or an inbox.</p>
       </div>
       <div class="card">
         <span class="card__k">Step 03</span>
-        <h3>You get a preview</h3>
         <p>A private link showing the change on your real site. Not a description of it — the actual
           thing, before anyone else sees it.</p>
       </div>
       <div class="card">
         <span class="card__k">Step 04</span>
-        <h3>You say go</h3>
         <p>It's live in about a minute. Usually the same day you asked. Often within the hour.</p>
       </div>
     </div>
@@ -723,6 +943,52 @@
           The Woodlands to Tomball to north Houston. The first meeting is free and takes about
           45 minutes.</p></details>
     </div>
+  </div>
+</section>
+
+<!-- ══════════════ SERVICE AREA ══════════════
+     Local-SEO surface. Cities are where I'll actually drive; the neighborhoods under each are a
+     handful of well-known ones, deliberately NOT an exhaustive list — a wall of subdivision names
+     is the doorway-page pattern search engines discount, and it reads as stuffing to a human.
+     ══════════════════════════════════════════════════════════════════════════════════════ -->
+<section class="alt" id="areas">
+  <div class="wrap">
+    <div class="shead" data-fade><span class="mono">Where I work</span>
+      <h2>Web design for <em class="ser">north Houston</em>, in person.</h2></div>
+    <p class="slede" data-fade>I'm in Spring, and these are the places I'll drive to for a first
+      meeting — no charge, no Zoom link. Times are roughly from my desk.</p>
+
+    <div class="geo" data-fade>
+      <div class="geo__c"><span class="tag">Home base</span><h3>Spring, TX</h3>
+        <p>Gleannloch Farms · Augusta Pines · Windrose · Legends Ranch · Springwoods Village · Harmony</p></div>
+      <div class="geo__c"><span class="tag">~15 min</span><h3>The Woodlands</h3>
+        <p>Alden Bridge · Sterling Ridge · Creekside Park · Cochran's Crossing · Grogan's Mill · Panther Creek</p></div>
+      <div class="geo__c"><span class="tag">~15 min</span><h3>Klein &amp; Champions</h3>
+        <p>Champion Forest · Memorial Northwest · Northgate Forest · Oak Ridge North · Shenandoah</p></div>
+      <div class="geo__c"><span class="tag">~25 min</span><h3>Tomball</h3>
+        <p>Wildwood at Northpointe · Amira · Raburn Reserve · Village Creek</p></div>
+      <div class="geo__c"><span class="tag">~25 min</span><h3>Kingwood &amp; Humble</h3>
+        <p>Atascocita · Eagle Springs · Fall Creek · Forest Cove · Trailwood · Porter</p></div>
+      <div class="geo__c"><span class="tag">~30 min</span><h3>Cypress</h3>
+        <p>Bridgeland · Towne Lake · Fairfield · Coles Crossing · Blackhorse Ranch</p></div>
+      <div class="geo__c"><span class="tag">~30 min</span><h3>Conroe</h3>
+        <p>Grand Central Park · April Sound · Woodforest · Water Crest · Longmire</p></div>
+      <div class="geo__c"><span class="tag">~30 min</span><h3>Magnolia</h3>
+        <p>Lake Windcrest · Mostyn Manor · Magnolia Reserve · Ridgelake Shores</p></div>
+      <div class="geo__c"><span class="tag">~40 min</span><h3>Montgomery &amp; Willis</h3>
+        <p>Bentwater · Walden on Lake Conroe · Seven Coves · Lake Conroe</p></div>
+    </div>
+
+    <p class="kw" data-fade>Most people land here searching for something specific — <b>web design in
+      Spring, TX</b>, a <b>website designer in The Woodlands</b>, someone to <b>redesign a WordPress
+      site</b> in Conroe, <b>small business web design</b> in Tomball, or help getting a <b>Google
+      Business Profile verified</b> in Cypress. If that's roughly what you typed, you just watched
+      local SEO work — and it's the same thing I build into your site.<br>
+      Also here for: <a href="#addons">online store and e-commerce</a>,
+      <a href="#addons">logo and brand identity</a>, <a href="#presence">Google Ads and Meta ads
+      management</a>, <a href="#addons">review generation</a>, restaurant and med-spa sites,
+      contractor and home-services sites, and <a href="#pricing">monthly website maintenance</a>
+      for businesses that would rather text than log in.</p>
   </div>
 </section>
 
