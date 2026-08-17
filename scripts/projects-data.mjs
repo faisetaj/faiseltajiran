@@ -276,7 +276,7 @@ export const projects = [
 
   {
     slug: 'cruise-reels',
-    nr: '12',
+    nr: '13',
     group: 'Work improvisation · PTC',
     title: 'Cruise Reels',
     hue: '#ff4f9a',
@@ -343,8 +343,48 @@ export const projects = [
   },
 
   {
+    slug: 'mwwrenovations',
+    nr: '09',
+    group: 'Client \u00b7 Web design',
+    title: 'MWW Renovations',
+    hue: '#ff6a13',
+    motif: 'mww',
+    // 'RENOVATIONS' is wider than the line box at the default clamp; see titleFit in build-work.mjs
+    titleSize: 'clamp(30px,6.9vw,116px)',
+    category: 'General Contractor Web',
+    year: '2026',
+    role: 'Designer \u00b7 Engineer (client work)',
+    status: 'Live \u00b7 paid in full',
+    scope: 'Web \u00b7 Design system \u00b7 Local SEO',
+    link: { href: 'https://www.mwwrenovations.com', label: 'mwwrenovations.com' },
+    tagline: 'A Houston builder\u2019s site that finally looks like <b>the work</b>.',
+    description: 'Total redesign for a Houston general contractor, replacing a 2011-era Weebly site. Vite + React 19 + Tailwind v4, three design directions built, client picked one.',
+    thesis: [
+      'MWW Renovations has been building in Houston since at least 2011 \u2014 whole-home remodels, commercial build-outs, and custom homes on the client\u2019s own lot. The work was excellent. The website was a <strong>Weebly page from the same era</strong>, and it was costing him jobs to competitors whose work he beats.',
+      'A homeowner picking a general contractor is deciding who gets a key to their house and a five-figure check. That decision runs on evidence, not adjectives \u2014 so the site is built to put real job photos, real neighborhoods, and a real phone number in front of that decision as fast as possible.',
+    ],
+    build: [
+      { label: 'DIRECTIONS', title: 'Three worlds built, one shipped', body: 'Rather than one mockup to react to, the client saw three fully-built directions and chose. <strong>Ironwork</strong> shipped \u2014 industrial editorial, Archivo 800 and JetBrains Mono, full-bleed video hero, hairline grids. <strong>Blueprint</strong> (drafting precision, spec tables) stays intact in the repo as a live backup. <strong>Monograph</strong> was cut: warm, serif, image-led, and it read too soft for a builder.' },
+      { label: 'SYSTEM', title: 'One attribute drives the whole design', body: 'Every palette, typeface, and type behaviour hangs off <code>&lt;html data-style&gt;</code> \u2014 weight, tracking, leading, and display ceiling included. The same <code>display-xl</code> utility renders as an 800-weight grotesque in one world and a condensed technical face in the other. No hardcoded hex exists outside those blocks.' },
+      { label: 'EVIDENCE', title: 'No invented figures, anywhere', body: 'Every number on the site is traceable to the client\u2019s own published material. <em>2011</em> is the earliest Internet Archive capture, treated as a floor rather than a founding date. <em>120+ photos</em> is 121 unique images counted after discarding Weebly\u2019s duplicate renditions. <em>7 Houston areas</em> are the neighborhoods named in his own gallery titles. Even the headline is derived from his 2011 tagline.' },
+      { label: 'LOCAL SEO', title: 'Service areas tagged by scope, not stuffed', body: 'Eight client-supplied cities, each carrying a handful of real subdivisions \u2014 deliberately a handful. A wall of subdivision names is the doorway-page pattern search engines discount and humans read as stuffing. Each city is tagged build / remodel / addition / commercial, because acreage country and inside-the-Beltway are different businesses.' },
+      { label: 'MOTION', title: 'Four animated graphics, re-themed', body: 'Split-flap board, odometer, gear schematic, and a rotating structural frame \u2014 ported from Forever Components (MIT) and re-pointed onto the design tokens so they inherit whichever world is active.' },
+    ],
+    signals: [
+      { value: '3', label: 'DESIGN WORLDS BUILT' },
+      { value: '8', label: 'SERVICE-AREA CITIES' },
+      { value: '120+', label: 'JOB PHOTOS, VERIFIED' },
+      { value: '2011', label: 'CLIENT\u2019S FLOOR YEAR' },
+    ],
+    stack: ['React 19', 'Vite 8', 'TypeScript', 'Tailwind v4', 'Netlify', 'GeneralContractor schema', 'oxlint'],
+    proves: [
+      'The unglamorous half of client work is provenance. Anyone can design a contractor site; the discipline is refusing to invent a founding date, a project count, or a service area \u2014 and shipping a repo where every claim has a source next to it.',
+    ],
+  },
+
+  {
     slug: 'ptc-promotions',
-    nr: '11',
+    nr: '12',
     group: 'Work improvisation · PTC',
     title: 'PTC Promotions',
     hue: '#38b6ff',
@@ -378,7 +418,7 @@ export const projects = [
 
   {
     slug: 'ptc-ai-operator',
-    nr: '09',
+    nr: '10',
     group: 'Work improvisation · PTC',
     title: 'PTC AI Operator',
     hue: '#e8b84b',
@@ -418,7 +458,7 @@ export const projects = [
 
   {
     slug: 'ghl-rc-bridge',
-    nr: '10',
+    nr: '11',
     group: 'Work improvisation · PTC',
     title: 'GHL×RC Bridge',
     hue: '#ffb02e',

@@ -318,6 +318,34 @@
     justify-content: space-between; flex-wrap: wrap; gap: 12px; color: var(--muted); font-size: 12px; }
   .foot a:hover { color: var(--hl); }
 
+  /* ── founding-offer card — corner card, never a blocking modal ── */
+  .offer { position: fixed; z-index: 200; right: 22px; bottom: 22px; width: min(360px, calc(100vw - 32px));
+    background: linear-gradient(160deg, var(--hl-soft), transparent 60%), var(--bg-2);
+    border: 1px solid color-mix(in srgb, var(--hl) 45%, transparent); border-radius: 16px;
+    padding: 22px 22px 20px; box-shadow: 0 18px 60px rgba(0,0,0,.5), 0 0 40px var(--hl-soft);
+    opacity: 0; transform: translateY(18px) scale(.98); pointer-events: none;
+    transition: opacity .5s var(--ease), transform .5s var(--ease); }
+  .offer.show { opacity: 1; transform: none; pointer-events: auto; }
+  .offer__k { color: var(--hl); text-shadow: 0 0 12px var(--hl-dim); margin-bottom: 10px; }
+  .offer__t { font-weight: 750; font-stretch: 113%; font-size: 26px; letter-spacing: -0.03em;
+    line-height: 1.05; margin-bottom: 10px; }
+  .offer__p { color: var(--muted); font-size: 14px; line-height: 1.6; }
+  .offer__p b { color: var(--text); font-weight: 700; }
+  .offer__spots { color: var(--hl); margin-top: 12px; }
+  .offer__row { display: flex; align-items: center; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
+  .offer__row .btn { padding: 12px 22px; font-size: 13px; }
+  .offer__no { background: none; border: 0; cursor: pointer; color: var(--muted); font-family: var(--mono);
+    font-size: 10px; letter-spacing: .14em; text-transform: uppercase; padding: 4px; }
+  .offer__no:hover { color: var(--text); }
+  .offer__x { position: absolute; top: 10px; right: 12px; background: none; border: 0; cursor: pointer;
+    color: var(--muted); font-size: 20px; line-height: 1; padding: 6px; }
+  .offer__x:hover { color: var(--text); }
+  @media (max-width: 520px) {
+    .offer { right: 10px; left: 10px; bottom: 10px; width: auto; padding: 20px 18px 18px; }
+    .offer__t { font-size: 22px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .offer { transform: none; } }
+
   /* ── reveal ── */
   [data-fade] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
   [data-fade].in { opacity: 1; transform: none; }
@@ -343,9 +371,10 @@
   <div class="wrap">
     <p class="mono hero__eyebrow" data-fade><i></i>Spring · The Woodlands · North Houston</p>
     <h1 data-fade>Get your business <span>on the map</span> — and off WordPress.</h1>
-    <p class="hero__sub" data-fade>A real website, built for you from scratch, for <b>$900</b>.
-      Then <b>$99 a month</b> and I'm your webmaster — you text me the change, I make it, it's
-      live the same day. No logins. No plugins. No page builder to fight.</p>
+    <p class="hero__sub" data-fade>A real website, built for you from scratch — <b>$900</b> for the
+      first 10 local businesses, normally $1,200. Then <b>$99 a month</b> and I'm your webmaster:
+      you text me the change, I make it, it's live the same day. No logins. No plugins. No page
+      builder to fight.</p>
     <div class="hero__row" data-fade>
       <a class="btn" href="#start">Book a free 45-min consult</a>
       <a class="btn btn--ghost" href="#pricing">See pricing &amp; add-ons</a>
@@ -403,15 +432,16 @@
   <div class="wrap">
     <div class="shead" data-fade><span class="mono">Pricing</span>
       <h2>One price to launch. One price to never think about it again.</h2></div>
-    <p class="slede" data-fade>I used to charge $1,500 for a WordPress site on a purchased template.
-      I build faster and better now — custom, no template — so the launch price came down instead of
-      the margin going up. That's the whole pitch.</p>
+    <p class="slede" data-fade>I used to charge <b>$1,500</b> for a WordPress site on a purchased
+      template. The build is custom now, with no template and no plugins — and it still lists under
+      that, because I build faster than I used to and pass the difference on. The first ten local
+      businesses get 25% off on top of it.</p>
 
     <div class="launch" data-fade>
       <div>
-        <span class="launch__k">Website launch · one time</span>
+        <span class="launch__k">Website launch · founding-client price</span>
         <div class="launch__n">$900</div>
-        <span class="launch__was">Was $1,500 on WordPress</span>
+        <span class="launch__was">Regular price <s>$1,200</s> · 25% off for the first 10</span>
         <p class="launch__note">Everything you need to be live and findable. Yours to keep, plan or no plan.</p>
       </div>
       <ul class="inc">
@@ -751,6 +781,20 @@
   </div>
 </section>
 
+<aside class="offer" id="offer" role="dialog" aria-modal="false" aria-labelledby="offer-t">
+  <button class="offer__x" id="offer-x" aria-label="Close this offer">&times;</button>
+  <p class="mono offer__k">Founding client offer</p>
+  <h2 class="offer__t" id="offer-t">25% off your launch</h2>
+  <p class="offer__p">The first 10 local businesses get the full build for <b>$900</b> instead of
+    $1,200. Same site, same care plan, no catch — I want the first ten done well and talking
+    about it.</p>
+  <p class="mono offer__spots" id="offer-spots"></p>
+  <div class="offer__row">
+    <a class="btn" href="#start" id="offer-cta">Claim a spot</a>
+    <button class="offer__no" id="offer-no">No thanks</button>
+  </div>
+</aside>
+
 <script>
 (function(){
   document.getElementById('y').textContent = new Date().getFullYear();
@@ -782,6 +826,73 @@
     });
   });
 
+  /* ─────────────────────────────────────────────────────────────────────────
+     FOUNDING OFFER — ▸▸ UPDATE SPOTS_CLAIMED BY HAND AS YOU SELL THEM ◂◂
+     This is a real count of a real offer. Do NOT wire it to a timer, a random
+     number, or an auto-decrement — fake scarcity is a dark pattern, and the one
+     thing this whole page is selling is that you tell people the truth.
+     When SPOTS_CLAIMED hits SPOTS_TOTAL the card stops appearing on its own.
+     ───────────────────────────────────────────────────────────────────────── */
+  var SPOTS_TOTAL = 10, SPOTS_CLAIMED = 0;
+
+  var offer = document.getElementById('offer');
+  var DISMISS_KEY = 'ft-studio-offer-dismissed';
+  var DISMISS_DAYS = 30;
+  var left = SPOTS_TOTAL - SPOTS_CLAIMED;
+
+  function dismissed(){
+    try {
+      var t = parseInt(localStorage.getItem(DISMISS_KEY) || '0', 10);
+      return t && (Date.now() - t) < DISMISS_DAYS * 864e5;
+    } catch (e) { return false; }
+  }
+  function dismiss(){
+    offer.classList.remove('show');
+    try { localStorage.setItem(DISMISS_KEY, String(Date.now())); } catch (e) {}
+  }
+
+  if (left > 0 && !dismissed()) {
+    document.getElementById('offer-spots').textContent =
+      left === SPOTS_TOTAL ? SPOTS_TOTAL + ' spots open' : left + ' of ' + SPOTS_TOTAL + ' spots left';
+
+    var shown = false;
+    function show(){
+      // Never interrupt someone already filling out the form.
+      if (shown || dismissed() || document.activeElement.closest('#studio-inquiry')) return;
+      shown = true;
+      offer.classList.add('show');
+      cleanup();
+    }
+    function onScroll(){
+      var d = document.documentElement;
+      if ((d.scrollTop) / (d.scrollHeight - d.clientHeight) > 0.35) show();
+    }
+    function onExit(e){ if (e.clientY <= 0) show(); }
+    function cleanup(){
+      window.removeEventListener('scroll', onScroll);
+      document.removeEventListener('mouseout', onExit);
+    }
+
+    // Earliest it can appear is 7s in — long enough that it reads as an offer,
+    // not an ambush.
+    setTimeout(function(){
+      window.addEventListener('scroll', onScroll, { passive: true });
+      document.addEventListener('mouseout', onExit);
+      setTimeout(show, 14000);
+    }, 7000);
+
+    document.getElementById('offer-x').addEventListener('click', dismiss);
+    document.getElementById('offer-no').addEventListener('click', dismiss);
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && offer.classList.contains('show')) dismiss();
+    });
+    document.getElementById('offer-cta').addEventListener('click', function(){
+      var opt = 'New website — $900 launch';
+      [].forEach.call(select.options, function(o){ if (o.value === opt) select.value = opt; });
+      dismiss();
+    });
+  }
+
   var status = form.querySelector('.cform__status');
   form.addEventListener('submit', async function(e){
     e.preventDefault();
@@ -802,6 +913,7 @@
       if (!r.ok) throw new Error();
       form.reset();
       status.textContent = 'SENT — I\'LL GET BACK TO YOU TODAY.';
+      dismiss(); // they've made contact; stop pitching the offer at them
     } catch (err) {
       status.textContent = 'OPENING YOUR EMAIL APP INSTEAD…';
       location.href = 'mailto:faisel@faiseltajiran.com?subject=' +

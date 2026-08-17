@@ -23,6 +23,12 @@ if (!defs) throw new Error('Could not find motif defs in index.html');
 
 const strip = (html) => html.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
 
+// The hero h1 runs at clamp(38px, 9.2vw, 160px), which suits one short word. A title with a
+// long single word ("RENOVATIONS") is wider than the line box and Chrome breaks it mid-word.
+// Set `titleSize` on that project to override the clamp — explicit per project, because a
+// length heuristic also shrinks titles like "PTC AI Operator" that wrap correctly as-is.
+const titleFit = (p) => (p.titleSize ? ` style="font-size:${p.titleSize}"` : '');
+
 const page = (p, next) => `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -100,7 +106,7 @@ const page = (p, next) => `<!DOCTYPE html>
       <div class="container">
         <p class="case-hero__crumb mono"><a href="/#work" data-transition>← INDEX</a><span>/</span><span>WORK</span><span>/</span><span>${p.slug.toUpperCase()}</span></p>
         <p class="case-hero__nr mono">№ ${p.nr} — ${p.category.toUpperCase()}</p>
-        <h1 class="case-hero__title">${p.title}</h1>
+        <h1 class="case-hero__title"${titleFit(p)}>${p.title}</h1>
         <p class="case-hero__tagline">${p.tagline}</p>
         <div class="case-meta">
           <div><span class="mono">TYPE</span><strong>${p.group}</strong></div>
@@ -221,7 +227,14 @@ projects.forEach((p, i) => {
 
 // sitemap
 const today = new Date().toISOString().slice(0, 10);
-const urls = ['https://faiseltajiran.com/', ...projects.map(p => `https://faiseltajiran.com/work/${p.slug}/`)];
+// Standalone pages that aren't generated from projects-data but must stay in the sitemap.
+// Add new hand-built pages here — this script overwrites sitemap.xml wholesale, so anything
+// missing from this list silently disappears on the next run.
+const staticPages = [
+  'https://faiseltajiran.com/',
+  'https://faiseltajiran.com/studio/',
+];
+const urls = [...staticPages, ...projects.map(p => `https://faiseltajiran.com/work/${p.slug}/`)];
 writeFileSync(join(root, 'sitemap.xml'),
 `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

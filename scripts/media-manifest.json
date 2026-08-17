@@ -246,5 +246,15 @@
       "h": 1000,
       "wide": true
     }
+  ],
+  "mwwrenovations": [
+    {
+      "file": "home.webp",
+      "alt": "MWW Renovations homepage — full-bleed jobsite video hero reading 'Build it once. Build it right.'",
+      "caption": "HOMEPAGE — IRONWORK DIRECTION, FULL-BLEED JOBSITE VIDEO HERO",
+      "w": 1344,
+      "h": 840,
+      "wide": true
+    }
   ]
 }
