@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Request a Website Change — Faisel Tajiran</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0c0a'/%3E%3Ctext x='50%25' y='57%25' dominant-baseline='middle' text-anchor='middle' font-family='ui-sans-serif' font-weight='700' font-size='14' fill='%23d4ff00'%3EFT%3C/text%3E%3C/svg%3E" />
+<style>
+  @font-face { font-family:'Archivo'; src:url('/assets/fonts/archivo-var.woff2') format('woff2');
+    font-weight:100 900; font-stretch:62% 125%; font-display:swap; }
+  @font-face { font-family:'JetBrains Mono'; src:url('/assets/fonts/jetbrains-mono-var.woff2') format('woff2');
+    font-weight:100 800; font-display:swap; }
+  :root{
+    --bg:#0a0c0a; --bg-2:#101310; --text:#f1f0ea; --muted:#8b8e87;
+    --hl:#d4ff00; --hl-dim:rgba(212,255,0,.5); --hl-soft:rgba(212,255,0,.13); --hl-ink:#222a00;
+    --line:rgba(241,240,234,.13);
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+    --sans:'Archivo',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  [hidden]{display:none!important}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;padding:clamp(20px,4vw,48px)}
+  body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(60% 42% at 50% -6%,var(--hl-soft),transparent 70%)}
+  .wrap{max-width:640px;margin:0 auto}
+  .mono{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
+  .eyebrow{color:var(--hl);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .eyebrow::before{content:'';width:26px;height:1px;background:var(--hl)}
+  h1{font-weight:750;font-stretch:113%;font-size:clamp(26px,5vw,40px);letter-spacing:-.03em;line-height:1.06}
+  .sub{color:var(--muted);margin-top:14px}
+  form{margin-top:32px;display:grid;gap:20px}
+  label{display:grid;gap:8px}
+  label>span,legend{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  input,select,textarea{font-family:var(--sans);font-size:16px;background:var(--bg-2);color:var(--text);
+    border:1px solid var(--line);border-radius:10px;padding:13px 14px;width:100%;transition:border-color .2s,box-shadow .2s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--hl);box-shadow:0 0 18px var(--hl-soft)}
+  textarea{min-height:76px;resize:vertical}
+  fieldset{border:0}
+  .ops{display:grid;gap:14px;margin-top:12px}
+  .op{border:1px solid var(--line);border-left:2px solid var(--hl);border-radius:10px;
+    padding:16px;background:var(--bg-2);display:grid;gap:12px}
+  .op__h{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .op__n{font-family:var(--mono);font-size:10px;color:var(--muted);letter-spacing:.14em}
+  .op__t{flex:1;min-width:190px;font-weight:600}
+  .op__x{background:none;border:1px solid var(--line);border-radius:999px;color:var(--muted);cursor:pointer;
+    font-family:var(--mono);font-size:9px;letter-spacing:.12em;padding:6px 11px;text-transform:uppercase}
+  .op__x:hover{color:#ff6b5f;border-color:#ff6b5f}
+  .add{background:none;border:1px dashed var(--line);border-radius:10px;color:var(--hl);cursor:pointer;
+    font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:14px;width:100%}
+  .add:hover{border-color:var(--hl);background:var(--hl-soft)}
+  button[type=submit]{font-family:var(--sans);font-size:15px;font-weight:800;cursor:pointer;border:0;
+    border-radius:999px;background:var(--hl);color:var(--hl-ink);padding:15px 30px;justify-self:start;
+    box-shadow:0 0 26px var(--hl-dim);transition:transform .25s,box-shadow .25s}
+  button[type=submit]:hover{transform:translateY(-2px);box-shadow:0 0 40px var(--hl-dim)}
+  button[type=submit]:disabled{opacity:.5;cursor:wait;transform:none}
+  .hint{font-family:var(--sans);font-size:13px;color:var(--muted);letter-spacing:0;text-transform:none}
+  .foot{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);
+    font-family:var(--mono);font-size:10px;line-height:2;letter-spacing:.08em}
+  .err{color:#ff6b5f;font-size:14px}
+  .ok h1{color:var(--hl)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div id="bad" hidden>
+    <p class="mono eyebrow">Website care</p>
+    <h1>That link isn't right.</h1>
+    <p class="sub">Use the bookmark Faisel sent you — it has a code on the end that tells us which
+      website you're asking about. If you've lost it, just text him.</p>
+  </div>
+
+  <div id="main" hidden>
+    <p class="mono eyebrow"><span id="who">Website care</span></p>
+    <h1>Tell us what to change.<br>We'll handle the rest.</h1>
+    <p class="sub">Add one line for each thing you want changed. Plain words are fine — you don't
+      need to know how the website works. You'll get a preview to approve before anything goes live.</p>
+
+    <form id="f">
+      <label><span>Your name</span><input type="text" name="name" required autocomplete="name" placeholder="Your name"></label>
+      <label><span>Email</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com"></label>
+
+      <fieldset>
+        <legend>What needs to change?</legend>
+        <div class="ops" id="ops"></div>
+        <p class="err" id="operr" hidden>Add at least one change, and fill in its details.</p>
+        <button type="button" class="add" id="addop">+ Add another change</button>
+      </fieldset>
+
+      <label><span>When does this need to be live? <span class="hint">(optional)</span></span>
+        <input type="text" name="deadline" placeholder="e.g. before Friday / no rush"></label>
+
+      <div style="position:absolute;left:-9999px" aria-hidden="true">
+        <label>Company<input type="text" name="company" tabindex="-1" autocomplete="off"></label>
+      </div>
+
+      <div>
+        <button type="submit" id="send">Send it →</button>
+        <p class="err" id="senderr" hidden></p>
+      </div>
+    </form>
+
+    <p class="foot">Every change gets a preview before it goes live.<br>
+      Urgent? Call or text Faisel at <a href="tel:+18329281561" style="color:var(--hl)">832&nbsp;928&nbsp;1561</a>.<br>
+      <a href="https://faiseltajiran.com/studio/" style="color:var(--muted)">FAISELTAJIRAN.COM — WEBSITE CARE</a></p>
+  </div>
+
+  <div id="done" class="ok" hidden>
+    <p class="mono eyebrow">Request received</p>
+    <h1>Got it.</h1>
+    <p class="sub">Your request is in the queue. You'll hear back with a preview — once you're happy
+      with it, it goes live.</p>
+    <p class="foot"><a href="" id="again" style="color:var(--hl)">Submit another request</a></p>
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var HUB = 'https://zippy-bienenstitch-61db73.netlify.app';
+  var q = new URLSearchParams(location.search), SLUG = q.get('c') || '', KEY = q.get('k') || '';
+  var $ = function(id){ return document.getElementById(id); };
+
+  if (!SLUG || !KEY) { $('bad').hidden = false; return; }
+
+  fetch(HUB + '/.netlify/functions/intake?c=' + encodeURIComponent(SLUG) + '&k=' + encodeURIComponent(KEY))
+    .then(function(r){ if(!r.ok) throw new Error(); return r.json(); })
+    .then(function(d){ $('who').textContent = d.name + ' — website care'; $('main').hidden = false; build(); })
+    .catch(function(){ $('bad').hidden = false; });
+
+  var TYPES = {
+    change: { label:'Change something', fields:[
+      ['from','Change this','The words on the site now — copy them if you can'],
+      ['to','To this','Exactly what it should say instead']] },
+    add:    { label:'Add something', fields:[
+      ['what','Add this','The new text, item, price, or photo caption'],
+      ['where','Where it goes','e.g. under the brands list, at the top of the page']] },
+    remove: { label:'Remove something', fields:[
+      ['what','Remove this','What should come off the site, and where it is']] },
+    image:  { label:'Swap a photo', fields:[
+      ['which','Which photo','Where it is now — e.g. the big photo at the top'],
+      ['note','Notes','Email the new photo to Faisel. Anything else we should know?']] },
+    post:   { label:'New post / announcement', fields:[
+      ['title','Title','Headline for the announcement'],
+      ['body','What it says','Write it however you like — we’ll format it']] },
+    other:  { label:'Something else', fields:[
+      ['details','Describe it','Tell us in plain words what you need']] }
+  };
+
+  var wrap, n = 0;
+  function row(){
+    n++;
+    var el = document.createElement('div'); el.className = 'op';
+    var opts = Object.keys(TYPES).map(function(k){ return '<option value="'+k+'">'+TYPES[k].label+'</option>'; }).join('');
+    el.innerHTML = '<div class="op__h"><span class="op__n">#'+n+'</span>' +
+      '<select class="op__t" aria-label="Type of change">'+opts+'</select>' +
+      '<button type="button" class="op__x">Remove</button></div><div class="op__f"></div>';
+    var sel = el.querySelector('.op__t'), f = el.querySelector('.op__f');
+    function render(){
+      f.innerHTML = '';
+      TYPES[sel.value].fields.forEach(function(x){
+        var l = document.createElement('label');
+        l.innerHTML = '<span>'+x[1]+'</span><textarea data-k="'+x[0]+'" rows="2" placeholder="'+x[2]+'"></textarea>';
+        l.style.marginTop = '10px'; f.appendChild(l);
+      });
+    }
+    sel.addEventListener('change', render);
+    el.querySelector('.op__x').addEventListener('click', function(){
+      el.remove(); if (!wrap.children.length) row(); renumber();
+    });
+    render(); wrap.appendChild(el); renumber();
+  }
+  function renumber(){
+    [].forEach.call(wrap.children, function(el,i){ el.querySelector('.op__n').textContent = '#'+(i+1); });
+    n = wrap.children.length;
+  }
+  function collect(){
+    return [].map.call(wrap.children, function(el){
+      var o = { type: el.querySelector('.op__t').value };
+      [].forEach.call(el.querySelectorAll('[data-k]'), function(t){ o[t.dataset.k] = t.value.trim(); });
+      return o;
+    }).filter(function(o){ return Object.keys(o).some(function(k){ return k!=='type' && o[k]; }); });
+  }
+
+  function build(){
+    wrap = $('ops'); $('addop').addEventListener('click', row); row();
+    $('f').addEventListener('submit', function(e){
+      e.preventDefault();
+      var ops = collect();
+      $('operr').hidden = !!ops.length;
+      if (!ops.length) { wrap.querySelector('textarea').focus(); return; }
+      var fd = new FormData(e.target), btn = $('send');
+      btn.disabled = true; btn.textContent = 'Sending…'; $('senderr').hidden = true;
+      fetch(HUB + '/.netlify/functions/intake', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          site: SLUG, key: KEY,
+          name: fd.get('name'), email: fd.get('email'), deadline: fd.get('deadline'),
+          company: fd.get('company'), operations: ops
+        })
+      }).then(function(r){ if(!r.ok) throw new Error(); return r.json(); })
+        .then(function(){ $('main').hidden = true; $('done').hidden = false;
+                          $('again').href = location.href; window.scrollTo(0,0); })
+        .catch(function(){
+          btn.disabled = false; btn.textContent = 'Send it →';
+          $('senderr').textContent = "That didn't send. Try again, or text Faisel at 832 928 1561.";
+          $('senderr').hidden = false;
+        });
+    });
+  }
+})();
+</script>
+</body>
+</html>
