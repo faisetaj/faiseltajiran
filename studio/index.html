@@ -35,6 +35,13 @@ document.documentElement.classList.add('js')</script>
   "url": "https://faiseltajiran.com/studio/",
   "email": "faisel@faiseltajiran.com",
   "telephone": "+1-832-928-1561",
+  "hasCredential": {
+    "@type": "EducationalOccupationalCredential",
+    "name": "AWS Certified AI Practitioner",
+    "credentialCategory": "certification",
+    "recognizedBy": { "@type": "Organization", "name": "Amazon Web Services" },
+    "url": "https://www.credly.com/badges/42c47393-6382-4513-9dd6-966e9fe27fa4/public_url"
+  },
   "image": "https://faiseltajiran.com/og.png",
   "priceRange": "$$",
   "founder": { "@type": "Person", "name": "Faisel Tajiran" },
@@ -77,8 +84,10 @@ document.documentElement.classList.add('js')</script>
         "itemOffered": { "@type": "Service", "name": "CRM selection, setup, contact migration and owner training" } },
       { "@type": "Offer", "name": "AI phone answering", "price": "1500", "priceCurrency": "USD",
         "itemOffered": { "@type": "Service", "name": "AI phone agent that answers calls and books appointments" } },
-      { "@type": "Offer", "name": "Hands-on AI training", "price": "350", "priceCurrency": "USD",
-        "itemOffered": { "@type": "Service", "name": "On-site generative AI training for small business owners and staff" } }
+      { "@type": "Offer", "name": "AI basics session", "price": "350", "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Two-hour hands-on generative AI basics session for a small business owner" } },
+      { "@type": "Offer", "name": "AI workshop for your team", "price": "650", "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Half-day on-site generative AI workshop for up to eight staff" } }
     ]
   }
 }
@@ -856,7 +865,8 @@ document.documentElement.classList.add('js')</script>
       <div class="menu__row"><b>CRM setup &amp; migration</b><i>Pick the right one, move your contacts, train you on it</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$650</span></div>
       <div class="menu__row"><b>AI phone answering</b><i>Answers when you can't, books the job, texts you the summary</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$1,500</span></div>
       <div class="menu__row"><b>Custom AI assistant</b><i>Trained on your pricing, services, and the questions you actually get</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$900</span></div>
-      <div class="menu__row"><b>Hands-on AI training</b><i>Two hours, at your shop, on your real work — not a slide deck</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$350</span></div>
+      <div class="menu__row"><b>AI basics — sat down with you</b><i>Two hours at your shop: what to type, what it’s good at, what not to trust</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$350</span></div>
+      <div class="menu__row"><b>AI workshop for your team</b><i>Half day, up to 8 people, using your real quotes, emails and job photos</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$650</span></div>
       <div class="menu__row"><b>Automation audit</b><i>Where your hours go, and the three things worth automating first</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">Free on a plan</span></div>
     </div>
 
@@ -866,7 +876,9 @@ document.documentElement.classList.add('js')</script>
       <p class="slede" data-fade>Most owners I meet aren't behind on this because they don't care —
         they're behind because nobody sat down and showed them which three things actually matter for
         a business their size. It's almost always the same three: answer leads faster, get the phone
-        answered, and stop running the business out of a spreadsheet.</p>
+        answered, and stop running the business out of a spreadsheet. I'm an <b>AWS Certified AI
+        Practitioner</b>, but the useful part isn't the certificate — it's that I build this for my
+        own companies before I sell it to yours.</p>
       <div class="cards" data-fade>
         <div class="card">
           <span class="card__k">Speed</span>
@@ -884,10 +896,11 @@ document.documentElement.classList.add('js')</script>
         </div>
         <div class="card">
           <span class="card__k">Hands-on</span>
-          <h3>And I show you how to drive it</h3>
-          <p>Two hours at your shop, on your actual work — which tools are worth your time, which are
-            hype, and how to make one of them useful by Friday. Nobody learns this from a video as
-            fast as they learn it sitting next to someone.</p>
+          <h3>Or I just sit down and show you</h3>
+          <p>Most owners don't need a strategy deck — they need someone next to them for two hours
+            showing them what to actually type. Writing a quote, answering a bad review, drafting the
+            email you've been putting off, turning job photos into a post. Basics first, on your own
+            work. Automation only once that's earning its keep.</p>
         </div>
       </div>
       <p class="slede" style="margin-top:26px;margin-bottom:0" data-fade>Not theory — both of these are
@@ -1005,6 +1018,13 @@ document.documentElement.classList.add('js')</script>
           build a better site in two weeks than an agency builds in two months, and charge less for it.</p>
         <p>What hasn't changed is how I work. You get my number. I come to your business. I explain
           things in plain English, and I tell you when something isn't worth your money.</p>
+        <a href="https://www.credly.com/badges/42c47393-6382-4513-9dd6-966e9fe27fa4/public_url"
+           rel="noopener" target="_blank"
+           style="display:inline-flex;align-items:center;gap:16px;margin-top:22px">
+          <img src="/assets/img/aws-certified-ai-practitioner.png" alt="AWS Certified AI Practitioner badge"
+               width="84" height="84" loading="lazy" style="display:block" />
+          <span class="mono" style="color:var(--muted);line-height:1.8">AWS CERTIFIED AI PRACTITIONER<br>AMAZON WEB SERVICES · 2026<br><span style="color:var(--hl)">VERIFY ON CREDLY ↗</span></span>
+        </a>
       </div>
       <div>
         <ul class="inc">
@@ -1172,7 +1192,8 @@ document.documentElement.classList.add('js')</script>
         <option>CRM setup &amp; migration — $650</option>
         <option>AI phone answering — $1,500</option>
         <option>Custom AI assistant — $900</option>
-        <option>Hands-on AI training — $350</option>
+        <option>AI basics — sat down with you — $350</option>
+        <option>AI workshop for your team — $650</option>
         <option>Automation audit</option>
         <option>Not sure yet — let's talk</option>
         </select>
