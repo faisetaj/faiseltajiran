@@ -82,7 +82,8 @@ document.documentElement.classList.add('js')</script>
         "itemOffered": { "@type": "Service", "name": "Automated text and email reply to new leads, wired to a CRM" } },
       { "@type": "Offer", "name": "CRM setup and migration", "price": "650", "priceCurrency": "USD",
         "itemOffered": { "@type": "Service", "name": "CRM selection, setup, contact migration and owner training" } },
-      { "@type": "Offer", "name": "AI phone answering", "price": "1500", "priceCurrency": "USD",
+      { "@type": "Offer", "name": "AI phone answering",
+        "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1500", "priceCurrency": "USD" },
         "itemOffered": { "@type": "Service", "name": "AI phone agent that answers calls and books appointments" } },
       { "@type": "Offer", "name": "AI basics session", "price": "350", "priceCurrency": "USD",
         "itemOffered": { "@type": "Service", "name": "Two-hour hands-on generative AI basics session for a small business owner" } },
@@ -842,7 +843,9 @@ document.documentElement.classList.add('js')</script>
     <div class="shead" data-fade><span class="mono">Add-ons · à la carte</span>
       <h2>Add what you need. Skip what you don't.</h2></div>
     <p class="slede" data-fade>One-time prices, added to the launch or any time after. No bundles you
-      don't want, and no "packages" designed to make you buy three things to get the one.</p>
+      don't want, and no "packages" designed to make you buy three things to get the one. Anything
+      marked <b>from</b> gets quoted after we talk — a phone agent for a one-truck business and one
+      for a six-line office are not the same build.</p>
 
     <div class="menu" data-fade>
       <div class="menu__grp">Website &amp; brand</div>
@@ -863,7 +866,7 @@ document.documentElement.classList.add('js')</script>
       <div class="menu__grp">Automation &amp; AI</div>
       <div class="menu__row"><b>Instant lead response</b><i>New lead texted back in under a minute, in your voice</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$450</span></div>
       <div class="menu__row"><b>CRM setup &amp; migration</b><i>Pick the right one, move your contacts, train you on it</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$650</span></div>
-      <div class="menu__row"><b>AI phone answering</b><i>Answers when you can't, books the job, texts you the summary</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$1,500</span></div>
+      <div class="menu__row"><b>AI phone answering</b><i>Answers when you can't, books the job, texts you the summary</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">From $1,500</span></div>
       <div class="menu__row"><b>Custom AI assistant</b><i>Trained on your pricing, services, and the questions you actually get</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$900</span></div>
       <div class="menu__row"><b>AI basics — sat down with you</b><i>Two hours at your shop: what to type, what it’s good at, what not to trust</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$350</span></div>
       <div class="menu__row"><b>AI workshop for your team</b><i>Half day, up to 8 people, using your real quotes, emails and job photos</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$650</span></div>
@@ -1190,7 +1193,7 @@ document.documentElement.classList.add('js')</script>
           <option>Online store / e-commerce</option>
           <option>Lead-response automation — $450</option>
         <option>CRM setup &amp; migration — $650</option>
-        <option>AI phone answering — $1,500</option>
+        <option>AI phone answering — from $1,500</option>
         <option>Custom AI assistant — $900</option>
         <option>AI basics — sat down with you — $350</option>
         <option>AI workshop for your team — $650</option>
