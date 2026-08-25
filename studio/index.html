@@ -64,7 +64,7 @@ document.documentElement.classList.add('js')</script>
     { "@type": "City", "name": "Montgomery, TX" },
     { "@type": "City", "name": "Houston, TX" }
   ],
-  "knowsAbout": ["Web Design","Website Redesign","Small Business Websites","WordPress Migration","Local SEO","Google Business Profile","Google Ads","Meta Ads","Branding","Logo Design","E-commerce","Website Maintenance","Business Process Automation","Generative AI Consulting","AI Phone Agents","CRM Implementation","Lead Response Automation","AI Training"],
+  "knowsAbout": ["Web Design","Website Redesign","Small Business Websites","WordPress Migration","Local SEO","Google Business Profile","Google Ads","Meta Ads","Branding","Logo Design","E-commerce","Website Maintenance","Verified Reviews","Review Generation","Business Process Automation","Generative AI Consulting","AI Phone Agents","CRM Implementation","Lead Response Automation","AI Training"],
   "sameAs": ["https://www.linkedin.com/in/faiseltajiran/","https://github.com/faisetaj"],
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
@@ -78,13 +78,17 @@ document.documentElement.classList.add('js')</script>
         "itemOffered": { "@type": "Service", "name": "Care plan plus Google Business Profile management and reporting" } },
       { "@type": "Offer", "name": "Full Presence care plan", "price": "499", "priceCurrency": "USD",
         "itemOffered": { "@type": "Service", "name": "Care plan plus managed Google or Meta advertising" } },
+      { "@type": "Offer", "name": "Verified reviews", "price": "250", "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Sealed review record on the business's own domain, counter stand and site badge, powered by Authyr" } },
       { "@type": "Offer", "name": "Instant lead response automation", "price": "450", "priceCurrency": "USD",
         "itemOffered": { "@type": "Service", "name": "Automated text and email reply to new leads, wired to a CRM" } },
       { "@type": "Offer", "name": "CRM setup and migration", "price": "650", "priceCurrency": "USD",
         "itemOffered": { "@type": "Service", "name": "CRM selection, setup, contact migration and owner training" } },
-      { "@type": "Offer", "name": "AI phone answering",
-        "priceSpecification": { "@type": "PriceSpecification", "minPrice": "1500", "priceCurrency": "USD" },
-        "itemOffered": { "@type": "Service", "name": "AI phone agent that answers calls and books appointments" } },
+      { "@type": "Offer", "name": "AI phone answering", "price": "1500", "priceCurrency": "USD",
+        "itemOffered": { "@type": "Service", "name": "Fixed-scope AI phone agent that answers the call, takes the message and texts the owner a summary" } },
+      { "@type": "Offer", "name": "Phone agent connected to booking or CRM",
+        "priceSpecification": { "@type": "PriceSpecification", "minPrice": "5000", "priceCurrency": "USD" },
+        "itemOffered": { "@type": "Service", "name": "Integrating an AI phone agent with an existing booking system or CRM" } },
       { "@type": "Offer", "name": "AI basics session", "price": "350", "priceCurrency": "USD",
         "itemOffered": { "@type": "Service", "name": "Two-hour hands-on generative AI basics session for a small business owner" } },
       { "@type": "Offer", "name": "AI workshop for your team", "price": "650", "priceCurrency": "USD",
@@ -354,6 +358,18 @@ document.documentElement.classList.add('js')</script>
   .cform__foot { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
   .cform__foot .btn:disabled { opacity: .6; cursor: wait; transform: none; }
   .cform__status { color: var(--hl); text-shadow: 0 0 10px var(--hl-dim); }
+  /* The three qualifying questions. Boxed so they read as one aside rather than three more
+     form fields, and sentence-case — a 9px uppercase mono label can't carry a whole question. */
+  .qual { border: 1px solid var(--line); border-radius: 14px; background: var(--bg-2);
+    padding: clamp(16px, 2vw, 22px); display: grid; gap: 16px; }
+  .qual__hd { display: grid; gap: 8px; }
+  .qual__k { color: var(--hl); text-shadow: 0 0 10px var(--hl-dim); }
+  .qual__s { color: var(--muted); font-size: 13.5px; max-width: 62ch; }
+  .qual__g { display: grid; grid-template-columns: repeat(auto-fit, minmax(212px, 1fr)); gap: 14px; }
+  /* Grid rows stretch, so space-between drops every select to the same baseline even when one
+     question wraps to two lines. Without it the three fields sit at three different heights. */
+  .cform .qual label { font-family: var(--sans); font-size: 13.5px; letter-spacing: 0;
+    text-transform: none; line-height: 1.45; gap: 10px; justify-content: space-between; }
   .bigs { display: grid; grid-template-columns: 1fr; border-top: 1px solid var(--line);
     margin-top: clamp(36px, 5.5vh, 62px); }
   @media (min-width: 860px) { .bigs { grid-template-columns: 1fr 1fr; column-gap: 44px; } }
@@ -786,7 +802,46 @@ document.documentElement.classList.add('js')</script>
         <li><b>Your photos edited and optimized</b>, plus direction on what to shoot if you're short.</li>
         <li><b>Contact, booking, or ordering</b> wired to wherever you already take business.</li>
         <li><b>Live in about two weeks</b>, and your old site stays up until the new one is ready.</li>
+        <li><b>Verified reviews on your own domain</b> — a sealed review record, a QR stand for the
+          counter, and a badge on your site. Powered by Authyr. Included for the first ten.</li>
       </ul>
+    </div>
+
+    <!-- ══ Verified reviews (Authyr) — the differentiator, included in a founding launch ══ -->
+    <div id="reviews" style="margin-top:clamp(44px,7vh,76px)">
+      <div class="shead shead--solo" data-fade><span class="mono">Included in every launch</span>
+        <h2 style="font-size:clamp(22px,2.7vw,36px)">Your reviews, on your own domain.</h2></div>
+      <p class="slede" data-fade style="max-width:68ch;color:var(--text);font-size:clamp(16px,1.35vw,19px)">Every
+        other designer builds your site and then points your customers at Google — a platform you
+        don't own, that can suspend you, where a competitor can post a fake. I build you a site where
+        the reviews live on <em class="ser">your</em> domain, tied to a verified visit, and sealed so
+        nobody can change them afterward. Not your competitor. Not me. Not you.</p>
+      <div class="cards" data-fade>
+        <div class="card">
+          <span class="card__k">The record</span>
+          <h3>Sealed the moment it's written</h3>
+          <p>Each review is chained to the one before it. Edit one after the fact and the chain
+            breaks — and the page that proves it names the exact review that broke it. Nobody
+            quietly rewrites history, me included.</p>
+        </div>
+        <div class="card">
+          <span class="card__k">The counter</span>
+          <h3>A stand your customer taps</h3>
+          <p>A small stand for the counter, the desk, or the truck — scan or tap, no app, no
+            account, no login. They were there, so they get to say what they thought.</p>
+        </div>
+        <div class="card">
+          <span class="card__k">Your site</span>
+          <h3>A badge that carries the proof</h3>
+          <p>Real reviews shown on your own pages, where the customer already is — instead of on a
+            profile you rent from a company that can switch it off without telling you.</p>
+        </div>
+      </div>
+      <p class="kw" data-fade style="max-width:80ch">Powered by <b>Authyr</b>. The record lives with
+        Authyr, not with me — I set it up and then I can't touch it, which is the entire point.
+        <b>Included for the first ten</b>, $250 after that. It fits businesses whose customers are
+        actually there when the work happens; if that isn't yours, I'll tell you so instead of
+        selling it to you.</p>
     </div>
 
     <div class="shead shead--solo" style="margin-top:clamp(44px,7vh,76px)" data-fade>
@@ -844,8 +899,8 @@ document.documentElement.classList.add('js')</script>
       <h2>Add what you need. Skip what you don't.</h2></div>
     <p class="slede" data-fade>One-time prices, added to the launch or any time after. No bundles you
       don't want, and no "packages" designed to make you buy three things to get the one. Anything
-      marked <b>from</b> gets quoted after we talk — a phone agent for a one-truck business and one
-      for a six-line office are not the same build.</p>
+      marked <b>from</b> gets quoted after we talk — wiring a phone agent into the booking system
+      you already run on is a different build every time.</p>
 
     <div class="menu" data-fade>
       <div class="menu__grp">Website &amp; brand</div>
@@ -855,7 +910,7 @@ document.documentElement.classList.add('js')</script>
       <div class="menu__row"><b>Google Ads — build &amp; launch</b><i>Account, campaigns, conversion tracking</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$500</span></div>
       <div class="menu__row"><b>Meta Ads — build &amp; launch</b><i>Facebook &amp; Instagram, pixel, audiences</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$500</span></div>
       <div class="menu__row"><b>Google Business Profile rescue</b><i>Suspended, duplicated, or someone else claimed it</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$250</span></div>
-      <div class="menu__row"><b>Review generation system</b><i>QR cards and automated asks after a visit</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$250</span></div>
+      <div class="menu__row"><b>Verified reviews (Authyr)</b><i>Included in a founding launch — sealed record on your domain, counter stand, site badge</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$250</span></div>
       <div class="menu__row"><b>Photography — half day, local</b><i>Your space, your team, your products</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$400</span></div>
       <div class="menu__row"><b>Copywriting</b><i>Per page, written in your voice, not AI filler</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$125</span></div>
       <div class="menu__row"><b>Extra page</b><i>Service page, location page, landing page</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$150</span></div>
@@ -866,7 +921,8 @@ document.documentElement.classList.add('js')</script>
       <div class="menu__grp">Automation &amp; AI</div>
       <div class="menu__row"><b>Instant lead response</b><i>New lead texted back in under a minute, in your voice</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$450</span></div>
       <div class="menu__row"><b>CRM setup &amp; migration</b><i>Pick the right one, move your contacts, train you on it</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$650</span></div>
-      <div class="menu__row"><b>AI phone answering</b><i>Answers when you can't, books the job, texts you the summary</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">From $1,500</span></div>
+      <div class="menu__row"><b>AI phone answering</b><i>Answers when you can't, takes the message, texts you the summary — fixed build, live in a week</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$1,500</span></div>
+      <div class="menu__row"><b>Phone agent into your booking or CRM</b><i>Connecting the agent to the system you already run on — a separate project, scoped after we talk</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">From $5,000</span></div>
       <div class="menu__row"><b>Custom AI assistant</b><i>Trained on your pricing, services, and the questions you actually get</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$900</span></div>
       <div class="menu__row"><b>AI basics — sat down with you</b><i>Two hours at your shop: what to type, what it’s good at, what not to trust</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$350</span></div>
       <div class="menu__row"><b>AI workshop for your team</b><i>Half day, up to 8 people, using your real quotes, emails and job photos</i><span class="menu__lead" aria-hidden="true"></span><span class="menu__p">$650</span></div>
@@ -895,7 +951,9 @@ document.documentElement.classList.add('js')</script>
           <h3>Something answers, even at 9pm</h3>
           <p>I built an AI phone operator for a Houston travel agency by mining 3,200 of their real
             calls — it answers the line and books appointments. Scaled down to a one-truck business,
-            that costs a fraction of a receptionist and never misses a Saturday.</p>
+            the fixed build answers, takes the message and texts you the summary for a fraction of a
+            receptionist, and never misses a Saturday. Booking straight into your calendar or CRM is
+            its own project on top.</p>
         </div>
         <div class="card">
           <span class="card__k">Hands-on</span>
@@ -1154,7 +1212,7 @@ document.documentElement.classList.add('js')</script>
       local SEO work — and it's the same thing I build into your site.<br>
       Also here for: <a href="#addons">online store and e-commerce</a>,
       <a href="#addons">logo and brand identity</a>, <a href="#presence">Google Ads and Meta ads
-      management</a>, <a href="#addons">review generation</a>, restaurant and med-spa sites,
+      management</a>, <a href="#reviews">review generation</a>, restaurant and med-spa sites,
       contractor and home-services sites, and <a href="#pricing">monthly website maintenance</a>
       for businesses that would rather text than log in.<br>
       And newer, for the same neighborhoods: <a href="#automation">business automation</a> and
@@ -1191,9 +1249,11 @@ document.documentElement.classList.add('js')</script>
           <option>Google or Meta ads</option>
           <option>Logo &amp; branding</option>
           <option>Online store / e-commerce</option>
+          <option>Verified reviews on my own domain — $250</option>
           <option>Lead-response automation — $450</option>
         <option>CRM setup &amp; migration — $650</option>
-        <option>AI phone answering — from $1,500</option>
+        <option>AI phone answering — $1,500</option>
+        <option>Phone agent into my booking or CRM — from $5,000</option>
         <option>Custom AI assistant — $900</option>
         <option>AI basics — sat down with you — $350</option>
         <option>AI workshop for your team — $650</option>
@@ -1201,6 +1261,45 @@ document.documentElement.classList.add('js')</script>
         <option>Not sure yet — let's talk</option>
         </select>
       </label>
+      <div class="qual full">
+        <div class="qual__hd">
+          <p class="qual__k mono">Three quick ones</p>
+          <p class="qual__s">They tell me, before we meet, whether the verified-review setup actually
+            fits your business — so I'm not selling you something that doesn't. Skip any that don't apply.</p>
+        </div>
+        <div class="qual__g">
+          <label>Are your customers with you in person when the work is done?
+            <select name="in_person">
+              <option value="" disabled selected>Choose one…</option>
+              <option>Yes — they're right there</option>
+              <option>Mostly</option>
+              <option>No — it's remote or online</option>
+            </select>
+          </label>
+          <label>Do you know most of your customers by name?
+            <select name="knows_by_name">
+              <option value="" disabled selected>Choose one…</option>
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          </label>
+          <label>What kind of business is it?
+            <select name="vertical">
+              <option value="" disabled selected>Choose one…</option>
+              <option>Home services or trades</option>
+              <option>Restaurant, bar or café</option>
+              <option>Salon, spa or barber</option>
+              <option>Auto — repair, detail or towing</option>
+              <option>Retail or e-commerce</option>
+              <option>Fitness, gym or studio</option>
+              <option>Health, dental or medical</option>
+              <option>Legal or financial</option>
+              <option>Real estate</option>
+              <option>Something else</option>
+            </select>
+          </label>
+        </div>
+      </div>
       <label class="full">Current website, if you have one<input name="website" type="text" placeholder="yourbusiness.com — or 'none yet'" /></label>
       <label class="full">What's going on?<textarea name="message" required placeholder="What the business does, where you're located, and what's not working right now."></textarea></label>
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -1394,6 +1493,11 @@ document.documentElement.classList.add('js')</script>
       var payload = {
           name: data.name, business: data.business, email: data.email, phone: data.phone,
           service: data.service, website: data.website, message: data.message,
+          // The three qualifying answers: three yeses (in person / known by name / unregulated)
+          // means the verified-review bundle goes in the launch. Blank is fine — they're optional,
+          // because a required question on a lead form loses the lead, not just the answer.
+          customers_in_person: data.in_person, knows_customers_by_name: data.knows_by_name,
+          kind_of_business: data.vertical,
           // Front-load the subject so the phone's notification preview is the whole lead:
           // who, what they want, and the number to call back.
           _subject: '📱 ' + (data.name || 'Lead') + ' — ' + (data.service || 'inquiry') +
