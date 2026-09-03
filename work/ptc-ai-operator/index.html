@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#0a0a0a" />
   <script>document.documentElement.dataset.theme='dark'</script>
   <title>PTC AI Operator — Case Study — Faisel Tajiran</title>
-  <meta name="description" content="AI phone platform for Professional Travel Center: ElevenLabs ConvAI voice agents on the live marketing line, booking real appointments into the company’s fulfillment system — with a script mined from 3,200 recorded operator calls." />
+  <meta name="description" content="Claude-powered AI phone operator for Professional Travel Center: Claude Sonnet 4.5 (Anthropic) reasoning behind an ElevenLabs ConvAI voice on the live marketing line, booking real appointments into the company’s fulfillment system. Script mined from 3,200 recorded operator calls; platform built end to end with Claude Code." />
   <meta name="author" content="Faisel Tajiran" />
   <link rel="canonical" href="https://faiseltajiran.com/work/ptc-ai-operator/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -15,7 +15,7 @@
   <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://faiseltajiran.com/work/ptc-ai-operator/" />
   <meta property="og:title" content="PTC AI Operator — Case Study — Faisel Tajiran" />
-  <meta property="og:description" content="AI phone platform for Professional Travel Center: ElevenLabs ConvAI voice agents on the live marketing line, booking real appointments into the company’s fulfillment system — with a script mined from 3,200 recorded operator calls." />
+  <meta property="og:description" content="Claude-powered AI phone operator for Professional Travel Center: Claude Sonnet 4.5 (Anthropic) reasoning behind an ElevenLabs ConvAI voice on the live marketing line, booking real appointments into the company’s fulfillment system. Script mined from 3,200 recorded operator calls; platform built end to end with Claude Code." />
   <meta property="og:image" content="https://faiseltajiran.com/og.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -36,7 +36,7 @@
       {
         "@type": "CreativeWork",
         "name": "PTC AI Operator",
-        "description": "AI phone platform for Professional Travel Center: ElevenLabs ConvAI voice agents on the live marketing line, booking real appointments into the company’s fulfillment system — with a script mined from 3,200 recorded operator calls.",
+        "description": "Claude-powered AI phone operator for Professional Travel Center: Claude Sonnet 4.5 (Anthropic) reasoning behind an ElevenLabs ConvAI voice on the live marketing line, booking real appointments into the company’s fulfillment system. Script mined from 3,200 recorded operator calls; platform built end to end with Claude Code.",
         "url": "https://faiseltajiran.com/work/ptc-ai-operator/",
         "author": { "@type": "Person", "name": "Faisel Tajiran", "url": "https://faiseltajiran.com" },
         "genre": "Agentic Voice AI"
@@ -76,13 +76,13 @@
         <p class="case-hero__crumb mono"><a href="/#work" data-transition>← INDEX</a><span>/</span><span>WORK</span><span>/</span><span>PTC-AI-OPERATOR</span></p>
         <p class="case-hero__nr mono">№ 10 — AGENTIC VOICE AI</p>
         <h1 class="case-hero__title">PTC AI Operator</h1>
-        <p class="case-hero__tagline">An AI operator that answers the marketing line, follows the script, and books the appointment — trained by mining <b>3,200 real calls</b>.</p>
+        <p class="case-hero__tagline">An AI operator — <b>Claude Sonnet 4.5</b> behind an ElevenLabs voice — that answers the marketing line, follows the script, and books the appointment. Trained by mining <b>3,200 real calls</b>.</p>
         <div class="case-meta">
           <div><span class="mono">TYPE</span><strong>Work improvisation · PTC</strong></div>
           <div><span class="mono">YEAR</span><strong>2026</strong></div>
           <div><span class="mono">ROLE</span><strong>Architect · Engineer · Trained on the operators it relieves</strong></div>
-          <div><span class="mono">STATUS</span><strong>Greenlit & paid · Phase 1 in build</strong></div>
-          <div><span class="mono">SCOPE</span><strong>Voice AI · Telephony · Call mining · Integrations</strong></div>
+          <div><span class="mono">STATUS</span><strong>Greenlit & paid · Production cutover — first real bookings landed</strong></div>
+          <div><span class="mono">SCOPE</span><strong>Voice AI · Claude Sonnet 4.5 · Telephony · Call mining · Integrations</strong></div>
           
         </div>
       </div>
@@ -95,6 +95,7 @@
         <div class="case-prose">
           <p data-reveal>Professional Travel Center’s marketing line rings all day with prospects responding to mail campaigns. Human operators answer during business hours and book about <strong>42% of answered calls</strong> into group sales presentations; after hours and on weekends, callers hit voicemail and die there. The fix: one shared platform, two AI agent roles — an <strong>Inbound Marketing Operator</strong> that answers, qualifies, and books appointments 24/7, and a Customer Service agent that captures member requests with pre-fetched research. The owner greenlit it as a real, paid build.</p>
           <p data-reveal>The part that makes it work is the training data. Before writing a line of agent prompt, I built a Playwright harvester over the company’s call-tracking system and mined <em>~3,200 recorded calls with outcome labels</em> — then read 79 full transcripts line by line. The result is a script-as-performed: the exact beats top operators run, objections ranked by real frequency, phonetic-alphabet email readbacks, timezone handling, and the wording that loses calls. The AI doesn’t follow the script as written; it follows the script as it actually wins.</p>
+          <p data-reveal>The reasoning behind the voice is <strong>Claude Sonnet 4.5</strong>, run at temperature 0 with six tools — session availability, book, reschedule, cancel, winning-code lookup, do-not-call — so every commitment the caller hears is a tool result, not a guess. A booking exists only when the booking tool returns it, and capacity is re-checked at write time against the live schedule. A drift checker diffs the live agent against the repo (prompt, tools, config) and fails on any difference, so what was tested is what answers the phone. The whole platform — API, dashboard, call harvester, audits, owner-facing PDFs — was built with Claude Code from the first commit in March 2026 to the prompt that is live today. First production call booked a real appointment into the fulfillment system on 2026-08-26.</p>
         </div>
       </div>
     </section>
@@ -106,6 +107,7 @@
         <div class="case-grid">
           <article class="case-card" data-reveal><span class="mono">CALL MINING</span><h3>A harvester over 3,200 real calls</h3><p>Playwright automation over the iovox call-tracking layer — login/recon/full-harvest modes, deep-pagination survival, idempotent re-runs. 79 transcripts pulled (booked and lost calls both), objections ranked by frequency, and the human booking baseline measured: 42% of answered calls. That number is the benchmark the AI has to beat.</p></article>
           <article class="case-card" data-reveal><span class="mono">VOICE</span><h3>ElevenLabs ConvAI on the live line</h3><p>The company’s RingCentral marketing number forwards via answering rule to a bridge DID fronting the ConvAI agent — so soft launch is literally a phone-system rule: humans keep business hours, AI takes nights and weekends. Recording-consent and AI-disclosure greeting on every call; off-script callers transfer to a human in hours, queue for callback after.</p></article>
+          <article class="case-card" data-reveal><span class="mono">MODEL</span><h3>Claude Sonnet 4.5 does the reasoning</h3><p>Anthropic’s Claude Sonnet 4.5 is the LLM inside the ElevenLabs agent, at temperature 0, with six server tools it calls mid-call. The prompt is the mined script-as-performed plus the owner’s rules; the model handles objections, timezone math, phonetic email readbacks, and reschedules while the tools own every fact. Guardrails: recording consent and AI disclosure up front, a 15-minute call cap, structured not-booked reasons, and a drift check that fails the deploy if the live agent differs from the repo.</p></article>
           <article class="case-card" data-reveal><span class="mono">BOOKINGS</span><h3>Real appointments, not demo rows</h3><p>A direct client for the company’s fulfillment-system API (reverse-engineered from its Swagger spec): customer lookup → create → appointment write, validated against live per-slot capacity. Resilience rule: if the API errors mid-call, the agent completes the booking conversationally and the platform queues, retries, and flags — a caller never hears “our system is down.”</p></article>
           <article class="case-card" data-reveal><span class="mono">API</span><h3>The glue layer</h3><p>Express + TypeScript tool endpoints, Bearer-authed per role, with an HMAC-verified post-call webhook ingesting transcript and recording — <code>conversation_id</code> ties every write together. Session capacity is enforced atomically in a Postgres function, never trusted to the agent prompt.</p></article>
           <article class="case-card" data-reveal><span class="mono">ISOLATION</span><h3>Two stores, three enforcement layers</h3><p>Owner’s hard rule: prospect data and member data never touch. Two separate Supabase projects with separate credentials, row-level security within each, and route guards in the dashboard — isolation by architecture, not policy. Three user roles see exactly their queue and nothing else.</p></article>
@@ -145,7 +147,7 @@
       <div class="container">
         <p class="mono case-section__label" data-reveal>STACK</p>
         <div class="case-stack">
-          <span>ElevenLabs ConvAI</span><span>Twilio · RingCentral</span><span>Playwright</span><span>Express · TypeScript</span><span>Supabase Postgres · RLS</span><span>Next.js</span><span>Prisma</span><span>HMAC webhooks</span><span>Resend · SMTP</span><span>Render</span><span>Serper · Brave Search</span>
+          <span>Claude Sonnet 4.5 (Anthropic)</span><span>ElevenLabs ConvAI</span><span>Twilio · RingCentral</span><span>Playwright</span><span>Express · TypeScript</span><span>Supabase Postgres · RLS</span><span>Next.js</span><span>Prisma</span><span>HMAC webhooks</span><span>Resend · SMTP</span><span>Render</span><span>Serper · Brave Search</span><span>Claude Code</span>
         </div>
       </div>
     </section>
