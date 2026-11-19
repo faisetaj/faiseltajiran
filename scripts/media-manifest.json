@@ -284,5 +284,39 @@
       "h": 900,
       "wide": true
     }
+  ],
+  "lifestyle-revolution": [
+    {
+      "file": "home.webp",
+      "alt": "revstartsnow.com homepage: Bungee showcard headline Train. Connect. Thrive. cut over an aqua keyline on a true-blue halftone field, with a tacked-on photo of an outdoor class",
+      "caption": "HOME — SHOWCARD LETTERING, AQUA KEYLINE, NAVY CAST SHADE, GROMMET HEM",
+      "w": 1600,
+      "h": 1000,
+      "wide": true
+    },
+    {
+      "file": "train.webp",
+      "alt": "Train page: navy hero, then a powder field with three cut-border class cards on hard offset blocks",
+      "caption": "TRAIN — CUT BORDERS AND HARD OFFSET BLOCKS, NO BLUR, NO DROP SHADOW",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    },
+    {
+      "file": "community.webp",
+      "alt": "Community page: navy hero over a stitched grommet hem into a powder field, the community wellness model introduced",
+      "caption": "COMMUNITY — BANDS ALTERNATE AND HANG FROM STITCHED, PUNCHED HEMS",
+      "w": 1600,
+      "h": 1000,
+      "wide": false
+    },
+    {
+      "file": "launch-gate.svg",
+      "alt": "How the site launched: one content file feeds a ready(key) gate; blocks without real content stay hidden, and a hidden band hands its divider color to the next so the bands still meet; nine block types waited on the client",
+      "caption": "ONE FILE → ONE GATE → SEVEN PAGES — NOTHING SHOWS UNTIL IT’S REAL",
+      "w": 1600,
+      "h": 900,
+      "wide": true
+    }
   ]
 }

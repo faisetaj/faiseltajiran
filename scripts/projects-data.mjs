@@ -360,7 +360,7 @@ export const projects = [
 
   {
     slug: 'cruise-reels',
-    nr: '15',
+    nr: '16',
     group: 'Work improvisation · PTC',
     title: 'Cruise Reels',
     hue: '#ff4f9a',
@@ -467,8 +467,51 @@ export const projects = [
   },
 
   {
+    slug: 'lifestyle-revolution',
+    nr: '12',
+    group: 'Client \u00b7 Web design',
+    title: 'Lifestyle Revolution',
+    hue: '#a9cdea',
+    motif: 'lifestyle',
+    // 'REVOLUTION' is wider than the line box at the default clamp; see titleFit in build-work.mjs
+    titleSize: 'clamp(30px,6.9vw,116px)',
+    category: 'Fitness & Wellness Web',
+    year: '2026',
+    role: 'Designer \u00b7 Engineer (client work)',
+    status: 'Live \u00b7 Launched Nov 19, 2026',
+    scope: 'Web \u00b7 Design system \u00b7 Content model \u00b7 SEO',
+    link: { href: 'https://revstartsnow.com', label: 'revstartsnow.com' },
+    tagline: 'A Houston fitness crew where <b>the workout is the event</b>, painted like the flyer for one.',
+    description: 'Seven-page site for a Houston fitness and wellness company, built to the owner\u2019s own 15-section brief: a sign-painting design system, one content file, and nothing shown until it\u2019s real.',
+    thesis: [
+      'Lifestyle Revolution sells fitness as culture rather than as a facility: group classes, one-on-one coaching, health-focused social events it calls <strong>fitness day parties</strong>, and contract instructors for gyms, studios and corporate wellness programs. Public classes build the crowd, the parties prove the instructors can hold a room, and that proof is what gets sold to businesses. A gym sells access to equipment. This sells the room.',
+      'The owner arrived with a fifteen-section brief of their own: a seven-item nav, a ten-section homepage, six inner-page flows, a motion spec, and a photography plan. The structure was the owner’s. My job was the surface, the system underneath it, and a launch where <em>no visitor ever sees a placeholder</em>, even though half the business facts were still on their way.',
+    ],
+    build: [
+      { label: 'DIRECTIONS', title: 'Three working homepages, one chosen', body: 'Instead of mockups, the client saw three complete, working homepages running off one shared content file. <strong>The Bill</strong>: Houston event sign-painting. <strong>The Rack</strong>: a skate-shop deck wall. <strong>The Cut</strong>: a two-ink programme bill. The owner picked The Bill and supplied the brand’s colors, and it was repainted in them. All three passed a mobile sweep from 320 to 1440px before the client saw them.' },
+      { label: 'SYSTEM', title: 'Seven cans, rules enforced in CSS', body: 'Bungee showcard lettering cut over an aqua keyline and a navy cast shade, flat enamel fields with a halftone tooth, and bands that hang from stitched, punched grommet hems. No blur and no drop shadows, only hard offset blocks. Aqua is the one signal color and only marks state and action. Every text pair is measured: all pass AA, and the two that don\u2019t are kept to display sizes only.' },
+      { label: 'RE-SKIN', title: 'A new surface, zero markup changes', body: 'When the full seven-page build landed on the owner\u2019s brief, it was re-skinned into The Bill without moving one line of page structure. The pages speak in classes (<code>.band</code>, <code>.cut</code>, <code>.card</code>), so the stylesheet was rewritten underneath them, with a short block of compatibility aliases in <code>:root</code> so older inline color references kept resolving.' },
+      { label: 'CONTENT', title: 'One file is the whole CMS', body: 'Every word, class, event and photo lives in <code>content/site.js</code>: a JSON literal inside a <code>window.LR</code> wrapper, loaded by a plain script tag. That one choice means no fetch, no build step and no server: the site runs from <code>file://</code> or any static host, and it is built to plug into the same agent-run change-request pipeline as my other client sites.' },
+      { label: 'LAUNCH', title: 'Hidden, not deleted', body: 'Testimonials, the class schedule, instructors, FAQ answers, outcome figures, case studies and upcoming events were all still on their way at launch. Each block carries <code>data-needs="key"</code>. A <code>ready()</code> check keeps it hidden until real content lands in the content file, then it appears on its own. A hidden band takes its color divider with it, and the next divider picks up where it left off, so the painted bands still meet cleanly.' },
+      { label: 'MEDIA', title: 'A repeatable photo and video pipeline', body: 'Two batches from the client (51 photos and 3 videos, then a photographer\u2019s session and an event shoot) went through Pillow and ffmpeg. All camera metadata (GPS, device, timestamps) was stripped, orientation applied, Display P3 converted to sRGB, and H.264 encoded with faststart. Files were renamed by subject. The second batch replaced the low-res phone shots wherever it could do the same job.' },
+      { label: 'LOGO', title: 'A glow on black, lifted to alpha', body: 'The logo arrived as a PNG of a glowing monogram painted on black, not a cut-out. The black was lifted into transparency (alpha from brightness, color divided back out), so it sits on the site\u2019s ink fields with no box edge, exactly as it looked on black. It is used only on dark fields, and a vector is on the request list for print.' },
+      { label: 'LAUNCH OPS', title: 'Forms, analytics, SEO, headers', body: 'Six Netlify Forms with honeypots, validated client-side, each firing a <code>form_submit_success</code> event into Google Tag Manager so leads can be counted. Keyword-led titles naming Houston, canonicals, share cards, and JSON-LD (<code>HealthAndBeautyBusiness</code>, <code>WebSite</code>, <code>BreadcrumbList</code>). Security headers, a branded 404, and the domain moved from a GoDaddy builder page to Netlify DNS on launch day.' },
+    ],
+    signals: [
+      { value: '7', label: 'PAGES FROM THE CLIENT\u2019S BRIEF' },
+      { value: '3', label: 'WORKING DIRECTIONS, ONE CHOSEN' },
+      { value: '9', label: 'BLOCK TYPES HIDDEN UNTIL REAL' },
+      { value: '0', label: 'BUILD STEPS \u00b7 FRAMEWORKS' },
+    ],
+    stack: ['HTML \u00b7 CSS \u00b7 vanilla JS', 'Bungee \u00b7 Archivo \u00b7 Yellowtail', 'IntersectionObserver motion', 'prefers-reduced-motion', 'Netlify \u00b7 Netlify DNS', 'Netlify Forms', 'Google Tag Manager', 'JSON-LD schema', 'Pillow', 'ffmpeg'],
+    proves: [
+      'Building to someone else\u2019s brief without losing the craft: the owner’s structure, word for word, under a design system strong enough to carry it. And launching a small business honestly: every price, testimonial and figure the client hasn\u2019t supplied stays off the page entirely. The count-up animation is built and working, but it will never count a number nobody gave me.',
+    ],
+  },
+
+  {
     slug: 'ptc-promotions',
-    nr: '14',
+    nr: '15',
     group: 'Work improvisation · PTC',
     title: 'PTC Promotions',
     hue: '#38b6ff',
@@ -502,7 +545,7 @@ export const projects = [
 
   {
     slug: 'ptc-ai-operator',
-    nr: '12',
+    nr: '13',
     group: 'Work improvisation · PTC',
     title: 'PTC AI Operator',
     hue: '#e8b84b',
@@ -544,7 +587,7 @@ export const projects = [
 
   {
     slug: 'ghl-rc-bridge',
-    nr: '13',
+    nr: '14',
     group: 'Work improvisation · PTC',
     title: 'GHL×RC Bridge',
     hue: '#ffb02e',

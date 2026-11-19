@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#a9cdea"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0a0c0f"/>
+  <g stroke="#f1efe6" stroke-opacity="0.03">
+    <path d="M0 150 H1600 M0 300 H1600 M0 450 H1600 M0 600 H1600 M0 750 H1600"/>
+    <path d="M200 0 V900 M400 0 V900 M600 0 V900 M800 0 V900 M1000 0 V900 M1200 0 V900 M1400 0 V900"/>
+  </g>
+
+  <!-- header -->
+  <text x="70" y="78" fill="#a9cdea" font-size="15" letter-spacing="5">ONE FILE → ONE GATE → SEVEN PAGES</text>
+  <text x="70" y="120" fill="#f1efe6" font-size="34" font-weight="700" letter-spacing="1">NOTHING SHOWS UNTIL IT’S REAL</text>
+  <text x="1530" y="78" fill="#8f8c80" font-size="13" letter-spacing="3" text-anchor="end">LIFESTYLE REVOLUTION — HOW THE SITE LAUNCHED</text>
+  <path d="M70 145 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+
+  <!-- 01 content file -->
+  <g>
+    <rect x="70" y="190" width="560" height="390" rx="14" fill="#10151b" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="94" y="228" fill="#a9cdea" font-size="13" letter-spacing="3">01 · CONTENT — content/site.js</text>
+    <text x="94" y="268" fill="#f1efe6" font-size="24" font-weight="700">ONE FILE IS THE CMS</text>
+    <text x="94" y="296" fill="#8f8c80" font-size="14">a JSON literal in a window.LR wrapper</text>
+    <path d="M94 314 H606" stroke="#f1efe6" stroke-opacity="0.1"/>
+    <text x="94" y="346" fill="#f1efe6" font-size="14">&quot;paths&quot;:</text>
+    <text x="284" y="346" fill="#8f8c80" font-size="14">[ four lines of business ]</text>
+    <text x="606" y="346" fill="#a9cdea" font-size="11" letter-spacing="2" text-anchor="end">SHOWN</text>
+    <text x="94" y="375" fill="#f1efe6" font-size="14">&quot;media&quot;:</text>
+    <text x="284" y="375" fill="#8f8c80" font-size="14">{ galleries, videos }</text>
+    <text x="606" y="375" fill="#a9cdea" font-size="11" letter-spacing="2" text-anchor="end">SHOWN</text>
+    <text x="94" y="404" fill="#c9c6ba" font-size="14">&quot;testimonials&quot;:</text>
+    <text x="284" y="404" fill="#8f8c80" font-size="14">{ &quot;pending&quot;: true }</text>
+    <text x="606" y="404" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end" opacity="0.8">HIDDEN</text>
+    <text x="94" y="433" fill="#c9c6ba" font-size="14">&quot;schedule&quot;:</text>
+    <text x="284" y="433" fill="#8f8c80" font-size="14">{ &quot;pending&quot;: true }</text>
+    <text x="606" y="433" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end" opacity="0.8">HIDDEN</text>
+    <text x="94" y="462" fill="#c9c6ba" font-size="14">&quot;team&quot;:</text>
+    <text x="284" y="462" fill="#8f8c80" font-size="14">{ &quot;pending&quot;: true }</text>
+    <text x="606" y="462" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end" opacity="0.8">HIDDEN</text>
+    <text x="94" y="491" fill="#c9c6ba" font-size="14">&quot;faq&quot;:</text>
+    <text x="284" y="491" fill="#8f8c80" font-size="14">[ questions, no answers ]</text>
+    <text x="606" y="491" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end" opacity="0.8">HIDDEN</text>
+    <text x="94" y="520" fill="#c9c6ba" font-size="14">&quot;corporateOutcomes&quot;:</text>
+    <text x="284" y="520" fill="#8f8c80" font-size="14">[ no figures yet ]</text>
+    <text x="606" y="520" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end" opacity="0.8">HIDDEN</text>
+    <text x="94" y="549" fill="#c9c6ba" font-size="14">&quot;upcomingEvents&quot;:</text>
+    <text x="284" y="549" fill="#8f8c80" font-size="14">{ &quot;pending&quot;: true }</text>
+    <text x="606" y="549" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end" opacity="0.8">HIDDEN</text>
+  </g>
+  <path d="M634 385 H676" stroke="#a9cdea" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- 02 the gate -->
+  <g>
+    <rect x="684" y="225" width="340" height="320" rx="14" fill="#10151b" stroke="#a9cdea" stroke-opacity="0.28" stroke-width="8"/>
+    <rect x="684" y="225" width="340" height="320" rx="14" fill="none" stroke="#a9cdea" stroke-opacity="0.75" stroke-width="2"/>
+    <text x="708" y="263" fill="#a9cdea" font-size="13" letter-spacing="3">02 · THE GATE — lr.js</text>
+    <text x="708" y="305" fill="#a9cdea" font-size="27" font-weight="700">ready(key)</text>
+    <text x="708" y="341" fill="#8f8c80" font-size="14">every gated block carries</text>
+    <text x="708" y="365" fill="#f1efe6" font-size="14">data-needs=&quot;key&quot;</text>
+    <text x="708" y="401" fill="#a9cdea" font-size="11" letter-spacing="2">SHOWN WHEN</text>
+    <text x="708" y="425" fill="#8f8c80" font-size="14">· not pending, has items</text>
+    <text x="708" y="449" fill="#8f8c80" font-size="14">· faq: an answer exists</text>
+    <text x="708" y="473" fill="#8f8c80" font-size="14">· outcomes: a real figure</text>
+    <path d="M708 493 H1000" stroke="#f1efe6" stroke-opacity="0.1"/>
+    <text x="708" y="521" fill="#f1efe6" font-size="14" font-weight="700">else: hidden, not deleted</text>
+  </g>
+  <path d="M1028 385 H1070" stroke="#a9cdea" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- 03 the page -->
+  <g>
+    <rect x="1078" y="190" width="452" height="390" rx="14" fill="#10151b" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="1102" y="228" fill="#a9cdea" font-size="13" letter-spacing="3">03 · THE PAGE — HOME, BANDS 07–09</text>
+    <text x="1102" y="268" fill="#f1efe6" font-size="24" font-weight="700">THE BANDS STILL MEET</text>
+
+    <rect x="1102" y="290" width="396" height="48" fill="#a9cdea" fill-opacity="0.13" stroke="#a9cdea" stroke-opacity="0.55"/>
+    <text x="1120" y="320" fill="#f1efe6" font-size="15" font-weight="700">§07 LIFESTYLE EVENTS</text>
+    <text x="1482" y="320" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end">NAVY</text>
+
+    <g opacity="0.35">
+    <path d="M1102 346 H1318" stroke="#8f8c80" stroke-width="2" stroke-dasharray="5 5"/>
+    <circle cx="1112" cy="355" r="3.2" fill="none" stroke="#8f8c80" stroke-width="1.6"/>
+    <circle cx="1142" cy="355" r="3.2" fill="none" stroke="#8f8c80" stroke-width="1.6"/>
+    <circle cx="1172" cy="355" r="3.2" fill="none" stroke="#8f8c80" stroke-width="1.6"/>
+    <circle cx="1202" cy="355" r="3.2" fill="none" stroke="#8f8c80" stroke-width="1.6"/>
+    <circle cx="1232" cy="355" r="3.2" fill="none" stroke="#8f8c80" stroke-width="1.6"/>
+    <circle cx="1262" cy="355" r="3.2" fill="none" stroke="#8f8c80" stroke-width="1.6"/>
+    <circle cx="1292" cy="355" r="3.2" fill="none" stroke="#8f8c80" stroke-width="1.6"/>
+    </g>
+    <text x="1498" y="360" fill="#8f8c80" font-size="10" letter-spacing="1.5" text-anchor="end">DIVIDER GOES TOO</text>
+
+    <rect x="1102" y="372" width="396" height="52" fill="none" stroke="#8f8c80" stroke-opacity="0.7" stroke-dasharray="6 6"/>
+    <text x="1120" y="395" fill="#8f8c80" font-size="15" font-weight="700">§08 TESTIMONIALS</text>
+    <path d="M1120 390 H1278" stroke="#8f8c80" stroke-width="1.5"/>
+    <text x="1120" y="414" fill="#8f8c80" font-size="12">data-needs=&quot;testimonials&quot; → hidden</text>
+    <text x="1482" y="395" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end">POWDER</text>
+
+    <g opacity="1">
+    <path d="M1102 432 H1318" stroke="#a9cdea" stroke-width="2" stroke-dasharray="5 5"/>
+    <circle cx="1112" cy="441" r="3.2" fill="none" stroke="#a9cdea" stroke-width="1.6"/>
+    <circle cx="1142" cy="441" r="3.2" fill="none" stroke="#a9cdea" stroke-width="1.6"/>
+    <circle cx="1172" cy="441" r="3.2" fill="none" stroke="#a9cdea" stroke-width="1.6"/>
+    <circle cx="1202" cy="441" r="3.2" fill="none" stroke="#a9cdea" stroke-width="1.6"/>
+    <circle cx="1232" cy="441" r="3.2" fill="none" stroke="#a9cdea" stroke-width="1.6"/>
+    <circle cx="1262" cy="441" r="3.2" fill="none" stroke="#a9cdea" stroke-width="1.6"/>
+    <circle cx="1292" cy="441" r="3.2" fill="none" stroke="#a9cdea" stroke-width="1.6"/>
+    </g>
+    <text x="1498" y="446" fill="#a9cdea" font-size="10" letter-spacing="1.5" text-anchor="end">--from: NAVY → INK</text>
+
+    <rect x="1102" y="458" width="396" height="48" fill="#a9cdea" fill-opacity="0.13" stroke="#a9cdea" stroke-opacity="0.55"/>
+    <text x="1120" y="488" fill="#f1efe6" font-size="15" font-weight="700">§09 GET STARTED</text>
+    <text x="1482" y="488" fill="#8f8c80" font-size="11" letter-spacing="2" text-anchor="end">INK</text>
+
+    <text x="1102" y="540" fill="#8f8c80" font-size="13">the next divider inherits the hidden one’s</text>
+    <text x="1102" y="561" fill="#8f8c80" font-size="13">start color, so navy hems straight into ink</text>
+  </g>
+
+  <!-- nine gated block types -->
+  <text x="70" y="628" fill="#a9cdea" font-size="13" letter-spacing="4">NINE BLOCK TYPES WAITED ON THE CLIENT AT LAUNCH — EACH APPEARS BY ITSELF WHEN ITS CONTENT LANDS</text>
+  <g font-size="12" fill="#c9c6ba" letter-spacing="1">
+    <rect x="70.0" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="145.8" y="672" text-anchor="middle">TESTIMONIALS</text>
+    <rect x="233.6" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="309.3" y="672" text-anchor="middle">CLASS SCHEDULE</text>
+    <rect x="397.1" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="472.9" y="672" text-anchor="middle">INSTRUCTORS</text>
+    <rect x="560.7" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="636.4" y="672" text-anchor="middle">FAQ ANSWERS</text>
+    <rect x="724.2" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="800.0" y="672" text-anchor="middle">OUTCOME FIGURES</text>
+    <rect x="887.8" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="963.6" y="672" text-anchor="middle">CASE STUDIES</text>
+    <rect x="1051.3" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="1127.1" y="672" text-anchor="middle">UPCOMING EVENTS</text>
+    <rect x="1214.9" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="1290.7" y="672" text-anchor="middle">PROMO VIDEO</text>
+    <rect x="1378.4" y="646" width="151.6" height="42" rx="21" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+    <text x="1454.2" y="672" text-anchor="middle">SOCIAL ICONS</text>
+  </g>
+
+  <!-- callouts -->
+  <g>
+    <rect x="70" y="722" width="715" height="112" rx="12" fill="#10151b" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="94" y="752" fill="#a9cdea" font-size="12" letter-spacing="3">COUNT-UPS</text>
+    <text x="94" y="782" fill="#f1efe6" font-size="17" font-weight="700">THE ANIMATION IS LIVE. NO NUMBER IS INVENTED.</text>
+    <text x="94" y="810" fill="#8f8c80" font-size="13">an outcome tile appears, and counts, only once the client supplies its figure</text>
+
+    <rect x="815" y="722" width="715" height="112" rx="12" fill="#10151b" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="839" y="752" fill="#a9cdea" font-size="12" letter-spacing="3">NO BUILD STEP</text>
+    <text x="839" y="782" fill="#f1efe6" font-size="17" font-weight="700">A PLAIN &lt;script&gt; TAG, NOT A FETCH</text>
+    <text x="839" y="810" fill="#8f8c80" font-size="13">runs from file:// or any static host; an edit is one file, not seven pages</text>
+  </g>
+
+  <path d="M70 866 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+  <text x="70" y="889" fill="#8f8c80" font-size="12" letter-spacing="3">LIVE AT REVSTARTSNOW.COM SINCE 19 NOV 2026 · SEVEN PAGES · HAND-WRITTEN HTML, CSS AND JS</text>
+  <text x="1530" y="889" fill="#a9cdea" font-size="12" letter-spacing="3" text-anchor="end">FAISELTAJIRAN.COM</text>
+</svg>

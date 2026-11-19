@@ -149,7 +149,9 @@
     const heroLines = document.querySelectorAll('.hero__line, .case-hero__title');
     document.fonts.ready.then(() => {
       heroLines.forEach((line, i) => {
-        const split = new SplitText(line, { type: 'chars', mask: 'chars' });
+        // 'words' keeps each word in one wrapper so a two-word title wraps between words,
+        // not mid-word (chars-only splitting broke "REVOLUTION" across lines).
+        const split = new SplitText(line, { type: 'words,chars', mask: 'chars' });
         gsap.from(split.chars, {
           yPercent: 110, rotate: 4, duration: 1.1, ease: 'expo.out',
           stagger: 0.028, delay: 0.05 + i * 0.12,
