@@ -256,5 +256,33 @@
       "h": 840,
       "wide": true
     }
+  ],
+  "doppeldesk": [
+    {
+      "file": "pipeline.svg",
+      "alt": "Doppeldesk platform pipeline — Listen, Learn, Launch, Prove, Renew, with the five gates every change passes and the supervised after-hours-first rollout",
+      "caption": "FIVE STAGES, ONE PIPELINE — LISTEN → LEARN → LAUNCH → PROVE → RENEW, FIVE GATES, AFTER-HOURS FIRST",
+      "w": 1600,
+      "h": 900,
+      "wide": true
+    },
+    {
+      "file": "recovered-calls.svg",
+      "alt": "Pilot results on the first tenant — 246 rollover and after-hours calls to 67 appointments, 24 shows and 4 sales, set rate by mail age, against the operators' 42% bar",
+      "caption": "THE PROVE STAGE — 246 RECOVERED CALLS → 67 APPOINTMENTS, SET RATE BY MAIL AGE, THE OWNER'S OWN BAR",
+      "w": 1600,
+      "h": 900,
+      "wide": true
+    }
+  ],
+  "revproof": [
+    {
+      "file": "cite-check-seal.svg",
+      "alt": "RevProof encounter flow — the LLM cites evidence as quotes, a deterministic engine checks the rules, a person approves, Authyr seals the record; guardrails and the three engines below",
+      "caption": "CITE → CHECK → APPROVE → SEAL — THE MODEL NEVER PICKS A CODE; GUARDRAILS AS CODE; THREE ENGINES ON ONE SPINE",
+      "w": 1600,
+      "h": 900,
+      "wide": true
+    }
   ]
 }

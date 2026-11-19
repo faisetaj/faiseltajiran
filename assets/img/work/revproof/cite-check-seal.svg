@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#34f5a0"/>
+    </marker>
+    <marker id="arrDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8f8c80"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0a0e0c"/>
+  <g stroke="#f1efe6" stroke-opacity="0.03">
+    <path d="M0 150 H1600 M0 300 H1600 M0 450 H1600 M0 600 H1600 M0 750 H1600"/>
+    <path d="M200 0 V900 M400 0 V900 M600 0 V900 M800 0 V900 M1000 0 V900 M1200 0 V900 M1400 0 V900"/>
+  </g>
+
+  <!-- header -->
+  <text x="70" y="78" fill="#34f5a0" font-size="15" letter-spacing="5">CITE → CHECK → APPROVE → SEAL</text>
+  <text x="70" y="120" fill="#f1efe6" font-size="34" font-weight="700" letter-spacing="1">THE MODEL NEVER PICKS A CODE</text>
+  <text x="1530" y="78" fill="#8f8c80" font-size="13" letter-spacing="3" text-anchor="end">REVPROOF — ONE ENCOUNTER, END TO END</text>
+  <path d="M70 145 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+
+  <!-- input -->
+  <g>
+    <rect x="70" y="236" width="170" height="188" rx="14" fill="#0f1713" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="94" y="272" fill="#8f8c80" font-size="13" letter-spacing="3">INPUT</text>
+    <text x="94" y="310" fill="#f1efe6" font-size="22" font-weight="700">VISIT NOTE</text>
+    <text x="94" y="344" fill="#8f8c80" font-size="14">exported from</text>
+    <text x="94" y="366" fill="#8f8c80" font-size="14">the EHR, plus</text>
+    <text x="94" y="388" fill="#8f8c80" font-size="14">what was billed</text>
+  </g>
+  <path d="M244 330 H296" stroke="#34f5a0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 1 : CITE -->
+  <g>
+    <rect x="304" y="210" width="300" height="240" rx="14" fill="#0f1713" stroke="#34f5a0" stroke-opacity="0.28" stroke-width="8"/>
+    <rect x="304" y="210" width="300" height="240" rx="14" fill="none" stroke="#34f5a0" stroke-opacity="0.75" stroke-width="2"/>
+    <text x="328" y="248" fill="#34f5a0" font-size="13" letter-spacing="3">01 · CITE — THE LLM</text>
+    <text x="328" y="290" fill="#f1efe6" font-size="24" font-weight="700">EVIDENCE ONLY</text>
+    <text x="328" y="330" fill="#34f5a0" font-size="27" font-weight="700">quotes + offsets</text>
+    <text x="328" y="362" fill="#8f8c80" font-size="14">problems, data, risk, time</text>
+    <text x="328" y="386" fill="#8f8c80" font-size="14">as verbatim quotes from the</text>
+    <text x="328" y="410" fill="#8f8c80" font-size="14">note; every quote is checked</text>
+    <text x="328" y="434" fill="#8f8c80" font-size="14">against the text or dropped</text>
+  </g>
+  <path d="M608 330 H660" stroke="#34f5a0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 2 : CHECK -->
+  <g>
+    <rect x="668" y="210" width="330" height="240" rx="14" fill="#0f1713" stroke="#34f5a0" stroke-opacity="0.28" stroke-width="8"/>
+    <rect x="668" y="210" width="330" height="240" rx="14" fill="none" stroke="#34f5a0" stroke-opacity="0.75" stroke-width="2"/>
+    <text x="692" y="248" fill="#34f5a0" font-size="13" letter-spacing="3">02 · CHECK — RULES ENGINE</text>
+    <text x="692" y="290" fill="#f1efe6" font-size="24" font-weight="700">DETERMINISTIC</text>
+    <text x="692" y="330" fill="#34f5a0" font-size="27" font-weight="700">every rule tested</text>
+    <text x="692" y="362" fill="#8f8c80" font-size="14">AMA 2021 MDM grid · CMS 8-minute</text>
+    <text x="692" y="386" fill="#8f8c80" font-size="14">rule + payer profiles · hospice</text>
+    <text x="692" y="410" fill="#8f8c80" font-size="14">42 CFR 418 · the gap priced on</text>
+    <text x="692" y="434" fill="#8f8c80" font-size="14">current-year CMS values, cited</text>
+  </g>
+  <path d="M1002 330 H1054" stroke="#34f5a0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 3 : APPROVE -->
+  <g>
+    <rect x="1062" y="236" width="196" height="188" rx="14" fill="#0f1713" stroke="#f1efe6" stroke-opacity="0.35" stroke-width="2" stroke-dasharray="7 6"/>
+    <text x="1086" y="272" fill="#f1efe6" font-size="13" letter-spacing="3">03 · APPROVE</text>
+    <text x="1086" y="310" fill="#f1efe6" font-size="22" font-weight="700">A PERSON</text>
+    <text x="1086" y="344" fill="#8f8c80" font-size="14">biller or doctor,</text>
+    <text x="1086" y="366" fill="#8f8c80" font-size="14">quotes lit in the</text>
+    <text x="1086" y="388" fill="#8f8c80" font-size="14">note; nothing is</text>
+    <text x="1086" y="410" fill="#8f8c80" font-size="14">sent on its own</text>
+  </g>
+  <path d="M1262 330 H1314" stroke="#34f5a0" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 4 : SEAL -->
+  <g>
+    <rect x="1322" y="210" width="208" height="240" rx="14" fill="#0f1a14" stroke="#34f5a0" stroke-opacity="0.5" stroke-width="10"/>
+    <rect x="1322" y="210" width="208" height="240" rx="14" fill="none" stroke="#34f5a0" stroke-width="2.5"/>
+    <text x="1346" y="248" fill="#34f5a0" font-size="13" letter-spacing="3">04 · SEAL</text>
+    <text x="1346" y="290" fill="#f1efe6" font-size="24" font-weight="700">WITNESS</text>
+    <text x="1346" y="318" fill="#f1efe6" font-size="24" font-weight="700">RECORD</text>
+    <text x="1346" y="362" fill="#8f8c80" font-size="13">held by Authyr, a</text>
+    <text x="1346" y="386" fill="#8f8c80" font-size="13">neutral third party;</text>
+    <text x="1346" y="410" fill="#8f8c80" font-size="13">append-only; hashes</text>
+    <text x="1346" y="434" fill="#8f8c80" font-size="13">only, never the note</text>
+  </g>
+
+  <!-- verify loop -->
+  <path d="M1426 450 V520 H1160 V430" stroke="#8f8c80" stroke-width="2" stroke-dasharray="6 7" fill="none" marker-end="url(#arrDim)"/>
+  <text x="1262" y="508" fill="#8f8c80" font-size="14" letter-spacing="2" text-anchor="middle">PAYER / AUDITOR → VERIFY PAGE</text>
+  <text x="70" y="552" fill="#8f8c80" font-size="14" letter-spacing="2">THE VERIFY PAGE SHOWS WHAT WAS SEALED · WHEN · THE HASHES · CHAIN POSITION · THREE CHECKS — NOTHING CLINICAL</text>
+
+  <!-- guardrails strip -->
+  <g>
+    <text x="70" y="612" fill="#34f5a0" font-size="13" letter-spacing="4">GUARDRAILS WRITTEN AS CODE — A BUILD GATE OR A TEST ENFORCES EACH ONE</text>
+    <g font-size="13" fill="#c9c6ba">
+      <rect x="70"   y="632" width="295" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="217"  y="659" text-anchor="middle">CODE TO DOCUMENTATION, NEVER ABOVE</text>
+      <rect x="396"  y="632" width="224" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="508"  y="659" text-anchor="middle">NEVER SUGGEST ADDING WORK</text>
+      <rect x="651"  y="632" width="295" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="798"  y="659" text-anchor="middle">FLAT PRICE — NEVER A % OF RECOVERY</text>
+      <rect x="977"  y="632" width="216" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="1085" y="659" text-anchor="middle">NO PHI IN THE REPO, EVER</text>
+      <rect x="1224" y="632" width="303" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="1375" y="659" text-anchor="middle">LEVELS RISE GRADUALLY, PER PROVIDER</text>
+    </g>
+  </g>
+
+  <!-- three engines -->
+  <g>
+    <text x="70" y="738" fill="#34f5a0" font-size="13" letter-spacing="4">THREE ENGINES, ONE SPINE — QUOTE VALIDATION, SEAL CHAIN, STORE AND APPROVAL FLOW SHARED</text>
+    <rect x="70" y="758" width="470" height="86" rx="12" fill="#0f1713" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="94" y="786" fill="#f1efe6" font-size="17" font-weight="700">OFFICE E/M</text>
+    <text x="94" y="808" fill="#8f8c80" font-size="13">99212–99215 · the dispute is interpretation,</text>
+    <text x="94" y="828" fill="#8f8c80" font-size="13">so the engine is the product</text>
+    <rect x="565" y="758" width="470" height="86" rx="12" fill="#0f1713" stroke="#f1efe6" stroke-opacity="0.2"/>
+    <text x="589" y="786" fill="#f1efe6" font-size="17" font-weight="700">THERAPY UNITS</text>
+    <text x="589" y="808" fill="#8f8c80" font-size="13">97110 · 97530 · 97535 · timed units,</text>
+    <text x="589" y="828" fill="#8f8c80" font-size="13">tapped in and out, both taps sealed</text>
+    <rect x="1060" y="758" width="470" height="86" rx="12" fill="#0f1a14" stroke="#34f5a0" stroke-opacity="0.5"/>
+    <text x="1084" y="786" fill="#f1efe6" font-size="17" font-weight="700">HOSPICE <tspan fill="#34f5a0" font-size="12" letter-spacing="2">  OCT 2026</tspan></text>
+    <text x="1084" y="808" fill="#8f8c80" font-size="13">per diem over benefit periods · the dispute is fact,</text>
+    <text x="1084" y="828" fill="#8f8c80" font-size="13">so the seal is the product</text>
+  </g>
+
+  <path d="M70 866 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+  <text x="70" y="889" fill="#8f8c80" font-size="12" letter-spacing="3">PROTOTYPE RUNS ON SYNTHETIC DATA · REAL CHARTS ONLY AFTER A BAA COVERS EVERY VENDOR IN THE PATH</text>
+  <text x="1530" y="889" fill="#34f5a0" font-size="12" letter-spacing="3" text-anchor="end">FAISELTAJIRAN.COM</text>
+</svg>

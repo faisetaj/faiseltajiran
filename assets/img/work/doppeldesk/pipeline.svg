@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" font-family="ui-monospace,'SF Mono',Menlo,Consolas,monospace">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#ff2bd6"/>
+    </marker>
+    <marker id="arrDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8f8c80"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="900" fill="#0e0a0e"/>
+  <g stroke="#f1efe6" stroke-opacity="0.03">
+    <path d="M0 150 H1600 M0 300 H1600 M0 450 H1600 M0 600 H1600 M0 750 H1600"/>
+    <path d="M200 0 V900 M400 0 V900 M600 0 V900 M800 0 V900 M1000 0 V900 M1200 0 V900 M1400 0 V900"/>
+  </g>
+
+  <!-- header -->
+  <text x="70" y="78" fill="#ff2bd6" font-size="15" letter-spacing="5">FIVE STAGES, ONE PIPELINE</text>
+  <text x="70" y="120" fill="#f1efe6" font-size="34" font-weight="700" letter-spacing="1">LISTEN → LEARN → LAUNCH → PROVE → RENEW</text>
+  <text x="1530" y="78" fill="#8f8c80" font-size="13" letter-spacing="3" text-anchor="end">DOPPELDESK — PLATFORM PIPELINE</text>
+  <path d="M70 145 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+
+  <!-- stage 1 : LISTEN -->
+  <g>
+    <rect x="70" y="210" width="248" height="240" rx="14" fill="#170d16" stroke="#ff2bd6" stroke-opacity="0.28" stroke-width="8"/>
+    <rect x="70" y="210" width="248" height="240" rx="14" fill="none" stroke="#ff2bd6" stroke-opacity="0.75" stroke-width="2"/>
+    <text x="94" y="248" fill="#ff2bd6" font-size="13" letter-spacing="3">01 · LISTEN</text>
+    <text x="94" y="290" fill="#f1efe6" font-size="24" font-weight="700">THEIR CALLS</text>
+    <text x="94" y="330" fill="#ff2bd6" font-size="27" font-weight="700">connectors</text>
+    <text x="94" y="362" fill="#8f8c80" font-size="14">RingCentral · CallRail,</text>
+    <text x="94" y="386" fill="#8f8c80" font-size="14">iovox CSV · MP3 upload;</text>
+    <text x="94" y="410" fill="#8f8c80" font-size="14">each call logged, audio</text>
+    <text x="94" y="434" fill="#8f8c80" font-size="14">in the tenant's bucket</text>
+  </g>
+  <path d="M322 330 H376" stroke="#ff2bd6" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 2 : LEARN -->
+  <g>
+    <rect x="384" y="210" width="248" height="240" rx="14" fill="#170d16" stroke="#ff2bd6" stroke-opacity="0.28" stroke-width="8"/>
+    <rect x="384" y="210" width="248" height="240" rx="14" fill="none" stroke="#ff2bd6" stroke-opacity="0.75" stroke-width="2"/>
+    <text x="408" y="248" fill="#ff2bd6" font-size="13" letter-spacing="3">02 · LEARN</text>
+    <text x="408" y="290" fill="#f1efe6" font-size="24" font-weight="700">THE MINER</text>
+    <text x="408" y="330" fill="#ff2bd6" font-size="27" font-weight="700">playbook</text>
+    <text x="408" y="362" fill="#8f8c80" font-size="14">Haiku labels outcomes,</text>
+    <text x="408" y="386" fill="#8f8c80" font-size="14">Opus writes a playbook;</text>
+    <text x="408" y="410" fill="#8f8c80" font-size="14">human baseline measured</text>
+    <text x="408" y="434" fill="#8f8c80" font-size="14">before the AI answers</text>
+  </g>
+  <path d="M636 330 H690" stroke="#ff2bd6" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 3 : LAUNCH -->
+  <g>
+    <rect x="698" y="210" width="248" height="240" rx="14" fill="#170d16" stroke="#ff2bd6" stroke-opacity="0.28" stroke-width="8"/>
+    <rect x="698" y="210" width="248" height="240" rx="14" fill="none" stroke="#ff2bd6" stroke-opacity="0.75" stroke-width="2"/>
+    <text x="722" y="248" fill="#ff2bd6" font-size="13" letter-spacing="3">03 · LAUNCH</text>
+    <text x="722" y="290" fill="#f1efe6" font-size="24" font-weight="700">ONE ANSWERING</text>
+    <text x="722" y="318" fill="#f1efe6" font-size="24" font-weight="700">RULE</text>
+    <text x="722" y="362" fill="#8f8c80" font-size="14">voice + chat, one agent;</text>
+    <text x="722" y="386" fill="#8f8c80" font-size="14">consent by area code,</text>
+    <text x="722" y="410" fill="#8f8c80" font-size="14">AI disclosure each call;</text>
+    <text x="722" y="434" fill="#8f8c80" font-size="14">after-hours line first</text>
+  </g>
+  <path d="M950 330 H1004" stroke="#ff2bd6" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 4 : PROVE -->
+  <g>
+    <rect x="1012" y="210" width="248" height="240" rx="14" fill="#170d16" stroke="#ff2bd6" stroke-opacity="0.28" stroke-width="8"/>
+    <rect x="1012" y="210" width="248" height="240" rx="14" fill="none" stroke="#ff2bd6" stroke-opacity="0.75" stroke-width="2"/>
+    <text x="1036" y="248" fill="#ff2bd6" font-size="13" letter-spacing="3">04 · PROVE</text>
+    <text x="1036" y="290" fill="#f1efe6" font-size="24" font-weight="700">RECEIPT-TRUE</text>
+    <text x="1036" y="318" fill="#f1efe6" font-size="24" font-weight="700">BOARD</text>
+    <text x="1036" y="362" fill="#8f8c80" font-size="14">booked only by receipt:</text>
+    <text x="1036" y="386" fill="#8f8c80" font-size="14">a row with the call id;</text>
+    <text x="1036" y="410" fill="#8f8c80" font-size="14">rate vs the owner's own</text>
+    <text x="1036" y="434" fill="#8f8c80" font-size="14">baseline · audio · tags</text>
+  </g>
+  <path d="M1264 330 H1318" stroke="#ff2bd6" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <!-- stage 5 : RENEW -->
+  <g>
+    <rect x="1326" y="210" width="204" height="240" rx="14" fill="#1c0f1a" stroke="#ff2bd6" stroke-opacity="0.5" stroke-width="10"/>
+    <rect x="1326" y="210" width="204" height="240" rx="14" fill="none" stroke="#ff2bd6" stroke-width="2.5"/>
+    <text x="1350" y="248" fill="#ff2bd6" font-size="13" letter-spacing="3">05 · RENEW</text>
+    <text x="1350" y="290" fill="#f1efe6" font-size="22" font-weight="700">SAME CLONE,</text>
+    <text x="1350" y="318" fill="#f1efe6" font-size="22" font-weight="700">OUTBOUND</text>
+    <text x="1350" y="362" fill="#8f8c80" font-size="14">renewals and</text>
+    <text x="1350" y="386" fill="#8f8c80" font-size="14">win-backs by voice,</text>
+    <text x="1350" y="410" fill="#8f8c80" font-size="14">consent-gated,</text>
+    <text x="1350" y="434" fill="#ff2bd6" font-size="12" letter-spacing="3">ROADMAP</text>
+  </g>
+
+  <!-- self-mining loop -->
+  <path d="M1136 450 V520 H508 V456" stroke="#8f8c80" stroke-width="2" stroke-dasharray="6 7" fill="none" marker-end="url(#arrDim)"/>
+  <text x="822" y="508" fill="#8f8c80" font-size="14" letter-spacing="2" text-anchor="middle">SELF-MINING LOOP — THE AGENT'S OWN CALLS → MINER → PROMPT v(n+1), THROUGH THE GATES</text>
+
+  <!-- gates strip -->
+  <g>
+    <text x="70" y="592" fill="#ff2bd6" font-size="13" letter-spacing="4">EVERY CHANGE PASSES FIVE GATES BEFORE IT ANSWERS A PHONE</text>
+    <g font-size="13" fill="#c9c6ba">
+      <rect x="70"   y="612" width="201" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="170"  y="639" text-anchor="middle">LINT · PROMPT RENDERER</text>
+      <rect x="300"  y="612" width="311" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="455"  y="639" text-anchor="middle">CONTRACT · EVERY REASON HAS A BRANCH</text>
+      <rect x="640"  y="612" width="287" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="783"  y="639" text-anchor="middle">REGRESSION · SIMULATED OBJECTIONS</text>
+      <rect x="956"  y="612" width="303" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="1107" y="639" text-anchor="middle">DRIFT · LIVE AGENT vs REPO, NIGHTLY</text>
+      <rect x="1288" y="612" width="240" height="44" rx="22" fill="none" stroke="#f1efe6" stroke-opacity="0.16"/>
+      <text x="1408" y="639" text-anchor="middle">GUARD · PROBED EVERY MINUTE</text>
+    </g>
+  </g>
+
+  <!-- rollout meter -->
+  <g>
+    <text x="70" y="738" fill="#ff2bd6" font-size="13" letter-spacing="4">SUPERVISED ROLLOUT — FLIPPED BY A PHONE-SYSTEM RULE, NOT A DEPLOY</text>
+    <rect x="70" y="762" width="1460" height="16" rx="8" fill="#f1efe6" fill-opacity="0.07"/>
+    <rect x="70" y="762" width="486" height="16" rx="8" fill="#ff2bd6" fill-opacity="0.85"/>
+    <rect x="556" y="762" width="487" height="16" fill="#ff2bd6" fill-opacity="0.35"/>
+    <path d="M556 750 V792 M1043 750 V792" stroke="#ff2bd6" stroke-width="2.5"/>
+    <text x="313" y="822" fill="#f1efe6" font-size="16" font-weight="700" text-anchor="middle">AFTER HOURS + SUNDAYS</text>
+    <text x="800" y="822" fill="#f1efe6" font-size="16" font-weight="700" text-anchor="middle">+ OVERFLOW (OPERATORS BUSY)</text>
+    <text x="1287" y="822" fill="#8f8c80" font-size="16" font-weight="700" text-anchor="middle">FULL LINE — ON THE OWNER'S GO</text>
+  </g>
+
+  <path d="M70 862 H1530" stroke="#f1efe6" stroke-opacity="0.12"/>
+  <text x="70" y="888" fill="#8f8c80" font-size="12" letter-spacing="3">ONE DATABASE · TENANT_ID + RLS ON EVERY TABLE · NO TIMERS IN THE PROCESS, PG_CRON OWNS THE CLOCK</text>
+  <text x="1530" y="888" fill="#ff2bd6" font-size="12" letter-spacing="3" text-anchor="end">FAISELTAJIRAN.COM</text>
+</svg>

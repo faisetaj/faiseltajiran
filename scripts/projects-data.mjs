@@ -239,8 +239,92 @@ export const projects = [
   },
 
   {
-    slug: 'alitherep',
+    slug: 'doppeldesk',
     nr: '07',
+    group: 'Venture · SaaS',
+    title: 'Doppeldesk',
+    hue: '#ff2bd6',
+    motif: 'doppeldesk',
+    category: 'Voice AI Platform',
+    year: '2026',
+    role: 'Founder · Architect · Engineer',
+    status: 'Live · First tenant onboarded (Professional Travel Center) · Founding 10 open',
+    scope: 'Call mining · Voice + chat agents · Drift & contract gates · Multi-tenant SaaS',
+    link: { href: 'https://doppeldesk.com', label: 'doppeldesk.com' },
+    tagline: 'The PTC AI Operator, made into a product. A business connects its <b>recorded calls</b>; Doppeldesk clones its best operator, takes the after-hours line first, and reports booking rate against <b>its own human baseline</b>.',
+    description: 'Doppeldesk clones a business’s phone operators from its own call recordings and deploys the clone as a voice and web-chat agent behind one answering rule on the phone system it already has. Multi-tenant Supabase + Express + Next.js platform with drift, contract and regression gates; ElevenLabs Agents with Claude reasoning. Professional Travel Center is the first tenant. Built by Faisel Tajiran.',
+    thesis: [
+      'The PTC AI Operator proved an AI could answer a real marketing line and book real appointments. The question it left behind was whether the hard parts generalize: mining a company’s own calls into the script, gating every change so what was tested is what answers the phone, and measuring against the humans it relieves. Generic AI receptionists start from a blank form; voice platforms hand over a toolkit. Doppeldesk starts from the customer’s <strong>own recordings</strong> and ends with a number against <strong>their own operators</strong>. Five stages, one pipeline: Listen → Learn → Launch → Prove → Renew.',
+      'The first tenant is the company the prototype was built inside. Professional Travel Center was seeded in October 2026 with <em>962 real inbound calls</em> from its phone system over fourteen days and 263 AI-agent calls, synced every twenty minutes by a database cron. Its team works the same Call Activity screen the product ships: reports by hour and day, filters by operator and number, recordings, tags, one-click transcription. The lead segment is sales-driven call rooms, where the call is the sale: direct-response, membership and seminar lines. Pricing is public: Launch at $249 a month, Clone at $399, Campaign line at $699, with the first ten businesses getting setup waived and the price locked for a year.',
+      'The proof is deliberately honest. The pilot line takes only rollover and after-hours calls, so the headline is recovered calls, not a contest with the operators: in five weeks the AI desk answered <strong>246 calls no operator was free to take</strong> and set 67 appointments from them, which became 24 shows and 4 sales. On mail a week old or less it set 47–52% of verified calls; the operators book 42% of every call that comes in. The board separates the operator from the lead source, and the product never claims to beat the humans before a true cutover produces like-for-like data.',
+    ],
+    build: [
+      { label: 'LISTEN', title: 'Connectors, not uploads', body: 'RingCentral / Office@Hand with JWT refresh, detailed call legs and recording fetch; CallRail; iovox CSV; MP3 upload. Every inbound call lands in a tenant phone log; recordings stay in the tenant’s bucket; ElevenLabs Scribe v2 transcribes diarized on demand. Nothing crosses tenants.' },
+      { label: 'LEARN', title: 'The miner', body: 'Claude Haiku labels outcomes and extracts signals from each call (questions, objections, the winning line); Claude Opus synthesizes the playbook; the human booking baseline is measured from the log before the AI takes a call. Industry packs hold aggregate patterns only, never transcripts. The first pack is direct-response events, learned from the pilot.' },
+      { label: 'LAUNCH', title: 'One answering rule', body: 'Voice and web chat from one agent definition on ElevenLabs Agents, Claude reasoning inside. Rollout is supervised by default: after-hours → overflow → full line, flipped by a phone-system rule. Recording-consent line chosen by caller area code, strictest form when unknown; AI disclosure on every greeting. The onboarding wizard goes site → draft → questions → build → “Talk to your desk”.' },
+      { label: 'GATES', title: 'Lint, contract, regression, drift', body: 'A renderer turns pack + playbook into the system prompt, tools.json and expected agent config. The contract gate fails the build if any reason the API can return lacks a prompt branch. Regression runs simulated conversations seeded from mined objections. Nightly drift diffs the live agent against the repo; publish() refuses a version that failed.' },
+      { label: 'GUARD', title: 'The live-agent guard', body: 'A database cron probes every live agent each minute through pg_net, so the API can stay asleep. On a block it alerts, then restores the last version proven by a real conversation, once per incident. 1,440 of 1,440 checks passed in its first day. A version is “proven” only when a caller actually talked to it.' },
+      { label: 'PROVE', title: 'A receipt-true board', body: 'A call counts as booked only when a booking row carries its conversation id. The owner sees booking rate against the human baseline, a stage timeline (Listen / Learn / Launch / Prove), playbook evidence counts and version history with gate results. The Call Activity screen gives call-tracking parity: tiles, by-hour charts, filters, export, recording playback, tags, notes.' },
+      { label: 'SCAN', title: 'The call scan', body: 'Quick and deep scans over a business’s phone log: a switchboard jack grid lights in the real answered / missed proportions while findings drop in with their evidence counts. Paced playback of real scan events only, never a canned animation. Also ships as a CLI for an offline first look.' },
+      { label: 'TENANCY', title: 'One database, RLS everywhere', body: 'tenant_id and row-level security on every table. Dashboard sessions are read-only; every write goes through an admin route under the service role, so no one can flip a gate result. Capacity lives in SQL functions, never in the prompt. Agent-facing routes never return 4xx/5xx to the agent’s own mistake: always 200 with a reason the prompt knows how to handle. No timers in the process; schedules live in pg_cron.' },
+      { label: 'VERIFIED', title: '38 live checks after every backend change', body: 'One script exercises the live demo line end to end: agent tool dry-runs, consent by area code, signed post-call ingest with audio and outcome labels, every job, cron picking up a queued scan on its own, admin routes with 401/403/RLS, billing, then deletes everything it created. 38 of 38 pass.' },
+    ],
+    signals: [
+      { value: '246 → 67', label: 'RECOVERED CALLS → APPOINTMENTS, 5 WEEKS' },
+      { value: '962', label: 'REAL CALLS IN THE FIRST TENANT' },
+      { value: '1,440/1,440', label: 'GUARD CHECKS, FIRST 24 HOURS' },
+      { value: '38/38', label: 'LIVE BACKEND CHECKS PASSING' },
+    ],
+    stack: ['ElevenLabs Agents', 'Claude (Anthropic) · Sonnet on calls, Haiku + Opus in the miner', 'Express · TypeScript', 'Next.js 15', 'Supabase Postgres · RLS · pg_cron · pg_net · Vault', 'RingCentral · CallRail · Twilio', 'ElevenLabs Scribe', 'Render · Netlify', 'Resend', 'Remotion', 'Claude Code'],
+    proves: [
+      'The step from forward-deployed build to product: the parts that made one AI operator trustworthy, mined scripts, gates and a baseline, became a platform any phone-driven business can onboard, with the original customer as tenant one and its numbers reported the way an auditor would want them.',
+    ],
+  },
+  {
+    slug: 'revproof',
+    nr: '08',
+    group: 'Venture · Health-tech',
+    title: 'RevProof',
+    hue: '#34f5a0',
+    motif: 'revproof',
+    category: 'Medical Billing AI',
+    year: '2026',
+    role: 'Founder · Architect · Engineer',
+    status: 'Prototype live on synthetic data · Houston design-partner practice · Hospice engine added Oct 2026',
+    scope: 'Clinical NLP · Deterministic coding engines · Sealed records · HIPAA-shaped architecture',
+    link: { href: 'https://revproof-site.netlify.app', label: 'Live demo (synthetic data)' },
+    tagline: 'Audit-ready E/M, therapy and hospice coding, <b>cited to the chart</b>, decided by a rules engine, <b>sealed by Authyr</b>. The model never picks a code.',
+    description: 'RevProof reads a clinical note, quotes the evidence behind every element of the billing decision, applies AMA, CMS and payer rules deterministically, shows the gap between what was billed and what the note supports, and puts every approved change on a sealed record a payer can verify. Prototype on synthetic data with E/M, therapy-unit and hospice engines. Built by Faisel Tajiran.',
+    thesis: [
+      'Small and mid-size practices on older EHRs undercode out of audit fear, get downcoded by payers, and cannot prove what happened. The design partner is a Houston multi-specialty practice: eleven clinicians, about 3,300 visits a month, billing through a remote-desktop window into a 2000s-era EHR. One 99213 that the note supports as a 99214 is about <strong>$55</strong> at the practice’s rates; the working model puts its yearly leak at <strong>$180k–257k</strong>. Every other tool suggests the code. RevProof defends it: each code carries its quotes, the rule that produced it, who approved it, and a seal that shows nothing changed afterward.',
+      'The architecture is the compliance posture. An LLM (Claude) extracts evidence only: problems, data, risk and time as <em>verbatim quotes with character offsets</em>, each validated against the note text, with anything unverifiable dropped before it is shown. A deterministic TypeScript engine applies the AMA 2021 decision-making grid, the CMS 8-minute rule and payer therapy profiles, and prices the gap on current-year Medicare values pulled from the CMS files. A person approves every change. Prompts for a missing sentence appear only when the note shows the work was done, never to add work. Pricing is flat per provider, never a share of recovery, because a percentage pays the vendor to code higher. First live eval: 95% level agreement on 40 notes with both misses upward, then a prompt revision to 140 of 140.',
+      'The seal makes the record checkable without trusting the practice or the vendor. The note’s fingerprint at signing, each therapy session’s tap in and tap out, and every approval land on append-only witness records held by Authyr, my other venture, kept strictly as a neutral third party: the UI says “sealed by Authyr” and nothing more, hashes only, never the note. In October 2026, with a hospice owner at the table, the product grew a second engine. Office E/M disputes interpretation; hospice disputes fact, so there the sealed record is the product and the engine is the assistant.',
+    ],
+    build: [
+      { label: 'CITE', title: 'Evidence, never codes', body: 'Claude pulls problems, data, risk and time from the note as quotes with offsets. A validator checks every quote against the note and drops what fails. With no API key the app runs in demo mode: the synthetic seed’s labelled evidence flows through the same validator. An eval harness scores extraction against ground truth, sequentially, note by note.' },
+      { label: 'CHECK · E/M', title: 'The AMA 2021 grid in pure TypeScript', body: 'Two of three elements or time, with independent interpretation, outside-records review and prescription management encoded as rules, each with its source and a test. The ledger prices the gap on CY2026 Medicare RVUs times the conversion factor from the CMS relative-value files; a test fails the build if the rate year goes stale.' },
+      { label: 'CHECK · THERAPY', title: 'Timed units, both ways', body: 'CMS aggregate 8-minute rule and per-payer profiles (the UHC cap, the BCBS of Texas aggregate). A 27-minute session at two units passes; a 20-minute session at two units is flagged as exposure, not upside. A phone page at the treatment-room stand taps the session in and out, and both taps are sealed.' },
+      { label: 'CHECK · HOSPICE', title: 'The second engine', body: 'Benefit-period calendar, notice-of-election and certification timeliness, the face-to-face window, LCD prognosis baselines, levels of care, the service-intensity add-on cap, and amendment-after-records-request rules, every one citing its CFR or manual section. FY2027 per-diem rates on the hospice fiscal year. A census board shows what stands between each chart and its claim.' },
+      { label: 'DENIALS', title: '835s read, appeals packed', body: 'A minimal X12 835 parser with the CARC dictionary detects payer downcodes and unit reductions. The appeal packet carries the quotes and a verify link, and sending it seals it. An in-browser downcode scanner lets a practice check its own remittances without any data leaving the browser.' },
+      { label: 'SEAL', title: 'Authyr witness records', body: 'Authyr’s witness envelope and signers, copied in with source notes, plus RevProof’s per-patient chain layer. The public verify page shows what was sealed, when, the hashes, the chain position and three checks, and nothing clinical. A dev-only tamper endpoint proves the failure mode: “This record does not verify.”' },
+      { label: 'FLOOR', title: 'Nurse intake mirrors the note', body: 'A rule from a retired physician advising the build: the note must document at least the work that was done, and under-documentation is the loss. The nurse intake records the visit in the claim’s structure and is compared with the physician’s note in both directions, because consistency between the two is what an auditor checks.' },
+      { label: 'GUARDRAILS AS CODE', title: 'The rules that cannot be unwritten', body: 'Build gates: no PHI in the seeds, every rule has a test, every rate cites its source. A brand test forbids the words “authenticate”, “maximize” and “% of”. Practice-scoped RLS with an isolation test on PGlite locally and the Supabase stack in CI. Synthetic data only until a BAA covers every vendor in the path.' },
+      { label: 'PRODUCT', title: 'Ledger to verify page', body: 'Next.js 16 / React 19 app: ledger, queue, encounter review with quotes lit in the note, therapy, room stand, denials, providers with a ramp target (a quarter of the gap a month, never all at once), verify, settings. A marketing site with a leakage calculator on the same ledger package, Git-connected on Netlify. Icons from one vector system; no AI-slop aesthetics.' },
+    ],
+    signals: [
+      { value: '0', label: 'CODES PICKED BY THE MODEL' },
+      { value: '95%', label: 'LEVEL AGREEMENT, FIRST LIVE EVAL (N=40)' },
+      { value: '150+', label: 'RULE AND ENGINE TESTS' },
+      { value: '3', label: 'ENGINES: E/M · THERAPY · HOSPICE' },
+    ],
+    stack: ['Claude Sonnet 5 (Anthropic) · extraction only', 'Next.js 16 · React 19', 'TypeScript', 'Tailwind 4 · shadcn · lucide', 'Supabase Postgres · RLS', 'PGlite', 'zod · vitest · Playwright', 'X12 835', 'Authyr witness seals', 'Netlify', 'pnpm workspaces', 'Claude Code'],
+    proves: [
+      'Regulated-domain AI done the defensible way: the model is confined to quoting, a tested rules engine decides, a human approves, and a neutral seal makes the record checkable by the party who pays. Scoped, built and demoed in days, then extended to a second clinical domain in one.',
+    ],
+  },
+  {
+    slug: 'alitherep',
+    nr: '09',
     group: 'Client · Web design',
     title: 'AliTheRep',
     hue: '#c8ff3d',
@@ -276,7 +360,7 @@ export const projects = [
 
   {
     slug: 'cruise-reels',
-    nr: '13',
+    nr: '15',
     group: 'Work improvisation · PTC',
     title: 'Cruise Reels',
     hue: '#ff4f9a',
@@ -311,7 +395,7 @@ export const projects = [
 
   {
     slug: 'newspeed',
-    nr: '08',
+    nr: '10',
     group: 'Client · Web design',
     title: 'Newspeed',
     hue: '#ff3d3d',
@@ -344,7 +428,7 @@ export const projects = [
 
   {
     slug: 'mwwrenovations',
-    nr: '09',
+    nr: '11',
     group: 'Client \u00b7 Web design',
     title: 'MWW Renovations',
     hue: '#ff6a13',
@@ -384,7 +468,7 @@ export const projects = [
 
   {
     slug: 'ptc-promotions',
-    nr: '12',
+    nr: '14',
     group: 'Work improvisation · PTC',
     title: 'PTC Promotions',
     hue: '#38b6ff',
@@ -418,7 +502,7 @@ export const projects = [
 
   {
     slug: 'ptc-ai-operator',
-    nr: '10',
+    nr: '12',
     group: 'Work improvisation · PTC',
     title: 'PTC AI Operator',
     hue: '#e8b84b',
@@ -460,7 +544,7 @@ export const projects = [
 
   {
     slug: 'ghl-rc-bridge',
-    nr: '11',
+    nr: '13',
     group: 'Work improvisation · PTC',
     title: 'GHL×RC Bridge',
     hue: '#ffb02e',
